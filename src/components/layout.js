@@ -1,13 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 
 import Footer from './Footer/Footer'
+import Global from '../styles/Global'
 
 const Layout = ({ children }) => (
   <>
     <TTFLayout>{children}</TTFLayout>
     <Footer />
+    <Global />
   </>
 )
 
@@ -23,4 +25,5 @@ const TTFLayout = styled.div`
   width: 100%;
   height: 100%;
   background: #2b2c3a;
+  overflow: hidden;
 `

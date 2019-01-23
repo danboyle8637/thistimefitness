@@ -1,30 +1,80 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { above } from '../styles/Theme'
 
+// Create a single a-tag button to use and do if checks to render the button you want
 const FooterButton = styled.a`
+  position: relative;
   margin: 0;
-  margin-top: ${props => props.marginTop};
-  padding: 0;
+  margin-top: ${props => props.marginTop || '0'};
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #5afdf2;
-  width: 200px;
+  font-size: 16px;
+  color: #f8f8f8;
+  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  width: 210px;
   height: 48px;
   border: none;
   border-radius: 4px;
-  font-size: 16px;
-  color: #34716d;
   cursor: pointer;
-  transition: background-color, color, transform, box-shadow, 150ms ease-out;
-  &:hover {
-    background-color: #2ad2e2;
-    color: #f8f8f8;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  transition: color 200ms ease-out;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #09a9b7;
+    border-radius: 4px;
+    transform: translateX(-100%);
+    transition: transform 200ms ease-out;
   }
-  &:active {
-    transform: translateY(1.5px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  &:hover::before {
+    transform: translateX(0);
   }
 `
 
-export { FooterButton }
+const SiteButton = styled.a`
+  position: relative;
+  margin: 0;
+  margin-top: ${props => props.marginTop || 0};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #f8f8f8;
+  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  width: 210px;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 200ms ease-out;
+  transform: translate(0, 30px);
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #09a9b7;
+    border: none;
+    border-radius: 4px;
+    transform: translateX(-100%);
+    transition: transform 150ms ease-out;
+  }
+  &:hover::before {
+    transform: translateX(0);
+  }
+  ${above.mobile`
+    width: 450px;
+    height: 55px;
+  `}
+`
+
+export { FooterButton, SiteButton }

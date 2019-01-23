@@ -2,46 +2,41 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
-import MainLogo from '../../svgs/MainLogo'
-import HeadlineMenu from './HeadlineMenu'
-import { above } from '../../styles/Theme'
+import HeadlineContent from './HeadlineContent'
+import { above } from '../../../styles/Theme'
 
 class HeadlineSection extends Component {
   state = {
     backgroundImage: {},
-    logoWidth: 0,
-    logoHeight: 0,
+    screenWidth: 0,
   }
 
   componentDidMount() {
     const {
       desktopBackground,
       tabletBackground,
-      mobileBackground,
+      mobileBackground2,
     } = this.props.images
     const screenWidth = window.innerWidth
 
     if (screenWidth >= 1240) {
       this.setState({
         backgroundImage: desktopBackground.childImageSharp.fluid,
-        logoWidth: 450,
-        logoHeight: 140,
+        screenWidth: screenWidth,
       })
     }
 
     if (screenWidth > 600 && screenWidth < 1240) {
       this.setState({
         backgroundImage: tabletBackground.childImageSharp.fluid,
-        logoWidth: 450,
-        logoHeight: 140,
+        screenWidth: screenWidth,
       })
     }
 
     if (screenWidth <= 600) {
       this.setState({
-        backgroundImage: mobileBackground.childImageSharp.fluid,
-        logoWidth: 250,
-        logoHeight: 80,
+        backgroundImage: mobileBackground2.childImageSharp.fluid,
+        screenWidth: screenWidth,
       })
     }
   }
@@ -50,17 +45,9 @@ class HeadlineSection extends Component {
     const fluid = this.state.backgroundImage
     return (
       <HeadlineGrid>
-        <BackgroundWrapper>
-          <Image fluid={fluid} />
-        </BackgroundWrapper>
+        <ImageWrapper fluid={fluid} />
         <ContentWrapper>
-          <MainLogo
-            width={`${this.state.logoWidth}`}
-            height={`${this.state.logoHeight}`}
-            thisFill={'#f8f8f8'}
-            fitnessFill={'#D7DAFF'}
-          />
-          <HeadlineMenu />
+          <HeadlineContent />
         </ContentWrapper>
       </HeadlineGrid>
     )
@@ -76,18 +63,23 @@ const HeadlineGrid = styled.div`
   width: 100vw;
 `
 
-const BackgroundWrapper = styled.div`
+const ImageWrapper = styled(Image)`
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 `
 
 const ContentWrapper = styled.div`
-  margin-top: 30%;
+  margin-top: 20%;
+  margin-left: 10px;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  justify-self: center;
+  justify-self: start;
   z-index: 1;
   ${above.mobile`
     margin-top: 10%;
+  `}
+  ${above.tablet`
+    margin-top: 2%;
+    margin-left: 20%;
   `}
 `

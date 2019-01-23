@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import FooterAddress from './FooterAddress'
 import TTFLogoShort from '../../svgs/TTFLogoShort'
+import { above } from '../../styles/Theme'
 
 const FooterNav = () => {
   return (
@@ -23,7 +24,9 @@ const FooterNav = () => {
           <NavLink>Disclaimer</NavLink>
           <NavLink>Login</NavLink>
         </FooterSiteLinks>
-        <FooterAddress />
+        <FooterAddressWrapper>
+          <FooterAddress />
+        </FooterAddressWrapper>
       </FooterContentWrapper>
     </NavContainer>
   )
@@ -46,9 +49,17 @@ const FooterLogo = styled.div`
 
 const FooterContentWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
-  width: 80%;
+  width: 100%;
+  margin-top: 30px;
+  ${above.mobile`
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  `}
+`
+
+const FooterAddressWrapper = styled.div`
+  grid-column: span 2;
   margin-top: 30px;
 `
 
@@ -66,7 +77,14 @@ const NavLink = styled.a`
   font-size: 16px;
   text-align: center;
   cursor: pointer;
+  transition: color 150ms ease-out;
   &:nth-child(n + 1) {
     margin-top: 10px;
+  }
+  &:hover {
+    color: #2ad2e2;
+  }
+  &:active {
+    color: #b44cff;
   }
 `

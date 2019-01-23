@@ -18,8 +18,8 @@ const InstagramIcon = ({ width, height, strokeColor }) => {
         rx="52.07"
         fill="none"
         stroke={strokeColor}
-        stroke-miterlimit="10"
-        stroke-width="11.44"
+        strokeMiterlimit="10"
+        strokeWidth="11.44"
       />
       <circle
         id="camera-center"
@@ -28,8 +28,8 @@ const InstagramIcon = ({ width, height, strokeColor }) => {
         r="48.34"
         fill="none"
         stroke={strokeColor}
-        stroke-miterlimit="10"
-        stroke-width="11.44"
+        strokeMiterlimit="10"
+        strokeWidth="11.44"
       />
       <circle
         id="camera-flash"

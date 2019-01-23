@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -9,9 +8,11 @@ import SEO from '../components/seo'
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="This Time Fitness"
+        keywords={[`this time fitness`, `application`, `react`]}
+      />
       <HeadlineSection images={data} />
-      <Link to="/page-2/">Go to page 2</Link>
     </Layout>
   )
 }
