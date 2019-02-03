@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
 import { above } from '../styles/Theme'
 
@@ -37,7 +38,6 @@ const FooterButton = styled.a`
 `
 
 const SiteButton = styled.a`
-  position: relative;
   margin: 0;
   margin-top: ${props => props.marginTop || 0};
   display: flex;
@@ -53,28 +53,83 @@ const SiteButton = styled.a`
   border-radius: 4px;
   cursor: pointer;
   overflow: hidden;
-  transition: color 200ms ease-out;
-  transform: translate(0, 30px);
-  &::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #09a9b7;
-    border: none;
-    border-radius: 4px;
-    transform: translateX(-100%);
-    transition: transform 150ms ease-out;
-  }
-  &:hover::before {
-    transform: translateX(0);
-  }
   ${above.mobile`
     width: 450px;
     height: 55px;
   `}
 `
 
-export { FooterButton, SiteButton }
+const MainButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  border-radius: 4px;
+  color: #f8f8f8;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 4px;
+  cursor: pointer;
+  width: 270px;
+  ${above.mobile`
+    width: 380px;
+  `}
+  ${above.tablet`
+    width: 420px;
+  `}
+`
+
+const PurchaseButton = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 8px;
+  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  border-radius: 4px;
+  color: #f8f8f8;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  width: 200px;
+  ${above.mobile`
+    width: 380px;
+  `}
+  ${above.tablet`
+    width: 420px;
+  `}
+`
+
+const GhostButton = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  background: transparent;
+  box-shadow: 0 0 0 2px #2ad2e2;
+  border-radius: 4px;
+  color: #2ad2e2;
+  text-decoration: none;
+  width: 280px;
+  cursor: pointer;
+  margin-top: ${props => props.margintop || 0};
+  ${above.mobile`
+    padding: 10px 20px;
+    width: 400px;
+    font-size: 18px;
+  `}
+  ${above.tablet`
+    width: 350px;
+    padding: 8px 20px;
+  `}
+`
+
+export { FooterButton, SiteButton, GhostButton, MainButton, PurchaseButton }

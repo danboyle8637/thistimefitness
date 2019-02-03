@@ -1,10 +1,11 @@
 import React from 'react'
 
-const MapIcon = ({ width, height, fillColor }) => {
+const MapIcon = ({ width, height, fillColor, className }) => {
   return (
     <svg
       id="map-icon"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 189.46 281.83"

@@ -1,10 +1,11 @@
 import React from 'react'
 
-const EmailIcon = ({ width, height, strokeColor }) => {
+const EmailIcon = ({ width, height, strokeColor, className }) => {
   return (
     <svg
       id="email-icon"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 220.95 143.32"

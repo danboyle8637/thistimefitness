@@ -10,7 +10,7 @@ const fonts = new Typography({
   googleFonts: [
     {
       name: 'Montserrat',
-      styles: ['500', '700'],
+      styles: ['400', '500', '700'],
     },
     {
       name: 'Quicksand',

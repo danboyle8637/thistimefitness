@@ -9,25 +9,25 @@ const HeadlineMenu = () => {
   return (
     <MenuContainer>
       <MenuText>
-        <ListArrow width={'40px'} />
+        <MenuArrow />
         <MenuLink to="/14-for-14-new-member-special/">
           First Timer Specials
         </MenuLink>
       </MenuText>
       <MenuText>
-        <ListArrow width={'40px'} />
-        <MenuLink to="/">About</MenuLink>
+        <MenuArrow />
+        <MenuLink to="/about">About</MenuLink>
       </MenuText>
       <MenuText>
-        <ListArrow width={'40px'} />
-        <MenuLink to="/">Our Classes</MenuLink>
+        <MenuArrow />
+        <MenuLink to="/classes">Our Classes</MenuLink>
       </MenuText>
       <MenuText>
-        <ListArrow width={'40px'} />
+        <MenuArrow />
         <MenuLink to="/">Case Studies</MenuLink>
       </MenuText>
       <MenuText>
-        <ListArrow width={'40px'} />
+        <MenuArrow />
         <MenuLink to="/">Schedule</MenuLink>
       </MenuText>
     </MenuContainer>
@@ -38,6 +38,7 @@ export default HeadlineMenu
 
 const MenuContainer = styled.ul`
   margin: 0;
+  margin-top: 10px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -45,6 +46,10 @@ const MenuContainer = styled.ul`
   list-style: none;
   ${above.mobile`
     margin-top: 30px;
+    transform: translateX(82px);
+  `}
+  ${above.tablet`
+    transform: translateX(76px);
   `}
 `
 
@@ -83,5 +88,15 @@ const MenuLink = styled(Link)`
   }
   ${above.mobile`
     font-size: 20px;
+  `}
+`
+
+const MenuArrow = styled(ListArrow)`
+  width: 40px;
+  ${above.mobile`
+    width: 50px;
+  `}
+  ${above.tablet`
+    width: 60px;
   `}
 `

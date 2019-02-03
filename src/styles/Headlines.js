@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { tealTheme, purpleTheme, above } from './Theme'
+import { above } from './Theme'
 
 // Mobile Headline Sizes and Uses
 // 60px - Big, main headline words
@@ -15,46 +15,22 @@ import { tealTheme, purpleTheme, above } from './Theme'
 // 55px - Emphasis subhead
 // 35px - Base subhead words and accent words in main headlines
 
-const alignLeft = css`
-  align-items: flex-start;
-`
-
-const alignCenter = css`
-  align-items: center;
-`
-
-const alignRight = css`
-  align-items: flex-end;
-`
-
-const HeadlineContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  ${props => {
-    if (props.left) return alignLeft
-    if (props.right) return alignRight
-    return alignCenter
-  }}
-  margin-top: ${props => props.marginTop || '80px'};
-  padding: 0 20px;
-  width: 100%;
-  ${above.mobile`
-    width: 60%;
-  `}
-`
-
 const moveHeadline = (x, y) => `translate(${x}, ${y})`
 
 const sharedSetup = css`
   margin: 0;
+  margin-top: ${props => props.marginTop || '0px'};
   padding: 0;
-  color: ${tealTheme.primaryColor};
-  font-weight: 800;
+  color: ${props => props.color || '#2AD2E2'};
+  font-weight: ${props => (props.thin ? 400 : 800)};
+  letter-spacing: ${props => props.letterSpacing || 0};
+  text-align: ${props => props.center && 'center'};
+  text-transform: ${props => props.upper && 'uppercase'};
 `
 
 const mobileSetup = css`
   ${sharedSetup}
-line-height: ${props => props.mobileLineHeight || 0.95};
+  line-height: ${props => props.mobileLineHeight || 0.95};
   transform: ${props =>
     moveHeadline(props.moveMobileX || '0', props.moveMobileY || '0')};
 `
@@ -75,7 +51,13 @@ const desktopSetup = css`
 
 // ********************** Headline Setup ********************** //
 
-const Heading1 = styled.h1`
+// *********** Magazine Style Main Headlines *********** //
+
+// *********** What is Customizable? *********** //
+
+// ***** Line Height, Translate ***** //
+
+const MagazineH1 = styled.h1`
   font-size: 60px;
   ${mobileSetup};
   ${above.mobile`
@@ -83,52 +65,78 @@ const Heading1 = styled.h1`
     ${tabletSetup}
   `}
   ${above.tablet`
+    font-size: 150px;
     ${desktopSetup}
   `}
 `
 
-const Heading2Big = styled.h2`
-  font-size: 55px;
-  ${mobileSetup}
-  ${above.mobile`
-    font-size: 75px;
-    ${tabletSetup}
-  `}
-  ${above.tablet`
-    ${desktopSetup}
-  `}
-`
-
-const Heading2Small = styled.h2`
-  font-size: 46px;
-  ${mobileSetup}
-  ${above.mobile`
-    font-size: 55px;
-    ${tabletSetup}
-  `}
-  ${above.tablet`
-    ${desktopSetup}
-  `}
-`
-
-const Heading3 = styled.h3`
-  font-size: 26px;
-  ${mobileSetup}
-  ${above.mobile`
-    font-size: 35px;
-    ${tabletSetup}
-  `}
-  ${above.tablet`
-    ${desktopSetup}
-  `}
-`
-
-const Heading4 = styled.h4`
-  font-size: 24px;
-
-  ${mobileSetup}
+const MagazineH1Filler = styled.h5`
+  font-size: ${props => props.fontSize || '24px'};
+  ${mobileSetup};
   ${above.mobile`
     font-size: 60px;
+    ${tabletSetup}
+  `}
+  ${above.tablet`
+    font-size: 60px;
+    ${desktopSetup}
+  `}
+`
+
+const MagazineSubhead = styled.h3`
+  font-size: ${props => props.fontSize || '20px'};
+  ${mobileSetup};
+  color: #f8f8f8;
+  ${above.mobile`
+    font-size: 26px;
+    ${tabletSetup}
+    color: #f8f8f8;
+  `}
+  ${above.tablet`
+    font-size: 26px;
+    ${desktopSetup}
+    color: #f8f8f8;
+  `}
+`
+
+// *********** Inner Page Level Sub-Headlines *********** //
+
+const BaseSubhead = styled.h3`
+  font-size: 26px;
+  ${mobileSetup};
+  ${above.mobile`
+    ${tabletSetup}
+  `}
+  ${above.tablet`
+    ${desktopSetup}
+  `}
+`
+
+const SpecialSubhead = styled.h3`
+  font-size: ${props => (props.big ? '50px' : '35px')};
+  ${mobileSetup};
+  ${above.mobile`
+    font-size: ${props => (props.big ? '60px' : props.med ? '55px' : '35px')};
+    ${tabletSetup}
+  `}
+  ${above.tablet`
+    font-size: ${props => (props.big ? '60px' : props.med ? '55px' : '35px')};
+    ${desktopSetup}
+  `}
+`
+
+const StatsHeadline = styled.h3`
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #b44cff;
+  margin-top: ${props => props.marginTop || 0};
+`
+
+const Price = styled.h4`
+  font-size: 40px;
+  ${mobileSetup};
+  ${above.mobile`
     ${tabletSetup}
   `}
   ${above.tablet`
@@ -137,10 +145,11 @@ const Heading4 = styled.h4`
 `
 
 export {
-  HeadlineContainer,
-  Heading1,
-  Heading2Big,
-  Heading2Small,
-  Heading3,
-  Heading4,
+  MagazineH1,
+  MagazineH1Filler,
+  MagazineSubhead,
+  BaseSubhead,
+  SpecialSubhead,
+  StatsHeadline,
+  Price,
 }

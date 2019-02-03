@@ -1,9 +1,10 @@
 import React from 'react'
 
-const MainLogo = ({ width, height, thisFill, fitnessFill }) => (
+const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
   <svg
     id="Logo"
     xmlns="http://www.w3.org/2000/svg"
+    className={className}
     width={width}
     height={height}
     viewBox="0 0 648.78 207.6"

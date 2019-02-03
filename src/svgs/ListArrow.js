@@ -1,9 +1,10 @@
 import React from 'react'
 
-const ListArrow = ({ width, height }) => (
+const ListArrow = ({ width, height, className }) => (
   <svg
     id="line-arrow"
     xmlns="http://www.w3.org/2000/svg"
+    className={className}
     width={width}
     height={height}
     viewBox="0 0 92.9 38.35"

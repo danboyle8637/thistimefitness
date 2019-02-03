@@ -20,6 +20,63 @@ module.exports = {
         path: `${__dirname}/src/images/Fourteen`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `FourteenCopy`,
+        path: `${__dirname}/src/content/Fourteen`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `FAQ`,
+        path: `${__dirname}/src/content/Faq`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `AboutImages`,
+        path: `${__dirname}/src/images/About`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `AboutCopy`,
+        path: `${__dirname}/src/content/About`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `IgniteImages`,
+        path: `${__dirname}/src/images/Ignite`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `IgniteCopy`,
+        path: `${__dirname}/src/content/Ignite`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ClassesImages`,
+        path: `${__dirname}/src/images/Classes`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ClassesCopy`,
+        path: `${__dirname}/src/content/Classes`,
+      },
+    },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
