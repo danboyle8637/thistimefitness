@@ -15,6 +15,18 @@ const alignRight = css`
   align-items: flex-end;
 `
 
+const justifyLeft = css`
+  justify-content: flex-start;
+`
+
+const justifyRight = css`
+  justify-content: flex-end;
+`
+
+const justifyCenter = css`
+  justify-content: center;
+`
+
 const marginTop = css`
   margin-top: ${({ mobile, tablet, desktop }) => {
     if (mobile) return mobile
@@ -96,7 +108,11 @@ const ListGridContainer = styled.div`
 
 const ButtonContainer = styled.div`
   display: flex;
-  justify-content: center;
+  ${({ left, right }) => {
+    if (left) return justifyLeft
+    if (right) return justifyRight
+    return justifyCenter
+  }}
   width: 100%;
   ${marginTop}
 `

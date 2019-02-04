@@ -1,35 +1,28 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import FaqArrow from '../../../svgs/FaqArrow'
 import { InnerBodyText } from '../../../styles/BodyText'
-import FaqContext from '../../../context/FaqContext'
+import Toggle from '../../Shared/Toggle'
 
-class QuestionCard extends Component {
-  static contextType = FaqContext
-
-  handleQuestionClick = () => {
-    const { handleToggleFaq } = this.context
-    handleToggleFaq()
-    console.log(this.context.open)
-  }
-
-  render() {
-    const { q, a } = this.props
-    return (
-      <QuestionContainer onClick={this.handleQuestionClick}>
-        <QuestionWrapper>{q}</QuestionWrapper>
-        <ArrowWrapper>
-          <Arrow width={'20px'} strokeWidth={'12px'} />
-        </ArrowWrapper>
-        {this.context.open ? (
-          <InnerBodyText dangerouslySetInnerHTML={{ __html: a }} />
-        ) : (
-          <div />
-        )}
-      </QuestionContainer>
-    )
-  }
+const QuestionCard = ({ q, a }) => {
+  return (
+    <Toggle>
+      {({ open, handleToggle }) => (
+        <QuestionContainer onClick={handleToggle}>
+          <QuestionWrapper>{q}</QuestionWrapper>
+          <ArrowWrapper>
+            <Arrow width={'20px'} strokeWidth={'12px'} />
+          </ArrowWrapper>
+          {open ? (
+            <InnerBodyText dangerouslySetInnerHTML={{ __html: a }} />
+          ) : (
+            <div />
+          )}
+        </QuestionContainer>
+      )}
+    </Toggle>
+  )
 }
 
 export default QuestionCard

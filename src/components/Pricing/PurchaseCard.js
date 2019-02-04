@@ -21,7 +21,7 @@ const PurchaseCard = ({ title, price }) => {
 export default PurchaseCard
 
 const PurchaseCardContainer = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   background: #393b4f;

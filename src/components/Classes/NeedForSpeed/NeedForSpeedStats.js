@@ -10,7 +10,7 @@ import ArrowList from '../../Shared/ArrowList'
 import { StatsHeadline } from '../../../styles/Headlines'
 import { BodyText } from '../../../styles/BodyText'
 
-const BodyBurnStats = () => {
+const NeedForSpeedStats = () => {
   return (
     <SpecialContainer>
       <StatsHeadline>Workout Stats:</StatsHeadline>
@@ -19,8 +19,8 @@ const BodyBurnStats = () => {
           listItems={[
             { text: '60 minute workout' },
             { text: '5 minute warmup' },
+            { text: '10 minute drills' },
             { text: '45 minute workout' },
-            { text: '10 minute cool down' },
           ]}
         />
       </ListContainer>
@@ -35,17 +35,17 @@ const BodyBurnStats = () => {
         <ArrowList
           listItems={[
             { text: 'Your body' },
-            { text: 'Kettlebells' },
-            { text: 'Steel maces' },
-            { text: 'Steel bells' },
+            { text: 'Bands' },
+            { text: 'Agility ladders' },
+            { text: 'Agility hurdles' },
           ]}
         />
         <ArrowList
           listItems={[
             { text: 'TRX systems' },
-            { text: 'Battle ropes' },
+            { text: 'Parachutes' },
             { text: 'The sled' },
-            { text: 'Parallettes' },
+            { text: 'Kettlebells' },
           ]}
         />
       </ListGridContainer>
@@ -56,7 +56,7 @@ const BodyBurnStats = () => {
   )
 }
 
-export default BodyBurnStats
+export default NeedForSpeedStats
 
 const SpecialContainer = styled.div`
   padding: 0 20px;

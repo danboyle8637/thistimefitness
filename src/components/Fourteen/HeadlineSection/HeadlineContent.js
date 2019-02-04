@@ -6,7 +6,8 @@ import {
   MagazineH1Filler,
   MagazineSubhead,
 } from '../../../styles/Headlines'
-import { SiteButton } from '../../../styles/Buttons'
+import { MainButton } from '../../../styles/Buttons'
+import { ButtonContainer } from '../../../styles/Containers'
 import { above } from '../../../styles/Theme'
 
 const HeadlineContent = () => {
@@ -36,7 +37,9 @@ const HeadlineContent = () => {
           14 Days of Unlimited Classes to Kick Start Your Results!
         </MagazineSubhead>
       </SubHeadlineWrapper>
-      <SiteButton purple>Click to Sign Up</SiteButton>
+      <ButtonContainer left mobile={'18px'}>
+        <MainButton purple>Click to Sign Up</MainButton>
+      </ButtonContainer>
     </HeadlineContainer>
   )
 }

@@ -5,13 +5,15 @@ import Layout from '../components/layout'
 import HeadlineSection from '../components/Classes/BodyBurn/HeadlineSection'
 import LeadSection from '../components/Classes/BodyBurn/LeadSection'
 import BodyBurnStatsSection from '../components/Classes/BodyBurn/BodyBurnStatsSection'
+import CTASection from '../components/Classes/BodyBurn/CTASection'
 
 const BodyBurn = ({ data }) => {
   return (
     <Layout>
       <HeadlineSection images={data} />
-      <LeadSection />
+      <LeadSection copy={data.bodyBurnCopy} />
       <BodyBurnStatsSection images={data} />
+      <CTASection copy={data.bodyBurnCopy} />
     </Layout>
   )
 }
@@ -107,6 +109,23 @@ export const query = graphql`
         ) {
           ...GatsbyImageSharpFluid
           aspectRatio
+        }
+      }
+    }
+    bodyBurnCopy: allFile(
+      filter: {
+        sourceInstanceName: { eq: "ClassesCopy" }
+        name: { regex: "/body_burn/" }
+      }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              id
+            }
+            html
+          }
         }
       }
     }

@@ -3,11 +3,17 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import HeadlineSection from '../components/Classes/NeedForSpeed/HeadlineSection'
+import LeadSection from '../components/Classes/NeedForSpeed/LeadSection'
+import NeedForSpeedStatsSection from '../components/Classes/NeedForSpeed/NeedForSpeedStatsSection'
+import CTASection from '../components/Classes/NeedForSpeed/CTASection'
 
 const NeedForSpeed = ({ data }) => {
   return (
     <Layout>
       <HeadlineSection images={data} />
+      <LeadSection copy={data.needForSpeedCopy} />
+      <NeedForSpeedStatsSection images={data} />
+      <CTASection copy={data.needForSpeedCopy} />
     </Layout>
   )
 }
@@ -62,7 +68,7 @@ export const query = graphql`
       }
     }
     statsMobileBackground: file(
-      relativePath: { eq: "weekend-recovery-stats-800x1500.jpg" }
+      relativePath: { eq: "need-for-speed-stats-800x1500.jpg" }
     ) {
       childImageSharp {
         fluid(
@@ -77,7 +83,7 @@ export const query = graphql`
       }
     }
     statsTabletBackground: file(
-      relativePath: { eq: "weekend-recovery-stats-834x1112.jpg" }
+      relativePath: { eq: "need-for-speed-stats-834x1112.jpg" }
     ) {
       childImageSharp {
         fluid(
@@ -92,7 +98,7 @@ export const query = graphql`
       }
     }
     statsDesktopBackground: file(
-      relativePath: { eq: "weekend-recovery-stats-1440x1024.jpg" }
+      relativePath: { eq: "need-for-speed-stats-1440x1024.jpg" }
     ) {
       childImageSharp {
         fluid(
@@ -103,6 +109,23 @@ export const query = graphql`
         ) {
           ...GatsbyImageSharpFluid
           aspectRatio
+        }
+      }
+    }
+    needForSpeedCopy: allFile(
+      filter: {
+        sourceInstanceName: { eq: "ClassesCopy" }
+        name: { regex: "/speed/" }
+      }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              id
+            }
+            html
+          }
         }
       }
     }
