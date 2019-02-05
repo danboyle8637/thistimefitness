@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { SpecialSubhead, MagazineSubhead } from '../../../styles/Headlines'
 import {
-  SpecialSubhead,
-  MagazineSubhead,
+  BodyTextContainer,
   HeadlineContainer,
-} from '../../../styles/Headlines'
-import { BodyTextContainer, InnerBodyText } from '../../../styles/BodyText'
+  SectionContainer,
+} from '../../../styles/Containers'
+import { InnerBodyText } from '../../../styles/BodyText'
 import { above } from '../../../styles/Theme'
 import TTFYourTime from '../../../svgs/TTFYouTime'
 import ScreenWidthContext from '../../../context/ScreenWidthContext'
@@ -89,17 +90,6 @@ const WhoWeAre = ({ copy }) => {
 }
 
 export default WhoWeAre
-
-const SectionContainer = styled.section`
-  padding-bottom: 120px;
-  width: 100%;
-  ${above.mobile`
-    width: 80%;
-  `}
-  ${above.tablet`
-    width: 60%;
-  `}
-`
 
 const YourTimeWrapper = styled.div`
   margin-top: 60px;

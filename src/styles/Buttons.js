@@ -118,16 +118,14 @@ const GhostButton = styled(Link)`
   border-radius: 4px;
   color: #2ad2e2;
   text-decoration: none;
-  width: 280px;
+  width: 100%;
   cursor: pointer;
   margin-top: ${props => props.margintop || 0};
   ${above.mobile`
     padding: 10px 20px;
-    width: 400px;
     font-size: 18px;
   `}
   ${above.tablet`
-    width: 350px;
     padding: 8px 20px;
   `}
 `

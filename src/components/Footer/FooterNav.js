@@ -51,6 +51,7 @@ const FooterContentWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
+  justify-items: center;
   width: 100%;
   margin-top: 30px;
   ${above.mobile`
@@ -61,6 +62,9 @@ const FooterContentWrapper = styled.div`
 const FooterAddressWrapper = styled.div`
   grid-column: span 2;
   margin-top: 30px;
+  ${above.tablet`
+    margin-top: 0px;
+  `}
 `
 
 const FooterSiteLinks = styled.div`
@@ -72,19 +76,19 @@ const FooterSiteLinks = styled.div`
 const NavLink = styled.a`
   margin: 0;
   padding: 0;
-  color: #d4d4d4;
+  color: ${props => props.theme.footer.base};
   text-decoration: none;
   font-size: 16px;
   text-align: center;
   cursor: pointer;
-  transition: color 150ms ease-out;
+  transition: color 120ms ease-out;
   &:nth-child(n + 1) {
     margin-top: 10px;
   }
   &:hover {
-    color: #2ad2e2;
+    color: ${props => props.theme.footer.hover};
   }
   &:active {
-    color: #b44cff;
+    color: ${props => props.theme.footer.active};
   }
 `

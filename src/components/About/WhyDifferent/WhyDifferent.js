@@ -1,11 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {
-  BaseSubhead,
-  SpecialSubhead,
-  HeadlineContainer,
-} from '../../../styles/Headlines'
+import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
+import { HeadlineContainer } from '../../../styles/Containers'
 import { SiteButton } from '../../../styles/Buttons'
 import WhyDifferentCard from './WhyDifferentCard'
 import WorkoutIcon from '../../../svgs/WorkoutIcon'

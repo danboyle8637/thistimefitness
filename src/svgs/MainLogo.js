@@ -1,5 +1,7 @@
 import React from 'react'
 
+import PropTypes from 'prop-types'
+
 const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
   <svg
     id="Logo"
@@ -94,5 +96,13 @@ const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
     </g>
   </svg>
 )
+
+MainLogo.propTypes = {
+  width: PropTypes.string,
+  height: PropTypes.string,
+  thisFill: PropTypes.string,
+  fitnessFill: PropTypes.string,
+  className: PropTypes.string,
+}
 
 export default MainLogo

@@ -1,20 +1,28 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import HeadlineSection from '../components/Home/HeadlineSection'
 import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title="This Time Fitness"
-        keywords={[`this time fitness`, `application`, `react`]}
+        title={siteConfig.home.title}
+        description={siteConfig.home.description}
+        keywords={siteConfig.home.keywords}
+        land={siteConfig.home.lang}
       />
       <HeadlineSection images={data} />
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.object,
 }
 
 export default IndexPage

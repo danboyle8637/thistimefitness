@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 import { above } from '../../../styles/Theme'
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
-import { InnerBodyText, BodyTextContainer } from '../../../styles/BodyText'
+import { BodyTextContainer } from '../../../styles/Containers'
+import { InnerBodyText } from '../../../styles/BodyText'
 import { SiteButton } from '../../../styles/Buttons'
 import KindalSig from '../../../svgs/KindalSig'
 

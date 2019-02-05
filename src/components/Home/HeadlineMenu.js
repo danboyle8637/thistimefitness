@@ -1,37 +1,59 @@
-import React from 'react'
+import React, { Component, createRef } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { TweenMax, Power2, Back } from 'gsap/TweenMax'
 
 import ListArrow from '../../svgs/ListArrow'
 import { above } from '../../styles/Theme'
 
-const HeadlineMenu = () => {
-  return (
-    <MenuContainer>
-      <MenuText>
-        <MenuArrow />
-        <MenuLink to="/14-for-14-new-member-special/">
-          First Timer Specials
-        </MenuLink>
-      </MenuText>
-      <MenuText>
-        <MenuArrow />
-        <MenuLink to="/about">About</MenuLink>
-      </MenuText>
-      <MenuText>
-        <MenuArrow />
-        <MenuLink to="/classes">Our Classes</MenuLink>
-      </MenuText>
-      <MenuText>
-        <MenuArrow />
-        <MenuLink to="/">Case Studies</MenuLink>
-      </MenuText>
-      <MenuText>
-        <MenuArrow />
-        <MenuLink to="/">Schedule</MenuLink>
-      </MenuText>
-    </MenuContainer>
-  )
+class HeadlineMenu extends Component {
+  constructor(props) {
+    super(props)
+
+    this.menuItems = []
+
+    this.setMenuItemRef = element => {
+      this.menuItems.push(element)
+    }
+  }
+
+  componentDidMount() {
+    TweenMax.staggerFrom(
+      this.menuItems,
+      0.8,
+      { ease: Back.easeOut.config(1.2), x: -600, opacity: 0 },
+      0.2
+    )
+  }
+
+  render() {
+    return (
+      <MenuContainer>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/14-for-14-new-member-special/">
+            First Timer Specials
+          </MenuLink>
+        </MenuText>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/about">About</MenuLink>
+        </MenuText>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/classes">Our Classes</MenuLink>
+        </MenuText>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/">Case Studies</MenuLink>
+        </MenuText>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/">Schedule</MenuLink>
+        </MenuText>
+      </MenuContainer>
+    )
+  }
 }
 
 export default HeadlineMenu
@@ -59,13 +81,8 @@ const MenuText = styled.li`
   padding: 0;
   display: flex;
   align-items: center;
-  transform: translateX(0);
-  transition: transform 150ms ease-out;
   &:nth-child(n + 1) {
     margin-top: 20px;
-  }
-  &:hover {
-    transform: translateX(-8px);
   }
   ${above.mobile`
     margin-right: 8px;

@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
 import Footer from './Footer/Footer'
 import Global from '../styles/Global'
 import { ScreenWidthStore } from '../context/ScreenWidthContext'
-import { FaqStore } from '../context/FaqContext'
+import { tealTheme } from '../styles/Theme'
 
 const Layout = ({ children }) => (
   <>
-    <FaqStore>
+    <ThemeProvider theme={tealTheme}>
       <ScreenWidthStore>
         <TTFLayout>{children}</TTFLayout>
         <Footer />
         <Global />
       </ScreenWidthStore>
-    </FaqStore>
+    </ThemeProvider>
   </>
 )
 

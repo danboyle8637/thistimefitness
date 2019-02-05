@@ -22,7 +22,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   ${above.mobile`
-    margin-top: 10%;
+    margin-top: 14%;
   `}
 `
 

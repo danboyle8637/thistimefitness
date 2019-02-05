@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { BodyTextContainer, BodyText } from '../../../styles/BodyText'
-import { BaseSubhead, HeadlineContainer } from '../../../styles/Headlines'
+import { BodyText } from '../../../styles/BodyText'
+import { BodyTextContainer } from '../../../styles/Containers'
+import { BaseSubhead } from '../../../styles/Headlines'
 
 const WhyDifferentCard = ({ icon, headline, text }) => {
   return (

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
 
-import { above } from '../../../styles/Theme'
 import AboutKindalContent from './AboutKindalContent'
 
 class AboutKindal extends Component {
