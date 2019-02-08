@@ -8,8 +8,12 @@ const notValid = css`
   border-color: #ed1c24;
 `
 
+const FormFieldSet = styled.fieldset`
+  border: none;
+`
+
 const InputContainer = styled.div`
-  position: relative;
+  display: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -51,6 +55,8 @@ const FormTextAreaInput = styled.textarea`
 `
 
 const ErrorMessage = styled.div`
+  position: absolute;
+  bottom: 100%;
   margin: 0;
   padding: 12px;
   background: rgba(237, 28, 36, 0.18);
@@ -84,4 +90,5 @@ export {
   FormTextAreaInput,
   ErrorMessage,
   InstructionMessage,
+  FormFieldSet,
 }

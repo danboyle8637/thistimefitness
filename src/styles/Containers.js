@@ -28,12 +28,13 @@ const justifyCenter = css`
 `
 
 const marginTop = css`
-  margin-top: ${({ mobile, tablet, desktop }) => {
-    if (mobile) return mobile
-    if (tablet) return tablet
-    if (desktop) return desktop
-    return '0px'
-  }};
+  margin-top: ${props => props.mMarginTop || '0'};
+  ${above.mobile`
+    margin-top: ${props => props.tMarginTop || '0'};
+  `}
+  ${above.tablet`
+    margin-top: ${props => props.dMarginTop || '0'};
+  `}
 `
 
 const sectionPadding = css`
@@ -49,10 +50,10 @@ const sectionPadding = css`
 const containerWidth = css`
   width: 100%;
   ${above.mobile`
-    width: 70%;
+    width: 80%;
   `}
   ${above.tablet`
-    width: 50%;
+    width: 60%;
   `}
 `
 
@@ -80,6 +81,7 @@ const HeadlineContainer = styled.div`
 const BodyTextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   ${({ center }) => {
     if (center) return alignCenter
     return alignLeft

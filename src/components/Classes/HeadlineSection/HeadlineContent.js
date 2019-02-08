@@ -7,37 +7,64 @@ import WeekendRecoveryLogo from '../../../svgs/WeekendRecoveryLogo'
 import { SiteButton } from '../../../styles/Buttons'
 import { above } from '../../../styles/Theme'
 import { SectionContainer } from '../../../styles/Containers'
+import DraggableRow from '../../Shared/DraggableRow'
+
+import ClassCard from './ClassCard'
 
 const HeadlineContent = () => {
-  return (
-    <SectionContainer>
-      <ClassWrapper>
-        <BodyBurn />
-        <DescriptionText spacing={'1.3px'}>
-          Metabolic Strength Training
-        </DescriptionText>
-        <SiteButton marginTop={'14px'}>Click to Learn More</SiteButton>
-      </ClassWrapper>
-      <ClassWrapper>
-        <Need4Speed />
-        <DescriptionText spacing={'0.7em'}>Running Training</DescriptionText>
-        <SiteButton marginTop={'14px'}>Click to Learn More</SiteButton>
-      </ClassWrapper>
-      <ClassWrapper>
-        <WeekendRecovery />
-        <DescriptionText spacing={'0.8em'}>Strength & Yoga</DescriptionText>
-        <SiteButton marginTop={'14px'}>Click to Learn More</SiteButton>
-      </ClassWrapper>
-    </SectionContainer>
-  )
+  const classArray = [
+    {
+      icon: 'body_burn',
+      title: 'Metabolic Strength Training',
+      body:
+        'Our main program designed to get you in the best shape of your life.',
+      path: '/body-burn',
+    },
+    {
+      icon: 'need_for_speed',
+      title: 'Running Training',
+      body: 'Learn to run efficiently, with less injury, and much faster.',
+      path: '/need-for-speed',
+    },
+    {
+      icon: 'weekend_recovery',
+      title: 'Strength, Mobility & Yoga',
+      body:
+        'Special Body Burn classes focused on mobility and some yoga classes too!',
+      path: '/weekend-recovery',
+    },
+  ]
+
+  const classCard = classArray.map(card => {
+    const iconObj = {
+      body_burn: <BodyBurnLogo />,
+      need_for_speed: <Need4SpeedLogo />,
+      weekend_recovery: <WeekendRecoveryLogo />,
+    }
+
+    const icon = iconObj[card.icon]
+    const title = card.title
+    const body = card.body
+    const path = card.path
+
+    return (
+      <ClassCard
+        key={title}
+        icon={icon}
+        title={title}
+        body={body}
+        path={path}
+      />
+    )
+  })
+
+  return <DraggableRow>{classCard}</DraggableRow>
 }
 
 export default HeadlineContent
 
 const ClassWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 60px;
 `
 
 const DescriptionText = styled.p`

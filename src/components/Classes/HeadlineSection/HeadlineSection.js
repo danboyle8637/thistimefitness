@@ -9,6 +9,7 @@ import {
   BackgroundWrapper,
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
+import ScrollIcon from '../../../svgs/ScrollIcon'
 
 const HeadlineSection = ({ images }) => {
   const {
@@ -29,7 +30,13 @@ const HeadlineSection = ({ images }) => {
             <Image fluid={backgroundImage} />
           </BackgroundWrapper>
           <ContentWrapper>
-            <HeadlineContent />
+            <DraggableWrapper>
+              <CenteredWrapper>
+                <ScrollText>Scroll</ScrollText>
+                <ScrollIconWrapper />
+                <HeadlineContent />
+              </CenteredWrapper>
+            </DraggableWrapper>
           </ContentWrapper>
         </HeadlineGrid>
       )}
@@ -38,3 +45,32 @@ const HeadlineSection = ({ images }) => {
 }
 
 export default HeadlineSection
+
+const DraggableWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+`
+
+const CenteredWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 70%;
+`
+
+const ScrollIconWrapper = styled(ScrollIcon)`
+  width: 30px;
+`
+
+const ScrollText = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #d7daff;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+`

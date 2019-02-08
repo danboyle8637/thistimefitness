@@ -49,7 +49,7 @@ const NeedForSpeedStats = () => {
           ]}
         />
       </ListGridContainer>
-      <BodyTextContainer center mobile={'40px'}>
+      <BodyTextContainer center mMarginTop={'40px'}>
         <BodyText>Plus so much more!</BodyText>
       </BodyTextContainer>
     </SpecialContainer>

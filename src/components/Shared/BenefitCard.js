@@ -12,7 +12,7 @@ const BenefitCard = ({ headline, body }) => {
       <HeadlineContainer left>
         <BaseSubhead desktopLineHeight={1.4}>{headline}</BaseSubhead>
       </HeadlineContainer>
-      <BodyTextContainer left mobile={'20px'}>
+      <BodyTextContainer left mMarginTop={'20px'}>
         <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
       </BodyTextContainer>
     </CardContainer>

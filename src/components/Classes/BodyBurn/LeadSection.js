@@ -36,7 +36,7 @@ const LeadSection = ({ copy }) => {
           />
         </ListContainer>
       </BodyTextContainer>
-      <HeadlineContainer mobile={'40px;'}>
+      <HeadlineContainer mMarginTop={'80px;'}>
         <BaseSubhead mobileLineHeight={'1.4'}>We Call This Workout</BaseSubhead>
         <BodyBurnLogo width={'280px'} />
       </HeadlineContainer>

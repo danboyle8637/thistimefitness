@@ -38,28 +38,6 @@ const FooterButton = styled.a`
 `
 
 const SiteButton = styled.a`
-  margin: 0;
-  margin-top: ${props => props.marginTop || 0};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  text-decoration: none;
-  color: #f8f8f8;
-  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
-  width: 210px;
-  height: 48px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  overflow: hidden;
-  ${above.mobile`
-    width: 450px;
-    height: 55px;
-  `}
-`
-
-const MainButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,6 +58,32 @@ const MainButton = styled.a`
   `}
   ${above.tablet`
     width: 420px;
+    padding: 16px 10px;
+  `}
+`
+
+const MainButton = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  border-radius: 4px;
+  color: #f8f8f8;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 4px;
+  cursor: pointer;
+  width: 270px;
+  ${above.mobile`
+    width: 380px;
+  `}
+  ${above.tablet`
+    width: 420px;
+    padding: 16px 10px;
   `}
 `
 

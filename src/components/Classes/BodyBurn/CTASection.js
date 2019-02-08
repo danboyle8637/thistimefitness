@@ -28,7 +28,9 @@ const CTASection = ({ copy }) => {
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </BodyTextContainer>
-      <MainButton>See Our Specials</MainButton>
+      <MainButton to={'/14-for-14-new-member-special'}>
+        See Our Specials
+      </MainButton>
     </SectionContainer>
   )
 }

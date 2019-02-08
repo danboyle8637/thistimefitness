@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FlexIcon = ({ width, height, className }) => (
+const FlexIcon = ({ width, height, className, fill }) => (
   <svg
     id="flexibility-icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="square"
       fill="none"
-      stroke="#2ad2e2"
+      stroke={fill}
       strokeLinejoin="round"
       strokeWidth="10"
       d="M57.616 90.464l34.309-34.308 34.309 34.308-34.31 34.31z"
@@ -20,7 +20,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="up-arrow-in"
       fill="none"
-      stroke="#b44cff"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -29,7 +29,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="up-arrow-out"
       fill="none"
-      stroke="#2ad2e2"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -38,7 +38,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="left-arrow-in"
       fill="none"
-      stroke="#b44cff"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -47,7 +47,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="left-arrow-out"
       fill="none"
-      stroke="#2ad2e2"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -56,7 +56,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="right-arrow-in"
       fill="none"
-      stroke="#b44cff"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -65,7 +65,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="right-arrow-out"
       fill="none"
-      stroke="#2ad2e2"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -74,7 +74,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="down-arrow-in"
       fill="none"
-      stroke="#b44cff"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"
@@ -83,7 +83,7 @@ const FlexIcon = ({ width, height, className }) => (
     <path
       id="down-arrow-out"
       fill="none"
-      stroke="#2ad2e2"
+      stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="10"

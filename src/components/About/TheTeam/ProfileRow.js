@@ -1,28 +1,40 @@
 import React from 'react'
-import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 
-import ProfilePicture from './ProfilePicture'
+import TeamCard from './TeamCard'
+import DraggableRow from '../../Shared/DraggableRow'
 
 const ProfileRow = () => (
   <StaticQuery
     query={graphql`
       query {
-        allFile(
-          filter: { sourceInstanceName: { eq: "AboutImages" } }
-          sort: { fields: name, order: DESC }
+        team: allFile(
+          filter: {
+            sourceInstanceName: { eq: "AboutCopy" }
+            name: { regex: "/Team/" }
+          }
+          sort: { fields: name, order: ASC }
         ) {
           edges {
             node {
-              name
-              childImageSharp {
-                fluid(
-                  maxWidth: 150
-                  maxHeight: 150
-                  jpegProgressive: true
-                  quality: 90
-                ) {
-                  ...GatsbyImageSharpFluid
+              childMarkdownRemark {
+                html
+                frontmatter {
+                  id
+                  name
+                  certs
+                  pic {
+                    childImageSharp {
+                      fluid(
+                        maxWidth: 150
+                        maxHeight: 150
+                        jpegProgressive: true
+                        quality: 90
+                      ) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -31,29 +43,22 @@ const ProfileRow = () => (
       }
     `}
     render={data => {
-      const images = data.allFile.edges
-        .filter(image => {
-          const name = image.node.name
-          return name.includes('team')
-        })
-        .map((person, index) => {
-          return (
-            <ProfilePicture
-              key={index}
-              picture={person.node.childImageSharp.fluid}
-            />
-          )
-        })
+      const teamCard = data.team.edges.map(person => {
+        const id = person.node.childMarkdownRemark.frontmatter.id
+        const pic =
+          person.node.childMarkdownRemark.frontmatter.pic.childImageSharp.fluid
+        const name = person.node.childMarkdownRemark.frontmatter.name
+        const certs = person.node.childMarkdownRemark.frontmatter.certs
+        const body = person.node.childMarkdownRemark.html
 
-      return <ProfileWrapper>{images}</ProfileWrapper>
+        return (
+          <TeamCard key={id} pic={pic} name={name} certs={certs} body={body} />
+        )
+      })
+
+      return <DraggableRow>{teamCard}</DraggableRow>
     }}
   />
 )
 
 export default ProfileRow
-
-const ProfileWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`

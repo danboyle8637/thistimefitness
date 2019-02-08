@@ -7,6 +7,7 @@ import {
   HeadlineContainer,
   BodyTextContainer,
   ButtonContainer,
+  ListContainer,
 } from '../../../styles/Containers'
 import { BodyText } from '../../../styles/BodyText'
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
@@ -44,22 +45,24 @@ const LeadSection = () => {
             Do You Fall?
           </SpecialSubhead>
         </HeadlineContainer>
-        <BodyTextContainer mobile={'80px'}>
+        <BodyTextContainer mMarginTop={'80px'}>
           <BodyText>
             I created This Time Fitness for women who want more than a generic
             workout.
           </BodyText>
-          <BodyText>Women who want...</BodyText>
-          <ArrowList
-            listItems={[
-              { text: 'Personalized training...' },
-              { text: 'Custom support…' },
-              { text: 'Real community...' },
-              { text: 'Results that last!' },
-            ]}
-          />
+          <BodyText marginTop={'30px'}>Women who want...</BodyText>
+          <ListContainer mMarginTop={'20px'}>
+            <ArrowList
+              listItems={[
+                { text: 'Personalized training...' },
+                { text: 'Custom support…' },
+                { text: 'Real community...' },
+                { text: 'Results that last!' },
+              ]}
+            />
+          </ListContainer>
         </BodyTextContainer>
-        <HeadlineContainer mobile={'80px'}>
+        <HeadlineContainer mMarginTop={'80px'}>
           <BaseSubhead moveMobileX={'-50px'} moveTabletX={'-50px'}>
             This Time
           </BaseSubhead>
@@ -73,7 +76,7 @@ const LeadSection = () => {
             You Found It!
           </BaseSubhead>
         </HeadlineContainer>
-        <HeadlineContainer mobile={'80px'}>
+        <HeadlineContainer mMarginTop={'80px'}>
           <BaseSubhead
             mobileLineHeight={'1.8'}
             tabletLineHeight={'1.8'}
@@ -91,7 +94,7 @@ const LeadSection = () => {
           </BaseSubhead>
           <BaseSubhead>next 14 days!</BaseSubhead>
         </HeadlineContainer>
-        <ButtonContainer mobile={'40px'}>
+        <ButtonContainer mMarginTop={'40px'}>
           <MainButton purple>Click to Sign Up</MainButton>
         </ButtonContainer>
       </SectionContainer>

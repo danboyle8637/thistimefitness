@@ -16,7 +16,7 @@ const BenefitCard = ({ headline, body, svg }) => {
             {headline}
           </BaseSubhead>
         </HeadlineContainer>
-        <BodyTextContainer left mobile={'20px'}>
+        <BodyTextContainer left mMarginTop={'15px'}>
           <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
         </BodyTextContainer>
       </ContentWrapper>

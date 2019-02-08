@@ -3,11 +3,17 @@ import styled from 'styled-components'
 
 import { SpecialSubhead } from '../../../styles/Headlines'
 import ProfileRow from './ProfileRow'
+import ScrollIcon from '../../../svgs/ScrollIcon'
+import { BodyTextContainer } from '../../../styles/Containers'
 
 const TheTeam = () => {
   return (
     <TheTeamContainer>
       <SpecialSubhead>The Team:</SpecialSubhead>
+      <BodyTextContainer center mMarginTop={'12px'}>
+        <ScrollText>Scroll</ScrollText>
+        <ScrollIconWrapper />
+      </BodyTextContainer>
       <ProfileRow />
     </TheTeamContainer>
   )
@@ -25,8 +31,15 @@ const TheTeamContainer = styled.section`
   width: 100%;
 `
 
-const SliderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+const ScrollIconWrapper = styled(ScrollIcon)`
+  width: 30px;
+`
+
+const ScrollText = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #d7daff;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
 `

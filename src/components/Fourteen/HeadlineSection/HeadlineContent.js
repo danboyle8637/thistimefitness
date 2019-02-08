@@ -37,7 +37,7 @@ const HeadlineContent = () => {
           14 Days of Unlimited Classes to Kick Start Your Results!
         </MagazineSubhead>
       </SubHeadlineWrapper>
-      <ButtonContainer left mobile={'18px'}>
+      <ButtonContainer left mMarginTop={'18px'}>
         <MainButton purple>Click to Sign Up</MainButton>
       </ButtonContainer>
     </HeadlineContainer>

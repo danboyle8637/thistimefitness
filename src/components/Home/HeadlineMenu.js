@@ -1,7 +1,7 @@
 import React, { Component, createRef } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { TweenMax, Power2, Back } from 'gsap/TweenMax'
+import { TweenMax, Back } from 'gsap/TweenMax'
 
 import ListArrow from '../../svgs/ListArrow'
 import { above } from '../../styles/Theme'

@@ -13,12 +13,12 @@ import TTFYourTime from '../../../svgs/TTFYouTime'
 import ScreenWidthContext from '../../../context/ScreenWidthContext'
 
 const WhoWeAre = ({ copy }) => {
-  const whoWeAreCopy = copy.edges.find(el => {
-    const id = el.node.childMarkdownRemark.frontmatter.id
+  const whoWeAreCopy = copy.edges.find(copyChunk => {
+    const id = copyChunk.node.childMarkdownRemark.frontmatter.id
     if (id !== 'who_we_are') {
       return
     }
-    return el
+    return copyChunk
   })
 
   const body = whoWeAreCopy.node.childMarkdownRemark.html
@@ -28,11 +28,15 @@ const WhoWeAre = ({ copy }) => {
       {({ screenWidth }) => {
         let svgWidth
 
-        if (screenWidth < 600) {
+        if (screenWidth <= 600) {
           svgWidth = '300px'
         }
 
-        if (screenWidth >= 600) {
+        if (screenWidth > 600 && screenWidth <= 900) {
+          svgWidth = '460px'
+        }
+
+        if (screenWidth > 900) {
           svgWidth = '500px'
         }
 

@@ -11,7 +11,7 @@ import {
 const TextInput = props => {
   let error, instruction
 
-  if (!props.valid) {
+  if (!props.valid && !props.initial) {
     error = (
       <ErrorMessage>
         Custom error message based on what's happening.
