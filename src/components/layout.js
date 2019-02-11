@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 
 import Footer from './Footer/Footer'
+import Header from './header'
 import Global from '../styles/Global'
 import { ScreenWidthStore } from '../context/ScreenWidthContext'
 import { tealTheme } from '../styles/Theme'
@@ -11,6 +12,7 @@ const Layout = ({ children }) => (
   <>
     <ThemeProvider theme={tealTheme}>
       <ScreenWidthStore>
+        <Header />
         <TTFLayout>{children}</TTFLayout>
         <Footer />
         <Global />

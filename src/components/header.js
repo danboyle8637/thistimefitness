@@ -1,42 +1,35 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+import TTFLogoShort from '../svgs/TTFLogoShort'
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+const Header = () => {
+  return (
+    <HeaderContainer>
+      <div>
+        <TTFLogoShort width={'50px'} />
+      </div>
+      <MenuWrapper />
+    </HeaderContainer>
+  )
 }
 
 export default Header
+
+const HeaderContainer = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: transparent;
+  width: 100vw;
+  z-index: 9999;
+`
+
+const MenuWrapper = styled.div`
+  background: #000;
+  border-radius: 4px;
+  width: 100px;
+  height: 48px;
+`

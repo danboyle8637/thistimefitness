@@ -3,6 +3,9 @@ const validate = (value, rules) => {
 
   for (let rule in rules) {
     switch (rule) {
+      case 'maxLength':
+        isValid = isValid && maxLengthValidator(value, rules[rule])
+
       case 'minLength':
         isValid = isValid && minLengthValidator(value, rules[rule])
         break
@@ -22,6 +25,8 @@ const validate = (value, rules) => {
 
   return isValid
 }
+
+const maxLengthValidator = (value, maxLength) => value.length <= maxLength
 
 const minLengthValidator = (value, minLength) => value.length >= minLength
 
