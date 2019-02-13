@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import QuestionCard from './QuestionCard'
-import { above } from '../../../styles/Theme'
+import { SectionContainer } from '../../../styles/Containers'
 
 const Faq = ({ questions }) => {
   const faq = questions.edges.map((question, index) => {
@@ -11,7 +11,11 @@ const Faq = ({ questions }) => {
     return <QuestionCard key={index} q={q} a={a} />
   })
 
-  return <FaqContainer>{faq}</FaqContainer>
+  return (
+    <SectionContainer>
+      <FaqContainer>{faq}</FaqContainer>
+    </SectionContainer>
+  )
 }
 
 export default Faq
@@ -19,12 +23,6 @@ export default Faq
 const FaqContainer = styled.div`
   background: #393b4f;
   border-radius: 4px;
-  width: 90%;
+  width: 100%;
   margin-bottom: 40px;
-  ${above.mobile`
-    width: 80%;
-  `}
-  ${above.tablet`
-    width: 60%;
-  `}
 `

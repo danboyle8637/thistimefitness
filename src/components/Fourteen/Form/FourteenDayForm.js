@@ -3,10 +3,16 @@ import styled from 'styled-components'
 
 import TextInput from '../../Shared/Form/TextInput'
 import TextArea from '../../Shared/Form/TextArea'
+import RadioInput from '../../Shared/Form/RadioInput'
 import validate from '../../../helpers/validate'
 import { SiteButton } from '../../../styles/Buttons'
 import { BodyText } from '../../../styles/BodyText'
-import { SectionContainer } from '../../../styles/Containers'
+import { SpecialSubhead } from '../../../styles/Headlines'
+import {
+  SectionContainer,
+  HeadlineContainer,
+  ButtonContainer,
+} from '../../../styles/Containers'
 import { FormFieldSet } from '../../../styles/Form'
 
 class FourteenDayForm extends Component {
@@ -17,6 +23,33 @@ class FourteenDayForm extends Component {
       formControls: {
         goal: {
           value: '',
+        },
+        goal: {
+          value: '',
+          valid: false,
+          touched: false,
+          checked: false,
+          validationRules: {
+            isRequired: true,
+          },
+          options: [
+            { value: 'weightLoss', displayValue: 'Weight Loss', checked: true },
+            {
+              value: 'oldClothes',
+              displayValue: 'Fit back into my old clothes',
+              checked: false,
+            },
+            {
+              value: 'strength',
+              displayValue: 'Build muscle and strength',
+              checked: false,
+            },
+            {
+              value: 'lifestyle',
+              displayValue: 'Build a long terim healthy lifestyle',
+              checked: false,
+            },
+          ],
         },
         why: {
           value: '',
@@ -54,7 +87,7 @@ class FourteenDayForm extends Component {
     }
   }
 
-  handleFormChange = event => {
+  handleFormChange = (event, key) => {
     const name = event.target.name
     const value = event.target.value
 
@@ -72,6 +105,16 @@ class FourteenDayForm extends Component {
       value,
       updatedFormElement.validationRules
     )
+
+    if (key) {
+      updatedFormElement.options.map(option => {
+        if (option.value === key) {
+          option.checked = !option.checked
+        } else {
+          option.checked = false
+        }
+      })
+    }
 
     updatedControls[name] = updatedFormElement
 
@@ -91,24 +134,39 @@ class FourteenDayForm extends Component {
       ...updatedControls[name],
     }
 
-    updatedFormElement.touched = !updatedFormElement.touched
     updatedFormElement.initial = false
+    updatedFormElement.touched = !updatedFormElement.touched
     updatedFormElement.showInstruction = !updatedFormElement.showInstruction
 
     updatedControls[name] = updatedFormElement
 
-    this.setState({ formControls: updatedControls })
+    this.setState({
+      formControls: updatedControls,
+    })
   }
 
   render() {
     return (
       <SectionContainer>
+        <HeadlineContainer>
+          <SpecialSubhead>Fill Out Form</SpecialSubhead>
+        </HeadlineContainer>
         <form action="post">
           <FormFieldSet>
-            <TextLabel htmlFor="firstName">First Name</TextLabel>
+            <RadioInput
+              name={'goal'}
+              value={this.state.formControls.goal.value}
+              touched={this.state.formControls.goal.touched}
+              valid={this.state.formControls.goal.valid}
+              checked={this.state.formControls.goal.checked}
+              options={this.state.formControls.goal.options}
+              handleFormChange={this.handleFormChange}
+            />
             <TextInput
               type="text"
               name="firstName"
+              labelName={'First Name'}
+              labelFor={'firstName'}
               label={'First Name'}
               value={this.state.formControls.firstName.value}
               onChange={this.handleFormChange}
@@ -121,11 +179,11 @@ class FourteenDayForm extends Component {
                 this.state.formControls.firstName.showInstruction
               }
             />
-            <TextLabel htmlFor="email">Email Address</TextLabel>
             <TextInput
               type="email"
               name="email"
-              label={'Email Address'}
+              labelName={'Email Address'}
+              labelFor={'email'}
               value={this.state.formControls.email.value}
               onChange={this.handleFormChange}
               onFocus={this.handleFormFocus}
@@ -141,10 +199,9 @@ class FourteenDayForm extends Component {
               value={this.state.formControls.why.value}
               onChange={this.handleFormChange}
             />
-            <BodyText htmlFor="why">
-              Why is getting healthy and fit a priority for you at this moment?
-            </BodyText>
-            <SiteButton>I'm Interested</SiteButton>
+            <ButtonContainer mMarginTop={'30px'}>
+              <SiteButton>I'm Interested</SiteButton>
+            </ButtonContainer>
           </FormFieldSet>
         </form>
       </SectionContainer>
@@ -153,21 +210,3 @@ class FourteenDayForm extends Component {
 }
 
 export default FourteenDayForm
-
-const TextInputWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-`
-
-const TextLabel = styled.label`
-  margin: 0;
-  padding: 0;
-  color: #b3b6e1;
-  font-size: 15px;
-  font-family: Montserrat;
-  font-weight: 400;
-  background-color: #2b2c3a;
-  padding: 3px;
-`

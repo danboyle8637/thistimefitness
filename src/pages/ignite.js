@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import HeadlineSection from '../components/Ignite/HeadlineSection/HeadlineSection'
 import LeadSection from '../components/Ignite/LeadSection/LeadSection'
 import LetterSection from '../components/Ignite/LetterSection/LetterSection'
-import CountdownTimer from '../components/Ignite/CountdownTimer/CountdownTimer'
+import CountdownSection from '../components/Ignite/CountdownTimer/CountdownSection'
 import BenefitSection from '../components/Ignite/BenefitSection/BenefitSection'
 import CTASection from '../components/Ignite/CTASection/CTASection'
 
@@ -14,11 +14,11 @@ const Ignite = ({ data }) => {
     <Layout>
       <HeadlineSection images={data} />
       <LeadSection copy={data.igniteCopy} />
-      <CountdownTimer />
+      <CountdownSection />
       <LetterSection copy={data.igniteCopy} images={data} />
-      <CountdownTimer />
+      <CountdownSection />
       <BenefitSection copy={data.igniteCopy} />
-      <CountdownTimer />
+      <CountdownSection />
       <CTASection />
     </Layout>
   )

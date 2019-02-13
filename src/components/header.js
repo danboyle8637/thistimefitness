@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 import TTFLogoShort from '../svgs/TTFLogoShort'
+import MenuSection from '../components/Nav/MenuSection'
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <div>
+      <Link to={'/'}>
         <TTFLogoShort width={'50px'} />
-      </div>
-      <MenuWrapper />
+      </Link>
+      <MenuSection />
     </HeaderContainer>
   )
 }
@@ -25,11 +26,4 @@ const HeaderContainer = styled.div`
   background: transparent;
   width: 100vw;
   z-index: 9999;
-`
-
-const MenuWrapper = styled.div`
-  background: #000;
-  border-radius: 4px;
-  width: 100px;
-  height: 48px;
 `
