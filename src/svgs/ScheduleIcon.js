@@ -47,7 +47,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-2"
-            dataName="day-block"
+            data-name="day-block"
             x="148.64"
             y="95.89"
             width="39.24"
@@ -57,7 +57,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-3"
-            dataName="day-block"
+            data-name="day-block"
             x="205.51"
             y="95.89"
             width="39.24"
@@ -67,7 +67,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-4"
-            dataName="day-block"
+            data-name="day-block"
             x="34.42"
             y="144.08"
             width="39.24"
@@ -77,7 +77,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-5"
-            dataName="day-block"
+            data-name="day-block"
             x="91.45"
             y="144.08"
             width="39.24"
@@ -87,7 +87,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-6"
-            dataName="day-block"
+            data-name="day-block"
             x="148.48"
             y="144.08"
             width="39.24"
@@ -97,7 +97,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-7"
-            dataName="day-block"
+            data-name="day-block"
             x="205.51"
             y="144.08"
             width="39.24"
@@ -107,7 +107,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-8"
-            dataName="day-block"
+            data-name="day-block"
             x="34.42"
             y="192.57"
             width="39.24"
@@ -117,7 +117,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-9"
-            dataName="day-block"
+            data-name="day-block"
             x="91.45"
             y="192.57"
             width="39.24"
@@ -127,7 +127,7 @@ class ScheduleIcon extends Component {
           />
           <rect
             id="day-block-10"
-            dataName="day-block"
+            data-name="day-block"
             x="148.48"
             y="192.57"
             width="39.24"

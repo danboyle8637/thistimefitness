@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+import React from 'react'
+
+export const onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents([<div key={'menu_portal'} id={'menu_portal'} />])
+}

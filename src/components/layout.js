@@ -6,17 +6,20 @@ import Footer from './Footer/Footer'
 import Header from './header'
 import Global from '../styles/Global'
 import { ScreenWidthStore } from '../context/ScreenWidthContext'
+import { MenuOpenStore } from '../context/MenuOpenContext'
 import { tealTheme } from '../styles/Theme'
 
 const Layout = ({ children }) => (
   <>
     <ThemeProvider theme={tealTheme}>
-      <ScreenWidthStore>
-        <Header />
-        <TTFLayout>{children}</TTFLayout>
-        <Footer />
-        <Global />
-      </ScreenWidthStore>
+      <MenuOpenStore>
+        <ScreenWidthStore>
+          <Header />
+          <TTFLayout>{children}</TTFLayout>
+          <Footer />
+          <Global />
+        </ScreenWidthStore>
+      </MenuOpenStore>
     </ThemeProvider>
   </>
 )

@@ -7,6 +7,8 @@ class CountdownTimer extends Component {
   constructor(props) {
     super(props)
 
+    this.intervalTimerId = 0
+
     this.state = {
       days: 0,
       hours: 0,
@@ -18,6 +20,10 @@ class CountdownTimer extends Component {
   componentDidMount() {
     this.calculateTime()
     this.updateTime()
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalTimerId)
   }
 
   calculateTime = () => {
@@ -51,12 +57,12 @@ class CountdownTimer extends Component {
   }
 
   updateTime = () => {
-    setInterval(this.calculateTime, 1000)
+    this.intervalTimerId = setInterval(this.calculateTime, 1000)
   }
 
   render() {
     return (
-      <ScreenWidthContext>
+      <ScreenWidthContext.Consumer>
         {({ screenWidth }) => {
           const numWrapperWidth = screenWidth / 4
 
@@ -81,7 +87,7 @@ class CountdownTimer extends Component {
             </NumberContainer>
           )
         }}
-      </ScreenWidthContext>
+      </ScreenWidthContext.Consumer>
     )
   }
 }

@@ -14,7 +14,7 @@ const CountdownSection = () => {
         <HeadlineContainer>
           <BaseSubhead>Next session starts:</BaseSubhead>
         </HeadlineContainer>
-        <CountdownTimer date={'02/14/2019 12:00 AM'} />
+        <CountdownTimer date={'02/17/2019 12:00 AM'} />
         <SiteButton purple>Click to Sign Up</SiteButton>
       </CoundownContainer>
     </SectionContainer>

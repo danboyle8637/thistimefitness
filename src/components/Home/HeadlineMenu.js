@@ -98,8 +98,7 @@ const MenuLink = styled(Link)`
   font-weight: 500;
   letter-spacing: 1.4px;
   cursor: pointer;
-  transform: translateX(0);
-  transition: color, transform, 150ms ease-out;
+  transition: color, 150ms ease-out;
   &:hover {
     color: #5afdf2;
   }
