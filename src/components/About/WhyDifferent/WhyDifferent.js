@@ -1,13 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
-import { HeadlineContainer, SectionContainer } from '../../../styles/Containers'
+import {
+  HeadlineContainer,
+  SectionContainer,
+  ButtonContainer,
+} from '../../../styles/Containers'
 import { MainButton } from '../../../styles/Buttons'
 import WorkoutIcon from '../../../svgs/WorkoutIcon'
 import FlexIcon from '../../../svgs/FlexIcon'
 import HeartIcon from '../../../svgs/HeartIcon'
 import BenefitWithBackgroundCard from '../../Shared/BenefitWithBackgroundCard'
+import { above } from '../../../styles/Theme'
 
 const WhyDifferent = () => {
   return (
@@ -37,7 +43,7 @@ const WhyDifferent = () => {
         }
       `}
       render={data => {
-        const benefits = data.whyDifferent.edges.map((benefit, index) => {
+        const benefits = data.whyDifferent.edges.map(benefit => {
           const iconObj = {
             workout: <WorkoutIcon kbFill={'#272834'} dbFill={'#272834'} />,
             total_body: <FlexIcon fill={'#272834'} />,
@@ -60,17 +66,27 @@ const WhyDifferent = () => {
         })
 
         return (
-          <SectionContainer>
+          <SectionContainer desktopWidth={'100%'}>
             <HeadlineContainer marginTop={'0px'}>
               <BaseSubhead>Why We're</BaseSubhead>
-              <SpecialSubhead mobileLineHeight={'1.4'}>
+              <SpecialSubhead
+                mobileLineHeight={'1.4'}
+                tabletLineHeight={'1.4'}
+                desktopLineHeight={'1.6'}
+              >
                 DIFFERENT
               </SpecialSubhead>
             </HeadlineContainer>
-            {benefits}
-            <MainButton purple marginTop={'60px'}>
-              See Our Specials
-            </MainButton>
+            <BenefitWrapper>{benefits}</BenefitWrapper>
+            <ButtonContainer
+              mMarginTop={'20px'}
+              tMarginTop={'40px'}
+              dMarginTop={'60px'}
+            >
+              <MainButton to={'/'} purple>
+                See Our Specials
+              </MainButton>
+            </ButtonContainer>
           </SectionContainer>
         )
       }}
@@ -79,3 +95,14 @@ const WhyDifferent = () => {
 }
 
 export default WhyDifferent
+
+const BenefitWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  ${above.tablet`
+    flex-direction: row;
+    width: 90%;
+  `}
+`

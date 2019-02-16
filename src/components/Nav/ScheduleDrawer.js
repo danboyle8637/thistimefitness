@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import TweenMax, { Power2 } from 'gsap/TweenMax'
 import { Transition } from 'react-transition-group'
 
-const menuDrawerRoot =
+const scheduleDrawerRoot =
   typeof document !== 'undefined'
-    ? document.getElementById('menu_portal')
+    ? document.getElementById('schedule_portal')
     : null
 
-class MenuDrawer extends Component {
+class ScheduleDrawer extends Component {
   constructor(props) {
     super(props)
 
@@ -18,15 +18,16 @@ class MenuDrawer extends Component {
   }
 
   componentDidMount() {
-    menuDrawerRoot.appendChild(this.el)
+    scheduleDrawerRoot.appendChild(this.el)
   }
 
   componentWillUnmount() {
-    menuDrawerRoot.removeChild(this.el)
+    scheduleDrawerRoot.removeChild(this.el)
   }
 
   render() {
     const { children } = this.props
+
     const drawer = (
       <Transition
         in={this.props.in}
@@ -58,7 +59,7 @@ class MenuDrawer extends Component {
           }
         }}
       >
-        <MenuDrawerWrapper>{children}</MenuDrawerWrapper>
+        <ScheduleDrawerWrapper />
       </Transition>
     )
 
@@ -70,17 +71,15 @@ class MenuDrawer extends Component {
   }
 }
 
-export default MenuDrawer
+export default ScheduleDrawer
 
-const MenuDrawerWrapper = styled.div`
+const ScheduleDrawerWrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  width: 80%;
   height: 100%;
-  padding: 30px 10px 30px 30px;
-  border-radius: 8px 0 0 8px;
-  background: #3a3767;
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
+  border-radius: 8px 0 8px 0;
+  background: #26243e;
+  pointer-events: none;
   z-index: 7;
 `

@@ -34,9 +34,12 @@ const SectionContainer = styled.section`
 const MapGrid = styled.div`
   display: flex;
   flex-direction: column;
+  ${above.mobile`
+    align-items: center;
+  `}
   ${above.tablet`
     flex-direction: row;
-    width: 86%;
+    width: 100%;
     box-shadow: 2px 6px 20px rgba(0,0,0,0.4);
     border-radius: 4px;
     background: #363358;
@@ -48,6 +51,9 @@ const MapWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  ${above.mobile`
+    width: 70%;
+  `}
   ${above.tablet`
     order: 0;
     background: #26243e;

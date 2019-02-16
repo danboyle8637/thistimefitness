@@ -8,8 +8,11 @@ class MenuOpenStore extends Component {
 
     this.state = {
       menuOpen: false,
+      scheduleOpen: false,
       handleToggleMenu: this.handleToggleMenu,
       handleCloseMenu: this.handleCloseMenu,
+      handleToggleSchedule: this.handleToggleSchedule,
+      handleCloseSchedule: this.handleCloseSchedule,
     }
   }
 
@@ -18,8 +21,17 @@ class MenuOpenStore extends Component {
     this.setState({ menuOpen: toggle })
   }
 
+  handleToggleSchedule = () => {
+    const toggle = !this.state.scheduleOpen
+    this.setState({ scheduleOpen: toggle })
+  }
+
   handleCloseMenu = () => {
     this.setState({ menuOpen: false })
+  }
+
+  handleCloseSchedule = () => {
+    this.setState({ scheduleOpen: false })
   }
 
   render() {

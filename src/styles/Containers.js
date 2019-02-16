@@ -50,10 +50,10 @@ const sectionPadding = css`
 const containerWidth = css`
   width: 100%;
   ${above.mobile`
-    width: 80%;
+    width: ${props => props.tabletWidth || '80%'};
   `}
   ${above.tablet`
-    width: 60%;
+    width: ${props => props.desktopWidth || '60%'};
   `}
 `
 

@@ -10,7 +10,7 @@ const TheTeam = () => {
   return (
     <TheTeamContainer>
       <SpecialSubhead>The Team:</SpecialSubhead>
-      <BodyTextContainer center mMarginTop={'12px'}>
+      <BodyTextContainer center mMarginTop={'12px'} tMarginTop={'14px'}>
         <ScrollText>Scroll</ScrollText>
         <ScrollIconWrapper />
       </BodyTextContainer>

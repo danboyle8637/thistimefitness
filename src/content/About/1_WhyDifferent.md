@@ -1,6 +1,6 @@
 ---
 id: why_different_1
-headline: Custom Workouts
+headline: 1. Custom Workouts
 icon: workout
 ---
 

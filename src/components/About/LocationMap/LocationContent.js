@@ -11,7 +11,7 @@ import ChatIcon from '../../../svgs/ChatIcon'
 import MessengerIcon from '../../../svgs/MessengerIcon'
 
 const LocationContent = () => {
-  const addressLink =
+  const mapLink =
     'https://www.google.com/maps/place/2408+Ashley+River+Rd,+Charleston,+SC+29414/@32.8267406,-80.0399742,18z/data=!4m5!3m4!1s0x88fe7cf1db72c8bb:0xf47f23abc33d7dca!8m2!3d32.8268102!4d-80.0385162'
 
   return (
@@ -33,13 +33,13 @@ const LocationContent = () => {
           Kindal@ThisTimeFitness.com
         </AddressText>
       </AddressBox>
-      <BodyTextContainer center>
+      <BodyTextContainer center desktopWidth={'70%'}>
         <BodyText padding={'20px'}>
           We are located a quarter mile down from Bees Ferry road on Highway 61
           (Ashley River Road)… in the Peripont Shopping Center.
         </BodyText>
         <GhostButtonWrapper>
-          <GhostButton to="/" margintop={'12px'}>
+          <GhostButton href={mapLink} target="_blank" margintop={'12px'}>
             <SpacedMapIcon width={'14px'} fillColor={'#2AD2E2'} />
             Open in Google Maps
           </GhostButton>
@@ -71,7 +71,7 @@ const AddressBox = styled.div`
     width: 32%;
   `}
   ${above.tablet`
-    width: 50%;
+    width: 30%;
   `}
 `
 
@@ -105,6 +105,7 @@ const SpacedMessengerIcon = styled(MessengerIcon)`
 
 const GhostButtonWrapper = styled.div`
   width: 80%;
+  padding: 8px;
   ${above.mobile`
     width: 60%;
   `}

@@ -8,10 +8,12 @@ import MenuSection from '../components/Nav/MenuSection'
 const Header = () => {
   return (
     <HeaderContainer>
-      <Link to={'/'}>
-        <TTFLogoShort width={'50px'} />
-      </Link>
-      <MenuSection />
+      <HeadlineWrapper>
+        <Link to={'/'}>
+          <TTFLogoShort width={'50px'} />
+        </Link>
+        <MenuSection />
+      </HeadlineWrapper>
     </HeaderContainer>
   )
 }
@@ -21,9 +23,16 @@ export default Header
 const HeaderContainer = styled.div`
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 6px 12px;
   background: transparent;
   width: 100vw;
   z-index: 9999;
+`
+
+const HeadlineWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 960px;
 `

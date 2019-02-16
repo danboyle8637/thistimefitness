@@ -112,7 +112,7 @@ const PurchaseButton = styled.a`
   `}
 `
 
-const GhostButton = styled(Link)`
+const GhostButton = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,6 +125,11 @@ const GhostButton = styled(Link)`
   width: 100%;
   cursor: pointer;
   margin-top: ${props => props.margintop || 0};
+  transition: box-shadow, color, 150ms ease-out;
+  &:active {
+    box-shadow: 0 0 0 2px #b44cff;
+    color: '#B44CFF';
+  }
   ${above.mobile`
     padding: 10px 20px;
     font-size: 18px;

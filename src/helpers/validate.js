@@ -5,6 +5,7 @@ const validate = (value, rules) => {
     switch (rule) {
       case 'maxLength':
         isValid = isValid && maxLengthValidator(value, rules[rule])
+        break
 
       case 'minLength':
         isValid = isValid && minLengthValidator(value, rules[rule])

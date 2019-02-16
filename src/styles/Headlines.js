@@ -84,11 +84,11 @@ const MagazineH1Filler = styled.h5`
 `
 
 const MagazineSubhead = styled.h3`
-  font-size: ${props => props.fontSize || '20px'};
+  font-size: ${props => props.mobileFontSize || '20px'};
   ${mobileSetup};
   color: #f8f8f8;
   ${above.mobile`
-    font-size: 26px;
+    font-size: ${props => props.tabletFontSize || '26px'};
     ${tabletSetup}
     color: #f8f8f8;
   `}

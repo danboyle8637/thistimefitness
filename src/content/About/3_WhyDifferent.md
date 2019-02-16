@@ -1,6 +1,6 @@
 ---
 id: why_different_3
-headline: Community
+headline: 3. Community
 icon: community
 ---
 

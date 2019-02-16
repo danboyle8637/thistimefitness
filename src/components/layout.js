@@ -9,20 +9,22 @@ import { ScreenWidthStore } from '../context/ScreenWidthContext'
 import { MenuOpenStore } from '../context/MenuOpenContext'
 import { tealTheme } from '../styles/Theme'
 
-const Layout = ({ children }) => (
-  <>
-    <ThemeProvider theme={tealTheme}>
-      <MenuOpenStore>
-        <ScreenWidthStore>
-          <Header />
-          <TTFLayout>{children}</TTFLayout>
-          <Footer />
-          <Global />
-        </ScreenWidthStore>
-      </MenuOpenStore>
-    </ThemeProvider>
-  </>
-)
+const Layout = ({ children }) => {
+  return (
+    <>
+      <ThemeProvider theme={tealTheme}>
+        <MenuOpenStore>
+          <ScreenWidthStore>
+            <Header />
+            <TTFLayout>{children}</TTFLayout>
+            <Footer />
+            <Global />
+          </ScreenWidthStore>
+        </MenuOpenStore>
+      </ThemeProvider>
+    </>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

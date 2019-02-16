@@ -3,9 +3,9 @@ import styled from 'styled-components'
 
 import { above } from '../../../styles/Theme'
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
-import { BodyTextContainer } from '../../../styles/Containers'
+import { BodyTextContainer, ButtonContainer } from '../../../styles/Containers'
 import { InnerBodyText } from '../../../styles/BodyText'
-import { SiteButton } from '../../../styles/Buttons'
+import { MainButton } from '../../../styles/Buttons'
 import KindalSig from '../../../svgs/KindalSig'
 
 const AboutKindalInvite = ({ copy }) => {
@@ -41,7 +41,7 @@ const AboutKindalInvite = ({ copy }) => {
       >
         melt body fat...
       </SpecialSubhead>
-      <BodyTextContainer marginTop={'0px'} desktopWidth={'40%'}>
+      <BodyTextContainer mMarginTop={'0px'} desktopWidth={'40%'}>
         <InnerBodyText
           marginTop={'40px'}
           dangerouslySetInnerHTML={{ __html: body1 }}
@@ -58,16 +58,20 @@ const AboutKindalInvite = ({ copy }) => {
       >
         Is the answer!
       </BaseSubhead>
-      <BodyTextContainer marginTop={'0px'} desktopWidth={'40%'}>
+      <BodyTextContainer mMarginTop={'0px'} desktopWidth={'40%'}>
         <InnerBodyText
           marginTop={'40px'}
           dangerouslySetInnerHTML={{ __html: body2 }}
         />
-        <MovableKindalSig width={'140px'} fill="#2AD2E2" />
+        <MovableKindalSig fill="#2AD2E2" />
       </BodyTextContainer>
-      <SiteButton purple marginTop={'30px'}>
-        See Our Specials
-      </SiteButton>
+      <ButtonContainer
+        mMarginTop={'40px'}
+        tMarginTop={'40px'}
+        dMarginTop={'60px'}
+      >
+        <MainButton purple>See Our Specials</MainButton>
+      </ButtonContainer>
     </LetterContainer>
   )
 }
@@ -87,5 +91,6 @@ const LetterContainer = styled.div`
 `
 
 const MovableKindalSig = styled(KindalSig)`
+  width: 140px;
   align-self: flex-end;
 `

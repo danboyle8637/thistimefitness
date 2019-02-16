@@ -13,23 +13,27 @@ const TeamCard = ({ name, certs, body, pic }) => {
   return (
     <TeamCardContainer>
       <TeamCardWrapper>
-        <HeadlineContainer mMarginTop={'20px'}>
-          <PictureWrapper fluid={pic} />
-          <BaseSubhead color={'#B44CFF'} marginTop={'20px'}>
-            {name}
-          </BaseSubhead>
-          <MagazineSubhead
-            marginTop={'20px'}
-            fontSize={'13px'}
-            mobileLineHeight={'1.5'}
-            thin
-          >
-            {certs}
-          </MagazineSubhead>
-        </HeadlineContainer>
-        <BodyTextContainer mMarginTop={'20px'}>
-          <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
-        </BodyTextContainer>
+        <PictureWrapper fluid={pic} />
+        <TeamContentWrapper>
+          <HeadlineContainer mMarginTop={'20px'}>
+            <BaseSubhead color={'#B44CFF'} marginTop={'20px'}>
+              {name}
+            </BaseSubhead>
+            <MagazineSubhead
+              marginTop={'20px'}
+              mobileFontSize={'13px'}
+              tabletFontSize={'15px'}
+              mobileLineHeight={'1.5'}
+              tabletLineHeight={'1.6'}
+              thin
+            >
+              {certs}
+            </MagazineSubhead>
+          </HeadlineContainer>
+          <BodyTextContainer mMarginTop={'20px'}>
+            <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
+          </BodyTextContainer>
+        </TeamContentWrapper>
       </TeamCardWrapper>
     </TeamCardContainer>
   )
@@ -58,4 +62,10 @@ const TeamCardWrapper = styled.div`
 const PictureWrapper = styled(Img)`
   border-radius: 50%;
   width: 150px;
+`
+
+const TeamContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `

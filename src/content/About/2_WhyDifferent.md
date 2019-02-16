@@ -1,6 +1,6 @@
 ---
 id: why_different_2
-headline: Total Body
+headline: 2. Total Body
 icon: total_body
 ---
 
