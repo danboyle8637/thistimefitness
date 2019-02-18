@@ -2,6 +2,6 @@
 id: weekend_top
 ---
 
-Functional strength training maximizes cardio during a workout to burn calories...
+Weekend Recovery is a two class combination of Body Burn and our yoga classes.
 
-Yet it’s focus is on strength so you build lean muscle mass while melting inches from your body for a slimmer, leaner look.
+It’s perfect if you want to get in your hardcore strength workouts during the weekend and/or get in some stretching... movement... and pure recovery time with yoga.

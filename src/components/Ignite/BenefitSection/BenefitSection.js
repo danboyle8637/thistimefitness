@@ -69,7 +69,7 @@ const BenefitSection = () => {
                 get
               </SpecialSubhead>
             </HeadlineContainer>
-            {benefits}
+            <BenefitWrapper>{benefits}</BenefitWrapper>
           </SectionContainer>
         )
       }}
@@ -78,3 +78,8 @@ const BenefitSection = () => {
 }
 
 export default BenefitSection
+
+const BenefitWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`

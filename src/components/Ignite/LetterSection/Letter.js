@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Image from 'gatsby-image'
 
 import { InnerBodyText } from '../../../styles/BodyText'
+import { above } from '../../../styles/Theme'
 import KindalSig from '../../../svgs/KindalSig'
 
 const Letter = ({ part1, part2, kindal }) => {
@@ -19,7 +20,7 @@ const Letter = ({ part1, part2, kindal }) => {
           <KindalPic fluid={kindal} />
         </ImageWrapper>
         <InnerBodyText note dangerouslySetInnerHTML={{ __html: body2 }} />
-        <Signature fill={'#09A9B7'} width={'100px'} />
+        <Signature fill={'#09A9B7'} />
       </Part2Wrapper>
     </>
   )
@@ -35,10 +36,18 @@ const Part1Wrapper = styled.div`
   padding: 30px 16px 0px 16px;
   box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.3);
   transform: rotate(3deg);
+  ${above.mobile`
+    width: 60%;
+  `}
+  ${above.tablet`
+    width: 40%;
+  `}
 `
 
 const Part2Wrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   background: #f8f8f8;
   width: 76%;
@@ -46,6 +55,12 @@ const Part2Wrapper = styled.div`
   padding: 30px 16px 0px 16px;
   box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.3);
   transform: translate(46px, -40px) rotate(4deg);
+  ${above.mobile`
+    width: 60%;
+  `}
+  ${above.tablet`
+    width: 40%;
+  `}
 `
 
 const ImageWrapper = styled.div`
@@ -60,8 +75,17 @@ const KindalPic = styled(Image)`
   width: 180px;
   border-radius: 50%;
   box-shadow: 2px 4px 18px rgba(0, 0, 0, 0.3);
+  ${above.tablet`
+    width: 240px;
+  `}
 `
 
 const Signature = styled(KindalSig)`
-  transform: translateX(140px);
+  align-self: flex-end;
+  margin: 10px 30px;
+  width: 100px;
+  ${above.mobile`
+    margin: 20px 30px;
+    width: 140px;
+  `}
 `

@@ -12,6 +12,9 @@ export const siteConfig = {
     ],
     lang: 'en-us',
   },
+  ignite: {
+    countdownDate: '03/12/2019 12:00 AM',
+  },
   schedule: {
     Monday: {
       day: 'Monday',

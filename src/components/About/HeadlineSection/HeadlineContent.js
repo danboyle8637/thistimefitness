@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import TimelineMax from 'gsap/TimelineMax'
-import TweenMax, { Power3, Power2 } from 'gsap/TweenMax'
 
 import {
   MagazineH1,
@@ -10,50 +8,9 @@ import {
 } from '../../../styles/Headlines'
 import { HeadlineContainer } from '../../../styles/Containers'
 import { MainButton } from '../../../styles/Buttons'
-import FaqArrow from '../../../svgs/FaqArrow'
-import { above } from '../../../styles/Theme'
+import AnimatedScrollArrow from '../../Shared/AnimatedScrollArrow'
 
 class HeadlineContent extends Component {
-  constructor(props) {
-    super(props)
-
-    this.arrow = null
-
-    this.setArrowRef = element => {
-      this.arrow = element
-    }
-
-    this.scrollArrowTimeline = new TimelineMax({ paused: true, repeat: -1 })
-  }
-
-  componentDidMount() {
-    this.scrollArrowTimeline.add(
-      TweenMax.to(this.arrow, 0.5, {
-        startAt: { y: '-40px', opacity: 0 },
-      })
-    )
-    this.scrollArrowTimeline.add(
-      TweenMax.to(this.arrow, 0.5, {
-        y: 0,
-        opacity: 1,
-        ease: Power3.easeOut,
-      })
-    )
-    this.scrollArrowTimeline.add(
-      TweenMax.to(this.arrow, 0.5, {
-        y: '20px',
-        opacity: 0,
-        ease: Power2.easeOut,
-      })
-    )
-
-    this.scrollArrowTimeline.play()
-  }
-
-  componentWillUnmount() {
-    this.scrollArrowTimeline.stop()
-  }
-
   render() {
     return (
       <HeaderContainer>
@@ -61,6 +18,7 @@ class HeadlineContent extends Component {
           mMarginTop={'20px'}
           tMarginTop={'30px'}
           dMarginTop={'50px'}
+          tabletWidth={'90%'}
         >
           <MagazineH1Filler
             mobileLineHeight={'1.4'}
@@ -73,7 +31,7 @@ class HeadlineContent extends Component {
           <MagazineSubhead
             thin
             center
-            fontSize={'16px'}
+            mobileFontSize={'16px'}
             letterSpacing={'1px'}
             mobileLineHeight={'1.5'}
             tabletLineHeight={'1.3'}
@@ -83,10 +41,10 @@ class HeadlineContent extends Component {
             you’ve always wanted?
           </MagazineSubhead>
         </HeadlineContainer>
-        <ArrowWrapper ref={this.setArrowRef}>
-          <FaqArrow strokeWidth={'10px'} />
-        </ArrowWrapper>
-        <MainButton purple>See Our Specials</MainButton>
+        <AnimatedScrollArrow />
+        <MainButton purple to={'/specials'}>
+          See Our Specials
+        </MainButton>
       </HeaderContainer>
     )
   }

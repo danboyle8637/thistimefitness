@@ -23,7 +23,6 @@ const sharedSetup = css`
   padding: 0;
   color: ${props => props.color || '#2AD2E2'};
   font-weight: ${props => (props.thin ? 400 : 800)};
-  letter-spacing: ${props => props.letterSpacing || 0};
   text-align: ${props => props.center && 'center'};
   text-transform: ${props => props.upper && 'uppercase'};
 `
@@ -31,6 +30,7 @@ const sharedSetup = css`
 const mobileSetup = css`
   ${sharedSetup}
   line-height: ${props => props.mobileLineHeight || 0.95};
+  letter-spacing: ${props => props.mobileLetterSpacing || 0};
   transform: ${props =>
     moveHeadline(props.moveMobileX || '0', props.moveMobileY || '0')};
 `
@@ -38,6 +38,7 @@ const mobileSetup = css`
 const tabletSetup = css`
   ${sharedSetup}
   line-height: ${props => props.tabletLineHeight || 0.85};
+  letter-spacing: ${props => props.tabletLetterSpacing || 0};
   transform: ${props =>
     moveHeadline(props.moveTabletX || '0', props.moveTabletY || '0')};
 `
@@ -45,6 +46,7 @@ const tabletSetup = css`
 const desktopSetup = css`
   ${sharedSetup}
   line-height: ${props => props.desktopLineHeight || 0.85};
+  letter-spacing: ${props => props.desktopLetterSpacing || 0};
   transform: ${props =>
     moveHeadline(props.moveDesktopX || '0', props.moveDesktopY || '0')};
 `
@@ -71,14 +73,14 @@ const MagazineH1 = styled.h1`
 `
 
 const MagazineH1Filler = styled.h5`
-  font-size: ${props => props.fontSize || '24px'};
+  font-size: ${props => props.mobileFontSize || '24px'};
   ${mobileSetup};
   ${above.mobile`
-    font-size: 60px;
+    font-size: ${props => props.tabletFontSize || '60px'};
     ${tabletSetup}
   `}
   ${above.tablet`
-    font-size: 60px;
+    font-size: ${props => props.desktopFontSize || '60px'};
     ${desktopSetup}
   `}
 `
@@ -93,7 +95,7 @@ const MagazineSubhead = styled.h3`
     color: #f8f8f8;
   `}
   ${above.tablet`
-    font-size: 26px;
+    font-size: ${props => props.desktopFontSize || '26px'};
     ${desktopSetup}
     color: #f8f8f8;
   `}

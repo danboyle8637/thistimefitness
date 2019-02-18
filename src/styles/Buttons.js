@@ -82,7 +82,7 @@ const MainButton = styled(Link)`
     width: 380px;
   `}
   ${above.tablet`
-    width: 420px;
+    width: ${props => props.buttonWidth || '420px'};
     padding: 16px 10px;
   `}
 `

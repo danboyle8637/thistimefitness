@@ -1,21 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {
-  HeadlineContainer,
-  BodyTextContainer,
-} from '../../../styles/Containers'
+import { HeadlineContainer } from '../../../styles/Containers'
 import { SpecialSubhead, BaseSubhead } from '../../../styles/Headlines'
+import { above } from '../../../styles/Theme'
 
 const LetterHeadline = () => {
   return (
     <SpecialHeadline>
       <HeadlineContainer left>
-        <BaseSubhead moveMobileX={'3px'}>Have you</BaseSubhead>
-        <SpecialSubhead big upper mobileLineHeight={'1.3'}>
+        <BaseSubhead
+          moveMobileX={'3px'}
+          moveTabletX={'3px'}
+          moveDesktopX={'2px'}
+        >
+          Have you
+        </BaseSubhead>
+        <SpecialSubhead
+          big
+          upper
+          mobileLineHeight={'1.3'}
+          tabletLineHeight={'1.3'}
+          desktopLineHeight={'1.3'}
+        >
           Decided
         </SpecialSubhead>
-        <BaseSubhead moveMobileX={'3px'}>it's TIME for a change?</BaseSubhead>
+        <BaseSubhead
+          moveMobileX={'3px'}
+          moveTabletX={'3px'}
+          moveDesktopX={'2px'}
+        >
+          it's TIME for a change?
+        </BaseSubhead>
       </HeadlineContainer>
     </SpecialHeadline>
   )
@@ -24,5 +40,12 @@ const LetterHeadline = () => {
 export default LetterHeadline
 
 const SpecialHeadline = styled.div`
+  width: 100%;
   padding: 20px;
+  ${above.mobile`
+    width: 70%;
+  `}
+  ${above.tablet`
+    width: 40%;
+  `}
 `

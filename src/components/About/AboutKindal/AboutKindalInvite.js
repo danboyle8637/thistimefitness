@@ -70,7 +70,9 @@ const AboutKindalInvite = ({ copy }) => {
         tMarginTop={'40px'}
         dMarginTop={'60px'}
       >
-        <MainButton purple>See Our Specials</MainButton>
+        <MainButton purple to={'/specials'}>
+          See Our Specials
+        </MainButton>
       </ButtonContainer>
     </LetterContainer>
   )

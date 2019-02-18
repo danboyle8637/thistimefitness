@@ -38,12 +38,12 @@ const marginTop = css`
 `
 
 const sectionPadding = css`
-  padding: 80px 20px;
+  padding: ${props => props.mobilePadding || '80px 20px'};
   ${above.mobile`
-    padding: 120px 20px;
+    padding: ${props => props.tabletPadding || '120px 20px'};
   `}
   ${above.tablet`
-    padding: 120px 20px;
+    padding: ${props => props.desktopPadding || '120px 20px'};
   `}
 `
 

@@ -13,12 +13,32 @@ class ScheduleDrawer extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      leftPosition: '20%',
+    }
+
     this.el =
       typeof document !== 'undefined' ? document.createElement('div') : null
   }
 
   componentDidMount() {
     scheduleDrawerRoot.appendChild(this.el)
+    const screenWidth = window.innerWidth
+
+    if (screenWidth <= 600) {
+      const leftPosition = '20%'
+      this.setState({ leftPosition })
+    }
+
+    if (screenWidth > 600 && this.context.screenWidth <= 960) {
+      const leftPosition = '60%'
+      this.setState({ leftPosition })
+    }
+
+    if (screenWidth > 960) {
+      const leftPosition = '70%'
+      this.setState({ leftPosition })
+    }
   }
 
   componentWillUnmount() {
@@ -45,7 +65,7 @@ class ScheduleDrawer extends Component {
                 onComplete: done,
               },
               {
-                left: '20%',
+                left: `${this.state.leftPosition}`,
                 ease: Power2.easeOut,
                 onComplete: done,
               }

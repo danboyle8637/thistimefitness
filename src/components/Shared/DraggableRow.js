@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Draggable } from 'gsap/Draggable'
 import ThrowPropsPlugin from '../../greensockplugins/ThrowPropsPlugin'
 
+import { above } from '../../styles/Theme'
+
 class DraggableRow extends Component {
   constructor(props) {
     super(props)
@@ -17,19 +19,23 @@ class DraggableRow extends Component {
   }
 
   componentDidMount() {
-    Draggable.create(this.card, {
-      type: 'x',
-      edgeResistance: 0.75,
-      lockAxis: true,
-      allowNativeTouchScrolling: false,
-      dragResistance: 0.3,
-      throwProps: true,
-      snap: function(value) {
-        return Math.round(value / 380) * 380
-      },
-      zIndexBoost: false,
-      bounds: window,
-    })
+    const screenWidth = window.innerWidth
+
+    if (screenWidth <= 1024) {
+      Draggable.create(this.card, {
+        type: 'x',
+        edgeResistance: 0.75,
+        lockAxis: true,
+        allowNativeTouchScrolling: false,
+        dragResistance: 0.3,
+        throwProps: true,
+        snap: function(value) {
+          return Math.round(value / screenWidth) * screenWidth
+        },
+        zIndexBoost: false,
+        bounds: window,
+      })
+    }
   }
 
   render() {
@@ -45,4 +51,8 @@ export default DraggableRow
 
 const DraggableContainer = styled.div`
   display: flex;
+  ${above.tablet`
+    justify-content: center;
+    margin-top: 40px;
+  `}
 `

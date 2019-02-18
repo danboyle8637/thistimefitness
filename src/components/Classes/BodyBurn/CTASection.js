@@ -6,6 +6,7 @@ import {
   BodyTextContainer,
   HeadlineContainer,
   SectionContainer,
+  ButtonContainer,
 } from '../../../styles/Containers'
 import { MainButton } from '../../../styles/Buttons'
 
@@ -28,9 +29,15 @@ const CTASection = ({ copy }) => {
           dangerouslySetInnerHTML={{ __html: body }}
         />
       </BodyTextContainer>
-      <MainButton to={'/14-for-14-new-member-special'}>
-        See Our Specials
-      </MainButton>
+      <ButtonContainer
+        mMarginTop={'30px'}
+        tMarginTop={'40px'}
+        dMarginTop={'40px'}
+      >
+        <MainButton to={'/14-for-14-new-member-special'}>
+          See Our Specials
+        </MainButton>
+      </ButtonContainer>
     </SectionContainer>
   )
 }

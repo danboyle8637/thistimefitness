@@ -6,10 +6,12 @@ import HeadlineSection from '../components/Classes/BodyBurn/HeadlineSection'
 import LeadSection from '../components/Classes/BodyBurn/LeadSection'
 import BodyBurnStatsSection from '../components/Classes/BodyBurn/BodyBurnStatsSection'
 import CTASection from '../components/Classes/BodyBurn/CTASection'
+import BackTab from '../components/Nav/BackTab'
 
 const BodyBurn = ({ data }) => {
   return (
     <Layout>
+      <BackTab />
       <HeadlineSection images={data} />
       <LeadSection copy={data.bodyBurnCopy} />
       <BodyBurnStatsSection images={data} />
@@ -83,12 +85,12 @@ export const query = graphql`
       }
     }
     statsTabletBackground: file(
-      relativePath: { eq: "body-burn-gym-834x1112.jpg" }
+      relativePath: { eq: "body-burn-gym-834x880.jpg" }
     ) {
       childImageSharp {
         fluid(
           maxWidth: 834
-          maxHeight: 1112
+          maxHeight: 880
           jpegProgressive: true
           quality: 90
         ) {
@@ -98,12 +100,12 @@ export const query = graphql`
       }
     }
     statsDesktopBackground: file(
-      relativePath: { eq: "body-burn-gym-1440x1024.jpg" }
+      relativePath: { eq: "body-burn-gym-1440x700.jpg" }
     ) {
       childImageSharp {
         fluid(
           maxWidth: 1440
-          maxHeight: 1024
+          maxHeight: 700
           jpegProgressive: true
           quality: 90
         ) {

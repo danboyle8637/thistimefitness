@@ -9,26 +9,57 @@ import {
 import { BodyText } from '../../../styles/BodyText'
 import { MainButton } from '../../../styles/Buttons'
 import ScrollIcon from '../../../svgs/ScrollIcon'
+import ScreenWidthContext from '../../../context/ScreenWidthContext'
+import { above } from '../../../styles/Theme'
 
 const ClassCard = ({ icon, title, body, path }) => {
   return (
-    <ClassCardContainer>
-      <ClassCardWrapper>
-        <HeadlineContainer mMarginTop={'20px'}>
-          {icon}
-          <DescriptionText spacing={'1.8px'}>{title}</DescriptionText>
-        </HeadlineContainer>
-        <ScrollIconWrapper />
-        <div>
-          <BodyTextContainer mMarginTop={'80px'}>
-            <BodyText>{body}</BodyText>
-          </BodyTextContainer>
-          <ButtonContainer mMarginTop={'20px'}>
-            <MainButton to={path}>Learn More</MainButton>
-          </ButtonContainer>
-        </div>
-      </ClassCardWrapper>
-    </ClassCardContainer>
+    <ScreenWidthContext.Consumer>
+      {({ screenWidth }) => {
+        let showScrollIcon
+
+        if (screenWidth >= 1024) {
+          showScrollIcon = null
+        }
+
+        if (screenWidth < 1024) {
+          showScrollIcon = <ScrollIconWrapper />
+        }
+
+        return (
+          <ClassCardContainer>
+            <ClassCardWrapper>
+              <HeadlineContainer
+                mMarginTop={'20px'}
+                tMarginTop={'20px'}
+                tabletWidth={'100%'}
+                desktopWidth={'100%'}
+              >
+                {icon}
+                <DescriptionText>{title}</DescriptionText>
+              </HeadlineContainer>
+              {showScrollIcon}
+              <div>
+                <BodyTextContainer
+                  tabletWidth={'100%'}
+                  desktopWidth={'100%'}
+                  dMarginTop={'80px'}
+                >
+                  <BodyText>{body}</BodyText>
+                </BodyTextContainer>
+                <ButtonContainer
+                  mMarginTop={'20px'}
+                  tMarginTop={'30px'}
+                  dMarginTop={'30px'}
+                >
+                  <MainButton to={path}>Learn More</MainButton>
+                </ButtonContainer>
+              </div>
+            </ClassCardWrapper>
+          </ClassCardContainer>
+        )
+      }}
+    </ScreenWidthContext.Consumer>
   )
 }
 
@@ -38,6 +69,9 @@ const ClassCardContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
+  ${above.tablet`
+    width: 30%;
+  `}
 `
 
 const ClassCardWrapper = styled.div`
@@ -47,6 +81,9 @@ const ClassCardWrapper = styled.div`
   justify-content: space-between;
   width: 90%;
   background: transparent;
+  ${above.mobile`
+    width: 80%;
+  `}
 `
 
 const DescriptionText = styled.p`
@@ -55,9 +92,16 @@ const DescriptionText = styled.p`
   color: #d7daff;
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: ${props => props.spacing};
+  letter-spacing: 4px;
+  ${above.mobile`
+    letter-spacing: 13px;
+  `}
+  ${above.tablet`
+    letter-spacing: 11px;
+  `}
 `
 
 const ScrollIconWrapper = styled(ScrollIcon)`
   width: 30px;
+  padding: 60px 0;
 `

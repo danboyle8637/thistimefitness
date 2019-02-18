@@ -5,16 +5,17 @@ import CountdownTimer from '../../Shared/CountdownTimer/CountDownTimer'
 import { HeadlineContainer, SectionContainer } from '../../../styles/Containers'
 import { BaseSubhead } from '../../../styles/Headlines'
 import { SiteButton } from '../../../styles/Buttons'
+import { siteConfig } from '../../../helpers/siteConfig'
 import { above } from '../../../styles/Theme'
 
 const CountdownSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer tabletWidth={'70%'} desktopWidth={'45%'}>
       <CoundownContainer>
         <HeadlineContainer>
           <BaseSubhead>Next session starts:</BaseSubhead>
         </HeadlineContainer>
-        <CountdownTimer date={'02/17/2019 12:00 AM'} />
+        <CountdownTimer date={siteConfig.ignite.countdownDate} />
         <SiteButton purple>Click to Sign Up</SiteButton>
       </CoundownContainer>
     </SectionContainer>

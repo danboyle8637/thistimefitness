@@ -11,7 +11,7 @@ import { StatsHeadline } from '../../../styles/Headlines'
 import { BodyText } from '../../../styles/BodyText'
 import { above } from '../../../styles/Theme'
 
-const BodyBurnStats = () => {
+const WeekendStats = () => {
   return (
     <StatsContainer>
       <StatsWrapper>
@@ -71,7 +71,7 @@ const BodyBurnStats = () => {
   )
 }
 
-export default BodyBurnStats
+export default WeekendStats
 
 const StatsContainer = styled.div`
   display: flex;

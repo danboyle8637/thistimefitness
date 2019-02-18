@@ -23,7 +23,13 @@ const LeadSection = ({ copy }) => {
     <SectionContainer>
       <BodyTextContainer>
         <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
-        <ListContainer mobile={'40px'}>
+        <ListContainer
+          mMarginTop={'20px'}
+          tMarginTop={'30px'}
+          dMarginTop={'40px'}
+          tabletWidth={'100%'}
+          desktopWidth={'100%'}
+        >
           <ArrowList
             listItems={[
               { text: 'Some workouts you’ll run through drills.' },
@@ -36,8 +42,18 @@ const LeadSection = ({ copy }) => {
           />
         </ListContainer>
       </BodyTextContainer>
-      <HeadlineContainer mMarginTop={'80px;'}>
-        <BaseSubhead mobileLineHeight={'1.4'}>We Call This Workout</BaseSubhead>
+      <HeadlineContainer
+        mMarginTop={'80px;'}
+        tMarginTop={'80px'}
+        dMarginTop={'80px'}
+      >
+        <BaseSubhead
+          mobileLineHeight={'1.6'}
+          tabletLineHeight={'1.6'}
+          desktopLineHeight={'1.6'}
+        >
+          We Call This Workout
+        </BaseSubhead>
         <Need4SpeedLogo width={'280px'} />
       </HeadlineContainer>
     </SectionContainer>

@@ -13,21 +13,19 @@ const HeadlineContent = () => {
     {
       icon: 'body_burn',
       title: 'Metabolic Strength Training',
-      body:
-        'Our main program designed to get you in the best shape of your life.',
+      body: `Our main class designed with pure strength training at it's core and laced with heart pumping cardio. Are you ready for Charleston's most effective workout?`,
       path: '/body-burn',
     },
     {
       icon: 'need_for_speed',
       title: 'Running Training',
-      body: 'Learn to run efficiently, with less injury, and much faster.',
+      body: `Our running class where you will learn to run longer, more efficiently, with less injury, and much faster.`,
       path: '/need-for-speed',
     },
     {
       icon: 'weekend_recovery',
       title: 'Strength, Mobility & Yoga',
-      body:
-        'Special Body Burn classes focused on mobility and some yoga classes too!',
+      body: `Our special weekend schedule that includes Body Burn Classes and restoritive yoga classes. This is the perfect time to let your body recovery.`,
       path: '/weekend-recovery',
     },
   ]
@@ -59,28 +57,3 @@ const HeadlineContent = () => {
 }
 
 export default HeadlineContent
-
-const ClassWrapper = styled.div`
-  display: flex;
-`
-
-const DescriptionText = styled.p`
-  margin: 0;
-  padding: 0;
-  color: #d7daff;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: ${props => props.spacing};
-`
-
-const BodyBurn = styled(BodyBurnLogo)`
-  width: 260px;
-`
-
-const Need4Speed = styled(Need4SpeedLogo)`
-  width: 300px;
-`
-
-const WeekendRecovery = styled(WeekendRecoveryLogo)`
-  width: 300px;
-`

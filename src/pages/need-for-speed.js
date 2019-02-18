@@ -6,10 +6,12 @@ import HeadlineSection from '../components/Classes/NeedForSpeed/HeadlineSection'
 import LeadSection from '../components/Classes/NeedForSpeed/LeadSection'
 import NeedForSpeedStatsSection from '../components/Classes/NeedForSpeed/NeedForSpeedStatsSection'
 import CTASection from '../components/Classes/NeedForSpeed/CTASection'
+import BackTab from '../components/Nav/BackTab'
 
 const NeedForSpeed = ({ data }) => {
   return (
     <Layout>
+      <BackTab />
       <HeadlineSection images={data} />
       <LeadSection copy={data.needForSpeedCopy} />
       <NeedForSpeedStatsSection images={data} />
@@ -83,12 +85,12 @@ export const query = graphql`
       }
     }
     statsTabletBackground: file(
-      relativePath: { eq: "need-for-speed-stats-834x1112.jpg" }
+      relativePath: { eq: "need-for-speed-stats-834x880.jpg" }
     ) {
       childImageSharp {
         fluid(
           maxWidth: 834
-          maxHeight: 1112
+          maxHeight: 880
           jpegProgressive: true
           quality: 90
         ) {
@@ -98,12 +100,12 @@ export const query = graphql`
       }
     }
     statsDesktopBackground: file(
-      relativePath: { eq: "need-for-speed-stats-1440x1024.jpg" }
+      relativePath: { eq: "need-for-speed-stats-1440x700.jpg" }
     ) {
       childImageSharp {
         fluid(
           maxWidth: 1440
-          maxHeight: 1024
+          maxHeight: 700
           jpegProgressive: true
           quality: 90
         ) {

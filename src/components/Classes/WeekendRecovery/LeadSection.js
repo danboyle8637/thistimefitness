@@ -10,12 +10,12 @@ import {
 import { InnerBodyText } from '../../../styles/BodyText'
 import ArrowList from '../../Shared/ArrowList'
 import { BaseSubhead } from '../../../styles/Headlines'
-import BodyBurnLogo from '../../../svgs/BodyBurnLogo'
+import WeekendRecoveryLogo from '../../../svgs/WeekendRecoveryLogo'
 
 const LeadSection = ({ copy }) => {
   const bodyObj = copy.edges.find(copyChunk => {
     const id = copyChunk.node.childMarkdownRemark.frontmatter.id
-    return id === 'body_burn_top'
+    return id === 'weekend_top'
   })
 
   const body = bodyObj.node.childMarkdownRemark.html
@@ -33,11 +33,14 @@ const LeadSection = ({ copy }) => {
         >
           <ArrowList
             listItems={[
-              { text: 'Some workouts will have more cardio…' },
-              { text: 'Some workouts will focus more on strength…' },
+              { text: 'Some workouts focus on balance...' },
+              { text: 'Some workouts focus on agility and coordination...' },
+              {
+                text: 'And yoga focuses on restoring your range of motion...',
+              },
               {
                 text:
-                  'Every week you’ll get a new, balanced set of workouts to hit your goals.',
+                  'End every week filling in the important fitness gaps most women completely ignore.',
               },
             ]}
           />
@@ -55,14 +58,10 @@ const LeadSection = ({ copy }) => {
         >
           We Call This Workout
         </BaseSubhead>
-        <BodyBurnLogoStyled />
+        <WeekendRecoveryLogo width={'230px'} />
       </HeadlineContainer>
     </SectionContainer>
   )
 }
 
 export default LeadSection
-
-const BodyBurnLogoStyled = styled(BodyBurnLogo)`
-  width: 280px;
-`

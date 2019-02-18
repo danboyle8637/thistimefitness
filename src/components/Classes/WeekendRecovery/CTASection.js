@@ -13,7 +13,7 @@ import { MainButton } from '../../../styles/Buttons'
 const CTASection = ({ copy }) => {
   const preBody = copy.edges.find(copyChunk => {
     const id = copyChunk.node.childMarkdownRemark.frontmatter.id
-    return id === 'need_for_speed_bottom'
+    return id === 'weekend_bottom'
   })
 
   const body = preBody.node.childMarkdownRemark.html
@@ -34,7 +34,7 @@ const CTASection = ({ copy }) => {
         tMarginTop={'40px'}
         dMarginTop={'40px'}
       >
-        <MainButton to={'/14-for-14-new-member-spcial'}>
+        <MainButton to={'/14-for-14-new-member-special'}>
           See Our Specials
         </MainButton>
       </ButtonContainer>

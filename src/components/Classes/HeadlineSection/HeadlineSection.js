@@ -10,6 +10,8 @@ import {
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
 import ScrollIcon from '../../../svgs/ScrollIcon'
+import ScreenWidthContext from '../../../context/ScreenWidthContext'
+import { above } from '../../../styles/Theme'
 
 const HeadlineSection = ({ images }) => {
   const {
@@ -25,20 +27,40 @@ const HeadlineSection = ({ images }) => {
       desktopBackground={classesDesktopBackground}
     >
       {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image fluid={backgroundImage} />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <DraggableWrapper>
-              <CenteredWrapper>
-                <ScrollText>Scroll</ScrollText>
-                <ScrollIconWrapper />
-                <HeadlineContent />
-              </CenteredWrapper>
-            </DraggableWrapper>
-          </ContentWrapper>
-        </HeadlineGrid>
+        <ScreenWidthContext.Consumer>
+          {({ screenWidth }) => {
+            let showScrollIcon
+
+            if (screenWidth >= 1024) {
+              showScrollIcon = null
+            }
+
+            if (screenWidth < 1024) {
+              showScrollIcon = (
+                <>
+                  <ScrollText>Scroll</ScrollText>
+                  <ScrollIconWrapper />
+                </>
+              )
+            }
+
+            return (
+              <HeadlineGrid>
+                <BackgroundWrapper>
+                  <Image fluid={backgroundImage} />
+                </BackgroundWrapper>
+                <ContentWrapper>
+                  <DraggableWrapper>
+                    <CenteredWrapper>
+                      {showScrollIcon}
+                      <HeadlineContent />
+                    </CenteredWrapper>
+                  </DraggableWrapper>
+                </ContentWrapper>
+              </HeadlineGrid>
+            )
+          }}
+        </ScreenWidthContext.Consumer>
       )}
     </RenderBackgroundImage>
   )
@@ -59,11 +81,16 @@ const CenteredWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 70%;
+  height: 80%;
+  ${above.tablet`
+    justify-content: center;
+  `}
 `
 
 const ScrollIconWrapper = styled(ScrollIcon)`
   width: 30px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 `
 
 const ScrollText = styled.p`

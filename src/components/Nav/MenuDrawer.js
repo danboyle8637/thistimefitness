@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import TweenMax, { Power2 } from 'gsap/TweenMax'
 import { Transition } from 'react-transition-group'
 
+import { above } from '../../styles/Theme'
+
 const menuDrawerRoot =
   typeof document !== 'undefined'
     ? document.getElementById('menu_portal')
@@ -13,12 +15,32 @@ class MenuDrawer extends Component {
   constructor(props) {
     super(props)
 
+    this.state = {
+      leftPosition: '20%',
+    }
+
     this.el =
       typeof document !== 'undefined' ? document.createElement('div') : null
   }
 
   componentDidMount() {
     menuDrawerRoot.appendChild(this.el)
+    const screenWidth = window.innerWidth
+
+    if (screenWidth <= 600) {
+      const leftPosition = '20%'
+      this.setState({ leftPosition })
+    }
+
+    if (screenWidth > 600 && screenWidth <= 960) {
+      const leftPosition = '60%'
+      this.setState({ leftPosition })
+    }
+
+    if (screenWidth > 960) {
+      const leftPosition = '70%'
+      this.setState({ leftPosition })
+    }
   }
 
   componentWillUnmount() {
@@ -27,6 +49,7 @@ class MenuDrawer extends Component {
 
   render() {
     const { children } = this.props
+
     const drawer = (
       <Transition
         in={this.props.in}
@@ -44,7 +67,7 @@ class MenuDrawer extends Component {
                 onComplete: done,
               },
               {
-                left: '20%',
+                left: `${this.state.leftPosition}`,
                 ease: Power2.easeOut,
                 onComplete: done,
               }
