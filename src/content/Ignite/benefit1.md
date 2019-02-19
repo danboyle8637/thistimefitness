@@ -1,6 +1,6 @@
 ---
 id: ignite_benefit_1
-headline: '6 Weeks of Classes'
+headline: '1. 6 Weeks of Classes'
 icon: workout
 ---
 

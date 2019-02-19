@@ -1,6 +1,6 @@
 ---
 id: ignite_benefit_2
-headline: 'Nutrition Fast Start'
+headline: '2. Nutrition Fast Start'
 icon: nutrition
 ---
 

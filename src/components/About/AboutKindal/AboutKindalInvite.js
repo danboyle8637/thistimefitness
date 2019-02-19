@@ -67,7 +67,7 @@ const AboutKindalInvite = ({ copy }) => {
       </BodyTextContainer>
       <ButtonContainer
         mMarginTop={'40px'}
-        tMarginTop={'40px'}
+        tMarginTop={'60px'}
         dMarginTop={'60px'}
       >
         <MainButton purple to={'/specials'}>
@@ -89,6 +89,9 @@ const LetterContainer = styled.div`
   padding-bottom: 80px;
   ${above.mobile`
     padding-bottom: 120px;
+  `}
+  ${above.tablet`
+    padding: 120px 20px;
   `}
 `
 

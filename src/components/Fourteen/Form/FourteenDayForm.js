@@ -145,7 +145,10 @@ class FourteenDayForm extends Component {
 
   render() {
     return (
-      <SectionContainer>
+      <SectionContainer
+        tabletPadding={'40px 20px 40px 20px'}
+        desktopPadding={'40px 20px 40px 20px'}
+      >
         <HeadlineContainer>
           <SpecialSubhead>Fill Out Form</SpecialSubhead>
         </HeadlineContainer>
@@ -197,7 +200,11 @@ class FourteenDayForm extends Component {
               value={this.state.formControls.why.value}
               onChange={this.handleFormChange}
             />
-            <ButtonContainer mMarginTop={'30px'}>
+            <ButtonContainer
+              mMarginTop={'30px'}
+              tMarginTop={'30px'}
+              dMarginTop={'40px'}
+            >
               <SiteButton>I'm Interested</SiteButton>
             </ButtonContainer>
           </FormFieldSet>

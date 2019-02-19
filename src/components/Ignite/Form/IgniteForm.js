@@ -134,7 +134,13 @@ class IgniteForm extends Component {
 
   render() {
     return (
-      <SectionContainer>
+      <SectionContainer
+        mobilePadding={'20px 20px 80px 20px'}
+        tabletPadding={'20px 20px 80px 20px'}
+        desktopPadding={'20px 20px 80px 20px'}
+        tabletWidth={'60%'}
+        desktopWidth={'40%'}
+      >
         <HeadlineContainer>
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
         </HeadlineContainer>
@@ -180,7 +186,11 @@ class IgniteForm extends Component {
               onFocus={this.handleFormFocus}
               onBlur={this.handleFormFocus}
             />
-            <ButtonContainer mMarginTop={'30px'}>
+            <ButtonContainer
+              mMarginTop={'30px'}
+              tMarginTop={'40px'}
+              dMarginTop={'40px'}
+            >
               <SiteButton>I'm Interested</SiteButton>
             </ButtonContainer>
           </FormFieldSet>

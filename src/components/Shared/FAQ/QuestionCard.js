@@ -106,7 +106,11 @@ class QuestionCard extends Component {
         <ArrowWrapper ref={this.setArrowRef} onClick={this.handleToggle}>
           <Arrow width={'20px'} strokeWidth={'12px'} />
         </ArrowWrapper>
-        <BodyTextContainer ref={this.setAnswerRef}>
+        <BodyTextContainer
+          ref={this.setAnswerRef}
+          tabletWidth={'100%'}
+          desktopWidth={'100%'}
+        >
           <InnerBodyText dangerouslySetInnerHTML={{ __html: a }} />
         </BodyTextContainer>
       </QuestionContainer>
@@ -121,7 +125,7 @@ const QuestionContainer = styled.div`
   grid-template-columns: 5fr 1fr;
   grid-column-gap: 10px;
   align-items: center;
-  padding: 12px;
+  padding: 16px;
   border-bottom: 1px solid #2b2c3a;
 `
 
@@ -136,10 +140,9 @@ const ArrowWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  height: 0%;
 `
 
 const Arrow = styled(FaqArrow)`
   transform-origin: 50% 50%;
-  transform: rotate(0deg);
 `

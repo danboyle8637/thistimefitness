@@ -6,7 +6,7 @@ import {
   MagazineH1Filler,
   MagazineSubhead,
 } from '../../../styles/Headlines'
-import { MainButton } from '../../../styles/Buttons'
+import { SiteButton } from '../../../styles/Buttons'
 import { ButtonContainer } from '../../../styles/Containers'
 import { above } from '../../../styles/Theme'
 
@@ -37,8 +37,13 @@ const HeadlineContent = () => {
           14 Days of Unlimited Classes to Kick Start Your Results!
         </MagazineSubhead>
       </SubHeadlineWrapper>
-      <ButtonContainer left mMarginTop={'18px'}>
-        <MainButton purple>Click to Sign Up</MainButton>
+      <ButtonContainer
+        left
+        mMarginTop={'18px'}
+        tMarginTop={'20px'}
+        dMarginTop={'30px'}
+      >
+        <SiteButton purple>Click to Sign Up</SiteButton>
       </ButtonContainer>
     </HeadlineContainer>
   )
@@ -47,6 +52,7 @@ const HeadlineContent = () => {
 export default HeadlineContent
 
 const HeadlineContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -56,7 +62,7 @@ const HeadlineContainer = styled.div`
     margin-top: 10%;
   `}
   ${above.tablet`
-    margin-top: 2%;
+    margin-top: 5%;
     margin-left: 20%;
   `}
 `
@@ -66,5 +72,8 @@ const SubHeadlineWrapper = styled.div`
   width: 70%;
   ${above.mobile`
     width: 60%;
+  `}
+  ${above.tablet`
+    width: 50%;
   `}
 `

@@ -1,6 +1,6 @@
 ---
 id: ignite_benefit_3
-headline: '12 Fit Quickie Challenges'
+headline: '3. 12 Fit Quickie Challenges'
 icon: fitquickie
 ---
 

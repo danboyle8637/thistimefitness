@@ -47,6 +47,9 @@ const QuoteContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
   `}
+  ${above.tablet`
+    width: 60%;
+  `}
 `
 
 const QuoteWrapper = styled.div`

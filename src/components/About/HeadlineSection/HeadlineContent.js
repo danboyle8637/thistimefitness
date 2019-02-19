@@ -42,9 +42,7 @@ class HeadlineContent extends Component {
           </MagazineSubhead>
         </HeadlineContainer>
         <AnimatedScrollArrow />
-        <MainButton purple to={'/specials'}>
-          See Our Specials
-        </MainButton>
+        <MainButton to={'/specials'}>See Our Specials</MainButton>
       </HeaderContainer>
     )
   }

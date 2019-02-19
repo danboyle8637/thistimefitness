@@ -22,6 +22,7 @@ const tealTheme = {
   footerBackground: '#2b2c3a',
   primaryColor: '#2AD2E2',
   secondaryColor: '#B44CFF',
+  primaryButtonColor: '#B44CFF',
   textColor: '#D7DAFF',
   fillerColor: '#f8f8f8',
   hover: {

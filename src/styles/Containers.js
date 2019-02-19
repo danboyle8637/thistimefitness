@@ -123,6 +123,7 @@ const BenefitCardsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
   align-items: center;
   grid-gap: 20px;
   padding: 0 20px;

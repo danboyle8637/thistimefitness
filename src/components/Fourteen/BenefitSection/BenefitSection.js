@@ -68,9 +68,7 @@ class BenefitSection extends Component {
           top={'topBlue'}
           bottom={'bottomPurple'}
         />
-        <BenefitCardsContainer mobile={'20px'}>
-          {this.renderBenefits()}
-        </BenefitCardsContainer>
+        <BenefitsWrapper>{this.renderBenefits()}</BenefitsWrapper>
         <Image
           image={this.state.groupFlex}
           top={'topPurple'}
@@ -94,10 +92,18 @@ const BenefitsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: center;
+  margin: 20px 0;
+  padding: 0 20px;
   width: 100%;
+  ${above.mobile`
+    width: 60%;
+    margin: 40px 0;
+  `}
   ${above.tablet`
     flex-direction: row;
     align-items: flex-start;
-    padding: 80px 0;
+    width: 90%;
+    margin: 120px 0;
   `}
 `

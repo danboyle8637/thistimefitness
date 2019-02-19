@@ -67,7 +67,7 @@ const WhyDifferent = () => {
 
         return (
           <SectionContainer desktopWidth={'100%'}>
-            <HeadlineContainer marginTop={'0px'}>
+            <HeadlineContainer mMarginTop={'0px'}>
               <BaseSubhead>Why We're</BaseSubhead>
               <SpecialSubhead
                 mobileLineHeight={'1.4'}
@@ -77,11 +77,11 @@ const WhyDifferent = () => {
                 DIFFERENT
               </SpecialSubhead>
             </HeadlineContainer>
-            <BenefitWrapper>{benefits}</BenefitWrapper>
+            <BenefitWrapperGrid>{benefits}</BenefitWrapperGrid>
             <ButtonContainer
-              mMarginTop={'20px'}
-              tMarginTop={'40px'}
-              dMarginTop={'60px'}
+              mMarginTop={'40px'}
+              tMarginTop={'60px'}
+              dMarginTop={'80px'}
             >
               <MainButton to={'/'} purple>
                 See Our Specials
@@ -96,13 +96,20 @@ const WhyDifferent = () => {
 
 export default WhyDifferent
 
-const BenefitWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const BenefitWrapperGrid = styled.div`
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
   width: 100%;
+  ${above.mobile`
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 80px;
+    width: 70%;
+  `}
   ${above.tablet`
-    flex-direction: row;
     width: 90%;
+    grid-template-columns: repeat(3, 1fr);
   `}
 `

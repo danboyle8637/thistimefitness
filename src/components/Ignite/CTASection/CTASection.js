@@ -35,12 +35,30 @@ const CTASection = () => (
       return (
         <SectionContainer>
           <HeadlineContainer>
-            <MagazineH1Filler thin>{prehead}</MagazineH1Filler>
-            <BaseSubhead center marginTop={'12px'} mobileLineHeight={'1.4'}>
+            <MagazineH1Filler
+              thin
+              tabletFontSize={'28px'}
+              desktopFontSize={'28px'}
+            >
+              {prehead}
+            </MagazineH1Filler>
+            <BaseSubhead
+              center
+              marginTop={'12px'}
+              mobileLineHeight={'1.4'}
+              tabletLineHeight={'1.4'}
+              desktopLineHeight={'1.4'}
+            >
               {headline}
             </BaseSubhead>
           </HeadlineContainer>
-          <BodyTextContainer mMarginTop={'20px'}>
+          <BodyTextContainer
+            mMarginTop={'20px'}
+            tMarginTop={'30px'}
+            dMarginTop={'40px'}
+            tabletWidth={'100%'}
+            desktopWidth={'100%'}
+          >
             <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
           </BodyTextContainer>
         </SectionContainer>

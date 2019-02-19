@@ -45,13 +45,21 @@ const LeadSection = () => {
             Do You Fall?
           </SpecialSubhead>
         </HeadlineContainer>
-        <BodyTextContainer mMarginTop={'80px'}>
+        <BodyTextContainer
+          mMarginTop={'80px'}
+          tMarginTop={'80px'}
+          dMarginTop={'80px'}
+        >
           <BodyText>
             I created This Time Fitness for women who want more than a generic
             workout.
           </BodyText>
           <BodyText marginTop={'30px'}>Women who want...</BodyText>
-          <ListContainer mMarginTop={'20px'}>
+          <ListContainer
+            mMarginTop={'20px'}
+            tMarginTop={'20px'}
+            dMarginTop={'20px'}
+          >
             <ArrowList
               listItems={[
                 { text: 'Personalized training...' },
@@ -62,13 +70,22 @@ const LeadSection = () => {
             />
           </ListContainer>
         </BodyTextContainer>
-        <HeadlineContainer mMarginTop={'80px'}>
-          <BaseSubhead moveMobileX={'-50px'} moveTabletX={'-50px'}>
+        <HeadlineContainer
+          mMarginTop={'80px'}
+          tMarginTop={'80px'}
+          dMarginTop={'80px'}
+        >
+          <BaseSubhead
+            moveMobileX={'-50px'}
+            moveTabletX={'-50px'}
+            moveDesktopX={'-50px'}
+          >
             This Time
           </BaseSubhead>
           <BaseSubhead
             moveMobileX={'10px'}
             moveTabletX={'10px'}
+            moveDesktopX={'10px'}
             mobileLineHeight={'1.4'}
             tabletLineHeight={'1.4'}
             desktopLineHeight={'1.6'}
@@ -76,7 +93,11 @@ const LeadSection = () => {
             You Found It!
           </BaseSubhead>
         </HeadlineContainer>
-        <HeadlineContainer mMarginTop={'80px'}>
+        <HeadlineContainer
+          mMarginTop={'80px'}
+          tMarginTop={'80px'}
+          dMarginTop={'80px'}
+        >
           <BaseSubhead
             mobileLineHeight={'1.8'}
             tabletLineHeight={'1.8'}
@@ -94,7 +115,11 @@ const LeadSection = () => {
           </BaseSubhead>
           <BaseSubhead>next 14 days!</BaseSubhead>
         </HeadlineContainer>
-        <ButtonContainer mMarginTop={'40px'}>
+        <ButtonContainer
+          mMarginTop={'40px'}
+          tMarginTop={'40px'}
+          dMarginTop={'60px'}
+        >
           <MainButton purple>Click to Sign Up</MainButton>
         </ButtonContainer>
       </SectionContainer>

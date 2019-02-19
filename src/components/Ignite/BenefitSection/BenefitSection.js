@@ -9,6 +9,7 @@ import WorkoutIcon from '../../../svgs/WorkoutIcon'
 import ForkKnifeIcon from '../../../svgs/ForkKnifeIcon'
 import FitQuickieIcon from '../../../svgs/FitQuickieIcon'
 import FacebookIcon from '../../../svgs/FacebookIcon'
+import { above } from '../../../styles/Theme'
 
 const BenefitSection = () => {
   return (
@@ -65,11 +66,17 @@ const BenefitSection = () => {
           <SectionContainer>
             <HeadlineContainer left>
               <BaseSubhead>Here's what you</BaseSubhead>
-              <SpecialSubhead big upper mobileLineHeight={'1.4'}>
+              <SpecialSubhead
+                big
+                upper
+                mobileLineHeight={'1.4'}
+                tabletLineHeight={'1.4'}
+                desktopLineHeight={'1.4'}
+              >
                 get
               </SpecialSubhead>
             </HeadlineContainer>
-            {benefits}
+            <BenefitWrapperGrid>{benefits}</BenefitWrapperGrid>
           </SectionContainer>
         )
       }}
@@ -78,3 +85,20 @@ const BenefitSection = () => {
 }
 
 export default BenefitSection
+
+const BenefitWrapperGrid = styled.div`
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 80px;
+  width: 100%;
+  ${above.mobile`
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    column-gap: 60px;
+    row-gap: 80px;
+  `}
+  ${above.tablet`
+    row-gap: 50px;
+  `}
+`

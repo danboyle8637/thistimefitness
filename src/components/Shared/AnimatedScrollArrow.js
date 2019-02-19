@@ -4,6 +4,7 @@ import TimelineMax from 'gsap/TimelineMax'
 import TweenMax, { Power3, Power2 } from 'gsap/TweenMax'
 
 import FaqArrow from '../../svgs/FaqArrow'
+import { above } from '../../styles/Theme'
 
 class AnimatedScrollArrow extends Component {
   constructor(props) {
@@ -48,7 +49,12 @@ class AnimatedScrollArrow extends Component {
 
   render() {
     return (
-      <ArrowWrapper ref={this.setArrowRef}>
+      <ArrowWrapper
+        ref={this.setArrowRef}
+        mobileTop={this.props.mobileTop || null}
+        tabletTop={this.props.tabletTop || null}
+        desktopTop={this.props.desktopTop || null}
+      >
         <FaqArrow strokeWidth={'10px'} />
       </ArrowWrapper>
     )
@@ -60,7 +66,13 @@ export default AnimatedScrollArrow
 const ArrowWrapper = styled.div`
   position: absolute;
   width: 30px;
-  top: 80%;
+  top: ${props => props.mobileTop || '80%'};
   left: 50%;
   transform: translateX(-50%);
+  ${above.mobile`
+    top: ${props => props.tabletTop || '80%'}
+  `}
+  ${above.tablet`
+    top: ${props => props.desktopTop || '80%'}
+  `}
 `

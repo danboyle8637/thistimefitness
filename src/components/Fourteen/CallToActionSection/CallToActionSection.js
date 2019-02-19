@@ -33,7 +33,12 @@ const CallToActionSection = ({ copy }) => {
         <SpecialSubhead>For Only $14!</SpecialSubhead>
       </HeadlineContainer>
       <BodyTextContainer>
-        <ListContainer mMarginTop={'40px'}>
+        <ListContainer
+          mMarginTop={'40px'}
+          tMarginTop={'40px'}
+          dMarginTop={'50px'}
+          desktopWidth={'100%'}
+        >
           <ArrowList
             listItems={[
               { text: 'You will be able to keep up and excell' },

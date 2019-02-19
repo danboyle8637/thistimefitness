@@ -12,7 +12,11 @@ const BenefitCard = ({ headline, body, svg }) => {
       <BackgroundIcon>{svg}</BackgroundIcon>
       <ContentWrapper>
         <HeadlineContainer left tabletWidth={'100%'} desktopWidth={'100%'}>
-          <BaseSubhead mobileLineHeight={'1.2'} desktopLineHeight={'1.4'}>
+          <BaseSubhead
+            mobileLineHeight={'1.2'}
+            tabletLineHeight={'1.4'}
+            desktopLineHeight={'1.4'}
+          >
             {headline}
           </BaseSubhead>
         </HeadlineContainer>
@@ -40,19 +44,11 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  &:first-child {
-    margin-top: 80px;
-  }
-  &:not(:first-child):nth-child(n) {
-    margin-top: 120px;
-  }
   ${above.mobile`
-    width: 70%;
-    height: 260px
+    width: 100%;
   `}
   ${above.tablet`
     width: 100%;
-    padding: 0 30px;
     align-items: start;
   `}
 `

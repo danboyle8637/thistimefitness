@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
-import { above } from '../styles/Theme'
+import { above, tealTheme, purpleTheme } from '../styles/Theme'
 
 // Create a single a-tag button to use and do if checks to render the button you want
 const FooterButton = styled.a`
@@ -67,7 +67,7 @@ const MainButton = styled(Link)`
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
-  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  background: ${props => props.theme.primaryButtonColor};
   border-radius: 4px;
   color: #f8f8f8;
   text-decoration: none;

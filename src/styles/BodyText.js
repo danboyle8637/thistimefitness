@@ -20,10 +20,13 @@ const InnerBodyText = styled.div`
     ${props =>
       props.note &&
       `
-    color: #5c5c5c;
-  `}
+      color: #5c5c5c;
+    `}
   }
   & ol {
+    color: #b44cff;
+  }
+  & ul {
     color: #b44cff;
   }
 `
