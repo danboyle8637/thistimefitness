@@ -40,8 +40,12 @@ const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 300px;
-  margin-top: 40px;
+  &:first-child {
+    margin-top: 80px;
+  }
+  &:not(:first-child):nth-child(n) {
+    margin-top: 120px;
+  }
   ${above.mobile`
     width: 70%;
     height: 260px

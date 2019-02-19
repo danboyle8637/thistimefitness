@@ -8,6 +8,8 @@ import LetterSection from '../components/Ignite/LetterSection/LetterSection'
 import CountdownSection from '../components/Ignite/CountdownTimer/CountdownSection'
 import BenefitSection from '../components/Ignite/BenefitSection/BenefitSection'
 import CTASection from '../components/Ignite/CTASection/CTASection'
+import IgniteForm from '../components/Ignite/Form/IgniteForm'
+import Faq from '../components/Shared/FAQ/FAQ'
 
 const Ignite = ({ data }) => {
   return (
@@ -20,6 +22,8 @@ const Ignite = ({ data }) => {
       <BenefitSection copy={data.igniteCopy} />
       <CountdownSection />
       <CTASection />
+      <IgniteForm />
+      <Faq questions={data.faqArray} />
     </Layout>
   )
 }
@@ -95,6 +99,21 @@ export const query = graphql`
               id
               headline
               icon
+            }
+            html
+          }
+        }
+      }
+    }
+    faqArray: allFile(
+      filter: { sourceInstanceName: { eq: "FAQ" }, name: { regex: "/ignite/" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              id
+              question
             }
             html
           }

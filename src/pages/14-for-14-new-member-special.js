@@ -176,7 +176,12 @@ export const query = graphql`
         }
       }
     }
-    faqArray: allFile(filter: { sourceInstanceName: { eq: "FAQ" } }) {
+    faqArray: allFile(
+      filter: {
+        sourceInstanceName: { eq: "FAQ" }
+        name: { regex: "/fourteen/" }
+      }
+    ) {
       edges {
         node {
           childMarkdownRemark {
