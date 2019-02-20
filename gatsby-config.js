@@ -1,8 +1,16 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `This Time Fitness`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `This Time Fitness`,
+    social: {
+      instagram: '@thistimefitness',
+      facebook: '@thistimefitness',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -77,6 +85,30 @@ module.exports = {
       options: {
         name: `ClassesCopy`,
         path: `${__dirname}/src/content/Classes`,
+      },
+    },
+    {
+      resolve: `gatsby-source-graphcms`,
+      options: {
+        endpoint: `${process.env.GRAPHCMS_ENDPOINT}`,
+        token: `${process.env.GRAPHCMS_TOKEN}`,
+        query: `{
+          blogPosts {
+            id
+            title
+            author {
+              name
+            }
+            published
+            imagePicker {
+              url
+            }
+            blogContent
+            postTags
+            slug
+          }
+        }
+        `,
       },
     },
     {

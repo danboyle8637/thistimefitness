@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import styled, { css } from 'styled-components'
-import { above, tealTheme, purpleTheme } from '../styles/Theme'
+import { above } from '../styles/Theme'
 
 // Create a single a-tag button to use and do if checks to render the button you want
 const FooterButton = styled.a`

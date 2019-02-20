@@ -32,7 +32,7 @@ class MenuSection extends Component {
           if (this.context.menuOpen || this.context.scheduleOpen) {
             TweenMax.to(node, 0.3, {
               rotation: '90',
-              x: '-252px',
+              x: '-278px',
               y: '360px',
               onComplete: done,
             })
