@@ -83,9 +83,7 @@ const WhyDifferent = () => {
               tMarginTop={'60px'}
               dMarginTop={'80px'}
             >
-              <MainButton to={'/'} purple>
-                See Our Specials
-              </MainButton>
+              <MainButton to={'/specials'}>See Our Specials</MainButton>
             </ButtonContainer>
           </SectionContainer>
         )

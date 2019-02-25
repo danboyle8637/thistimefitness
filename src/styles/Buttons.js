@@ -12,7 +12,7 @@ const FooterButton = styled.a`
   align-items: center;
   font-size: 16px;
   color: #f8f8f8;
-  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  background: ${props => props.theme.primaryColor};
   width: 210px;
   height: 48px;
   border: none;
@@ -42,9 +42,9 @@ const SiteButton = styled.a`
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
-  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  background: ${props => props.theme.primaryButtonColor};
   border-radius: 4px;
-  color: #f8f8f8;
+  color: ${props => props.theme.fillerColor};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
@@ -69,7 +69,7 @@ const MainButton = styled(Link)`
   padding: 10px 10px;
   background: ${props => props.theme.primaryButtonColor};
   border-radius: 4px;
-  color: #f8f8f8;
+  color: ${props => props.theme.fillerColor};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
@@ -82,7 +82,7 @@ const MainButton = styled(Link)`
     width: 380px;
   `}
   ${above.tablet`
-    width: ${props => props.buttonWidth || '420px'};
+    width: 100%;
     padding: 16px 10px;
   `}
 `
@@ -92,9 +92,9 @@ const PurchaseButton = styled.a`
   justify-content: center;
   align-items: center;
   padding: 8px 8px;
-  background: ${props => (props.purple ? '#B44CFF' : '#2ad2e2')};
+  background: ${props => props.theme.primaryButtonColor};
   border-radius: 4px;
-  color: #f8f8f8;
+  color: ${props => props.theme.fillerColor};
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
@@ -118,21 +118,21 @@ const GhostButton = styled.a`
   align-items: center;
   padding: 8px 20px;
   background: transparent;
-  box-shadow: 0 0 0 2px #2ad2e2;
+  box-shadow: 0 0 0 2px ${props => props.theme.mapButton.primaryColor};
   border-radius: 4px;
-  color: #2ad2e2;
+  color: ${props => props.theme.mapButton.primaryColor};
   text-decoration: none;
   width: 100%;
   cursor: pointer;
   margin-top: ${props => props.margintop || 0};
   transition: box-shadow, color, 150ms ease-out;
   &:active {
-    box-shadow: 0 0 0 2px #b44cff;
-    color: '#B44CFF';
+    box-shadow: 0 0 0 2px ${props => props.theme.mapButton.secondaryColor};
+    color: ${props => props.theme.mapButton.secondaryColor};
   }
   ${above.mobile`
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
   `}
   ${above.tablet`
     padding: 8px 20px;

@@ -48,11 +48,7 @@ class MenuList extends Component {
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/">Specials</MenuLink>
-            <MenuArrow />
-          </MenuText>
-          <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/ignite">Ignite</MenuLink>
+            <MenuLink to="/specials">Specials</MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
@@ -61,6 +57,10 @@ class MenuList extends Component {
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/pricing">Pricing</MenuLink>
+            <MenuArrow />
+          </MenuText>
+          <MenuText ref={this.setMenuItemRef}>
+            <MenuLink to="/blog">Blog</MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>

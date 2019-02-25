@@ -6,10 +6,17 @@ import PurchaseCard from '../components/Pricing/PurchaseCard'
 import { SectionContainer, ListContainer } from '../styles/Containers'
 import { SpecialSubhead, BaseSubhead } from '../styles/Headlines'
 import ArrowList from '../components/Shared/ArrowList'
+import TextHeader from '../components/Shared/TextHeader'
 
 const Pricing = () => {
   return (
     <Layout>
+      <TextHeader
+        word={'pricing'}
+        tagLine={'Monthly | Class Passes | Custom'}
+        fontSize={'64px'}
+        letterSpacing={'1.4'}
+      />
       <SectionContainer>
         <OptionWrapper>
           <ExtendBaseSubhead>Monthly Options:</ExtendBaseSubhead>

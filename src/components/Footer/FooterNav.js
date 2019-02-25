@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import FooterAddress from './FooterAddress'
 import TTFLogoShort from '../../svgs/TTFLogoShort'
 import { above } from '../../styles/Theme'
 
 const FooterNav = () => {
+  const memberLoginLink =
+    'https://thistimefitness.sites.zenplanner.com/login.cfm'
+
   return (
     <NavContainer>
       <FooterLogo>
@@ -13,16 +17,16 @@ const FooterNav = () => {
       </FooterLogo>
       <FooterContentWrapper>
         <FooterSiteLinks>
-          <NavLink>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Classes</NavLink>
-          <NavLink>Case Studies</NavLink>
-          <NavLink>Schedule</NavLink>
+          <InternalLink to={'/'}>Home</InternalLink>
+          <InternalLink to={'/about'}>About</InternalLink>
+          <InternalLink to={'/classes'}>Classes</InternalLink>
+          <InternalLink to={'/case-studies'}>Case Studies</InternalLink>
+          <InternalLink to={'/schedule'}>Schedule</InternalLink>
         </FooterSiteLinks>
         <FooterSiteLinks>
-          <NavLink>Privacy</NavLink>
-          <NavLink>Disclaimer</NavLink>
-          <NavLink>Login</NavLink>
+          <InternalLink to={'/privacy'}>Privacy</InternalLink>
+          <InternalLink to={'/disclaimer'}>Disclaimer</InternalLink>
+          <ExternalLink href={memberLoginLink}>Login</ExternalLink>
         </FooterSiteLinks>
         <FooterAddressWrapper>
           <FooterAddress />
@@ -73,7 +77,27 @@ const FooterSiteLinks = styled.div`
   align-items: center;
 `
 
-const NavLink = styled.a`
+const InternalLink = styled(Link)`
+  margin: 0;
+  padding: 0;
+  color: ${props => props.theme.footer.base};
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 120ms ease-out;
+  &:nth-child(n + 1) {
+    margin-top: 10px;
+  }
+  &:hover {
+    color: ${props => props.theme.footer.hover};
+  }
+  &:active {
+    color: ${props => props.theme.footer.active};
+  }
+`
+
+const ExternalLink = styled.a`
   margin: 0;
   padding: 0;
   color: ${props => props.theme.footer.base};

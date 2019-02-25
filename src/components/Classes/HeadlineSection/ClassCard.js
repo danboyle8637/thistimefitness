@@ -39,7 +39,7 @@ const ClassCard = ({ icon, title, body, path }) => {
                 <DescriptionText>{title}</DescriptionText>
               </HeadlineContainer>
               {showScrollIcon}
-              <div>
+              <ClassCardContent>
                 <BodyTextContainer
                   tabletWidth={'100%'}
                   desktopWidth={'100%'}
@@ -51,10 +51,11 @@ const ClassCard = ({ icon, title, body, path }) => {
                   mMarginTop={'20px'}
                   tMarginTop={'30px'}
                   dMarginTop={'30px'}
+                  desktopWidth={'90%'}
                 >
                   <MainButton to={path}>Learn More</MainButton>
                 </ButtonContainer>
-              </div>
+              </ClassCardContent>
             </ClassCardWrapper>
           </ClassCardContainer>
         )
@@ -70,7 +71,7 @@ const ClassCardContainer = styled.div`
   justify-content: center;
   width: 100vw;
   ${above.tablet`
-    width: 30%;
+    width: 100%;
   `}
 `
 
@@ -84,12 +85,22 @@ const ClassCardWrapper = styled.div`
   ${above.mobile`
     width: 80%;
   `}
+  ${above.tablet`
+    width: 92%;
+  `}
+`
+
+const ClassCardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 `
 
 const DescriptionText = styled.p`
   margin: 0;
   padding: 0;
-  color: #d7daff;
+  color: ${props => props.theme.textColor};
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -97,7 +108,7 @@ const DescriptionText = styled.p`
     letter-spacing: 13px;
   `}
   ${above.tablet`
-    letter-spacing: 11px;
+    letter-spacing: 6.5px;
   `}
 `
 

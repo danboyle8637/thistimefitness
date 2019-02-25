@@ -7,12 +7,15 @@ class MenuOpenStore extends Component {
     super(props)
 
     this.state = {
+      leftPosition: '20%',
       menuOpen: false,
       scheduleOpen: false,
+      drawerMaxWidth: 0,
       handleToggleMenu: this.handleToggleMenu,
       handleCloseMenu: this.handleCloseMenu,
       handleToggleSchedule: this.handleToggleSchedule,
       handleCloseSchedule: this.handleCloseSchedule,
+      setMenuState: this.setMenuState,
     }
   }
 
@@ -32,6 +35,10 @@ class MenuOpenStore extends Component {
 
   handleCloseSchedule = () => {
     this.setState({ scheduleOpen: false })
+  }
+
+  setMenuState = (maxWidth, leftPosition) => {
+    this.setState({ leftPosition, drawerMaxWidth: maxWidth })
   }
 
   render() {

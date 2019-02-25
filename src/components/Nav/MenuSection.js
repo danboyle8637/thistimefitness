@@ -4,11 +4,13 @@ import styled from 'styled-components'
 import SecheduleIcon from '../../svgs/ScheduleIcon'
 import MainMenuIcon from '../../svgs/MainMenuIcon'
 import MenuDrawer from './MenuDrawer'
-import ScheduleDrawer from './ScheduleDrawer'
+import SchedulePortal from './SchedulePortal'
 import ContentContainer from './ContentContainer'
 import MenuOpenContext from '../../context/MenuOpenContext'
 import TweenMax from 'gsap/TweenMax'
 import { Transition } from 'react-transition-group'
+
+import Drawer from '../Schedule/Drawer'
 
 class MenuSection extends Component {
   static contextType = MenuOpenContext
@@ -32,8 +34,8 @@ class MenuSection extends Component {
           if (this.context.menuOpen || this.context.scheduleOpen) {
             TweenMax.to(node, 0.3, {
               rotation: '90',
-              x: '-278px',
-              y: '360px',
+              x: '-248px',
+              y: '90px',
               onComplete: done,
             })
           } else {
@@ -53,12 +55,13 @@ class MenuSection extends Component {
           <HamburgerWrapper onClick={this.handleToggleMenu}>
             <MainMenuIcon width={'30px'} />
           </HamburgerWrapper>
+          {/* MenuDrawer is my Menu Portal */}
           <MenuDrawer in={this.context.menuOpen}>
             <ContentContainer />
           </MenuDrawer>
-          <ScheduleDrawer in={this.context.scheduleOpen}>
-            This is some children
-          </ScheduleDrawer>
+          <SchedulePortal>
+            <Drawer in={this.context.scheduleOpen} />
+          </SchedulePortal>
         </MenuWrapper>
       </Transition>
     )

@@ -5,8 +5,10 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `This Time Fitness`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `This Time Fitness`,
+    description: `This Time Fitness is a West Ashley strength, weight loss, and fitness studio for women. Learn more, come in , and take control of your health now!`,
+    url: 'https://thistimefitness.com',
+    author: `Never Back Down`,
+    app_id: '123456',
     social: {
       instagram: '@thistimefitness',
       facebook: '@thistimefitness',
@@ -88,6 +90,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `SpecialsImages`,
+        path: `${__dirname}/src/images/Specials`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `LegalCopy`,
+        path: `${__dirname}/src/content/Legal`,
+      },
+    },
+    {
       resolve: `gatsby-source-graphcms`,
       options: {
         endpoint: `${process.env.GRAPHCMS_ENDPOINT}`,
@@ -106,6 +122,10 @@ module.exports = {
             blogContent
             postTags
             slug
+          }
+          schedules {
+            id
+            classTimes
           }
         }
         `,

@@ -45,14 +45,19 @@ const WhoWeAre = ({ copy }) => {
             <BodyTextContainer>
               <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
             </BodyTextContainer>
-            <HeadlineContainer marginTop={'14px'} right>
+            <HeadlineContainer
+              mMarginTop={'14px'}
+              tMarginTop={'28px'}
+              dMarginTop={'30px'}
+              right
+            >
               <SpecialSubhead big upper>
                 Strong
               </SpecialSubhead>
               <SpecialSubhead
                 big
                 upper
-                color={'#B44CFF'}
+                secondary
                 mobileLineHeight={'1.2'}
                 tabletLineHeight={'1.2'}
                 desktopLineHeight={'1.2'}
@@ -71,7 +76,7 @@ const WhoWeAre = ({ copy }) => {
               <SpecialSubhead
                 big
                 upper
-                color={'#B44CFF'}
+                secondary
                 mobileLineHeight={'1.2'}
                 tabletLineHeight={'1.2'}
                 desktopLineHeight={'1.2'}

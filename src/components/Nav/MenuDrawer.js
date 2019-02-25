@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import TweenMax, { Power2 } from 'gsap/TweenMax'
 import { Transition } from 'react-transition-group'
 
-import { above } from '../../styles/Theme'
+import MenuOpenContext from '../../context/MenuOpenContext'
 
 const menuDrawerRoot =
   typeof document !== 'undefined'
@@ -12,12 +12,10 @@ const menuDrawerRoot =
     : null
 
 class MenuDrawer extends Component {
+  static contextType = MenuOpenContext
+
   constructor(props) {
     super(props)
-
-    this.state = {
-      leftPosition: '20%',
-    }
 
     this.el =
       typeof document !== 'undefined' ? document.createElement('div') : null
@@ -29,17 +27,26 @@ class MenuDrawer extends Component {
 
     if (screenWidth <= 600) {
       const leftPosition = '20%'
-      this.setState({ leftPosition })
+      const maxWidth =
+        this.el.clientWidth -
+        (this.el.clientWidth * parseInt(leftPosition)) / 100
+      this.context.setMenuState(maxWidth, leftPosition)
     }
 
     if (screenWidth > 600 && screenWidth <= 960) {
       const leftPosition = '60%'
-      this.setState({ leftPosition })
+      const maxWidth =
+        this.el.clientWidth -
+        (this.el.clientWidth * parseInt(leftPosition)) / 100
+      this.context.setMenuState(maxWidth, leftPosition)
     }
 
     if (screenWidth > 960) {
       const leftPosition = '70%'
-      this.setState({ leftPosition })
+      const maxWidth =
+        this.el.clientWidth -
+        (this.el.clientWidth * parseInt(leftPosition)) / 100
+      this.context.setMenuState(maxWidth, leftPosition)
     }
   }
 
@@ -67,7 +74,7 @@ class MenuDrawer extends Component {
                 onComplete: done,
               },
               {
-                left: `${this.state.leftPosition}`,
+                left: `${this.context.leftPosition}`,
                 ease: Power2.easeOut,
                 onComplete: done,
               }
@@ -99,11 +106,11 @@ const MenuDrawerWrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
-  width: 80%;
-  height: 100%;
+  height: 100vh;
   padding: 30px 10px 30px 30px;
   border-radius: 8px 0 0 8px;
   background: #3a3767;
+  pointer-events: auto;
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
   z-index: 7;
 `

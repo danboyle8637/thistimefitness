@@ -1,0 +1,9 @@
+#active-m,
+#active-tu,
+#active-w,
+#active-th,
+#active-f,
+#active-s,
+#active-su {
+  visibility: hidden;
+}

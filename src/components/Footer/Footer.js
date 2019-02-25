@@ -18,7 +18,7 @@ const FooterContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #1d1d1d;
+  background: ${props => props.theme.footerBackground};
   width: 100vw;
   padding: 60px;
 `

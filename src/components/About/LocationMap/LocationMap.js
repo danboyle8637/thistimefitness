@@ -23,7 +23,7 @@ export default LocationMap
 const SectionContainer = styled.section`
   display: flex;
   justify-content: center;
-  background: #26243e;
+  background: ${props => props.theme.secondaryBackground};
   width: 100%;
   ${above.tablet`
     padding: 120px 80px;
@@ -39,10 +39,10 @@ const MapGrid = styled.div`
   `}
   ${above.tablet`
     flex-direction: row;
-    width: 100%;
+    width: 90%;
     box-shadow: 2px 6px 20px rgba(0,0,0,0.4);
     border-radius: 4px;
-    background: #363358;
+    background: ${props => props.theme.specialBackground};
   `}
 `
 
@@ -56,6 +56,6 @@ const MapWrapper = styled.div`
   `}
   ${above.tablet`
     order: 0;
-    background: #26243e;
+    background: ${props => props.theme.secondaryBackground};
   `}
 `

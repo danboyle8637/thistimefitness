@@ -16,7 +16,7 @@ const LocationContent = () => {
 
   return (
     <AddressWrapper>
-      <MapIcon width={'40px'} fillColor={'#2AD2E2'} />
+      <MapIcon width={'30px'} fillColor={'#2AD2E2'} />
       <AddressBox>
         <AddressText>2408 Ashley River Rd Ste G</AddressText>
         <AddressText>Charleston, SC 29414</AddressText>
@@ -33,13 +33,13 @@ const LocationContent = () => {
           Kindal@ThisTimeFitness.com
         </AddressText>
       </AddressBox>
-      <BodyTextContainer center desktopWidth={'70%'}>
+      <BodyTextContainer center tabletWidth={'60%'} desktopWidth={'80%'}>
         <BodyText padding={'20px'}>
           We are located a quarter mile down from Bees Ferry road on Highway 61
           (Ashley River Road)… in the Peripont Shopping Center.
         </BodyText>
         <GhostButtonWrapper>
-          <GhostButton href={mapLink} target="_blank" margintop={'12px'}>
+          <GhostButton href={mapLink} target="_blank">
             <SpacedMapIcon width={'14px'} fillColor={'#2AD2E2'} />
             Open in Google Maps
           </GhostButton>
@@ -61,6 +61,7 @@ const AddressWrapper = styled.div`
   ${above.tablet`
     order: 1;
     align-self: center;
+    padding-top: 20px;
   `}
 `
 
@@ -71,20 +72,18 @@ const AddressBox = styled.div`
     width: 32%;
   `}
   ${above.tablet`
-    width: 30%;
+    width: 33%;
   `}
 `
 
 const AddressText = styled.p`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   margin: 0;
   padding: 0;
   font-size: 15px;
-  color: #d7daff;
-  &:nth-child(n + 1) {
-    align-self: flex-start;
-  }
+  color: ${props => props.theme.textColor};
 `
 
 const SpacedMapIcon = styled(MapIcon)`
@@ -110,6 +109,6 @@ const GhostButtonWrapper = styled.div`
     width: 60%;
   `}
   ${above.tablet`
-    width: 90%;
+    width: 70%;
   `}
 `

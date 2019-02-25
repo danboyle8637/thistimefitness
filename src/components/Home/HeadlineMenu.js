@@ -31,9 +31,7 @@ class HeadlineMenu extends Component {
       <MenuContainer>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
-          <MenuLink to="/14-for-14-new-member-special/">
-            First Timer Specials
-          </MenuLink>
+          <MenuLink to="/specials">First Timer Specials</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
@@ -49,7 +47,11 @@ class HeadlineMenu extends Component {
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
-          <MenuLink to="/">Schedule</MenuLink>
+          <MenuLink to="/schedule">Schedule</MenuLink>
+        </MenuText>
+        <MenuText ref={this.setMenuItemRef}>
+          <MenuArrow />
+          <MenuLink to="/blog">Blog</MenuLink>
         </MenuText>
       </MenuContainer>
     )
@@ -92,7 +94,7 @@ const MenuText = styled.li`
 const MenuLink = styled(Link)`
   margin-left: 8px;
   text-decoration: none;
-  color: #f8f8f8;
+  color: ${props => props.theme.fillerColor};
   font-family: 'Montserrat';
   font-size: 16px;
   font-weight: 500;
@@ -100,7 +102,7 @@ const MenuLink = styled(Link)`
   cursor: pointer;
   transition: color, 150ms ease-out;
   &:hover {
-    color: #5afdf2;
+    color: ${props => props.theme.accentColor};
   }
   ${above.mobile`
     font-size: 20px;

@@ -9,8 +9,6 @@ import {
   BackgroundWrapper,
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
-import ScrollIcon from '../../../svgs/ScrollIcon'
-import ScreenWidthContext from '../../../context/ScreenWidthContext'
 import { above } from '../../../styles/Theme'
 
 const HeadlineSection = ({ images }) => {
@@ -27,40 +25,18 @@ const HeadlineSection = ({ images }) => {
       desktopBackground={classesDesktopBackground}
     >
       {({ backgroundImage }) => (
-        <ScreenWidthContext.Consumer>
-          {({ screenWidth }) => {
-            let showScrollIcon
-
-            if (screenWidth >= 1024) {
-              showScrollIcon = null
-            }
-
-            if (screenWidth < 1024) {
-              showScrollIcon = (
-                <>
-                  <ScrollText>Scroll</ScrollText>
-                  <ScrollIconWrapper />
-                </>
-              )
-            }
-
-            return (
-              <HeadlineGrid>
-                <BackgroundWrapper>
-                  <Image fluid={backgroundImage} />
-                </BackgroundWrapper>
-                <ContentWrapper>
-                  <DraggableWrapper>
-                    <CenteredWrapper>
-                      {showScrollIcon}
-                      <HeadlineContent />
-                    </CenteredWrapper>
-                  </DraggableWrapper>
-                </ContentWrapper>
-              </HeadlineGrid>
-            )
-          }}
-        </ScreenWidthContext.Consumer>
+        <HeadlineGrid>
+          <BackgroundWrapper>
+            <Image fluid={backgroundImage} />
+          </BackgroundWrapper>
+          <ContentWrapper>
+            <DraggableWrapper>
+              <CenteredWrapper>
+                <HeadlineContent />
+              </CenteredWrapper>
+            </DraggableWrapper>
+          </ContentWrapper>
+        </HeadlineGrid>
       )}
     </RenderBackgroundImage>
   )
@@ -85,19 +61,4 @@ const CenteredWrapper = styled.div`
   ${above.tablet`
     justify-content: center;
   `}
-`
-
-const ScrollIconWrapper = styled(ScrollIcon)`
-  width: 30px;
-  margin-top: 8px;
-  margin-bottom: 20px;
-`
-
-const ScrollText = styled.p`
-  padding: 0;
-  margin: 0;
-  font-size: 12px;
-  color: #d7daff;
-  text-transform: uppercase;
-  letter-spacing: 1.8px;
 `

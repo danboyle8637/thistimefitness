@@ -23,7 +23,7 @@ const TeamCard = ({ name, certs, body, pic }) => {
             tabletWidth={'100%'}
             desktopWidth={'100%'}
           >
-            <BaseSubhead color={'#B44CFF'}>{name}</BaseSubhead>
+            <BaseSubhead>{name}</BaseSubhead>
             <MagazineSubhead
               marginTop={'20px'}
               mobileFontSize={'13px'}
@@ -69,7 +69,7 @@ const TeamCardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 90%;
-  background: #363358;
+  background: ${props => props.theme.specialBackground};
   padding: 40px 20px 0px 20px;
   border-radius: 4px;
   box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.3);
@@ -92,7 +92,7 @@ const PictureWrapper = styled(Img)`
     width: 220px;
   `}
   ${above.tablet`
-    width: 180px;
+    width: 140px;
   `}
 `
 

@@ -7,15 +7,18 @@ import ScrollIcon from '../../../svgs/ScrollIcon'
 import { BodyTextContainer } from '../../../styles/Containers'
 import { above } from '../../../styles/Theme'
 import ScreenWidthContext from '../../../context/ScreenWidthContext'
+import DraggableDots from '../../Shared/DraggableDots'
 
 const TheTeam = () => {
   return (
     <ScreenWidthContext.Consumer>
       {({ screenWidth }) => {
         let showScrollIcon
+        let showDraggableDots
 
         if (screenWidth >= 1024) {
           showScrollIcon = null
+          showDraggableDots = null
         }
 
         if (screenWidth < 1024) {
@@ -25,6 +28,12 @@ const TheTeam = () => {
               <ScrollIconWrapper />
             </BodyTextContainer>
           )
+
+          showDraggableDots = (
+            <BodyTextContainer center mMarginTop={'12px'} tMarginTop={'14px'}>
+              <DraggableDots />
+            </BodyTextContainer>
+          )
         }
 
         return (
@@ -32,6 +41,7 @@ const TheTeam = () => {
             <SpecialSubhead>The Team:</SpecialSubhead>
             {showScrollIcon}
             <ProfileRow />
+            {showDraggableDots}
           </TheTeamContainer>
         )
       }}
@@ -46,7 +56,7 @@ const TheTeamContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #26243e;
+  background: ${props => props.theme.secondaryBackground};
   padding: 80px 0px;
   width: 100%;
   ${above.tablet`

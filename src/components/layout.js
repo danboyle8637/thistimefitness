@@ -7,20 +7,23 @@ import Header from './header'
 import Global from '../styles/Global'
 import { ScreenWidthStore } from '../context/ScreenWidthContext'
 import { MenuOpenStore } from '../context/MenuOpenContext'
+import { ActiveSlideStore } from '../context/ActiveSlideContext'
 import { tealTheme } from '../styles/Theme'
 
 const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={tealTheme}>
-        <MenuOpenStore>
-          <ScreenWidthStore>
-            <Header />
-            <TTFLayout>{children}</TTFLayout>
-            <Footer />
-            <Global />
-          </ScreenWidthStore>
-        </MenuOpenStore>
+        <ActiveSlideStore>
+          <MenuOpenStore>
+            <ScreenWidthStore>
+              <Header />
+              <TTFLayout>{children}</TTFLayout>
+              <Footer />
+              <Global />
+            </ScreenWidthStore>
+          </MenuOpenStore>
+        </ActiveSlideStore>
       </ThemeProvider>
     </>
   )
@@ -40,6 +43,6 @@ const TTFLayout = styled.div`
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #2b2c3a;
+  background: ${props => props.theme.primaryBackground};
   overflow: hidden;
 `

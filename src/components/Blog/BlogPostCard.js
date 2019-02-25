@@ -4,17 +4,22 @@ import styled from 'styled-components'
 import { MainButton } from '../../styles/Buttons'
 import { ButtonContainer, HeadlineContainer } from '../../styles/Containers'
 
-const BlogPostCard = ({ title, author, image }) => {
+const BlogPostCard = ({ title, author, image, postTags }) => {
+  const tags = postTags.map((tag, index) => (
+    <BlogPostTag key={index}>{tag}</BlogPostTag>
+  ))
+
   return (
     <BlogCardContainer>
       <FeatureImageWrapper src={image} />
       <BlogContentWrapper>
-        <HeadlineContainer left mMarginTop={'10px'}>
+        <HeadlineContainer left mMarginTop={'10px'} tMarginTop={'14px'}>
           <BlogPostTitle>{title}</BlogPostTitle>
         </HeadlineContainer>
+        <BlogPostTagWrapper>{tags}</BlogPostTagWrapper>
         <HorizontalLine />
         <BlogPostAuthor>By {author}</BlogPostAuthor>
-        <ButtonContainer mMarginTop={'20px'}>
+        <ButtonContainer mMarginTop={'14px'} tMarginTop={'18px'}>
           <MainButton to={'/'}>Read Post</MainButton>
         </ButtonContainer>
       </BlogContentWrapper>
@@ -30,6 +35,10 @@ const BlogCardContainer = styled.div`
   width: 100%;
   background: #f8f8f8;
   border-radius: 0 0 4px 4px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  &:not(:first-child) {
+    margin-top: 76px;
+  }
 `
 
 const BlogContentWrapper = styled.div`
@@ -55,6 +64,25 @@ const BlogPostTitle = styled.h3`
   line-height: 1.4em;
 `
 
+const BlogPostTag = styled.p`
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #9193b3;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  &:not(:first-child) {
+    margin-left: 5px;
+  }
+`
+
+const BlogPostTagWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+`
+
 const HorizontalLine = styled.div`
   margin-top: 26px;
   width: 100%;
@@ -68,5 +96,5 @@ const BlogPostAuthor = styled.p`
   align-self: flex-end;
   color: #80829f;
   text-transform: uppercase;
-  letter-spacing: 1.4;
+  letter-spacing: 1.4px;
 `

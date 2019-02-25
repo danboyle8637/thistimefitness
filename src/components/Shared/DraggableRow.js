@@ -4,12 +4,19 @@ import { Draggable } from 'gsap/Draggable'
 import ThrowPropsPlugin from '../../greensockplugins/ThrowPropsPlugin'
 
 import { above } from '../../styles/Theme'
+import ActiveSlideContext from '../../context/ActiveSlideContext'
 
 class DraggableRow extends Component {
+  static contextType = ActiveSlideContext
+
   constructor(props) {
     super(props)
 
     const throwPropsPlugin = ThrowPropsPlugin
+
+    this.state = {
+      screenWidth: 0,
+    }
 
     this.card = null
 
@@ -20,6 +27,7 @@ class DraggableRow extends Component {
 
   componentDidMount() {
     const screenWidth = window.innerWidth
+    this.setState({ screenWidth })
 
     if (screenWidth <= 1024) {
       Draggable.create(this.card, {
@@ -29,13 +37,19 @@ class DraggableRow extends Component {
         allowNativeTouchScrolling: false,
         dragResistance: 0.3,
         throwProps: true,
-        snap: function(value) {
-          return Math.round(value / screenWidth) * screenWidth
-        },
+        snap: this.snapX,
         zIndexBoost: false,
         bounds: window,
       })
     }
+  }
+
+  snapX = value => {
+    const snapValue =
+      Math.round(value / this.state.screenWidth) * this.state.screenWidth
+    const activeSlide = snapValue / this.state.screenWidth
+    this.context.handleChangeActiveSlide(activeSlide)
+    return snapValue
   }
 
   render() {

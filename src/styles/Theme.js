@@ -19,12 +19,14 @@ const above = Object.keys(sizes).reduce((acc, size) => {
 const tealTheme = {
   primaryBackground: '#2B2C3A',
   secondaryBackground: '#26243E',
-  footerBackground: '#2b2c3a',
+  footerBackground: '#19191f',
+  specialBackground: '#363358',
   primaryColor: '#2AD2E2',
   secondaryColor: '#B44CFF',
   primaryButtonColor: '#B44CFF',
   textColor: '#D7DAFF',
   fillerColor: '#f8f8f8',
+  accentColor: '#5afdf2',
   hover: {
     buttonColor: '#09A9B7',
     textColor: '#2ad2e2',
@@ -33,9 +35,15 @@ const tealTheme = {
     buttonColor: '#dc45c7',
   },
   footer: {
-    base: '#d4d4d4',
+    base: '#f8f8f8',
     hover: '#2ad2e2',
-    active: '#b44cff',
+    active: '#dc45c7',
+    addressText: '#7e7e7e',
+  },
+  mapButton: {
+    primaryColor: '#2ad2e2',
+    secondaryColor: '#b44cff',
+    iconFill: '#2ad2e2',
   },
 }
 

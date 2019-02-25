@@ -18,7 +18,6 @@ const HeadlineContent = () => {
       >
         <MagazineH1Filler
           thin
-          color={'#f8f8f8'}
           mobileFontSize={'14px'}
           tabletFontSize={'20px'}
           desktopFontSize={'22px'}

@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { MagazineH1Filler, Price } from '../../styles/Headlines'
+import {
+  MagazineH1Filler,
+  Price,
+  MagazineSubhead,
+} from '../../styles/Headlines'
 import { PurchaseButton } from '../../styles/Buttons'
 
 const PurchaseCard = ({ title, price }) => {
   return (
     <PurchaseCardContainer>
-      <MagazineH1Filler fontSize={'20px'} color={'#D7DAFF'}>
-        {title}
-      </MagazineH1Filler>
+      <MagazineSubhead>{title}</MagazineSubhead>
       <PurchaseWrapper>
         <Price>{price}</Price>
         <PurchaseButton>Join Our Family</PurchaseButton>

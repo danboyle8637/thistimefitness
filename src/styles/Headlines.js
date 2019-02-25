@@ -21,7 +21,8 @@ const sharedSetup = css`
   margin: 0;
   margin-top: ${props => props.marginTop || '0px'};
   padding: 0;
-  color: ${props => props.color || '#2AD2E2'};
+  color: ${props =>
+    props.secondary ? props.theme.secondaryColor : props.theme.primaryColor};
   font-weight: ${props => (props.thin ? 400 : 800)};
   text-align: ${props => props.center && 'center'};
   text-transform: ${props => props.upper && 'uppercase'};
@@ -83,21 +84,22 @@ const MagazineH1Filler = styled.h5`
     font-size: ${props => props.desktopFontSize || '60px'};
     ${desktopSetup}
   `}
+  color: ${props => props.theme.fillerColor};
 `
 
 const MagazineSubhead = styled.h3`
   font-size: ${props => props.mobileFontSize || '20px'};
   ${mobileSetup};
-  color: #f8f8f8;
+  color: ${props => props.theme.fillerColor};
   ${above.mobile`
     font-size: ${props => props.tabletFontSize || '26px'};
     ${tabletSetup}
-    color: #f8f8f8;
+    color: ${props => props.theme.fillerColor};
   `}
   ${above.tablet`
     font-size: ${props => props.desktopFontSize || '26px'};
     ${desktopSetup}
-    color: #f8f8f8;
+    color: ${props => props.theme.fillerColor};
   `}
 `
 
@@ -131,7 +133,7 @@ const StatsHeadline = styled.h3`
   margin: 0;
   padding: 0;
   font-size: 20px;
-  color: #b44cff;
+  color: ${props => props.theme.secondaryColor};
   margin-top: ${props => props.marginTop || 0};
 `
 

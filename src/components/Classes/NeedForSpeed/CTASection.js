@@ -34,9 +34,7 @@ const CTASection = ({ copy }) => {
         tMarginTop={'40px'}
         dMarginTop={'40px'}
       >
-        <MainButton to={'/14-for-14-new-member-spcial'}>
-          See Our Specials
-        </MainButton>
+        <MainButton to={'/specials'}>See Our Specials</MainButton>
       </ButtonContainer>
     </SectionContainer>
   )

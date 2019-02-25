@@ -1,10 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import BodyBurnLogo from '../../../svgs/BodyBurnLogo'
 import Need4SpeedLogo from '../../../svgs/Need4SpeedLogo'
 import WeekendRecoveryLogo from '../../../svgs/WeekendRecoveryLogo'
+import ScreenWidthContext from '../../../context/ScreenWidthContext'
 import DraggableRow from '../../Shared/DraggableRow'
+import DraggableDots from '../../Shared/DraggableDots'
 
 import ClassCard from './ClassCard'
 
@@ -53,7 +54,32 @@ const HeadlineContent = () => {
     )
   })
 
-  return <DraggableRow>{classCard}</DraggableRow>
+  return (
+    <ScreenWidthContext.Consumer>
+      {({ screenWidth }) => {
+        let showScrollIcon
+
+        if (screenWidth >= 1024) {
+          showScrollIcon = null
+        }
+
+        if (screenWidth < 1024) {
+          showScrollIcon = (
+            <>
+              <DraggableDots />
+            </>
+          )
+        }
+
+        return (
+          <>
+            {showScrollIcon}
+            <DraggableRow>{classCard}</DraggableRow>
+          </>
+        )
+      }}
+    </ScreenWidthContext.Consumer>
+  )
 }
 
 export default HeadlineContent

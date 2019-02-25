@@ -115,7 +115,7 @@ const ButtonContainer = styled.div`
     if (right) return justifyRight
     return justifyCenter
   }}
-  width: 100%;
+  ${containerWidth}
   ${marginTop}
 `
 
