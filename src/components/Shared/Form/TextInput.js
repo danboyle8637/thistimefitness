@@ -74,11 +74,11 @@ const MessageWrapper = styled.div`
 const TextLabel = styled.label`
   margin: 0;
   padding: 0;
-  color: #b3b6e1;
+  color: ${props => props.theme.textColor};
   font-size: 15px;
   font-family: Montserrat;
   font-weight: 400;
-  background-color: #2b2c3a;
+  background-color: ${props => props.theme.primaryBackground};
   padding: 3px;
   z-index: 5;
 `

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-import ScheduleCard from './ScheduleCard'
-import DraggableRow from '../Shared/DraggableRow'
+import SideScheduleCard from './SideScheduleCard'
+import DraggableSchedule from '../../Schedule/DraggableSchedule'
 
-class ScheduleRow extends Component {
+class SideScheduleRow extends Component {
   render() {
+    const { maxWidth } = this.props
     return (
       <StaticQuery
         query={graphql`
@@ -34,15 +35,27 @@ class ScheduleRow extends Component {
             const classTimes = classDay.node.classTimes.times
 
             return (
-              <ScheduleCard key={id} day={dayName} classTimes={classTimes} />
+              <SideScheduleCard
+                key={id}
+                day={dayName}
+                classTimes={classTimes}
+                maxWidth={maxWidth}
+              />
             )
           })
 
-          return <DraggableRow page={'schedule'}>{scheduleCard}</DraggableRow>
+          return (
+            <DraggableSchedule
+              scheduleOpen={this.props.scheduleOpen}
+              bounds={maxWidth}
+            >
+              {scheduleCard}
+            </DraggableSchedule>
+          )
         }}
       />
     )
   }
 }
 
-export default ScheduleRow
+export default SideScheduleRow

@@ -41,11 +41,10 @@ const RadioLabel = styled.label`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: #b3b6e1;
+  color: ${props => props.theme.textColor};
   font-size: 15px;
   font-family: Montserrat;
   font-weight: 400;
-  background-color: #2b2c3a;
   padding: 3px;
   z-index: 5;
 `

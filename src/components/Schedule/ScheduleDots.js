@@ -19,7 +19,7 @@ class ScheduleDots extends Component {
     const { activeSlide } = this.context
 
     return (
-      <DotContainer minWidth={`${drawerWidth}px`}>
+      <DotContainer>
         <MondayDot active={activeSlide === 3 ? true : false} />
         <TuesdayDot active={activeSlide === 2 ? true : false} />
         <WednesdayDot active={activeSlide === 1 ? true : false} />
@@ -41,7 +41,7 @@ const DotContainer = styled.div`
   justify-items: center;
   align-items: center;
   padding: 0 14px;
-  width: ${props => props.minWidth};
+  width: 100%;
   ${above.mobile`
     padding: 10px 0 30px 0;
   `};

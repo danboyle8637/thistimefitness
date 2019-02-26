@@ -15,23 +15,28 @@ const InputContainer = styled.div`
 `
 
 const FormTextInput = styled.input`
-  border: 2px solid #2ad2e2;
+  border: 2px solid;
+  border-color: ${props =>
+    !props.valid && !props.touched && !props.initial
+      ? props.theme.errorColor
+      : props.theme.primaryColor};
   border-radius: 50px;
   background: transparent;
   height: 48px;
   padding: 0 20px;
-  color: #b3b6e1;
+  color: ${props => props.theme.textColor};
   outline: none;
   width: 80%;
   transition: all 200ms ease-out;
   &:focus {
-    border: 2px solid #b44cff;
+    border: 2px solid;
+    border-color: ${props => props.theme.secondaryColor};
     width: 100%;
   }
 `
 
 const HiddenRadioInput = styled.input.attrs({ type: 'radio' })`
-  visibility: none;
+  visibility: hidden;
   margin: 0;
   width: 0;
 `
@@ -40,22 +45,25 @@ const FormRadioInput = styled.div`
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: ${props => (props.checked ? '#2ad2e2' : '#f8f8f8')};
+  background: ${props =>
+    props.checked ? props.theme.primaryColor : 'rgba(179, 182, 225, 0.3)'};
   border-radius: 50%;
 `
 
 const FormTextAreaInput = styled.textarea`
-  border: 2px solid #2ad2e2;
+  border: 2px solid;
+  border-color: ${props => props.theme.primaryColor};
   border-radius: 20px;
   background: transparent;
   padding: 8px 20px;
   min-height: 120px;
-  color: #b3b6e1;
+  color: ${props => props.theme.textColor};
   width: 80%;
   outline: none;
   transition: all 200ms ease-out;
   &:focus {
-    border: 2px solid #b44cff;
+    border: 2px solid;
+    border-color: ${props => props.theme.secondaryColor};
     width: 100%;
   }
 `

@@ -103,7 +103,7 @@ const PurchaseButton = styled.a`
   letter-spacing: 2px;
   text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  width: 200px;
+  width: 100%;
   ${above.mobile`
     width: 380px;
   `}

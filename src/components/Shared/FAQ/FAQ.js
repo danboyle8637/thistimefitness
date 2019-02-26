@@ -13,7 +13,11 @@ const Faq = ({ questions }) => {
   })
 
   return (
-    <SectionContainer>
+    <SectionContainer
+      mobilePadding={'20px 20px 80px 20px'}
+      tabletPadding={'40px 20px 80px 20px'}
+      desktopPadding={'60px 20px 80px 20px'}
+    >
       <HeadlineContainer>
         <SpecialSubhead>F.A.Q.</SpecialSubhead>
       </HeadlineContainer>

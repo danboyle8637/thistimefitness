@@ -16,7 +16,7 @@ const CountdownSection = () => {
           <BaseSubhead>Next session starts:</BaseSubhead>
         </HeadlineContainer>
         <CountdownTimer date={siteConfig.ignite.countdownDate} />
-        <SiteButton purple>Click to Sign Up</SiteButton>
+        <SiteButton>Click to Sign Up</SiteButton>
       </CoundownContainer>
     </SectionContainer>
   )

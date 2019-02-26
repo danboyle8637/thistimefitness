@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Need4SpeedLogo from '../../../svgs/Need4SpeedLogo'
-import { MagazineH1Filler } from '../../../styles/Headlines'
+import { MagazineSubhead } from '../../../styles/Headlines'
 import { HeadlineContainer } from '../../../styles/Containers'
 import AnimatedScrollArrow from '../../Shared/AnimatedScrollArrow'
 import { above } from '../../../styles/Theme'
@@ -16,9 +16,8 @@ const HeadlineContent = () => {
         tMarginTop={'12px'}
         dMarginTop={'12px'}
       >
-        <MagazineH1Filler
+        <MagazineSubhead
           thin
-          color={'#f8f8f8'}
           mobileFontSize={'14px'}
           tabletFontSize={'20px'}
           desktopFontSize={'22px'}
@@ -27,7 +26,7 @@ const HeadlineContent = () => {
           desktopLetterSpacing={'16px'}
         >
           Running Training
-        </MagazineH1Filler>
+        </MagazineSubhead>
       </HeadlineContainer>
       <AnimatedScrollArrow />
     </ContentContainer>

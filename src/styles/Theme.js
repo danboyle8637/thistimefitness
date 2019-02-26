@@ -24,9 +24,11 @@ const tealTheme = {
   primaryColor: '#2AD2E2',
   secondaryColor: '#B44CFF',
   primaryButtonColor: '#B44CFF',
-  textColor: '#D7DAFF',
+  textColor: '#b3b6e1',
+  pricingColor: '#1e1d2c',
   fillerColor: '#f8f8f8',
   accentColor: '#5afdf2',
+  errorColor: '#e23e44',
   hover: {
     buttonColor: '#09A9B7',
     textColor: '#2ad2e2',

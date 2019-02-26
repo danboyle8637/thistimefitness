@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import { SectionContainer } from '../styles/Containers'
 import TextHeader from '../components/Shared/TextHeader'
 import ScheduleRow from '../components/Schedule/ScheduleRow'
 import ScheduleDots from '../components/Schedule/ScheduleDots'
@@ -19,6 +20,22 @@ class Schedule extends Component {
     this.setState({ screenWidth })
   }
 
+  renderScheduleDots = () => {
+    let scheduleDots
+
+    if (this.state.screenWidth <= 1024) {
+      scheduleDots = (
+        <ScheduleDotsWrapper>
+          <ScheduleDots drawerWidth={this.state.screenWidth} />
+        </ScheduleDotsWrapper>
+      )
+    } else {
+      scheduleDots = null
+    }
+
+    return scheduleDots
+  }
+
   render() {
     return (
       <Layout>
@@ -28,16 +45,22 @@ class Schedule extends Component {
           fontSize={'42px'}
           letterSpacing={'1.4'}
         />
-        <ScheduleDotsWrapper>
-          <ScheduleDots drawerWidth={this.state.screenWidth} />
-        </ScheduleDotsWrapper>
-        <ScrollIconWrapper />
-        <ScheduleRow bounds={this.state.screenWidth} />
-        <ClassKeyWrapper>
-          <ClassKeyCard classType="body_burn" />
-          <ClassKeyCard classType="yoga" />
-          <ClassKeyCard classType="running" />
-        </ClassKeyWrapper>
+        <SectionContainer
+          mobilePadding={'0px 0px 80px 0px'}
+          tabletPadding={'20px 0px 120px 0px'}
+          desktopPadding={'20px 0px 120px 0px'}
+          tabletWidth={'100%'}
+          desktopWidth={'100%'}
+        >
+          {this.renderScheduleDots()}
+          <ScrollIconWrapper />
+          <ScheduleRow bounds={this.state.screenWidth} />
+          <ClassKeyWrapper>
+            <ClassKeyCard classType="body_burn" />
+            <ClassKeyCard classType="yoga" />
+            <ClassKeyCard classType="running" />
+          </ClassKeyWrapper>
+        </SectionContainer>
       </Layout>
     )
   }
@@ -47,6 +70,7 @@ export default Schedule
 
 const ScheduleDotsWrapper = styled.div`
   padding: 20px 0%;
+  width: 100%;
 `
 
 const ClassKeyWrapper = styled.div`

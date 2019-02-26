@@ -26,6 +26,7 @@ class DraggableRow extends Component {
   }
 
   componentDidMount() {
+    const { page } = this.props
     const screenWidth = window.innerWidth
     this.setState({ screenWidth })
 
@@ -38,6 +39,19 @@ class DraggableRow extends Component {
         dragResistance: 0.3,
         throwProps: true,
         snap: this.snapX,
+        zIndexBoost: false,
+        bounds: window,
+      })
+    }
+
+    if (screenWidth > 1024 && page === 'schedule') {
+      Draggable.create(this.card, {
+        type: 'x',
+        edgeResistance: 0.75,
+        lockAxis: true,
+        allowNativeTouchScrolling: false,
+        dragResistance: 0.3,
+        throwProps: true,
         zIndexBoost: false,
         bounds: window,
       })

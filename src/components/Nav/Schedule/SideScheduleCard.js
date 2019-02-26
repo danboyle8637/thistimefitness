@@ -1,39 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ClassTimeCard from './ClassTimeCard'
-import { above } from '../../styles/Theme'
+import SideClassTimeCard from './SideClassTimeCard'
 
-const ScheduleCard = ({ day, classTimes }) => {
+const SideScheduleCard = ({ day, classTimes, maxWidth }) => {
   const times = classTimes.map(time => {
     const id = time.id
     const classType = time.icon
     const classTime = time.time
 
     return (
-      <ClassTimeCard key={id} classType={classType} classTime={classTime} />
+      <SideClassTimeCard key={id} classType={classType} classTime={classTime} />
     )
   })
 
   return (
-    <ScheduleCardContainer>
+    <ScheduleCardContainer width={`${maxWidth}px`}>
       <ScheduleDay>{day}</ScheduleDay>
       <TimeWrapper>{times}</TimeWrapper>
     </ScheduleCardContainer>
   )
 }
 
-export default ScheduleCard
+export default SideScheduleCard
 
 const ScheduleCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  padding: 20px 40px;
-  ${above.tablet`
-    width: 300px;
-  `}
+  min-width: ${props => props.width};
 `
 
 const ScheduleDay = styled.h3`
@@ -45,9 +40,6 @@ const ScheduleDay = styled.h3`
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: 0.24em;
-  ${above.tablet`
-    font-size: 20px;
-  `}
 `
 
 const TimeWrapper = styled.div`

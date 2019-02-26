@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TweenMax, { Elastic } from 'gsap/TweenMax'
+import TweenMax, { Sine } from 'gsap/TweenMax'
 
 class IgniteLogo extends Component {
   constructor(props) {
@@ -20,36 +20,36 @@ class IgniteLogo extends Component {
   componentDidMount() {
     TweenMax.fromTo(
       this.backFlame,
-      0.6,
+      0.3,
       {
         transformOrigin: '50% 100%',
         rotation: -6,
         repeat: -1,
-        ease: Elastic.ease,
+        ease: Sine.easeInOut,
         yoyo: true,
       },
       {
         rotation: 12,
         repeat: -1,
-        ease: Elastic.ease,
+        ease: Sine.easeInOut,
         yoyo: true,
       }
     )
 
     TweenMax.fromTo(
       this.middleFlame,
-      0.6,
+      0.3,
       {
         transformOrigin: '50% 100%',
         rotation: 6,
         repeat: -1,
-        ease: Elastic.ease,
+        ease: Sine.easeInOut,
         yoyo: true,
       },
       {
         rotation: -12,
         repeat: -1,
-        ease: Elastic.ease,
+        ease: Sine.easeInOut,
         yoyo: true,
       }
     )

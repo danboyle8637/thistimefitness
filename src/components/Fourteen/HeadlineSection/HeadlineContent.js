@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -29,7 +29,7 @@ const HeadlineContent = () => {
       <SubHeadlineWrapper>
         <MagazineSubhead
           thin
-          letterSpacing={'1.06px'}
+          mobileLetterSpacing={'1.4px'}
           mobileLineHeight={'1.8rem'}
           tabletLineHeight={'2.2rem'}
           desktopLineHeight={'2.4rem'}
@@ -43,7 +43,7 @@ const HeadlineContent = () => {
         tMarginTop={'20px'}
         dMarginTop={'30px'}
       >
-        <SiteButton purple>Click to Sign Up</SiteButton>
+        <SiteButton>Click to Sign Up</SiteButton>
       </ButtonContainer>
     </HeadlineContainer>
   )
@@ -62,7 +62,7 @@ const HeadlineContainer = styled.div`
     margin-top: 10%;
   `}
   ${above.tablet`
-    margin-top: 5%;
+    margin-top: 3%;
     margin-left: 20%;
   `}
 `

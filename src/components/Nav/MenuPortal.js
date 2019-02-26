@@ -6,12 +6,12 @@ import { Transition } from 'react-transition-group'
 
 import MenuOpenContext from '../../context/MenuOpenContext'
 
-const menuDrawerRoot =
+const menuPortalRoot =
   typeof document !== 'undefined'
     ? document.getElementById('menu_portal')
     : null
 
-class MenuDrawer extends Component {
+class MenuPortal extends Component {
   static contextType = MenuOpenContext
 
   constructor(props) {
@@ -22,7 +22,7 @@ class MenuDrawer extends Component {
   }
 
   componentDidMount() {
-    menuDrawerRoot.appendChild(this.el)
+    menuPortalRoot.appendChild(this.el)
     const screenWidth = window.innerWidth
 
     if (screenWidth <= 600) {
@@ -51,7 +51,7 @@ class MenuDrawer extends Component {
   }
 
   componentWillUnmount() {
-    menuDrawerRoot.removeChild(this.el)
+    menuPortalRoot.removeChild(this.el)
   }
 
   render() {
@@ -100,7 +100,7 @@ class MenuDrawer extends Component {
   }
 }
 
-export default MenuDrawer
+export default MenuPortal
 
 const MenuDrawerWrapper = styled.div`
   position: fixed;

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import BodyBurnLogo from '../../../svgs/BodyBurnLogo'
-import { MagazineH1Filler } from '../../../styles/Headlines'
+import { MagazineSubhead } from '../../../styles/Headlines'
 import { HeadlineContainer } from '../../../styles/Containers'
 import AnimatedScrollArrow from '../../Shared/AnimatedScrollArrow'
 import { above } from '../../../styles/Theme'
@@ -16,7 +16,7 @@ const HeadlineContent = () => {
         tMarginTop={'8px'}
         dMarginTop={'8px'}
       >
-        <MagazineH1Filler
+        <MagazineSubhead
           thin
           mobileFontSize={'14px'}
           tabletFontSize={'20px'}
@@ -27,7 +27,7 @@ const HeadlineContent = () => {
           moveMobileX={'-12px'}
         >
           Metabolic Strength Training
-        </MagazineH1Filler>
+        </MagazineSubhead>
       </HeadlineContainer>
       <AnimatedScrollArrow />
     </ContentContainer>

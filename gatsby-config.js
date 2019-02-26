@@ -116,7 +116,7 @@ module.exports = {
               name
             }
             published
-            imagePicker {
+            featureImage {
               url
             }
             blogContent

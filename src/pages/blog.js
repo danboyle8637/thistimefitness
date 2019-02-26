@@ -11,7 +11,7 @@ const Blog = ({ data }) => {
     const id = post.node.id
     const title = post.node.title
     const author = post.node.author.name
-    const image = post.node.imagePicker.url
+    const image = post.node.featureImage.url
     const postTags = post.node.postTags
 
     return (
@@ -91,7 +91,7 @@ export const query = graphql`
           published(formatString: "MMMM DD, YYYY")
           postTags
           blogContent
-          imagePicker {
+          featureImage {
             url
           }
         }

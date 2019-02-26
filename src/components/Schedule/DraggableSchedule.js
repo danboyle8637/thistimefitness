@@ -21,34 +21,28 @@ class DraggableSchedule extends Component {
   }
 
   componentDidMount() {
-    const { bounds, scheduleOpen } = this.props
+    const { bounds } = this.props
 
-    if (scheduleOpen) {
-      Draggable.create(this.dragSchedule, {
-        type: 'x',
-        edgeResistance: 0.75,
-        lockAxis: true,
-        allowNativeTouchScrolling: false,
-        dragResistance: 0.3,
-        throwProps: true,
-        snap: this.snapX,
-        onClick: this.wasClicked,
-        zIndexBoost: true,
-        autoScroll: 1.5,
-        bounds: bounds,
-      })
-    }
-  }
+    console.log(bounds)
 
-  wasClicked = () => {
-    console.log('CLICKED!!!!!!!')
+    Draggable.create(this.dragSchedule, {
+      type: 'x',
+      edgeResistance: 0.75,
+      lockAxis: true,
+      allowNativeTouchScrolling: false,
+      dragResistance: 0.3,
+      throwProps: true,
+      snap: this.snapX,
+      zIndexBoost: false,
+      dragClickables: true,
+      bounds: { left: -10, right: -10, width: `${bounds}` },
+    })
   }
 
   snapX = value => {
     const { bounds } = this.props
-    const snapValue =
-      Math.round(value / bounds.offSetWidth) * bounds.offSetWidth
-    const activeSlide = snapValue / bounds.offSetWidth
+    const snapValue = Math.round(value / bounds) * bounds
+    const activeSlide = snapValue / bounds
     this.context.handleChangeActiveSlide(activeSlide)
     return snapValue
   }

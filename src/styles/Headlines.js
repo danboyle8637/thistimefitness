@@ -84,7 +84,6 @@ const MagazineH1Filler = styled.h5`
     font-size: ${props => props.desktopFontSize || '60px'};
     ${desktopSetup}
   `}
-  color: ${props => props.theme.fillerColor};
 `
 
 const MagazineSubhead = styled.h3`
@@ -137,17 +136,6 @@ const StatsHeadline = styled.h3`
   margin-top: ${props => props.marginTop || 0};
 `
 
-const Price = styled.h4`
-  font-size: 40px;
-  ${mobileSetup};
-  ${above.mobile`
-    ${tabletSetup}
-  `}
-  ${above.tablet`
-    ${desktopSetup}
-  `}
-`
-
 export {
   MagazineH1,
   MagazineH1Filler,
@@ -155,5 +143,4 @@ export {
   BaseSubhead,
   SpecialSubhead,
   StatsHeadline,
-  Price,
 }

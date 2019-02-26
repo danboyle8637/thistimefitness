@@ -93,6 +93,7 @@ const ClassKeyContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   width: 100%;
   padding: 0 30px;
 `
@@ -107,7 +108,7 @@ const ClassName = styled.p`
   margin: 0;
   margin-left: 10px;
   padding: 0;
-  color: #b3b6e1;
+  color: ${props => props.theme.textColor};
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1.8px;

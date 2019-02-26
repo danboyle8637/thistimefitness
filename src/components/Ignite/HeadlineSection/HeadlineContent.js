@@ -10,7 +10,13 @@ const HeadlineContent = () => {
     <ContentContainer>
       <IgniteLogoStyled />
       <HeadlineWrapper>
-        <MagazineH1Filler mobileLineHeight={'1.3'} moveMobileX={'4px'}>
+        <MagazineH1Filler
+          mobileLineHeight={'1.3'}
+          tabletLineHeight={'1.3'}
+          moveMobileX={'4px'}
+          moveTabletX={'7px'}
+          moveDesktopX={'8px'}
+        >
           Get the
         </MagazineH1Filler>
         <RightStartWrapper>

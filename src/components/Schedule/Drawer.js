@@ -3,11 +3,14 @@ import styled from 'styled-components'
 import TweenMax, { Power2 } from 'gsap/TweenMax'
 import { Transition } from 'react-transition-group'
 
-import ScheduleRow from '../Schedule/ScheduleRow'
+import SideScheduleRow from '../Nav/Schedule/SideScheduleRow'
 import MenuOpenContext from '../../context/MenuOpenContext'
+import ScheduleDots from '../Schedule/ScheduleDots'
+import ClassKeyCard from '../Schedule/ClassKeyCard'
 
 class Drawer extends Component {
   static contextType = MenuOpenContext
+
   render() {
     return (
       <Transition
@@ -22,10 +25,11 @@ class Drawer extends Component {
               0.3,
               {
                 left: '100%',
+                ease: Power2.easeOut,
                 onComplete: done,
               },
               {
-                left: '20%',
+                left: `${this.context.leftPosition}`,
                 ease: Power2.easeOut,
                 onComplete: done,
               }
@@ -39,9 +43,18 @@ class Drawer extends Component {
           }
         }}
       >
-        <ScheduleDrawerWrapper>
-          <ScheduleRow />
-        </ScheduleDrawerWrapper>
+        <ScheduleDrawerContainer>
+          <ClassKeyCardWrapper width={`${this.context.drawerMaxWidth}px`}>
+            <ClassKeyCard classType={'body_burn'} />
+            <ClassKeyCard classType={'running'} />
+            <ClassKeyCard classType={'yoga'} />
+          </ClassKeyCardWrapper>
+          <SideScheduleRow
+            scheduleOpen={this.context.scheduleOpen}
+            maxWidth={this.context.drawerMaxWidth}
+          />
+          <ScheduleDots />
+        </ScheduleDrawerContainer>
       </Transition>
     )
   }
@@ -49,7 +62,7 @@ class Drawer extends Component {
 
 export default Drawer
 
-const ScheduleDrawerWrapper = styled.div`
+const ScheduleDrawerContainer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
@@ -59,8 +72,15 @@ const ScheduleDrawerWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   border-radius: 8px 0 0 8px;
-  background: #26243e;
+  background: ${props => props.theme.secondaryBackground};
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   z-index: 999;
+`
+
+const ClassKeyCardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: ${props => props.width};
 `

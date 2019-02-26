@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import SecheduleIcon from '../../svgs/ScheduleIcon'
 import MainMenuIcon from '../../svgs/MainMenuIcon'
-import MenuDrawer from './MenuDrawer'
+import MenuPortal from './MenuPortal'
 import SchedulePortal from './SchedulePortal'
 import ContentContainer from './ContentContainer'
 import MenuOpenContext from '../../context/MenuOpenContext'
@@ -14,6 +14,35 @@ import Drawer from '../Schedule/Drawer'
 
 class MenuSection extends Component {
   static contextType = MenuOpenContext
+
+  state = {
+    screenWidth: 0,
+    x: 0,
+  }
+
+  componentDidMount() {
+    const screenWidth = window.innerWidth
+    let x
+
+    if (screenWidth <= 600) {
+      x = Math.round((screenWidth - screenWidth * 0.2 - 48) * -1)
+    }
+
+    if (screenWidth > 600 && screenWidth < 1024) {
+      x = Math.round((screenWidth - screenWidth * 0.6 - 48) * -1)
+    }
+
+    if (screenWidth >= 1024) {
+      x = Math.round(
+        (screenWidth - (screenWidth - 960) / 2 - screenWidth * 0.7 - 48) * -1
+      )
+    }
+
+    this.setState({
+      screenWidth,
+      x,
+    })
+  }
 
   handleToggleMenu = () => {
     this.context.handleCloseSchedule()
@@ -34,7 +63,7 @@ class MenuSection extends Component {
           if (this.context.menuOpen || this.context.scheduleOpen) {
             TweenMax.to(node, 0.3, {
               rotation: '90',
-              x: '-248px',
+              x: `${this.state.x}`,
               y: '90px',
               onComplete: done,
             })
@@ -55,10 +84,9 @@ class MenuSection extends Component {
           <HamburgerWrapper onClick={this.handleToggleMenu}>
             <MainMenuIcon width={'30px'} />
           </HamburgerWrapper>
-          {/* MenuDrawer is my Menu Portal */}
-          <MenuDrawer in={this.context.menuOpen}>
+          <MenuPortal in={this.context.menuOpen}>
             <ContentContainer />
-          </MenuDrawer>
+          </MenuPortal>
           <SchedulePortal>
             <Drawer in={this.context.scheduleOpen} />
           </SchedulePortal>

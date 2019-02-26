@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import ClassKeyDot from '../../svgs/ClassKeyDot'
-import { above } from '../../styles/Theme'
+import ClassKeyDot from '../../../svgs/ClassKeyDot'
+import { above } from '../../../styles/Theme'
 
-class ClassTimeCard extends Component {
+class SideClassTimeCard extends Component {
   setStartColor = () => {
     const { classType } = this.props
 
@@ -67,10 +67,10 @@ class ClassTimeCard extends Component {
   }
 }
 
-export default ClassTimeCard
+export default SideClassTimeCard
 
 const ClassTimeContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: center;

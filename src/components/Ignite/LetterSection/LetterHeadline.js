@@ -8,7 +8,7 @@ import { above } from '../../../styles/Theme'
 const LetterHeadline = () => {
   return (
     <SpecialHeadline>
-      <HeadlineContainer left>
+      <HeadlineContainer left desktopWidth={'100%'}>
         <BaseSubhead
           moveMobileX={'3px'}
           moveTabletX={'3px'}

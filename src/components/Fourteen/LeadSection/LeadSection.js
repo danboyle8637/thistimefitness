@@ -11,7 +11,7 @@ import {
 } from '../../../styles/Containers'
 import { BodyText } from '../../../styles/BodyText'
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
-import { MainButton } from '../../../styles/Buttons'
+import { SiteButton } from '../../../styles/Buttons'
 import TTFLogoShort from '../../../svgs/TTFLogoShort'
 
 const LeadSection = () => {
@@ -120,7 +120,7 @@ const LeadSection = () => {
           tMarginTop={'40px'}
           dMarginTop={'60px'}
         >
-          <MainButton purple>Click to Sign Up</MainButton>
+          <SiteButton>Click to Sign Up</SiteButton>
         </ButtonContainer>
       </SectionContainer>
     </>

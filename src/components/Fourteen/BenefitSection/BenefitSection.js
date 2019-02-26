@@ -84,7 +84,7 @@ export default BenefitSection
 const BenefitContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background: #26243e;
+  background: ${props => props.theme.secondaryBackground};
   width: 100%;
 `
 
