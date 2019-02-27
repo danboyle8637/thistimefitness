@@ -1,41 +1,8 @@
 import { Link } from 'gatsby'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { above } from '../styles/Theme'
 
 // Create a single a-tag button to use and do if checks to render the button you want
-const FooterButton = styled.a`
-  position: relative;
-  margin: 0;
-  margin-top: ${props => props.marginTop || '0'};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  color: #f8f8f8;
-  background: ${props => props.theme.primaryColor};
-  width: 210px;
-  height: 48px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: color 200ms ease-out;
-  &::after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #09a9b7;
-    border-radius: 4px;
-    transform: translateX(-100%);
-    transition: transform 200ms ease-out;
-  }
-  &:hover::before {
-    transform: translateX(0);
-  }
-`
 
 const SiteButton = styled.a`
   display: flex;
@@ -139,4 +106,4 @@ const GhostButton = styled.a`
   `}
 `
 
-export { FooterButton, SiteButton, GhostButton, MainButton, PurchaseButton }
+export { SiteButton, GhostButton, MainButton, PurchaseButton }

@@ -1,16 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { MagazineH1 } from '../../styles/Headlines'
-import { HeadlineContainer, SectionContainer } from '../../styles/Containers'
+import { MagazineSubhead } from '../../styles/Headlines'
+import {
+  HeadlineContainer,
+  SectionContainer,
+  BodyTextContainer,
+} from '../../styles/Containers'
 
 const Legal = ({ headline, body }) => {
   return (
     <SectionContainer>
-      <HeadlineContainer>
-        <MagazineH1>{headline}</MagazineH1>
+      <HeadlineContainer left>
+        <MagazineSubhead>{headline}</MagazineSubhead>
       </HeadlineContainer>
-      <LegalPageCopy dangerouslySetInnerHTML={{ __html: body }} />
+      <BodyTextContainer
+        mMarginTop={'30px'}
+        tMarginTop={'40px'}
+        dMarginTop={'40px'}
+      >
+        <LegalPageCopy dangerouslySetInnerHTML={{ __html: body }} />
+      </BodyTextContainer>
     </SectionContainer>
   )
 }
@@ -20,14 +30,17 @@ export default Legal
 const LegalPageCopy = styled.div`
   & p {
     font-size: 16px;
-    color: #d7daff;
+    color: ${props => props.theme.textColor};
   }
   & h3 {
     font-size: 26px;
     font-family: Montserrat;
-    color: #2ad2e2;
+    color: ${props => props.theme.primaryColor};
     font-weight: 800;
     text-align: left;
     text-transform: uppercase;
+  }
+  & a {
+    color: ${props => props.theme.primaryColor};
   }
 `

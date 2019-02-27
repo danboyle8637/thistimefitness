@@ -104,6 +104,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `Transformations`,
+        path: `${__dirname}/src/images/Transformations`,
+      },
+    },
+    {
       resolve: `gatsby-source-graphcms`,
       options: {
         endpoint: `${process.env.GRAPHCMS_ENDPOINT}`,
@@ -127,6 +134,16 @@ module.exports = {
             id
             classTimes
           }
+          reviews {
+            id
+            name
+            stars
+            review
+            headline
+            memberImage {
+              url
+            }
+          }
         }
         `,
       },
@@ -134,13 +151,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `This Time Fitness`,
+        short_name: `ttf`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#2b2c3a`,
+        theme_color: `#2b2c3a`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ttf-icon.png`, // This path is relative to the root of the site.
       },
     },
     {

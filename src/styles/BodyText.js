@@ -7,27 +7,25 @@ const BodyText = styled.p`
   margin-left: ${props => props.marginLeft || '0'};
   padding: ${props => props.padding || '0'};
   font-size: 16px;
-  color: #d7daff;
+  color: ${props => props.theme.textColor};
 `
 
 const InnerBodyText = styled.div`
+  color: ${props =>
+    props.note ? props.theme.blogTextColor : props.theme.textColor};
   & p {
     margin-top: ${props => props.marginTop || '0'};
     margin-left: ${props => props.marginLeft || '0'};
     padding: ${props => props.padding || '0'};
     font-size: 16px;
-    color: #d7daff;
-    ${props =>
-      props.note &&
-      `
-      color: #5c5c5c;
-    `}
+    color: ${props =>
+      props.note ? props.theme.blogTextColor : props.theme.textColor};
   }
   & ol {
-    color: #b44cff;
+    color: ${props => props.theme.secondaryColor};
   }
   & ul {
-    color: #b44cff;
+    color: ${props => props.theme.secondaryColor};
   }
 `
 

@@ -23,4 +23,7 @@ export const siteConfig = {
     tenClassPass: `https://thistimefitness.sites.zenplanner.com/retail-product.cfm?ProductId=296F7A65-673D-4B42-B908-2D550FA81731`,
     fifteenClassPass: `https://thistimefitness.sites.zenplanner.com/retail-product.cfm?ProductId=F7120BB2-A086-4752-816E-D3B16202CFB9`,
   },
+  siteWidths: {
+    desktopNavWidth: 960
+  }
 }
