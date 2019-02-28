@@ -59,11 +59,3 @@ const HeaderContainer = styled.div`
   height: 100%;
   padding: 30px;
 `
-
-const ArrowWrapper = styled.div`
-  position: absolute;
-  width: 30px;
-  top: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-`

@@ -7,12 +7,12 @@ import TextHeader from '../components/Shared/TextHeader'
 import Layout from '../components/layout'
 
 const Blog = ({ data }) => {
-  const cards = data.allBlogPost.edges.map(post => {
-    const id = post.node.id
-    const title = post.node.title
-    const author = post.node.author.name
-    const image = post.node.featureImage.url
-    const postTags = post.node.postTags
+  const cards = data.gcms.blogPosts.map(post => {
+    // const id = post.node.id
+    const title = post.title
+    const author = post.author.name
+    const image = post.featureImage.url
+    const postTags = post.postTags
 
     return (
       <>
@@ -79,21 +79,19 @@ export default Blog
 
 export const query = graphql`
   query {
-    allBlogPost {
-      edges {
-        node {
-          id
-          title
-          author {
-            name
-          }
-          slug
-          published(formatString: "MMMM DD, YYYY")
-          postTags
-          blogContent
-          featureImage {
-            url
-          }
+    gcms {
+      blogPosts {
+        id
+        slug
+        title
+        author {
+          name
+        }
+        featureImage {
+          url
+        }
+        blogText {
+          html
         }
       }
     }

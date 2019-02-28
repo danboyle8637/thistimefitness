@@ -8,17 +8,17 @@ const ReviewsSection = () => {
     <StaticQuery
       query={graphql`
         query {
-          allReview {
-            edges {
-              node {
-                id
-                name
-                stars
-                review
-                headline
-                memberImage {
-                  url
-                }
+          gcms {
+            reviews {
+              id
+              name
+              stars
+              headline
+              reviewText {
+                html
+              }
+              memberImage {
+                url
               }
             }
           }
@@ -27,13 +27,13 @@ const ReviewsSection = () => {
       render={data => {
         console.log(data)
 
-        const cards = data.allReview.edges.map(review => {
-          const id = review.node.id
-          const name = review.node.name
-          const stars = review.node.stars
-          const headline = review.node.headline
-          const reviewText = review.node.review
-          const url = review.node.memberImage.url
+        const cards = data.gcms.reviews.map(review => {
+          const id = review.id
+          const name = review.name
+          const stars = review.stars
+          const headline = review.headline
+          const reviewText = review.reviewText.html
+          const url = review.memberImage.url
 
           return (
             <ReviewCard

@@ -65,7 +65,6 @@ class IgniteForm extends Component {
         },
         email: {
           initial: true,
-          valid: '',
           valid: false,
           touched: false,
           showInstruction: false,

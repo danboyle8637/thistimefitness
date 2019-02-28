@@ -15,7 +15,6 @@ class ScheduleDots extends Component {
   static contextType = ActiveSlideContext
 
   render() {
-    const { drawerWidth } = this.props
     const { activeSlide } = this.context
 
     return (

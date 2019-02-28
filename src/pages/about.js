@@ -9,7 +9,6 @@ import AboutKindal from '../components/About/AboutKindal/AboutKindalGrid'
 import AboutKindalInvite from '../components/About/AboutKindal/AboutKindalInvite'
 import TheTeam from '../components/About/TheTeam/TheTeam'
 import WhyDifferent from '../components/About/WhyDifferent/WhyDifferent'
-import PropTypes from 'prop-types'
 
 const About = ({ data }) => {
   return (
@@ -23,10 +22,6 @@ const About = ({ data }) => {
       <WhyDifferent />
     </Layout>
   )
-}
-
-About.proptypes = {
-  data: PropTypes.object,
 }
 
 export default About

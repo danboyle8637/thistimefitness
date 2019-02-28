@@ -23,8 +23,6 @@ class DraggableSchedule extends Component {
   componentDidMount() {
     const { bounds } = this.props
 
-    console.log(bounds)
-
     Draggable.create(this.dragSchedule, {
       type: 'x',
       edgeResistance: 0.75,
@@ -34,7 +32,7 @@ class DraggableSchedule extends Component {
       throwProps: true,
       snap: this.snapX,
       zIndexBoost: false,
-      dragClickables: true,
+      dragClickables: false,
       bounds: { left: -10, right: -10, width: `${bounds}` },
     })
   }

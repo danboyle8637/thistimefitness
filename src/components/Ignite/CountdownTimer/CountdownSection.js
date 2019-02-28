@@ -6,7 +6,6 @@ import { HeadlineContainer, SectionContainer } from '../../../styles/Containers'
 import { BaseSubhead } from '../../../styles/Headlines'
 import { SiteButton } from '../../../styles/Buttons'
 import { siteConfig } from '../../../helpers/siteConfig'
-import { above } from '../../../styles/Theme'
 
 const CountdownSection = () => {
   return (

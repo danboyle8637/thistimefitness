@@ -111,41 +111,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-graphcms`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        endpoint: `${process.env.GRAPHCMS_ENDPOINT}`,
-        token: `${process.env.GRAPHCMS_TOKEN}`,
-        query: `{
-          blogPosts {
-            id
-            title
-            author {
-              name
-            }
-            published
-            featureImage {
-              url
-            }
-            blogContent
-            postTags
-            slug
-          }
-          schedules {
-            id
-            classTimes
-          }
-          reviews {
-            id
-            name
-            stars
-            review
-            headline
-            memberImage {
-              url
-            }
-          }
-        }
-        `,
+        typeName: `GCMS`,
+        fieldName: `gcms`,
+        url: `${process.env.GRAPHCMS_ENDPOINT}`,
+        headers: {
+          Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
+        },
+        fetchOptions: {},
       },
     },
     {

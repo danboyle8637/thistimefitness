@@ -21,9 +21,6 @@ class FourteenDayForm extends Component {
       formControls: {
         goal: {
           value: '',
-        },
-        goal: {
-          value: '',
           valid: false,
           touched: false,
           checked: false,

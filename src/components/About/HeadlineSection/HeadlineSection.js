@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Image from 'gatsby-image'
-import PropTypes from 'prop-types'
 
 import HeadlineContent from './HeadlineContent'
 import {
@@ -35,10 +34,6 @@ const HeadlineSection = ({ images }) => {
       )}
     </RenderBackgroundImage>
   )
-}
-
-HeadlineSection.propTypes = {
-  images: PropTypes.object,
 }
 
 export default HeadlineSection

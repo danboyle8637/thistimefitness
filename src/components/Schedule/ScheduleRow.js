@@ -10,28 +10,19 @@ class ScheduleRow extends Component {
       <StaticQuery
         query={graphql`
           query {
-            allSchedule {
-              edges {
-                node {
-                  id
-                  classTimes {
-                    day
-                    times {
-                      id
-                      icon
-                      time
-                    }
-                  }
-                }
+            gcms {
+              schedules {
+                id
+                classTimes
               }
             }
           }
         `}
         render={data => {
-          const scheduleCard = data.allSchedule.edges.map(classDay => {
-            const id = classDay.node.id
-            const dayName = classDay.node.classTimes.day
-            const classTimes = classDay.node.classTimes.times
+          const scheduleCard = data.gcms.schedules.map(classDay => {
+            const id = classDay.id
+            const dayName = classDay.classTimes.day
+            const classTimes = classDay.classTimes.times
 
             return (
               <ScheduleCard key={id} day={dayName} classTimes={classTimes} />

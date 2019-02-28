@@ -1,12 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 
-import {
-  InputContainer,
-  FormTextAreaInput,
-  ErrorMessage,
-  InstructionMessage,
-} from '../../../styles/Form'
+import { InputContainer, FormTextAreaInput } from '../../../styles/Form'
 import { BodyText } from '../../../styles/BodyText.js'
 
 const TextArea = props => {

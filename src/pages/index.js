@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
 
 import Layout from '../components/layout'
 import HeadlineSection from '../components/Home/HeadlineSection'
@@ -19,10 +18,6 @@ const IndexPage = ({ data }) => {
       <HeadlineSection images={data} />
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.object,
 }
 
 export default IndexPage

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { BenefitCardsContainer } from '../../../styles/Containers'
 import Image from '../../Shared/Image'
 import BenefitCard from '../../Shared/BenefitCard'
 import { above } from '../../../styles/Theme'

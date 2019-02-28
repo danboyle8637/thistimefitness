@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Image from 'gatsby-image'
 
 import HeadlineContent from './HeadlineContent'
-import { above } from '../../../styles/Theme'
 import {
   HeadlineGrid,
   BackgroundWrapper,

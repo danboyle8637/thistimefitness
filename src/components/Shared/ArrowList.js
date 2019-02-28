@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import ListArrow from '../../svgs/ListArrow'
-import { ListContainer } from '../../styles/Containers'
 import { BodyText } from '../../styles/BodyText'
 
 const ArrowList = ({ listItems }) => {
