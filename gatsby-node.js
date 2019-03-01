@@ -4,61 +4,47 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
-// You can delete this file if you're not using it
+// This makes the .env variables available in this file.
+// require('dotenv').config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
 
 // const path = require(`path`)
-// const { createFilePath } = require(`gatsby-source-filesystem`)
 
 // exports.createPages = ({ graphql, actions }) => {
 //   const { createPage } = actions
-//   const blogPost = path.resolve(`./src/components/Blog/BlogPost.js`)
-//   return graphql(
-//     `
-//       {
-//         allPost {
-//           edges {
-//             node {
-//               slug
+
+//   return new Promise((resolve, reject) => {
+//     const blogPost = path.resolve(`./src/components/Blog/BlogPost.js`)
+//     resolve(
+//       graphql(
+//         `
+//           {
+//             gcms {
+//               blogPosts {
+//                 slug
+//               }
 //             }
 //           }
-//         }
+//         `
+//       )
+//     ).then(result => {
+//       if (result.errors) {
+//         reject(result.errors)
 //       }
-//     `
-//   ).then(result => {
-//     if (result.errors) {
-//       throw result.errors
-//     }
-//     // Create blog posts pages.
-//     const posts = result.data.allPost.edges
 
-//     posts.forEach((post, index) => {
-//       const previous = index === posts.length - 1 ? null : posts[index + 1].node
-//       const next = index === 0 ? null : posts[index - 1].node
-//       createPage({
-//         path: post.node.slug,
-//         component: blogPost,
-//         context: {
-//           slug: post.node.slug,
-//           previous,
-//           next,
-//         },
+//       //Create pages for each post
+//       result.data.gcms.blogPosts.forEach(post => {
+//         const path = post.slug
+//         createPage({
+//           path,
+//           component: blogPost,
+//           context: {
+//             path,
+//           },
+//         })
 //       })
+//       resolve()
 //     })
 //   })
-// }
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
 // }

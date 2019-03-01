@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { MainButton } from '../../styles/Buttons'
 import { ButtonContainer, HeadlineContainer } from '../../styles/Containers'
+import { above } from '../../styles/Theme'
 
 const BlogPostCard = ({ title, author, image, postTags }) => {
   const tags = postTags.map((tag, index) => (
@@ -13,13 +14,23 @@ const BlogPostCard = ({ title, author, image, postTags }) => {
     <BlogCardContainer>
       <FeatureImageWrapper src={image} />
       <BlogContentWrapper>
-        <HeadlineContainer left mMarginTop={'10px'} tMarginTop={'14px'}>
+        <HeadlineContainer
+          left
+          mMarginTop={'10px'}
+          tMarginTop={'14px'}
+          tabletWidth={'100%'}
+          desktopWidth={'100%'}
+        >
           <BlogPostTitle>{title}</BlogPostTitle>
         </HeadlineContainer>
         <BlogPostTagWrapper>{tags}</BlogPostTagWrapper>
         <HorizontalLine />
         <BlogPostAuthor>By {author}</BlogPostAuthor>
-        <ButtonContainer mMarginTop={'14px'} tMarginTop={'18px'}>
+        <ButtonContainer
+          mMarginTop={'14px'}
+          tMarginTop={'18px'}
+          tabletWidth={'100%'}
+        >
           <MainButton to={'/'}>Read Post</MainButton>
         </ButtonContainer>
       </BlogContentWrapper>
@@ -39,6 +50,11 @@ const BlogCardContainer = styled.div`
   &:not(:first-child) {
     margin-top: 76px;
   }
+  ${above.tablet`
+    &:not(:first-child) {
+    margin-top: 0;
+  }
+  `}
 `
 
 const BlogContentWrapper = styled.div`
@@ -61,7 +77,10 @@ const BlogPostTitle = styled.h3`
   font-size: 26px;
   font-weight: 800;
   color: #494b64;
-  line-height: 1.4em;
+  line-height: 1.2em;
+  ${above.tablet`
+    font-size: 22px;
+  `}
 `
 
 const BlogPostTag = styled.p`

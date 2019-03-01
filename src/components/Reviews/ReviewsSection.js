@@ -25,8 +25,6 @@ const ReviewsSection = () => {
         }
       `}
       render={data => {
-        console.log(data)
-
         const cards = data.gcms.reviews.map(review => {
           const id = review.id
           const name = review.name
