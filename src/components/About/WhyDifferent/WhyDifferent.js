@@ -82,6 +82,7 @@ const WhyDifferent = () => {
               mMarginTop={'40px'}
               tMarginTop={'60px'}
               dMarginTop={'80px'}
+              desktopWidth={'40%'}
             >
               <MainButton to={'/specials'}>See Our Specials</MainButton>
             </ButtonContainer>

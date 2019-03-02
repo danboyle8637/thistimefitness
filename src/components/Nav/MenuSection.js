@@ -18,29 +18,37 @@ class MenuSection extends Component {
   state = {
     screenWidth: 0,
     x: 0,
+    y: 0,
   }
 
   componentDidMount() {
     const screenWidth = window.innerWidth
-    let x
+    const screenHeight = window.innerHeight
+    let x, y
 
+    // The - 30 part of the equation moves the chicklet further left of right.
+    // The lower the number, the more to the left it goes.
     if (screenWidth <= 600) {
-      x = Math.round((screenWidth - screenWidth * 0.2 - 48) * -1)
+      x = Math.round((screenWidth - screenWidth * 0.2 - 35) * -1)
+      y = 150
     }
 
     if (screenWidth > 600 && screenWidth < 1024) {
-      x = Math.round((screenWidth - screenWidth * 0.6 - 48) * -1)
+      x = Math.round((screenWidth - screenWidth * 0.6 - 35) * -1)
+      y = Math.round(screenHeight - screenHeight * 0.75)
     }
 
     if (screenWidth >= 1024) {
       x = Math.round(
-        (screenWidth - (screenWidth - 960) / 2 - screenWidth * 0.7 - 48) * -1
+        (screenWidth - (screenWidth - 960) / 2 - screenWidth * 0.7 - 25) * -1
       )
+      y = 200
     }
 
     this.setState({
       screenWidth,
       x,
+      y,
     })
   }
 
@@ -64,7 +72,7 @@ class MenuSection extends Component {
             TweenMax.to(node, 0.3, {
               rotation: '90',
               x: `${this.state.x}`,
-              y: '90px',
+              y: `${this.state.y}`,
               onComplete: done,
             })
           } else {
@@ -72,6 +80,7 @@ class MenuSection extends Component {
               rotation: '0',
               x: '0',
               y: '0',
+              delay: 0.3,
               onComplete: done,
             })
           }

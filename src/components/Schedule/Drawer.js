@@ -7,6 +7,7 @@ import SideScheduleRow from '../Nav/Schedule/SideScheduleRow'
 import MenuOpenContext from '../../context/MenuOpenContext'
 import ScheduleDots from '../Schedule/ScheduleDots'
 import ClassKeyCard from '../Schedule/ClassKeyCard'
+import ScrollIcon from '../../svgs/ScrollIcon'
 
 class Drawer extends Component {
   static contextType = MenuOpenContext
@@ -49,6 +50,7 @@ class Drawer extends Component {
             <ClassKeyCard classType={'running'} />
             <ClassKeyCard classType={'yoga'} />
           </ClassKeyCardWrapper>
+          <ScrollIconWrapper />
           <SideScheduleRow
             scheduleOpen={this.context.scheduleOpen}
             maxWidth={this.context.drawerMaxWidth}
@@ -83,4 +85,8 @@ const ClassKeyCardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   min-width: ${props => props.width};
+`
+
+const ScrollIconWrapper = styled(ScrollIcon)`
+  width: 30px;
 `

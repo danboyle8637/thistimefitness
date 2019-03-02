@@ -149,6 +149,7 @@ class FourteenDayForm extends Component {
         <HeadlineContainer>
           <SpecialSubhead>Fill Out Form</SpecialSubhead>
         </HeadlineContainer>
+        <div id="take-the-quiz" />
         <form>
           <FormFieldSet>
             <RadioInput

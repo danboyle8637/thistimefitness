@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import TTFLogoShort from '../svgs/TTFLogoShort'
 import MenuSection from '../components/Nav/MenuSection'
@@ -9,9 +10,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeadlineWrapper>
-        <Link to={'/'}>
+        <AniLink swipe direction="down" duration={0.8} to={'/'}>
           <TTFLogoShort width={'50px'} />
-        </Link>
+        </AniLink>
         <MenuSection />
       </HeadlineWrapper>
     </HeaderContainer>

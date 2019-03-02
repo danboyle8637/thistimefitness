@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 const Classes = ({ data }) => {
   return (
     <Layout>
-      <HeadlineSection images={data} />
+      <HeadlineSection images={data} path={data.classesPath.path} />
     </Layout>
   )
 }
@@ -23,6 +23,21 @@ export const query = graphql`
         fluid(
           maxWidth: 800
           maxHeight: 1500
+          jpegProgressive: true
+          quality: 90
+        ) {
+          ...GatsbyImageSharpFluid
+          aspectRatio
+        }
+      }
+    }
+    classesMobileXBackground: file(
+      relativePath: { eq: "class-background-1125x2436.jpg" }
+    ) {
+      childImageSharp {
+        fluid(
+          maxWidth: 1125
+          maxHeight: 2436
           jpegProgressive: true
           quality: 90
         ) {
@@ -60,6 +75,9 @@ export const query = graphql`
           aspectRatio
         }
       }
+    }
+    classesPath: sitePage(path: { eq: "/classes/" }) {
+      path
     }
   }
 `

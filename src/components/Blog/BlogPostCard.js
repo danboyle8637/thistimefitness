@@ -5,7 +5,7 @@ import { MainButton } from '../../styles/Buttons'
 import { ButtonContainer, HeadlineContainer } from '../../styles/Containers'
 import { above } from '../../styles/Theme'
 
-const BlogPostCard = ({ title, author, image, postTags }) => {
+const BlogPostCard = ({ title, author, image, slug, postTags }) => {
   const tags = postTags.map((tag, index) => (
     <BlogPostTag key={index}>{tag}</BlogPostTag>
   ))
@@ -31,7 +31,7 @@ const BlogPostCard = ({ title, author, image, postTags }) => {
           tMarginTop={'18px'}
           tabletWidth={'100%'}
         >
-          <MainButton to={'/'}>Read Post</MainButton>
+          <MainButton to={`/blog/${slug}`}>Read Post</MainButton>
         </ButtonContainer>
       </BlogContentWrapper>
     </BlogCardContainer>

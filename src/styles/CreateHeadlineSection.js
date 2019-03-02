@@ -13,6 +13,7 @@ const BackgroundWrapper = styled.div`
 `
 
 const ContentWrapper = styled.div`
+  position: relative;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   z-index: 1;

@@ -100,6 +100,7 @@ class MainMenuIcon extends Component {
           } else {
             TweenMax.to(node, 0.3, {
               rotation: '0',
+              delay: 0.3,
               onComplete: done,
             })
           }

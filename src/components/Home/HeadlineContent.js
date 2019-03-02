@@ -24,6 +24,9 @@ const ContentContainer = styled.div`
   ${above.mobile`
     margin-top: 14%;
   `}
+  ${above.tablet`
+    margin-top: 10%;
+  `}
 `
 
 const Logo = styled(MainLogo)`

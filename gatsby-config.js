@@ -122,6 +122,7 @@ module.exports = {
         fetchOptions: {},
       },
     },
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

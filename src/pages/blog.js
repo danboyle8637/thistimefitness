@@ -14,6 +14,7 @@ const Blog = ({ data }) => {
     const title = post.title
     const author = post.author.name
     const image = post.featureImage.url
+    const slug = post.slug
     const postTags = post.postTags
 
     return (
@@ -22,6 +23,7 @@ const Blog = ({ data }) => {
         title={title}
         author={author}
         image={image}
+        slug={slug}
         postTags={postTags}
       />
     )
@@ -61,6 +63,7 @@ export const query = graphql`
       blogPosts {
         id
         title
+        slug
         postTags
         author {
           name

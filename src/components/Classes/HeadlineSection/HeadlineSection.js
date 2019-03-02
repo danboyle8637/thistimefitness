@@ -11,9 +11,10 @@ import {
 } from '../../../styles/CreateHeadlineSection'
 import { above } from '../../../styles/Theme'
 
-const HeadlineSection = ({ images }) => {
+const HeadlineSection = ({ images, path }) => {
   const {
     classesMobileBackground,
+    classesMobileXBackground,
     classesTabletBackground,
     classesDesktopBackground,
   } = images
@@ -21,8 +22,10 @@ const HeadlineSection = ({ images }) => {
   return (
     <RenderBackgroundImage
       mobileBackground={classesMobileBackground}
+      mobileXBackground={classesMobileXBackground}
       tabletBackground={classesTabletBackground}
       desktopBackground={classesDesktopBackground}
+      path={path}
     >
       {({ backgroundImage }) => (
         <HeadlineGrid>

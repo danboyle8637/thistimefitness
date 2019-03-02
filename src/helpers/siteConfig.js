@@ -13,7 +13,7 @@ export const siteConfig = {
     lang: 'en-us',
   },
   ignite: {
-    countdownDate: '03/12/2019 12:00 AM',
+    countdownDate: '03/18/2019 12:00 AM',
   },
   purchaseLinks: {
     eightPerMonth: `https://thistimefitness.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&MembershipTemplateId=F4D3E520-8DE8-4F31-A1E0-B4CFEFC2866D&personId=56B20BB1-7E56-4266-85AE-06304AD82AF1`,
@@ -24,6 +24,6 @@ export const siteConfig = {
     fifteenClassPass: `https://thistimefitness.sites.zenplanner.com/retail-product.cfm?ProductId=F7120BB2-A086-4752-816E-D3B16202CFB9`,
   },
   siteWidths: {
-    desktopNavWidth: 960
-  }
+    desktopNavWidth: 960,
+  },
 }

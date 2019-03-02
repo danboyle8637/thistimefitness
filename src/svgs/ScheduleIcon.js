@@ -100,7 +100,11 @@ class ScheduleIcon extends Component {
               onComplete: done,
             })
           } else {
-            TweenMax.to(node, 0.3, { rotation: '0', onComplete: done })
+            TweenMax.to(node, 0.3, {
+              rotation: '0',
+              delay: 0.3,
+              onComplete: done,
+            })
           }
         }}
       >

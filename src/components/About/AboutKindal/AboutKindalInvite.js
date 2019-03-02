@@ -69,6 +69,7 @@ const AboutKindalInvite = ({ copy }) => {
         mMarginTop={'40px'}
         tMarginTop={'60px'}
         dMarginTop={'60px'}
+        desktopWidth={'40%'}
       >
         <MainButton to={'/specials'}>See Our Specials</MainButton>
       </ButtonContainer>

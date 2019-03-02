@@ -6,7 +6,7 @@ import {
   MagazineH1Filler,
   MagazineSubhead,
 } from '../../../styles/Headlines'
-import { HeadlineContainer } from '../../../styles/Containers'
+import { HeadlineContainer, ButtonContainer } from '../../../styles/Containers'
 import { MainButton } from '../../../styles/Buttons'
 import AnimatedScrollArrow from '../../Shared/AnimatedScrollArrow'
 
@@ -17,7 +17,7 @@ class HeadlineContent extends Component {
         <HeadlineContainer
           mMarginTop={'20px'}
           tMarginTop={'30px'}
-          dMarginTop={'50px'}
+          dMarginTop={'20px'}
           tabletWidth={'90%'}
         >
           <MagazineH1Filler
@@ -42,7 +42,9 @@ class HeadlineContent extends Component {
           </MagazineSubhead>
         </HeadlineContainer>
         <AnimatedScrollArrow />
-        <MainButton to={'/specials'}>See Our Specials</MainButton>
+        <ButtonContainer desktopWidth={'40%'}>
+          <MainButton to={'/specials'}>See Our Specials</MainButton>
+        </ButtonContainer>
       </HeaderContainer>
     )
   }

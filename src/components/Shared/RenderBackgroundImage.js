@@ -6,8 +6,15 @@ class RenderBackgroundImage extends Component {
   }
 
   componentDidMount() {
-    const { desktopBackground, tabletBackground, mobileBackground } = this.props
+    const {
+      desktopBackground,
+      tabletBackground,
+      mobileBackground,
+      mobileXBackground,
+      path,
+    } = this.props
     const screenWidth = window.innerWidth
+    const screenHeight = window.innerHeight
 
     if (screenWidth >= 1240) {
       this.setState({
@@ -21,7 +28,13 @@ class RenderBackgroundImage extends Component {
       })
     }
 
-    if (screenWidth <= 600) {
+    if (path === '/classes/' && screenWidth <= 600 && screenHeight >= 812) {
+      this.setState({
+        backgroundImage: mobileXBackground.childImageSharp.fluid,
+      })
+    }
+
+    if (screenWidth <= 600 && screenHeight < 812) {
       this.setState({
         backgroundImage: mobileBackground.childImageSharp.fluid,
       })

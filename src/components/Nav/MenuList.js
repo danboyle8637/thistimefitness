@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import TweenMax, { Back } from 'gsap/TweenMax'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { HeadlineContainer } from '../../styles/Containers'
 import { SpecialSubhead } from '../../styles/Headlines'
@@ -40,7 +41,9 @@ class MenuList extends Component {
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/about">About</MenuLink>
+            <MenuLink swipe direction="right" duration={0.5} to="/about">
+              About
+            </MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
@@ -100,7 +103,7 @@ const MenuText = styled.li`
   }
 `
 
-const MenuLink = styled(Link)`
+const MenuLink = styled(AniLink)`
   margin: 0;
   margin-right: 20px;
   padding: 0;
