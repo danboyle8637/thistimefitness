@@ -9,10 +9,16 @@ import AboutKindal from '../components/About/AboutKindal/AboutKindalGrid'
 import AboutKindalInvite from '../components/About/AboutKindal/AboutKindalInvite'
 import TheTeam from '../components/About/TheTeam/TheTeam'
 import WhyDifferent from '../components/About/WhyDifferent/WhyDifferent'
+import { siteConfig } from '../helpers/siteConfig'
+import SEO from '../components/seo'
 
 const About = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.about.title}
+        description={siteConfig.about.description}
+      />
       <HeadlineSection images={data} />
       <WhoWeAre copy={data.aboutCopy} />
       <LocationMap />
