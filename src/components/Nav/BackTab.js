@@ -26,9 +26,11 @@ class BackTab extends Component {
   }
 
   render() {
+    const { path } = this.props
+
     return (
       <BackTabContainer ref={this.setBackTabRef}>
-        <BackLink to={'/classes'}>
+        <BackLink to={path}>
           <BackArrow width={'12px'} strokeWidth={'16px'} />
           <BodyText marginLeft={'8px'}>Back</BodyText>
         </BackLink>

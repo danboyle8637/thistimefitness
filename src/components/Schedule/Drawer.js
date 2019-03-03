@@ -26,7 +26,7 @@ class Drawer extends Component {
               0.3,
               {
                 left: '100%',
-                ease: Power2.easeOut,
+                ease: Power2.easeIn,
                 onComplete: done,
               },
               {
@@ -50,7 +50,10 @@ class Drawer extends Component {
             <ClassKeyCard classType={'running'} />
             <ClassKeyCard classType={'yoga'} />
           </ClassKeyCardWrapper>
-          <ScrollIconWrapper />
+          <ScrollWrapper>
+            <ScrollText>Scroll</ScrollText>
+            <ScrollIconWrapper />
+          </ScrollWrapper>
           <SideScheduleRow
             scheduleOpen={this.context.scheduleOpen}
             maxWidth={this.context.drawerMaxWidth}
@@ -87,6 +90,21 @@ const ClassKeyCardWrapper = styled.div`
   min-width: ${props => props.width};
 `
 
+const ScrollWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const ScrollIconWrapper = styled(ScrollIcon)`
   width: 30px;
+`
+
+const ScrollText = styled.p`
+  padding: 8px 0;
+  margin: 0;
+  font-size: 12px;
+  color: #d7daff;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
 `

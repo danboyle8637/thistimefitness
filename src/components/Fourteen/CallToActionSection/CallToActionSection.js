@@ -41,9 +41,9 @@ const CallToActionSection = ({ copy }) => {
         >
           <ArrowList
             listItems={[
-              { text: 'You will be able to keep up and excell' },
-              { text: 'You will get the challenge you deserve' },
-              { text: 'You will have a ton of fun!' },
+              { text: `You'll get the right type of workout` },
+              { text: `You'll get the challenge you deserve` },
+              { text: `You'll have a ton of fun!` },
             ]}
           />
         </ListContainer>

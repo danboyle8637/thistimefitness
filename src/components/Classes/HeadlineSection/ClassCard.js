@@ -23,7 +23,12 @@ const ClassCard = ({ icon, title, body, path }) => {
         }
 
         if (screenWidth < 1024) {
-          showScrollIcon = <ScrollIconWrapper />
+          showScrollIcon = (
+            <ScrollWrapper>
+              <ScrollText>Scroll</ScrollText>
+              <ScrollIconWrapper />
+            </ScrollWrapper>
+          )
         }
 
         return (
@@ -112,7 +117,23 @@ const DescriptionText = styled.p`
   `}
 `
 
+const ScrollWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+`
+
 const ScrollIconWrapper = styled(ScrollIcon)`
   width: 30px;
-  padding: 60px 0;
+  height: 30px;
+`
+
+const ScrollText = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #d7daff;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
 `

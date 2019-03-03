@@ -20,7 +20,7 @@ const HeadlineContent = () => {
     {
       icon: 'need_for_speed',
       title: 'Running Training',
-      body: `Our running class where you will learn to run longer, more efficiently, with less injury, and much faster.`,
+      body: `Our running class where you'll learn to run correctly, longer, more efficiently, with less injury, and much faster.`,
       path: '/need-for-speed',
     },
     {

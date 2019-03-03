@@ -21,7 +21,7 @@ const BodyBurn = ({ data }) => {
         keywords={siteConfig.bodyBurn.keywords}
         lang={siteConfig.bodyBurn.lang}
       />
-      <BackTab />
+      <BackTab path={'/classes'} />
       <HeadlineSection images={data} />
       <LeadSection copy={data.bodyBurnCopy} />
       <BodyBurnStatsSection images={data} />

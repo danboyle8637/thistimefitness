@@ -28,15 +28,16 @@ class RenderBackgroundImage extends Component {
       })
     }
 
-    if (path === '/classes/' && screenWidth <= 600 && screenHeight >= 812) {
+    if (screenWidth <= 600) {
+      console.log('Non-iphoneX background set.')
       this.setState({
-        backgroundImage: mobileXBackground.childImageSharp.fluid,
+        backgroundImage: mobileBackground.childImageSharp.fluid,
       })
     }
 
-    if (screenWidth <= 600 && screenHeight < 812) {
+    if (path === '/classes/' && screenWidth <= 600 && screenHeight >= 812) {
       this.setState({
-        backgroundImage: mobileBackground.childImageSharp.fluid,
+        backgroundImage: mobileXBackground.childImageSharp.fluid,
       })
     }
   }

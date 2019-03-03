@@ -10,7 +10,8 @@ import {
   BlogHTMLWrapper,
 } from '../../styles/BlogStyles'
 import BlogAuthor from './BlogAuthor'
-import SEO from '../components/seo'
+import BackTab from '../Nav/BackTab'
+import SEO from '../seo'
 import './blog-post.css'
 
 const BlogPost = ({ data }) => {
@@ -40,6 +41,7 @@ const BlogPost = ({ data }) => {
           <BlogAuthor name={authorName} url={authorUrl} />
           <BlogHTMLWrapper dangerouslySetInnerHTML={{ __html: body }} />
         </BlogContentWrapper>
+        <BackTab path={'/blog'} />
       </BlogPageContainer>
     </Layout>
   )

@@ -21,7 +21,7 @@ const WeekendRecovery = ({ data }) => {
         keywords={siteConfig.weekendRecovery.keywords}
         lang={siteConfig.weekendRecovery.lang}
       />
-      <BackTab />
+      <BackTab path={'/classes'} />
       <HeadlineSection images={data} />
       <LeadSection copy={data.weekendCopy} />
       <WeekendStatsSection images={data} />

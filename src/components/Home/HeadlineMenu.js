@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { TweenMax, Back } from 'gsap/TweenMax'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import ListArrow from '../../svgs/ListArrow'
 import { above } from '../../styles/Theme'
@@ -32,13 +31,11 @@ class HeadlineMenu extends Component {
       <MenuContainer>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
-          <MenuLink to="/specials">First Timer Specials</MenuLink>
+          <MenuLink to="/specials">First Time Specials</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
-          <MenuLink swipe direction="right" duration={0.5} to="/about">
-            About
-          </MenuLink>
+          <MenuLink to="/about">About</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
@@ -98,7 +95,7 @@ const MenuText = styled.li`
   `}
 `
 
-const MenuLink = styled(AniLink)`
+const MenuLink = styled(Link)`
   margin-left: 8px;
   text-decoration: none;
   color: ${props => props.theme.fillerColor};

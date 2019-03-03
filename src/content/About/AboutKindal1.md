@@ -8,4 +8,4 @@ I used to be 32 pounds overweight. I struggled for years trying to lose weight a
 
 It wasn’t until I was introduced to strength training that everything changed for me.
 
-Since then, I have become a student of strength and functional training for women.
+Since then, I've become a student of strength and functional training for women.

@@ -11,4 +11,4 @@ The cost is the same as our normal membership since you’ll attend normal class
 - \$127 gives you 12 classes per month.
 - \$155 gives you unlimited classes per month.
 
-After Ignite, if you want to stay a member, you will need to sign up for our normal membership options which are all month to month.
+After Ignite, if you want to stay a member, sign up for our normal membership options which are all month to month.

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import TweenMax, { Back } from 'gsap/TweenMax'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 import { HeadlineContainer } from '../../styles/Containers'
 import { SpecialSubhead } from '../../styles/Headlines'
@@ -33,21 +32,19 @@ class MenuList extends Component {
     return (
       <MenuContainer>
         <HeadlineContainer left>
-          <SpecialSubhead color={'#B3B6E1'}>MENU</SpecialSubhead>
+          <SpecialSubhead secondary>MENU</SpecialSubhead>
         </HeadlineContainer>
         <MenuListContainer>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/">Home</MenuLink>
-            <MenuArrow />
-          </MenuText>
-          <MenuText ref={this.setMenuItemRef}>
-            <MenuLink swipe direction="right" duration={0.5} to="/about">
-              About
-            </MenuLink>
+            <MenuLink to="/about">About</MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/classes">Classes</MenuLink>
+            <MenuArrow />
+          </MenuText>
+          <MenuText ref={this.setMenuItemRef}>
+            <MenuLink to="/schedule">Schedule</MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
@@ -59,6 +56,10 @@ class MenuList extends Component {
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
+            <MenuLink to="/transformations">Before/Afters</MenuLink>
+            <MenuArrow />
+          </MenuText>
+          <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/pricing">Pricing</MenuLink>
             <MenuArrow />
           </MenuText>
@@ -67,7 +68,7 @@ class MenuList extends Component {
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/">Login</MenuLink>
+            <MenuLink to="/location">Location</MenuLink>
             <MenuArrow />
           </MenuText>
         </MenuListContainer>
@@ -103,7 +104,7 @@ const MenuText = styled.li`
   }
 `
 
-const MenuLink = styled(AniLink)`
+const MenuLink = styled(Link)`
   margin: 0;
   margin-right: 20px;
   padding: 0;

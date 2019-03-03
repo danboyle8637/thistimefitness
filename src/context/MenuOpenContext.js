@@ -8,14 +8,19 @@ class MenuOpenStore extends Component {
 
     this.state = {
       leftPosition: '20%',
+      rightPosition: '20%',
       menuOpen: false,
       scheduleOpen: false,
+      blogMenuOpen: false,
       drawerMaxWidth: 0,
       handleToggleMenu: this.handleToggleMenu,
       handleCloseMenu: this.handleCloseMenu,
       handleToggleSchedule: this.handleToggleSchedule,
       handleCloseSchedule: this.handleCloseSchedule,
+      handleToggleBlogMenu: this.handleToggleBlogMenu,
+      handleCloseBlogMenu: this.handleCloseBlogMenu,
       setMenuState: this.setMenuState,
+      setBlogMenuState: this.setBlogMenuState,
     }
   }
 
@@ -29,6 +34,11 @@ class MenuOpenStore extends Component {
     this.setState({ scheduleOpen: toggle })
   }
 
+  handleToggleBlogMenu = () => {
+    const toggle = !this.state.blogMenuOpen
+    this.setState({ blogMenuOpen: toggle })
+  }
+
   handleCloseMenu = () => {
     this.setState({ menuOpen: false })
   }
@@ -37,8 +47,16 @@ class MenuOpenStore extends Component {
     this.setState({ scheduleOpen: false })
   }
 
+  handleCloseBlogMenu = () => {
+    this.setState({ blogMenuOpen: false })
+  }
+
   setMenuState = (maxWidth, leftPosition) => {
     this.setState({ leftPosition, drawerMaxWidth: maxWidth })
+  }
+
+  setBlogMenuState = (maxWidth, rightPosition) => {
+    this.setState({ rightPosition, drawerMaxWidth: maxWidth })
   }
 
   render() {

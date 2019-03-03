@@ -7,6 +7,8 @@ import BlogPostCard from '../components/Blog/BlogPostCard'
 import TextHeader from '../components/Shared/TextHeader'
 import Layout from '../components/layout'
 import { above } from '../styles/Theme'
+import { siteConfig } from '../helpers/siteConfig'
+import SEO from '../components/seo'
 
 const Blog = ({ data }) => {
   const cards = data.gcms.blogPosts.map(post => {
@@ -31,6 +33,14 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
+      <SEO
+        title={siteConfig.blog.title}
+        description={siteConfig.blog.description}
+        image={siteConfig.blog.image}
+        url={siteConfig.blog.url}
+        keywords={siteConfig.blog.keywords}
+        lang={siteConfig.blog.lang}
+      />
       <TextHeader
         word={'blog'}
         tagLine={'Success Secrets | Case Studies'}

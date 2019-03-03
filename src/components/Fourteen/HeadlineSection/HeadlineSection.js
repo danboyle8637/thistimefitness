@@ -8,7 +8,6 @@ import {
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
 import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
-import AnimatedScrollArrow from '../../Shared/AnimatedScrollArrow'
 
 class HeadlineSection extends Component {
   render() {
@@ -31,7 +30,6 @@ class HeadlineSection extends Component {
             </BackgroundWrapper>
             <ContentWrapper>
               <HeadlineContent />
-              <AnimatedScrollArrow tabletTop={'90%'} desktopTop={'96%'} />
             </ContentWrapper>
           </HeadlineGrid>
         )}

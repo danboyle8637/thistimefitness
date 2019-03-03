@@ -25,7 +25,11 @@ const InnerBodyText = styled.div`
     color: ${props => props.theme.secondaryColor};
   }
   & ul {
-    color: ${props => props.theme.secondaryColor};
+    color: ${props => props.theme.textColor};
+  }
+  & a {
+    color: ${props => props.theme.primaryColor};
+    text-decoration: none;
   }
 `
 

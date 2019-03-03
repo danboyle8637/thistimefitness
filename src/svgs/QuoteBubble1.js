@@ -17,16 +17,16 @@ const QuoteBubble1 = ({ width, height }) => (
         y2="201.36"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0" stopColor="#09a9b7" stopOpacity=".14" />
-        <stop offset=".24" stopColor="#09a9b7" stopOpacity=".07" />
-        <stop offset=".47" stopColor="#09a9b7" stopOpacity="0" />
+        <stop offset="0" stopColor="#2AD2E2" stopOpacity=".14" />
+        <stop offset=".24" stopColor="#2AD2E2" stopOpacity=".07" />
+        <stop offset=".47" stopColor="#2AD2E2" stopOpacity="0" />
       </linearGradient>
     </defs>
     <path
       id="bubble"
       d="M468.24 8.89H19.76A8.76 8.76 0 0 0 11 17.65v133.49a8.76 8.76 0 0 0 8.76 8.75h328.92l49.68 45.92a4.44 4.44 0 0 0 7.45-3.26v-42.66h62.43a8.76 8.76 0 0 0 8.76-8.75V17.65a8.76 8.76 0 0 0-8.76-8.76z"
       transform="translate(-8 -5.89)"
-      stroke="#09a9b7"
+      stroke="#2AD2E2"
       strokeMiterlimit="10"
       strokeWidth="5"
       fill="url(#gradientQuote1)"
@@ -35,7 +35,7 @@ const QuoteBubble1 = ({ width, height }) => (
       id="quote"
       transform="translate(47.89 69.31)"
       fontSize="27"
-      fill="#09a9b7"
+      fill="#2AD2E2"
       fontFamily="Avenir-Medium, Avenir"
       fontWeight="500"
     >

@@ -11,3 +11,8 @@ blog-info-box
 blog-picture-group
 blog-recipe-directions
 */
+
+#blog-right-cross,
+#blog-left-cross {
+  visibility: hidden;
+}

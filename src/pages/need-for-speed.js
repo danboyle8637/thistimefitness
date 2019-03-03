@@ -21,7 +21,7 @@ const NeedForSpeed = ({ data }) => {
         keywords={siteConfig.need4Speed.keywords}
         lang={siteConfig.need4Speed.lang}
       />
-      <BackTab />
+      <BackTab path={'/classes'} />
       <HeadlineSection images={data} />
       <LeadSection copy={data.needForSpeedCopy} />
       <NeedForSpeedStatsSection images={data} />

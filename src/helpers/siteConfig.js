@@ -1,5 +1,5 @@
 export const siteConfig = {
-  fbAppId: '',
+  fbAppId: '734625066685760',
   home: {
     title: 'This Time Fitness: West Ashley Fitness Studio for Women',
     description:
@@ -178,6 +178,18 @@ export const siteConfig = {
     description: `We are blessed with some amazing members. Here are just some of our members and what they said about working out at This Time Fitness.`,
     image: '../images/Facebook/14-for-14-share-image.jpg',
     url: 'https://thistimefitness.com/reviews',
+    lang: 'en-us',
+  },
+  blog: {
+    title: 'Learn the Tips, Tricks, And Successes That Help You Succeed!',
+    description: `We share recipes, our workout tips, exercises, and case studies from our successful members so you can get the info to help you hit your healthy lifestyle goals.`,
+    url: 'https://thistimefitness.com/blog',
+    keywords: [
+      'fitness blog',
+      'healthy living tips',
+      'fitness tips',
+      'west ashley gym',
+    ],
     lang: 'en-us',
   },
   ignite: {

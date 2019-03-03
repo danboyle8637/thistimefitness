@@ -78,7 +78,7 @@ class LeadSection extends Component {
               <ArrowList
                 listItems={[
                   { text: 'Personalized training...' },
-                  { text: 'Custom support…' },
+                  { text: 'One-on-one support…' },
                   { text: 'Real community...' },
                   { text: 'Results that last!' },
                 ]}
