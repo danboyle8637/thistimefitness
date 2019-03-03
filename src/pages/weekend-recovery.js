@@ -7,10 +7,20 @@ import LeadSection from '../components/Classes/WeekendRecovery/LeadSection'
 import WeekendStatsSection from '../components/Classes/WeekendRecovery/WeekendStatsSection'
 import CTASection from '../components/Classes/WeekendRecovery/CTASection'
 import BackTab from '../components/Nav/BackTab'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const WeekendRecovery = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.weekendRecovery.title}
+        description={siteConfig.weekendRecovery.description}
+        image={siteConfig.weekendRecovery.image}
+        url={siteConfig.weekendRecovery.url}
+        keywords={siteConfig.weekendRecovery.keywords}
+        lang={siteConfig.weekendRecovery.lang}
+      />
       <BackTab />
       <HeadlineSection images={data} />
       <LeadSection copy={data.weekendCopy} />

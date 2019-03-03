@@ -3,10 +3,20 @@ import { graphql } from 'gatsby'
 
 import HeadlineSection from '../components/Classes/HeadlineSection/HeadlineSection'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const Classes = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.classes.title}
+        description={siteConfig.classes.description}
+        image={siteConfig.classes.image}
+        url={siteConfig.classes.url}
+        keywords={siteConfig.classes.keywords}
+        lang={siteConfig.classes.lang}
+      />
       <HeadlineSection images={data} path={data.classesPath.path} />
     </Layout>
   )

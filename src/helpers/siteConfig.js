@@ -43,7 +43,7 @@ export const siteConfig = {
     ],
     lang: 'en-us',
   },
-  ignite: {
+  igniteProgram: {
     title: 'Ignite - 6 Week Beginner Focused Fitness Program',
     description: `Ignite is a 6 week program for women just getting back into exercise. We'll work with you extra close so you know what to do. Plus you get a lot more!`,
     image: '../images/Facebook/ignite-share-image.jpg',

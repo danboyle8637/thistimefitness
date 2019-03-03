@@ -8,10 +8,20 @@ import BenefitSection from '../components/Fourteen/BenefitSection/BenefitSection
 import CallToActionSection from '../components/Fourteen/CallToActionSection/CallToActionSection'
 import FourteenDayForm from '../components/Fourteen/Form/FourteenDayForm'
 import Faq from '../components/Shared/FAQ/FAQ'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const FourteenFor14 = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.fourteen.title}
+        description={siteConfig.fourteen.description}
+        image={siteConfig.fourteen.image}
+        url={siteConfig.fourteen.url}
+        keywords={siteConfig.fourteen.keywords}
+        lang={siteConfig.fourteen.lang}
+      />
       <HeadlineSection images={data} />
       <LeadSection />
       <BenefitSection

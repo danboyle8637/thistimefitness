@@ -5,10 +5,18 @@ import Layout from '../components/layout'
 import TextHeader from '../components/Shared/TextHeader'
 import SpecialCard from '../components/Specials/SpecialCard'
 import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const Specials = ({ data }) => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO
+      title={siteConfig.specials.title}
+      description={siteConfig.specials.description}
+      image={siteConfig.specials.image}
+      url={siteConfig.specials.url}
+      keywords={siteConfig.specials.keywords}
+      lang={siteConfig.specials.lang}
+    />
     <TextHeader
       word={'Specials'}
       tagLine={'New Member Specials'}

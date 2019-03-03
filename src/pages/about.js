@@ -18,6 +18,10 @@ const About = ({ data }) => {
       <SEO
         title={siteConfig.about.title}
         description={siteConfig.about.description}
+        image={siteConfig.about.image}
+        url={siteConfig.about.url}
+        keywords={siteConfig.about.keywords}
+        lang={siteConfig.about.lang}
       />
       <HeadlineSection images={data} />
       <WhoWeAre copy={data.aboutCopy} />

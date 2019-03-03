@@ -9,10 +9,18 @@ import TextHeader from '../components/Shared/TextHeader'
 import BigPricingCard from '../components/Pricing/BigPricingCard'
 import { siteConfig } from '../helpers/siteConfig'
 import { above } from '../styles/Theme'
+import SEO from '../components/seo'
 
 const Pricing = () => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.pricing.title}
+        description={siteConfig.pricing.description}
+        image={siteConfig.pricing.image}
+        url={siteConfig.pricing.url}
+        lang={siteConfig.pricing.lang}
+      />
       <TextHeader
         word={'pricing'}
         tagLine={'Monthly | Class Passes | Custom'}

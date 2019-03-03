@@ -7,10 +7,20 @@ import LeadSection from '../components/Classes/BodyBurn/LeadSection'
 import BodyBurnStatsSection from '../components/Classes/BodyBurn/BodyBurnStatsSection'
 import CTASection from '../components/Classes/BodyBurn/CTASection'
 import BackTab from '../components/Nav/BackTab'
+import { siteConfig } from '../helpers/siteConfig'
+import SEO from '../components/seo'
 
 const BodyBurn = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.bodyBurn.title}
+        description={siteConfig.bodyBurn.description}
+        image={siteConfig.bodyBurn.image}
+        url={siteConfig.bodyBurn.url}
+        keywords={siteConfig.bodyBurn.keywords}
+        lang={siteConfig.bodyBurn.lang}
+      />
       <BackTab />
       <HeadlineSection images={data} />
       <LeadSection copy={data.bodyBurnCopy} />

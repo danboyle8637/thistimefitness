@@ -8,6 +8,8 @@ import ScheduleRow from '../components/Schedule/ScheduleRow'
 import ScheduleDots from '../components/Schedule/ScheduleDots'
 import ClassKeyCard from '../components/Schedule/ClassKeyCard'
 import ScrollIcon from '../svgs/ScrollIcon'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 class Schedule extends Component {
   state = {
@@ -39,6 +41,12 @@ class Schedule extends Component {
   render() {
     return (
       <Layout>
+        <SEO
+          title={siteConfig.schedule.title}
+          description={siteConfig.schedule.description}
+          url={siteConfig.schedule.url}
+          lang={siteConfig.schedule.lang}
+        />
         <TextHeader
           word={'Schedule'}
           tagLine={'Build Your Habit'}

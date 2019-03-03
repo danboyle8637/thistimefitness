@@ -12,8 +12,10 @@ const IndexPage = ({ data }) => {
       <SEO
         title={siteConfig.home.title}
         description={siteConfig.home.description}
+        image={siteConfig.home.image}
+        url={siteConfig.home.url}
         keywords={siteConfig.home.keywords}
-        land={siteConfig.home.lang}
+        lang={siteConfig.home.lang}
       />
       <HeadlineSection images={data} />
     </Layout>

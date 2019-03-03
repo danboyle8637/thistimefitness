@@ -10,10 +10,20 @@ import BenefitSection from '../components/Ignite/BenefitSection/BenefitSection'
 import CTASection from '../components/Ignite/CTASection/CTASection'
 import IgniteForm from '../components/Ignite/Form/IgniteForm'
 import Faq from '../components/Shared/FAQ/FAQ'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const Ignite = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.igniteProgram.title}
+        description={siteConfig.igniteProgram.description}
+        image={siteConfig.igniteProgram.image}
+        url={siteConfig.igniteProgram.url}
+        keywords={siteConfig.igniteProgram.keywords}
+        lang={siteConfig.igniteProgram.lang}
+      />
       <HeadlineSection images={data} />
       <LeadSection copy={data.igniteCopy} />
       <CountdownSection />

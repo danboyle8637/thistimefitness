@@ -7,10 +7,20 @@ import LeadSection from '../components/Classes/NeedForSpeed/LeadSection'
 import NeedForSpeedStatsSection from '../components/Classes/NeedForSpeed/NeedForSpeedStatsSection'
 import CTASection from '../components/Classes/NeedForSpeed/CTASection'
 import BackTab from '../components/Nav/BackTab'
+import SEO from '../components/seo'
+import { siteConfig } from '../helpers/siteConfig'
 
 const NeedForSpeed = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.need4Speed.title}
+        description={siteConfig.need4Speed.description}
+        image={siteConfig.need4Speed.image}
+        url={siteConfig.need4Speed.url}
+        keywords={siteConfig.need4Speed.keywords}
+        lang={siteConfig.need4Speed.lang}
+      />
       <BackTab />
       <HeadlineSection images={data} />
       <LeadSection copy={data.needForSpeedCopy} />

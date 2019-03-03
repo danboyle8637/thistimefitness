@@ -10,17 +10,27 @@ import {
   BlogHTMLWrapper,
 } from '../../styles/BlogStyles'
 import BlogAuthor from './BlogAuthor'
+import SEO from '../components/seo'
 import './blog-post.css'
 
 const BlogPost = ({ data }) => {
+  const postSlug = data.gcms.blogPost.slug
   const blogFeatureImage = data.gcms.blogPost.featureImage.url
   const blogTitle = data.gcms.blogPost.title
+  const postDescription = data.gcms.blogPost.postDescription
   const authorName = data.gcms.blogPost.author.name
   const authorUrl = data.gcms.blogPost.author.avatar.url
   const body = data.gcms.blogPost.blogText.html
 
   return (
     <Layout>
+      <SEO
+        title={blogTitle}
+        description={postDescription}
+        image={blogFeatureImage}
+        url={`https://thistimefitness.com/${postSlug}`}
+        lang={'en-us'}
+      />
       <BlogPageContainer>
         <BlogFeatureImageContainer>
           <img src={blogFeatureImage} style={{ margin: 0, padding: 0 }} />
@@ -45,6 +55,7 @@ export const query = graphql`
         slug
         title
         postTags
+        postDescription
         author {
           name
           avatar {
