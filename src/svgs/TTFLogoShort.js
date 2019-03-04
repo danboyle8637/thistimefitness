@@ -11,17 +11,17 @@ const TTFLogoShort = ({ width, height }) => {
     >
       <defs>
         <linearGradient
-          id="a"
+          id="short-ttf-gradient"
           x1="244.66"
           y1="9.12"
           x2="692.15"
           y2="234.55"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".38" stopColor="#2ad2e2" />
-          <stop offset=".58" stopColor="#5aa3ec" />
-          <stop offset=".86" stopColor="#9b65fa" />
-          <stop offset="1" stopColor="#b44cff" />
+          <stop offset="38%" stopColor="#2ad2e2" />
+          <stop offset="58%" stopColor="#5aa3ec" />
+          <stop offset="86%" stopColor="#9b65fa" />
+          <stop offset="100%" stopColor="#b44cff" />
         </linearGradient>
       </defs>
       <path
@@ -29,7 +29,7 @@ const TTFLogoShort = ({ width, height }) => {
         fill="#b44cff"
       />
       <path
-        fill="url(#a)"
+        fill="url(#short-ttf-gradient)"
         d="M654.25 70.27V9.43H241.2v62.55h70.07v176.73h80.67V71.98h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V70.27h113.83z"
       />
     </svg>
