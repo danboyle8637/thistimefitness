@@ -9,6 +9,7 @@ const PhoneIcon = ({ width, height, strokeColor, className }) => (
     height={height}
     viewBox="0 0 143.81 230.5"
   >
+    <title>Phone Icon</title>
     <path
       id="signal-outer"
       d="M140.81 45.5v-.25A42.26 42.26 0 0 0 98.56 3h-.75"

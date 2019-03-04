@@ -77,7 +77,7 @@ class BlogMenuDot extends Component {
         height={height}
         viewBox="0 0 174.12 174.12"
       >
-        <title>blog-menu</title>
+        <title>Blog Menu Icon</title>
         <g id="blog-menu-dot">
           <polyline
             ref={this.setRightXRef}

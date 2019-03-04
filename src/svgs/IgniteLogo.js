@@ -66,6 +66,7 @@ class IgniteLogo extends Component {
         height={height}
         viewBox="0 0 352.87 353.38"
       >
+        <title>Ignite Program Logo</title>
         <defs>
           <linearGradient
             id="back-flame-gradient"

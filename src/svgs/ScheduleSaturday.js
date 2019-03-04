@@ -55,6 +55,7 @@ class ScheduleSaturday extends Component {
         height={height}
         viewBox="0 0 200 200"
       >
+        <title>Saturday Icon</title>
         <g id="inactive-s">
           <path
             ref={this.setInactiveLetter}

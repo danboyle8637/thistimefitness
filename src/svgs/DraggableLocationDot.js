@@ -55,6 +55,7 @@ class DraggableLocationDot extends Component {
         height={height}
         viewBox="0 0 89 124.1"
       >
+        <title>Drag Slide Location Icon</title>
         <g id="class-active-dot">
           <path
             ref={this.setKettlebellRef}

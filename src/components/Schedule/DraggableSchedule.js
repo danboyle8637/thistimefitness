@@ -28,11 +28,11 @@ class DraggableSchedule extends Component {
       edgeResistance: 0.75,
       lockAxis: true,
       allowNativeTouchScrolling: false,
-      dragResistance: 0.3,
+      dragResistance: 0.2,
       throwProps: true,
       snap: this.snapX,
       zIndexBoost: false,
-      dragClickables: false,
+      dragClickables: true,
       bounds: { left: -10, right: -10, width: `${bounds}` },
     })
   }

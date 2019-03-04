@@ -8,6 +8,7 @@ const MessengerIcon = ({ width, height, className }) => (
     height={height}
     viewBox="0 0 179.9 181.76"
   >
+    <title>Facebook Messenger Icon</title>
     <path
       d="M100.29 6.56C50.61 6.56 10.34 44 10.34 90.19c0 25.79 12.57 48.84 32.31 64.18v33.95L73.32 170a96 96 0 0 0 27 3.83c49.68 0 90-37.44 90-83.62S150 6.56 100.29 6.56z"
       transform="translate(-10.34 -6.56)"

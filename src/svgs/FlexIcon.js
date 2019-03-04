@@ -9,6 +9,7 @@ const FlexIcon = ({ width, height, className, fill }) => (
     height={height}
     viewBox="0 0 183.86 181.28"
   >
+    <title>Flexibility and Total Body Icon</title>
     <path
       id="square"
       fill="none"

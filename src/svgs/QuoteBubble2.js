@@ -9,6 +9,7 @@ const QuoteBubble2 = ({ width, height }) => (
     height={height}
     viewBox="0 0 541 177.01"
   >
+    <title>Quote I'm a Beginner. Will I Get The Help I Need?</title>
     <defs>
       <linearGradient
         id="gradientQuote2"

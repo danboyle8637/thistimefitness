@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import ClassKeyDot from '../../svgs/ClassKeyDot'
+import { above } from '../../styles/Theme'
 
 class ClassKeyCard extends Component {
   setStartColor = () => {
@@ -94,8 +95,14 @@ const ClassKeyContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 100%;
+  width: 80%;
   padding: 0 30px;
+  ${above.mobile`
+    width: 78%;
+  `}
+  ${above.tablet`
+    width: 60%;
+  `}
 `
 
 const ClassWrapper = styled.div`

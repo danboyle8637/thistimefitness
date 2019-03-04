@@ -4,14 +4,22 @@ import styled from 'styled-components'
 import ReviewHeader from './ReviewHeader'
 import { InnerBodyText } from '../../styles/BodyText'
 import { BodyTextContainer } from '../../styles/Containers'
+import { above } from '../../styles/Theme'
 
 const ReviewCard = ({ reviewText, headline, stars, name, url }) => {
   return (
     <ReviewCardContainer>
-      <ReviewHeader headline={headline} stars={stars} name={name} url={url} />
-      <BodyTextContainer mMarginTop={'10px'}>
+      <ReviewHeader headline={headline} url={url} />
+      <BodyTextContainer
+        mMarginTop={'16px'}
+        tMarginTop={'20px'}
+        dMarginTop={'20px'}
+        tabletWidth={'100%'}
+        desktopWidth={'100%'}
+      >
         <InnerBodyText dangerouslySetInnerHTML={{ __html: reviewText }} />
       </BodyTextContainer>
+      <ReviewerName>- {name}</ReviewerName>
     </ReviewCardContainer>
   )
 }
@@ -19,11 +27,25 @@ const ReviewCard = ({ reviewText, headline, stars, name, url }) => {
 export default ReviewCard
 
 const ReviewCardContainer = styled.div`
-  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: ${props => props.theme.specialBackground};
-  padding: 12px;
-  border-radius: 50px 6px 6px 6px;
+  &:not(:last-child) {
+    margin-bottom: 60px;
+  }
+  ${above.tablet`
+    &:not(:last-child) {
+    margin-bottom: 120px;
+  }
+  `}
+`
+
+const ReviewerName = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: '1.8px';
+  color: ${props => props.theme.primaryColor};
 `

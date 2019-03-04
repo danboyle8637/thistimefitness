@@ -144,7 +144,7 @@ class IgniteForm extends Component {
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
         </HeadlineContainer>
         <div id="ignite-quiz" />
-        <FormWrapper>
+        <FormWrapper data-netlify="true">
           <FormFieldSet>
             <RadioInput
               name={'obstacle'}

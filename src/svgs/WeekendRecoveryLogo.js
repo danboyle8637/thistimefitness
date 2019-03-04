@@ -9,6 +9,7 @@ const WeekendRecoveryLogo = ({ width, height, className }) => (
     height={height}
     viewBox="0 0 787.93 268.36"
   >
+    <title>Weekend Recovery Class Logo</title>
     <text
       transform="translate(0 121)"
       fontSize="142.36"

@@ -54,6 +54,7 @@ class MapSVG extends Component {
         height={height}
         viewBox="0 0 800 800"
       >
+        <title>Map of Where TTF Is Located</title>
         <g id="side-streets" fill="none">
           <path
             id="parking-lot"

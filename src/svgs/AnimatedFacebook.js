@@ -54,6 +54,7 @@ class AnimatedFacebook extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
+        <title>Facebook Page Icon</title>
         <path
           ref={this.setFacebookStroke}
           id="icon"

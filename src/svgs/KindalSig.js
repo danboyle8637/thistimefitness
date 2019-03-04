@@ -9,6 +9,7 @@ const KindalSig = ({ width, height, fill, className }) => (
     height={height}
     viewBox="0 0 211.75 142.49"
   >
+    <title>Kindal Signature</title>
     <path
       d="M27 34c-.83 6-.14 12.15-.11 18.15Q27 62 26.61 71.81C26.15 84.82 23.93 98 24 111c0 3.47 5.46 4.43 6.22.84 2.63-12.51 2.21-26.28 2.3-39q.06-9.81-.31-19.62c-.23-6.28 0-13-1.56-19.13-.44-1.69-3.4-1.93-3.66 0z"
       transform="translate(-6.47 -5.44)"

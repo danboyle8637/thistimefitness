@@ -3,12 +3,13 @@ import styled from 'styled-components'
 
 import { above } from '../../styles/Theme'
 
-const TextHeader = ({ word, tagLine, fontSize, letterSpacing }) => {
+const TextHeader = ({ word, tagLine, fontSize, letterSpacing, purple }) => {
   const wordArray = word.split('')
 
   const pageTitle = wordArray.map((letter, index) => {
     return (
       <LetterStyle
+        purple={purple}
         key={index}
         fontSize={fontSize}
         letterSpacing={letterSpacing}
@@ -21,7 +22,7 @@ const TextHeader = ({ word, tagLine, fontSize, letterSpacing }) => {
   return (
     <TextHeaderContainer>
       <WordWrapper>{pageTitle}</WordWrapper>
-      <TagLine>{tagLine}</TagLine>
+      <TagLine purple={purple}>{tagLine}</TagLine>
     </TextHeaderContainer>
   )
 }
@@ -45,7 +46,7 @@ const TextHeaderContainer = styled.div`
 const LetterStyle = styled.div`
   font-family: Montserrat;
   text-transform: uppercase;
-  color: #21222b;
+  color: ${props => (props.purple ? '#1f1e2f' : '#21222b')};
   font-weight: 800;
   font-size: ${props => props.fontSize};
   letter-spacing: ${props => props.letterSpacing};
@@ -55,7 +56,7 @@ const LetterStyle = styled.div`
 const TagLine = styled.div`
   font-family: Montserrat;
   text-transform: uppercase;
-  color: #21222b;
+  color: ${props => (props.purple ? '#1f1e2f' : '#21222b')};
   font-size: 18px;
 `
 

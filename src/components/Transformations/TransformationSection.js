@@ -2,17 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import TransformationCard from './TransformationCard'
-import ResultsDisclaimer from './ResultsDisclaimer'
-import {
-  SectionContainer,
-  HeadlineContainer,
-  BodyTextContainer,
-  ButtonContainer,
-} from '../../styles/Containers'
+import { SectionContainer } from '../../styles/Containers'
 import TextHeader from '../Shared/TextHeader'
-import { BaseSubhead } from '../../styles/Headlines'
-import { BodyText } from '../../styles/BodyText'
-import { MainButton } from '../../styles/Buttons'
+import TransformationCTA from './TransformationCTA'
+import ReviewsLink from '../Reviews/ReviewsLink'
 import { above } from '../../styles/Theme'
 
 const TransformationSection = ({ images }) => {
@@ -33,33 +26,8 @@ const TransformationSection = ({ images }) => {
       />
       <SectionContainer desktopWidth={'70%'}>
         <TransformationGrid>{transformations}</TransformationGrid>
-        <HeadlineContainer
-          mMarginTop={'60px'}
-          tMarginTop={'80px'}
-          dMarginTop={'100px'}
-        >
-          <BaseSubhead>Ready for Your Change?</BaseSubhead>
-        </HeadlineContainer>
-        <BodyTextContainer
-          mMarginTop={'14px'}
-          tMarginTop={'20px'}
-          dMarginTop={'26px'}
-        >
-          <BodyText>
-            You too can accomplish your goals. But you have to start now... stay
-            persistant... work hard... and have fun. Let's do this together.
-          </BodyText>
-          <ButtonContainer
-            mMarginTop={'30px'}
-            tMarginTop={'40px'}
-            dMarginTop={'50px'}
-            tabletWidth={'100%'}
-            desktopWidth={'100%'}
-          >
-            <MainButton to={'/specials'}>See Specials</MainButton>
-          </ButtonContainer>
-        </BodyTextContainer>
-        <ResultsDisclaimer />
+        <ReviewsLink />
+        <TransformationCTA />
       </SectionContainer>
     </>
   )

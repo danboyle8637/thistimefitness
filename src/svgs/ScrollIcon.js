@@ -71,6 +71,7 @@ class ScrollIcon extends Component {
         height={height}
         viewBox="0 0 97.79 30.79"
       >
+        <title>Scroll Horizontally Icon</title>
         <circle cx="48.9" cy="15.4" r="13.53" fill="#d7daff" id="center-dot" />
         <path
           ref={this.setRightArrowRef}

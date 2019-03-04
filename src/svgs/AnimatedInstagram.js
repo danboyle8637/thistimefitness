@@ -70,6 +70,7 @@ class AnimatedInstagram extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
+        <title>Instagram Account Icon</title>
         <path
           ref={this.setCameraBody}
           d="M163.65 215.72H57.79a52.07 52.07 0 0 1-52.07-52.07V57.79A52.07 52.07 0 0 1 57.79 5.72h105.86a52.07 52.07 0 0 1 52.07 52.07v105.86a52.07 52.07 0 0 1-52.07 52.07z"

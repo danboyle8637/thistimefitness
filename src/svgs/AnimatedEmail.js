@@ -54,6 +54,7 @@ class AnimatedEmail extends Component {
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
       >
+        <title>Email Me Icon</title>
         <path
           ref={this.setEmailStroke}
           id="envelope"

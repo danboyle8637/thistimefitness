@@ -9,6 +9,7 @@ const Need4SpeedLogo = ({ width, height, className }) => (
     height={height}
     viewBox="0 0 772.53 164.91"
   >
+    <title>Need for Speed Class Logo</title>
     <defs>
       <linearGradient
         id="speed-gradient"

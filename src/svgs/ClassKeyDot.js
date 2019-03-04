@@ -22,6 +22,7 @@ class ClassKeyDot extends Component {
         height={height}
         viewBox="0 0 85 85"
       >
+        <title>Class Key Icon</title>
         <defs>
           <linearGradient
             id={`${classType}-gradient`}

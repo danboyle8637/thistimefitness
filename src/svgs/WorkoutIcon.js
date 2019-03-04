@@ -9,6 +9,7 @@ const WorkoutIcon = ({ width, height, className, kbFill, dbFill }) => (
     height={height}
     viewBox="0 0 194.08 142.24"
   >
+    <title>Workout Icon</title>
     <path
       id="kettlebell"
       d="M132.22 130.66c1.71.17 3.44.25 5.19.25a52.41 52.41 0 0 0 5.42-104.55 42 42 0 1 0-57.64 56.39 52.6 52.6 0 0 0 .85 6.06m19.79-67.73a25 25 0 0 1 17.34 7 52.51 52.51 0 0 0-35.9 35.09 25.11 25.11 0 0 1 18.56-42.09z"

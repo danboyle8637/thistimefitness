@@ -9,6 +9,7 @@ const HeartIcon = ({ width, height, className, fill }) => (
     height={height}
     viewBox="0 0 188.75 180.49"
   >
+    <title>Heart and Community Icon</title>
     <path
       d="M93.62 171.92l-71.49-71.49a53.64 53.64 0 0 1 0-75.83 48.16 48.16 0 0 1 68.17-.21"
       fill="none"

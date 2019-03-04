@@ -10,6 +10,7 @@ const EmailIcon = ({ width, height, strokeColor, className }) => {
       height={height}
       viewBox="0 0 220.95 143.32"
     >
+      <title>Email Me Icon</title>
       <path
         d="M215.47 22.99v97.33a17.53 17.53 0 0 1-17.52 17.52h-175a17.55 17.55 0 0 1-17.48-17.52V22.99a17.43 17.43 0 0 1 6.18-13.34l65.91 63.92 28.17 27.33a6.81 6.81 0 0 0 9.48 0l28.33-27.43L209.29 9.7a17.43 17.43 0 0 1 6.18 13.29z"
         fill="none"

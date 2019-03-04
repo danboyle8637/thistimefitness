@@ -9,6 +9,7 @@ const FitQuickieIcon = ({ width, height, fill, className }) => (
     height={height}
     viewBox="0 0 211.78 325.62"
   >
+    <title>Fit Quickie Icon</title>
     <text
       transform="translate(6.34 230.79)"
       fontSize="259.99"

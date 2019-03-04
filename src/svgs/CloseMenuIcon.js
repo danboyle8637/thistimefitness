@@ -1,7 +1,4 @@
 import React, { Component } from 'react'
-import { Transition } from 'react-transition-group'
-
-import MenuOpenContext from '../context/MenuOpenContext'
 
 class CloseMenuIcon extends Component {
   render() {
@@ -16,6 +13,7 @@ class CloseMenuIcon extends Component {
         height={height}
         viewBox="0 0 174.51 174.51"
       >
+        <title>Close Menu Icon</title>
         <rect
           x="134.27"
           y="-17.17"

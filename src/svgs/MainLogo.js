@@ -11,6 +11,7 @@ const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
     height={height}
     viewBox="0 0 648.78 207.6"
   >
+    <title>This Time Fitness Main Logo</title>
     <defs>
       <linearGradient
         id="time-logo-gradient"

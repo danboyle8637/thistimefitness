@@ -115,6 +115,7 @@ class ScheduleIcon extends Component {
           height={height}
           viewBox="0 0 279.27 260.54"
         >
+          <title>Class Schedule Icon</title>
           <g
             id="close-calendar"
             fill="#fff"

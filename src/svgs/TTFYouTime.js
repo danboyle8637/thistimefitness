@@ -8,6 +8,7 @@ const TTFYourTime = ({ width, height, fill1, fill2, className }) => (
     height={height}
     viewBox="0 0 644.57 192.79"
   >
+    <title>This Time It's Your Time Logo</title>
     <defs>
       <linearGradient
         id="yourTimeGradient"

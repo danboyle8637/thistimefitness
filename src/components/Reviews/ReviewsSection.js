@@ -1,7 +1,9 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import ReviewCard from './ReviewCard'
+import TransformationCTA from '../Transformations/TransformationCTA'
 
 const ReviewsSection = () => {
   return (
@@ -45,10 +47,21 @@ const ReviewsSection = () => {
           )
         })
 
-        return <div>{cards}</div>
+        return (
+          <RatingsWrapper>
+            {cards}
+            <TransformationCTA />
+          </RatingsWrapper>
+        )
       }}
     />
   )
 }
 
 export default ReviewsSection
+
+const RatingsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

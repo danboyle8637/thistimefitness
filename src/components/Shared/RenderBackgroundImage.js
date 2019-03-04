@@ -29,7 +29,6 @@ class RenderBackgroundImage extends Component {
     }
 
     if (screenWidth <= 600) {
-      console.log('Non-iphoneX background set.')
       this.setState({
         backgroundImage: mobileBackground.childImageSharp.fluid,
       })

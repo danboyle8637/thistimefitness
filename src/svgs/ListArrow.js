@@ -9,6 +9,7 @@ const ListArrow = ({ width, height, className }) => (
     height={height}
     viewBox="0 0 92.9 38.35"
   >
+    <title>List Item Arrow</title>
     <path
       id="arrow-body"
       fill="none"

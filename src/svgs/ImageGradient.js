@@ -9,6 +9,7 @@ const TopDarkBlueGradient = ({ width, height, stopMidOpacity }) => (
     height={height}
     viewBox="0 0 1440 600"
   >
+    <title>Image Gradient Section</title>
     <defs>
       <linearGradient
         id="topDarkBlueGradient"

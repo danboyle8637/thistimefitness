@@ -9,6 +9,7 @@ const BodyBurnLogo = ({ width, height, className }) => (
     height={height}
     viewBox="0 0 772.75 107.15"
   >
+    <title>Body Burn Class Logo</title>
     <defs>
       <linearGradient
         id="bbc-body-gradient"

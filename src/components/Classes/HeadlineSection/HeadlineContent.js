@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import BodyBurnLogo from '../../../svgs/BodyBurnLogo'
 import Need4SpeedLogo from '../../../svgs/Need4SpeedLogo'
@@ -72,10 +73,10 @@ const HeadlineContent = () => {
         }
 
         return (
-          <>
+          <HeadlineContentContainer>
             {showScrollIcon}
             <DraggableRow>{classCard}</DraggableRow>
-          </>
+          </HeadlineContentContainer>
         )
       }}
     </ScreenWidthContext.Consumer>
@@ -83,3 +84,10 @@ const HeadlineContent = () => {
 }
 
 export default HeadlineContent
+
+const HeadlineContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+`
