@@ -24,10 +24,26 @@ const TTFLogoShort = ({ width, height }) => {
           y2="234.55"
           // gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".38" stopColor={stopColor1} />
-          <stop offset=".58" stopColor={stopColor2} />
-          <stop offset=".86" stopColor={stopColor3} />
-          <stop offset="1" stopColor={stopColor4} />
+          <stop
+            offset=".38"
+            style={{ stopColor: '#2ad2e2' }}
+            // stopColor={stopColor1}
+          />
+          <stop
+            offset=".58"
+            style={{ stopColor: '#5aa3ec' }}
+            // stopColor={stopColor2}
+          />
+          <stop
+            offset=".86"
+            style={{ stopColor: '#9b65fa' }}
+            // stopColor={stopColor3}
+          />
+          <stop
+            offset="1"
+            style={{ stopColor: '#b44cff' }}
+            // stopColor={stopColor4}
+          />
         </linearGradient>
       </defs>
       <path
