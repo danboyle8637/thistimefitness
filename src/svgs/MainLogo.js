@@ -13,7 +13,7 @@ const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
   >
     <defs>
       <linearGradient
-        id="linear-gradient"
+        id="time-logo-gradient"
         x1="202.21"
         y1="326.9"
         x2="650.13"
@@ -88,7 +88,7 @@ const MainLogo = ({ width, height, thisFill, fitnessFill, className }) => (
         transform="translate(-8.22 -9.44)"
       />
     </g>
-    <g id="Time" fill="url(#linear-gradient)">
+    <g id="Time" fill="url(#time-logo-gradient)">
       <path
         d="M239.63 41.05h-35.42V9.44h111.6v31.61h-35.42v89.31h-40.76zM326.34 9.44h40.77v120.92h-40.77zM494.76 130.36l-.34-55.11-26.26 44.23h-18l-26.22-42.33v53.21H386.8V9.44h33.51l39.39 64.43 38.35-64.43h33.51l.34 120.92zM652.13 99.61v30.75H551.59V9.44h98.29v30.75h-58.21v14.16h51.13v29.37h-51.13v15.89z"
         transform="translate(-8.22 -9.44)"
