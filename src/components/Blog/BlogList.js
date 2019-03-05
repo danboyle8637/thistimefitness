@@ -1,16 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
-import { SectionContainer } from '../styles/Containers'
-import BlogPostCard from '../components/Blog/BlogPostCard'
-import TextHeader from '../components/Shared/TextHeader'
-import Layout from '../components/layout'
-import { above } from '../styles/Theme'
-import { siteConfig } from '../helpers/siteConfig'
-import SEO from '../components/seo'
+import { SectionContainer } from '../../styles/Containers'
+import BlogPostCard from '../Blog/BlogPostCard'
+import { above } from '../../styles/Theme'
+import TextHeader from '../Shared/TextHeader'
+import Layout from '../layout'
+import BlogPagination from './BlogPagination'
+import { siteConfig } from '../../helpers/siteConfig'
+import SEO from '../seo'
 
-const Blog = ({ data }) => {
+const BlogList = ({ data, pageContext }) => {
   const cards = data.gcms.blogPosts.map(post => {
     const id = post.id
     const title = post.title
@@ -31,6 +32,8 @@ const Blog = ({ data }) => {
     )
   })
 
+  console.log(pageContext)
+
   return (
     <Layout>
       <SEO
@@ -49,12 +52,18 @@ const Blog = ({ data }) => {
       />
       <SectionContainer>
         <BlogPostContainer>{cards}</BlogPostContainer>
+        <BlogPagination
+          hasPrevPage={pageContext.hasPrevPage}
+          hasNextPage={pageContext.hasNextPage}
+          nextPageLink={pageContext.nextPageLink}
+          pageNumber={pageContext.pageNumber}
+        />
       </SectionContainer>
     </Layout>
   )
 }
 
-export default Blog
+export default BlogList
 
 const BlogPostContainer = styled.div`
   display: grid;
@@ -68,9 +77,9 @@ const BlogPostContainer = styled.div`
 `
 
 export const query = graphql`
-  query {
+  query allBlogPostsQuery($first: Int!, $skip: Int!) {
     gcms {
-      blogPosts {
+      blogPosts(first: $first, skip: $skip, orderBy: published_DESC) {
         id
         title
         slug

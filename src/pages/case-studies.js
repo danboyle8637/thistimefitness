@@ -34,12 +34,12 @@ const CaseStudies = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={siteConfig.blog.title}
-        description={siteConfig.blog.description}
-        image={siteConfig.blog.image}
-        url={siteConfig.blog.url}
-        keywords={siteConfig.blog.keywords}
-        lang={siteConfig.blog.lang}
+        title={siteConfig.caseStudies.title}
+        description={siteConfig.caseStudies.description}
+        image={siteConfig.caseStudies.image}
+        url={siteConfig.caseStudies.url}
+        keywords={siteConfig.caseStudies.keywords}
+        lang={siteConfig.caseStudies.lang}
       />
       <TextHeader
         word={'Case Studies'}
@@ -70,7 +70,10 @@ const BlogPostContainer = styled.div`
 export const query = graphql`
   query {
     gcms {
-      blogPosts(where: { slug_contains: "transformation" }) {
+      blogPosts(
+        where: { slug_contains: "transformation" }
+        orderBy: published_DESC
+      ) {
         id
         slug
         title

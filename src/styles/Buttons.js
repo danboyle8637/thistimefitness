@@ -106,4 +106,30 @@ const GhostButton = styled.a`
   `}
 `
 
-export { SiteButton, GhostButton, MainButton, PurchaseButton }
+const FormButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  background: ${props => props.theme.primaryButtonColor};
+  border-radius: 4px;
+  color: ${props => props.theme.fillerColor};
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 4px;
+  border: none;
+  cursor: pointer;
+  width: 270px;
+  ${above.mobile`
+    width: 380px;
+  `}
+  ${above.tablet`
+    width: 420px;
+    padding: 16px 10px;
+  `}
+`
+
+export { SiteButton, GhostButton, MainButton, PurchaseButton, FormButton }

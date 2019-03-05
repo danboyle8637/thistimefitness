@@ -43,7 +43,7 @@ class HeadlineMenu extends Component {
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />
-          <MenuLink to="/">Case Studies</MenuLink>
+          <MenuLink to="/case-studies">Case Studies</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
           <MenuArrow />

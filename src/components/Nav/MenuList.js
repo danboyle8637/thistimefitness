@@ -52,7 +52,7 @@ class MenuList extends Component {
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/">Case Studies</MenuLink>
+            <MenuLink to="/case-studies">Case Studies</MenuLink>
             <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>

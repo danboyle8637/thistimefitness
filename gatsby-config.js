@@ -8,7 +8,7 @@ module.exports = {
     description: `This Time Fitness is a West Ashley strength, weight loss, and fitness studio for women. Learn more, come in , and take control of your health now!`,
     url: 'https://thistimefitness.com',
     author: `Never Back Down`,
-    app_id: '123456',
+    app_id: '734625066685760',
     social: {
       instagram: '@thistimefitness',
       facebook: '@thistimefitness',

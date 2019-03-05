@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import { navigateTo } from 'gatsby'
 
 import TextInput from '../../Shared/Form/TextInput'
 import TextArea from '../../Shared/Form/TextArea'
 import RadioInput from '../../Shared/Form/RadioInput'
 import validate from '../../../helpers/validate'
-import { SiteButton } from '../../../styles/Buttons'
+import { FormButton } from '../../../styles/Buttons'
 import { SpecialSubhead } from '../../../styles/Headlines'
 import {
   SectionContainer,
@@ -12,6 +13,12 @@ import {
   ButtonContainer,
 } from '../../../styles/Containers'
 import { FormFieldSet } from '../../../styles/Form'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 class FourteenDayForm extends Component {
   constructor(props) {
@@ -140,6 +147,22 @@ class FourteenDayForm extends Component {
     })
   }
 
+  handleFormSubmit = event => {
+    event.preventDefault()
+    const form = event.target
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...this.state,
+      }),
+    })
+      .then(() => navigateTo(form.getAttribute('action')))
+      .catch(error => alert(error))
+  }
+
   render() {
     return (
       <SectionContainer
@@ -152,10 +175,14 @@ class FourteenDayForm extends Component {
         <div id="take-the-quiz" />
         <form
           name={'14 Day Trial Form'}
+          method="post"
           data-netlify="true"
-          action="/src/pages/14-for-14-thank-you.js"
+          data-netlify-honeypot="bot-field"
+          action="/src/pages/14-for-14-thank-you/"
+          onSubmit={this.handleFormSubmit}
         >
           <FormFieldSet>
+            <input type="hidden" name="form-name" value="contact" />
             <RadioInput
               name={'goal'}
               value={this.state.formControls.goal.value}
@@ -207,7 +234,7 @@ class FourteenDayForm extends Component {
               tMarginTop={'30px'}
               dMarginTop={'40px'}
             >
-              <SiteButton type={'submit'}>I'm Interested</SiteButton>
+              <FormButton type={'submit'}>I'm Interested</FormButton>
             </ButtonContainer>
           </FormFieldSet>
         </form>
