@@ -10,14 +10,12 @@ exports.shouldUpdateScroll = ({
   routerProps: { location },
   getSavedScrollPosition,
 }) => {
-  const currentPosition = getSavedScrollPosition(location)
+  let currentPosition = getSavedScrollPosition(location)
   console.log(currentPosition)
 
   if (!currentPosition) {
-    window.scrollTo(0, 0)
+    return [0, 0]
   } else {
-    window.scrollTo(currentPosition)
+    return currentPosition
   }
-
-  return false
 }

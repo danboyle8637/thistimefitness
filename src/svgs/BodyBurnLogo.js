@@ -19,10 +19,10 @@ const BodyBurnLogo = ({ width, height, className }) => (
         y2="71.35"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0%" stopColor="#2ad2e2" stopOpacity="1" />
-        <stop offset="32%" stopColor="#5aa3ec" stopOpacity="1" />
-        <stop offset="78%" stopColor="#9b65fa" stopOpacity="1" />
-        <stop offset="100%" stopColor="#b44cff" stopOpacity="1" />
+        <stop offset="0" stopColor="#2ad2e2" />
+        <stop offset=".32" stopColor="#5aa3ec" />
+        <stop offset=".78" stopColor="#9b65fa" />
+        <stop offset="1" stopColor="#b44cff" />
       </linearGradient>
       <linearGradient
         id="bbcBurnGradient"
@@ -33,10 +33,10 @@ const BodyBurnLogo = ({ width, height, className }) => (
         gradientTransform="translate(0 -103)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0%" stopColor="#2ad2e2" stopOpacity="1" />
-        <stop offset="20%" stopColor="#5aa3ec" stopOpacity="1" />
-        <stop offset="48%" stopColor="#9b65fa" stopOpacity="1" />
-        <stop offset="61%" stopColor="#b44cff" stopOpacity="1" />
+        <stop offset="0" stopColor="#2ad2e2" />
+        <stop offset=".2" stopColor="#5aa3ec" />
+        <stop offset=".48" stopColor="#9b65fa" />
+        <stop offset=".61" stopColor="#b44cff" />
       </linearGradient>
     </defs>
     <g id="body" fill="#2ad2e2">

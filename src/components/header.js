@@ -10,13 +10,7 @@ const Header = () => {
     <HeaderContainer>
       <HeadlineWrapper>
         <Link to={'/'}>
-          <TTFLogoShort
-            width={'50px'}
-            color1={'#2ad2e2'}
-            color2={'#5aa3ec'}
-            color3={'#9b65fa'}
-            color4={'#b44cff'}
-          />
+          <TTFLogoShort width={'50px'} />
         </Link>
         <MenuSection />
       </HeadlineWrapper>

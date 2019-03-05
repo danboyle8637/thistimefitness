@@ -19,10 +19,10 @@ const TTFLogoShort = ({ width, height, color1, color2, color3, color4 }) => {
           y2="234.55"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="38%" stopColor={color1} stopOpacity="1" />
-          <stop offset="58%" stopColor={color2} stopOpacity="1" />
-          <stop offset="86%" stopColor={color3} stopOpacity="1" />
-          <stop offset="100%" stopColor={color4} stopOpacity="1" />
+          <stop offset=".38" stopColor={'#2ad2e2'} />
+          <stop offset=".58" stopColor={'#5aa3ec'} />
+          <stop offset=".86" stopColor={'#9b65fa'} />
+          <stop offset="1" stopColor={'#b44cff'} />
         </linearGradient>
       </defs>
       <path
