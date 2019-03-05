@@ -44,14 +44,14 @@ class Drawer extends Component {
           }
         }}
       >
-        <ScheduleDrawerContainer>
-          <ClassKeyCardWrapper width={`${this.context.drawerMaxWidth}px`}>
+        <ScheduleDrawerContainer width={`${this.context.drawerMaxWidth}px`}>
+          <ClassKeyCardWrapper>
             <ClassKeyCard classType={'body_burn'} />
             <ClassKeyCard classType={'running'} />
             <ClassKeyCard classType={'yoga'} />
           </ClassKeyCardWrapper>
           <ScrollWrapper>
-            <ScrollText>Scroll</ScrollText>
+            <ScrollText>Swipe</ScrollText>
             <ScrollIconWrapper />
           </ScrollWrapper>
           <SideScheduleRow
@@ -71,6 +71,7 @@ const ScheduleDrawerContainer = styled.div`
   position: fixed;
   top: 0;
   right: 0;
+  min-width: ${props => props.width};
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -86,8 +87,7 @@ const ScheduleDrawerContainer = styled.div`
 const ClassKeyCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: ${props => props.width};
+  align-items: flex-start;
 `
 
 const ScrollWrapper = styled.div`

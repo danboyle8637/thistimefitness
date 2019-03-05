@@ -31,6 +31,19 @@ const InnerBodyText = styled.div`
     color: ${props => props.theme.primaryColor};
     text-decoration: none;
   }
+  & th {
+    color: ${props => props.theme.primaryColor};
+    padding: 6px 0;
+  }
+  & td {
+    background: #393b4f;
+    padding: 6px 0;
+    border-radius: 4px;
+    border-bottom: none;
+    &:last-child {
+      padding-left: 10px;
+    }
+  }
 `
 
 export { BodyText, InnerBodyText }

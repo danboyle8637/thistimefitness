@@ -150,7 +150,11 @@ class FourteenDayForm extends Component {
           <SpecialSubhead>Fill Out Form</SpecialSubhead>
         </HeadlineContainer>
         <div id="take-the-quiz" />
-        <form data-netlify="true">
+        <form
+          name={'14 Day Trial Form'}
+          data-netlify="true"
+          action="/src/pages/14-for-14-thank-you.js"
+        >
           <FormFieldSet>
             <RadioInput
               name={'goal'}
@@ -203,7 +207,7 @@ class FourteenDayForm extends Component {
               tMarginTop={'30px'}
               dMarginTop={'40px'}
             >
-              <SiteButton>I'm Interested</SiteButton>
+              <SiteButton type={'submit'}>I'm Interested</SiteButton>
             </ButtonContainer>
           </FormFieldSet>
         </form>

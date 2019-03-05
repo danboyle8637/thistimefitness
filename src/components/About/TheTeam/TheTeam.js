@@ -24,7 +24,7 @@ const TheTeam = () => {
         if (screenWidth < 1024) {
           showScrollIcon = (
             <BodyTextContainer center mMarginTop={'12px'} tMarginTop={'14px'}>
-              <ScrollText>Scroll</ScrollText>
+              <ScrollText>Swipe</ScrollText>
               <ScrollIconWrapper />
             </BodyTextContainer>
           )

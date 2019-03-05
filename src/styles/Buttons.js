@@ -81,7 +81,7 @@ const PurchaseButton = styled.a`
 
 const GhostButton = styled.a`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 8px 20px;
   background: transparent;

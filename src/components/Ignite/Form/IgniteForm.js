@@ -144,7 +144,11 @@ class IgniteForm extends Component {
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
         </HeadlineContainer>
         <div id="ignite-quiz" />
-        <FormWrapper data-netlify="true">
+        <FormWrapper
+          name={'Ignite Lead Form'}
+          data-netlify="true"
+          action="/src/pages/ignite-thank-you.js"
+        >
           <FormFieldSet>
             <RadioInput
               name={'obstacle'}
@@ -191,7 +195,7 @@ class IgniteForm extends Component {
               tMarginTop={'40px'}
               dMarginTop={'40px'}
             >
-              <SiteButton>I'm Interested</SiteButton>
+              <SiteButton type={'submit'}>I'm Interested</SiteButton>
             </ButtonContainer>
           </FormFieldSet>
         </FormWrapper>

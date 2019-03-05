@@ -84,6 +84,7 @@ const ScheduleDotsWrapper = styled.div`
 const ClassKeyWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: start;
   gap: 10px;
   padding: 30px;
 `

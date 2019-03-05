@@ -92,17 +92,9 @@ export default ClassKeyCard
 
 const ClassKeyContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 80%;
+  justify-content: flex-start;
+  align-items: center;
   padding: 0 30px;
-  ${above.mobile`
-    width: 78%;
-  `}
-  ${above.tablet`
-    width: 60%;
-  `}
 `
 
 const ClassWrapper = styled.div`

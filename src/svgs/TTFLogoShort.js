@@ -1,11 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-const TTFLogoShort = ({ width, height }) => {
-  const stopColor1 = '#2ad2e2'
-  const stopColor2 = '#5aa3ec'
-  const stopColor3 = '#9b65fa'
-  const stopColor4 = '#b44cff'
-
+const TTFLogoShort = ({ width, height, color1, color2, color3, color4 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -22,28 +17,12 @@ const TTFLogoShort = ({ width, height }) => {
           y1="9.12"
           x2="692.15"
           y2="234.55"
-          // gradientUnits="userSpaceOnUse"
+          gradientUnits="userSpaceOnUse"
         >
-          <stop
-            offset=".38"
-            style={{ stopColor: '#2ad2e2' }}
-            // stopColor={stopColor1}
-          />
-          <stop
-            offset=".58"
-            style={{ stopColor: '#5aa3ec' }}
-            // stopColor={stopColor2}
-          />
-          <stop
-            offset=".86"
-            style={{ stopColor: '#9b65fa' }}
-            // stopColor={stopColor3}
-          />
-          <stop
-            offset="1"
-            style={{ stopColor: '#b44cff' }}
-            // stopColor={stopColor4}
-          />
+          <stop offset="38%" stopColor={color1} stopOpacity="1" />
+          <stop offset="58%" stopColor={color2} stopOpacity="1" />
+          <stop offset="86%" stopColor={color3} stopOpacity="1" />
+          <stop offset="100%" stopColor={color4} stopOpacity="1" />
         </linearGradient>
       </defs>
       <path

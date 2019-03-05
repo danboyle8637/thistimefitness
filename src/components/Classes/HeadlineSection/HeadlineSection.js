@@ -34,9 +34,7 @@ const HeadlineSection = ({ images, path }) => {
           </BackgroundWrapper>
           <ContentWrapper>
             <DraggableWrapper>
-              <CenteredWrapper>
-                <HeadlineContent />
-              </CenteredWrapper>
+              <HeadlineContent />
             </DraggableWrapper>
           </ContentWrapper>
         </HeadlineGrid>
@@ -51,16 +49,8 @@ const DraggableWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-`
-
-const CenteredWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 80%;
   ${above.tablet`
     justify-content: center;
   `}

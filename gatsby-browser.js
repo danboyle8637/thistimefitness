@@ -11,8 +11,13 @@ exports.shouldUpdateScroll = ({
   getSavedScrollPosition,
 }) => {
   const currentPosition = getSavedScrollPosition(location)
+  console.log(currentPosition)
 
-  window.scrollTo(...(currentPosition || [0, 0]))
+  if (!currentPosition) {
+    window.scrollTo(0, 0)
+  } else {
+    window.scrollTo(currentPosition)
+  }
 
   return false
 }

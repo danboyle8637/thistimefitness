@@ -25,7 +25,7 @@ const ClassCard = ({ icon, title, body, path }) => {
         if (screenWidth < 1024) {
           showScrollIcon = (
             <ScrollWrapper>
-              <ScrollText>Scroll</ScrollText>
+              <ScrollText>Swipe</ScrollText>
               <ScrollIconWrapper />
             </ScrollWrapper>
           )
@@ -75,7 +75,6 @@ const ClassCardContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100%;
   ${above.tablet`
     width: 100%;
   `}
@@ -109,7 +108,7 @@ const DescriptionText = styled.p`
   color: ${props => props.theme.textColor};
   font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 3.4px;
   ${above.mobile`
     letter-spacing: 13px;
   `}
