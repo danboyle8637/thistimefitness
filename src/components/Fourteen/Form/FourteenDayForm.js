@@ -174,7 +174,7 @@ class FourteenDayForm extends Component {
         </HeadlineContainer>
         <div id="take-the-quiz" />
         <form
-          name={'14 Day Trial Form'}
+          name={'fourteen_day_trial_form'}
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -182,7 +182,7 @@ class FourteenDayForm extends Component {
           onSubmit={this.handleFormSubmit}
         >
           <FormFieldSet>
-            <input type="hidden" name="form-name" value="contact" />
+            <input type="hidden" name="bot-field" />
             <RadioInput
               name={'goal'}
               value={this.state.formControls.goal.value}
