@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { navigateTo } from 'gatsby'
+import { navigate } from 'gatsby'
 
 import TextInput from '../../Shared/Form/TextInput'
 import TextArea from '../../Shared/Form/TextArea'
@@ -156,10 +156,13 @@ class FourteenDayForm extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
         'form-name': form.getAttribute('name'),
-        ...this.state,
+        goal: this.state.formControls.goal.value,
+        why: this.state.formControls.why.value,
+        firstName: this.state.formControls.firstName.value,
+        email: this.state.formControls.email.value,
       }),
     })
-      .then(() => navigateTo(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute('action')))
       .catch(error => alert(error))
   }
 
@@ -178,7 +181,7 @@ class FourteenDayForm extends Component {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action="/src/pages/14-for-14-thank-you/"
+          action="/14-for-14-thank-you/"
           onSubmit={this.handleFormSubmit}
         >
           <FormFieldSet>

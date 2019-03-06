@@ -14,7 +14,8 @@ exports.shouldUpdateScroll = ({
   console.log(currentPosition)
 
   if (!currentPosition) {
-    return [0, 0]
+    window.scrollTo(0, 0)
+    return false
   } else {
     return currentPosition
   }

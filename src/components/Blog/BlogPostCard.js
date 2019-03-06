@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { MainButton } from '../../styles/Buttons'
@@ -6,13 +6,19 @@ import { ButtonContainer, HeadlineContainer } from '../../styles/Containers'
 import { above } from '../../styles/Theme'
 
 const BlogPostCard = ({ title, author, image, slug, postTags }) => {
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    console.log(cardRef)
+  })
+
   const tags = postTags.map((tag, index) => (
     <BlogPostTag key={index}>{tag}</BlogPostTag>
   ))
 
   return (
-    <BlogCardContainer>
-      <FeatureImageWrapper src={image} />
+    <BlogCardContainer ref={cardRef}>
+      <FeatureImageWrapper src={image} alt={title} />
       <BlogContentWrapper>
         <HeadlineContainer
           left
@@ -29,7 +35,9 @@ const BlogPostCard = ({ title, author, image, slug, postTags }) => {
         <ButtonContainer
           mMarginTop={'14px'}
           tMarginTop={'18px'}
+          dMarginTop={'20px'}
           tabletWidth={'100%'}
+          desktopWidth={'100%'}
         >
           <MainButton to={`/blog/${slug}`}>Read Post</MainButton>
         </ButtonContainer>
@@ -100,6 +108,7 @@ const BlogPostTagWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 `
 
 const HorizontalLine = styled.div`

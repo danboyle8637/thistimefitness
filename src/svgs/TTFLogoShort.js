@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-const TTFLogoShort = ({ width, height, color1, color2, color3, color4 }) => {
+const TTFLogoShort = ({ width, height }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
       viewBox="0 0 664 259"
-      preserveAspectRatio="xMidYMid meet"
     >
       <title>Small This Time Fitness Logo</title>
       <defs>
@@ -26,8 +25,8 @@ const TTFLogoShort = ({ width, height, color1, color2, color3, color4 }) => {
         </linearGradient>
       </defs>
       <path
-        d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
         fill="#b44cff"
+        d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
       />
       <g fill="url(#shortTTFGradient)">
         <path d="M654.25 70.27V9.43H241.2v62.55h70.07v176.73h80.67V71.98h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V70.27h113.83z" />

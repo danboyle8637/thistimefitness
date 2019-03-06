@@ -32,8 +32,6 @@ const BlogList = ({ data, pageContext }) => {
     )
   })
 
-  console.log(pageContext)
-
   return (
     <Layout>
       <SEO
@@ -56,6 +54,7 @@ const BlogList = ({ data, pageContext }) => {
           hasPrevPage={pageContext.hasPrevPage}
           hasNextPage={pageContext.hasNextPage}
           nextPageLink={pageContext.nextPageLink}
+          prevPageLink={pageContext.prevPageLink}
           pageNumber={pageContext.pageNumber}
         />
       </SectionContainer>
@@ -70,9 +69,9 @@ const BlogPostContainer = styled.div`
   grid-template-columns: 1fr;
   width: 100%;
   ${above.tablet`
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
-    width: 100%;
   `}
 `
 

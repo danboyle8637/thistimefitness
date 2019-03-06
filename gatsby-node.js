@@ -51,9 +51,10 @@ exports.createPages = ({ graphql, actions }) => {
             first: postsPerPage,
             skip: i * postsPerPage,
             pageNumber: i + 1,
-            hasNextPage: i + 1 !== posts.length / postsPerPage,
+            hasNextPage: i + 1 < posts.length / postsPerPage,
             hasPrevPage: posts.length / postsPerPage - (i + 1) < i,
             nextPageLink: `/blog/${i + 2}`,
+            prevPageLink: i === 0 || 1 ? `/blog` : `/blog/${i}`,
           },
         })
       })
