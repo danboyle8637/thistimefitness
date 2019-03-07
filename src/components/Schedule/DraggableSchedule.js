@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import TweenMax from 'gsap/TweenMax'
 import { Draggable } from 'gsap/Draggable'
 import ThrowPropsPlugin from '../../greensockplugins/ThrowPropsPlugin'
 
@@ -23,6 +24,9 @@ class DraggableSchedule extends Component {
   componentDidMount() {
     const { bounds } = this.props
 
+    TweenMax.set(this.dragSchedule, { x: bounds * 3 })
+    this.context.handleChangeActiveSlide(3)
+
     Draggable.create(this.dragSchedule, {
       type: 'x',
       edgeResistance: 0.75,
@@ -31,9 +35,9 @@ class DraggableSchedule extends Component {
       dragResistance: 0.2,
       throwProps: true,
       snap: this.snapX,
-      zIndexBoost: false,
+      zIndexBoost: true,
       dragClickables: true,
-      bounds: { left: -10, right: -10, width: `${bounds}` },
+      bounds: bounds,
     })
   }
 

@@ -90,10 +90,10 @@ const Pricing = () => {
             </ListContainer>
             <PurchaseCardWrapper>
               <BigPricingCard
-                link={siteConfig.purchaseLinks.sixClassPass}
+                link={siteConfig.purchaseLinks.fiveClassPass}
                 price={60}
                 priceTitle={'5 Classes'}
-                priceDescription={`Get a class pass for 6 classes to use how you want. You have 6 months to use your pass.`}
+                priceDescription={`Get a class pass for 5 classes to use how you want. You have 6 months to use your pass.`}
               />
               <BigPricingCard
                 link={siteConfig.purchaseLinks.tenClassPass}

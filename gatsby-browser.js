@@ -14,8 +14,6 @@ exports.shouldUpdateScroll = ({
 }) => {
   let currentPosition = getSavedScrollPosition(location)
 
-  console.log(currentPosition)
-
   if (!currentPosition) {
     setTimeout(() => window.scrollTo(0, 0), transitionWait)
     return [0, 0]

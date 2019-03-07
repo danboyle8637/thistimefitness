@@ -7,6 +7,7 @@ import WeekendRecoveryLogo from '../../../svgs/WeekendRecoveryLogo'
 import ScreenWidthContext from '../../../context/ScreenWidthContext'
 import DraggableRow from '../../Shared/DraggableRow'
 import DraggableDots from '../../Shared/DraggableDots'
+import ActiveSlideContext from '../../../context/ActiveSlideContext'
 
 import ClassCard from './ClassCard'
 
@@ -75,7 +76,7 @@ const HeadlineContent = () => {
         return (
           <HeadlineContentContainer>
             {showScrollIcon}
-            <DraggableRow>{classCard}</DraggableRow>
+            <DraggableRow page={'classes'}>{classCard}</DraggableRow>
           </HeadlineContentContainer>
         )
       }}

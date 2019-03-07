@@ -158,17 +158,15 @@ class IgniteForm extends Component {
   render() {
     return (
       <SectionContainer
-        mobilePadding={'20px 20px 80px 20px'}
-        tabletPadding={'20px 20px 80px 20px'}
-        desktopPadding={'20px 20px 80px 20px'}
-        tabletWidth={'60%'}
-        desktopWidth={'40%'}
+        tabletPadding={'40px 20px 40px 20px'}
+        desktopPadding={'40px 20px 40px 20px'}
       >
         <HeadlineContainer>
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
         </HeadlineContainer>
         <div id="ignite-quiz" />
         <form
+          style={{ width: '100%' }}
           name={'ignite_lead_form'}
           method="post"
           data-netlify="true"

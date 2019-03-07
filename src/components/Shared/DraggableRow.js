@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import TweenMax from 'gsap/TweenMax'
 import { Draggable } from 'gsap/Draggable'
 import ThrowPropsPlugin from '../../greensockplugins/ThrowPropsPlugin'
 
@@ -29,6 +30,16 @@ class DraggableRow extends Component {
     const { page } = this.props
     const screenWidth = window.innerWidth
     this.setState({ screenWidth })
+
+    if (screenWidth < 1024 && page === 'classes') {
+      TweenMax.set(this.card, { x: screenWidth })
+      this.context.handleChangeActiveSlide(1)
+    }
+
+    if (page === 'schedule') {
+      TweenMax.set(this.card, { x: screenWidth * 3 })
+      this.context.handleChangeActiveSlide(3)
+    }
 
     if (screenWidth <= 1024) {
       Draggable.create(this.card, {
