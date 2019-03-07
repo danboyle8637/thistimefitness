@@ -3,39 +3,37 @@ import React from 'react'
 const TTFLogoShort = ({ width, height }) => {
   return (
     <svg
+      id="Layer_1"
+      data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}
-      viewBox="0 0 664 259"
+      viewBox="0 0 644.56 239.28"
     >
-      <title>Small This Time Fitness Logo</title>
       <defs>
         <linearGradient
-          id="shortTTFGradient"
-          x1="244.66"
-          y1="9.12"
-          x2="692.15"
-          y2="234.55"
+          id="shortLogoGradient"
+          x1="234.97"
+          y1="-.31"
+          x2="682.46"
+          y2="225.13"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset=".38" stopColor={'#2ad2e2'} />
-          <stop offset=".58" stopColor={'#5aa3ec'} />
-          <stop offset=".86" stopColor={'#9b65fa'} />
-          <stop offset="1" stopColor={'#b44cff'} />
+          <stop offset=".38" stopColor="#2ad2e2" />
+          <stop offset=".58" stopColor="#5aa3ec" />
+          <stop offset=".86" stopColor="#9b65fa" />
+          <stop offset="1" stopColor="#b44cff" />
         </linearGradient>
       </defs>
-      <g>
-        <path
-          fill="#b44cff"
-          d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
-        />
-      </g>
-      <g>
-        <path
-          fill="url(#shortTTFGradient)"
-          d="M654.25 70.27V9.43H241.2v62.55h70.07v176.73h80.67V71.98h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V70.27h113.83z"
-        />
-      </g>
+      <path
+        d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
+        transform="translate(-9.69 -9.43)"
+        fill="#b44cff"
+      />
+      <path
+        fill="url(#shortLogoGradient)"
+        d="M644.56 60.84V0H231.51v62.55h70.07v176.73h80.67V62.55h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V60.84h113.83z"
+      />
     </svg>
   )
 }
