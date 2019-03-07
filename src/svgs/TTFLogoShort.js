@@ -10,19 +10,6 @@ const TTFLogoShort = ({ width, height, className }) => {
       height={height}
       viewBox="0 0 644.56 239.28"
     >
-      <linearGradient
-        id="ttf-short-logo-gradient"
-        x1="234.97"
-        y1="-.31"
-        x2="682.46"
-        y2="225.13"
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset=".26" stopColor="#2ad2e2" stopOpacity="1" />
-        <stop offset=".5" stopColor="#5aa3ec" stopOpacity="1" />
-        <stop offset=".84" stopColor="#9b65fa" stopOpacity="1" />
-        <stop offset="1" stopColor="#b44cff" stopOpacity="1" />
-      </linearGradient>
       <g id="t">
         <path
           id="t-letter"
@@ -33,7 +20,7 @@ const TTFLogoShort = ({ width, height, className }) => {
       </g>
       <path
         id="ttf-gradient"
-        fill="url(#ttf-short-logo-gradient)"
+        fill="#2ad2e2"
         d="M644.56 60.84V0H231.51v62.55h70.07v176.73h80.67V62.55h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V60.84h113.83z"
       />
     </svg>

@@ -18,6 +18,8 @@ const FourteenThankYouPage = ({ data }) => {
   const headline = data.file.childMarkdownRemark.frontmatter.headline
   const body = data.file.childMarkdownRemark.html
 
+  const purchaseFourteen = 'https://thistimefitness.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&MembershipTemplateId=4012AB4B-B964-40D1-840D-CDE8E78BAAD4&personId=C6DA3B35-E59E-4E62-A630-605A1FD4BA2F'
+
   return (
     <Layout>
       <TextHeader
@@ -51,7 +53,7 @@ const FourteenThankYouPage = ({ data }) => {
           tMarginTop={'40px'}
           dMarginTop={'40px'}
         >
-          <GhostButton>Register On ZenPlanner</GhostButton>
+          <GhostButton href={purchaseFourteen} target="_blank">Register On ZenPlanner</GhostButton>
         </ButtonContainer>
       </SectionContainer>
     </Layout>
