@@ -12,6 +12,21 @@ import ScrollIcon from '../../svgs/ScrollIcon'
 class Drawer extends Component {
   static contextType = MenuOpenContext
 
+  constructor(props) {
+    super(props)
+
+    this.classKeys = null
+    this.swipe = null
+
+    this.setClassKeysRef = element => {
+      this.classKeys = element
+    }
+
+    this.setSwipeRef = element => {
+      this.swipe = element
+    }
+  }
+
   render() {
     return (
       <Transition
@@ -35,6 +50,18 @@ class Drawer extends Component {
                 onComplete: done,
               }
             )
+            TweenMax.staggerFrom(
+              [this.classKeys, this.swipe],
+              0.4,
+              {
+                ease: Power2.easeOut,
+                x: 300,
+                opacity: 0,
+                delay: 0.2,
+                onComplete: done,
+              },
+              0.1
+            )
           } else {
             TweenMax.to(node, 0.3, {
               left: '100%',
@@ -45,12 +72,12 @@ class Drawer extends Component {
         }}
       >
         <ScheduleDrawerContainer width={`${this.context.drawerMaxWidth}px`}>
-          <ClassKeyCardWrapper>
+          <ClassKeyCardWrapper ref={this.setClassKeysRef}>
             <ClassKeyCard classType={'body_burn'} />
             <ClassKeyCard classType={'running'} />
             <ClassKeyCard classType={'yoga'} />
           </ClassKeyCardWrapper>
-          <ScrollWrapper>
+          <ScrollWrapper ref={this.setSwipeRef}>
             <ScrollText>Swipe</ScrollText>
             <ScrollIconWrapper />
           </ScrollWrapper>

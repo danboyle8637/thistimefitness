@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 const TTFLogoShort = ({ width, height }) => {
   return (
@@ -24,12 +24,17 @@ const TTFLogoShort = ({ width, height }) => {
           <stop offset="1" stopColor={'#b44cff'} />
         </linearGradient>
       </defs>
-      <path
-        fill="#b44cff"
-        d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
-      />
-      <g fill="url(#shortTTFGradient)">
-        <path d="M654.25 70.27V9.43H241.2v62.55h70.07v176.73h80.67V71.98h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V70.27h113.83z" />
+      <g>
+        <path
+          fill="#b44cff"
+          d="M79.77 72H9.69V9.43h220.82V72h-70.07v176.71H79.77z"
+        />
+      </g>
+      <g>
+        <path
+          fill="url(#shortTTFGradient)"
+          d="M654.25 70.27V9.43H241.2v62.55h70.07v176.73h80.67V71.98h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V70.27h113.83z"
+        />
       </g>
     </svg>
   )

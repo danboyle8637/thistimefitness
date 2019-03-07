@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import { MainButton } from '../../styles/Buttons'
@@ -6,32 +6,28 @@ import { ButtonContainer, HeadlineContainer } from '../../styles/Containers'
 import { above } from '../../styles/Theme'
 
 const BlogPostCard = ({ title, author, image, slug, postTags }) => {
-  const cardRef = useRef(null)
-
-  useEffect(() => {
-    console.log(cardRef)
-  })
-
   const tags = postTags.map((tag, index) => (
     <BlogPostTag key={index}>{tag}</BlogPostTag>
   ))
 
   return (
-    <BlogCardContainer ref={cardRef}>
+    <BlogCardContainer>
       <FeatureImageWrapper src={image} alt={title} />
       <BlogContentWrapper>
-        <HeadlineContainer
-          left
-          mMarginTop={'10px'}
-          tMarginTop={'14px'}
-          tabletWidth={'100%'}
-          desktopWidth={'100%'}
-        >
-          <BlogPostTitle>{title}</BlogPostTitle>
-        </HeadlineContainer>
-        <BlogPostTagWrapper>{tags}</BlogPostTagWrapper>
-        <HorizontalLine />
-        <BlogPostAuthor>By {author}</BlogPostAuthor>
+        <BlogTitleContentWrapper>
+          <HeadlineContainer
+            left
+            mMarginTop={'10px'}
+            tMarginTop={'14px'}
+            tabletWidth={'100%'}
+            desktopWidth={'100%'}
+          >
+            <BlogPostTitle>{title}</BlogPostTitle>
+          </HeadlineContainer>
+          <BlogPostTagWrapper>{tags}</BlogPostTagWrapper>
+          <HorizontalLine />
+          <BlogPostAuthor>By {author}</BlogPostAuthor>
+        </BlogTitleContentWrapper>
         <ButtonContainer
           mMarginTop={'14px'}
           tMarginTop={'18px'}
@@ -68,8 +64,16 @@ const BlogCardContainer = styled.div`
 const BlogContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 100%;
+  height: 100%;
   padding: 20px;
+`
+
+const BlogTitleContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `
 
 const FeatureImageWrapper = styled.img`
@@ -96,19 +100,15 @@ const BlogPostTag = styled.p`
   padding: 0;
   font-size: 13px;
   color: #9193b3;
-  align-self: flex-start;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  &:not(:first-child) {
-    margin-left: 5px;
-  }
 `
 
 const BlogPostTagWrapper = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 0px;
 `
 
 const HorizontalLine = styled.div`

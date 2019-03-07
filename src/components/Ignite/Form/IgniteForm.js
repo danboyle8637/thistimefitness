@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 import TextInput from '../../Shared/Form/TextInput'
 import RadioInput from '../../Shared/Form/RadioInput'
 import validate from '../../../helpers/validate'
-import { SiteButton } from '../../../styles/Buttons'
+import { FormButton } from '../../../styles/Buttons'
 import { SpecialSubhead } from '../../../styles/Headlines'
 import {
   SectionContainer,
@@ -12,6 +13,12 @@ import {
   ButtonContainer,
 } from '../../../styles/Containers'
 import { FormFieldSet } from '../../../styles/Form'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 class IgniteForm extends Component {
   constructor(props) {
@@ -131,6 +138,24 @@ class IgniteForm extends Component {
     this.setState({ formControls: copiedFormControls })
   }
 
+  handleFormSubmit = event => {
+    event.preventDefault()
+    const form = event.target
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        obstacle: this.state.formControls.obstacle.value,
+        firstName: this.state.formControls.firstName.value,
+        email: this.state.formControls.email.value,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch(error => alert(error))
+  }
+
   render() {
     return (
       <SectionContainer
@@ -145,11 +170,15 @@ class IgniteForm extends Component {
         </HeadlineContainer>
         <div id="ignite-quiz" />
         <FormWrapper
-          name={'Ignite Lead Form'}
+          name={'ignite_lead_form'}
+          method="post"
           data-netlify="true"
-          action="/src/pages/ignite-thank-you.js"
+          data-netlify-honeypot="bot-field"
+          action="/ignite-thank-you.js"
+          onSubmit={this.handleFormSubmit}
         >
           <FormFieldSet>
+            <input type="hidden" name="bot-field" />
             <RadioInput
               name={'obstacle'}
               value={this.state.formControls.obstacle.value}
@@ -195,7 +224,7 @@ class IgniteForm extends Component {
               tMarginTop={'40px'}
               dMarginTop={'40px'}
             >
-              <SiteButton type={'submit'}>I'm Interested</SiteButton>
+              <FormButton type={'submit'}>I'm Interested</FormButton>
             </ButtonContainer>
           </FormFieldSet>
         </FormWrapper>
