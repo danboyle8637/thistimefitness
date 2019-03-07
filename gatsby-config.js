@@ -122,7 +122,6 @@ module.exports = {
         fetchOptions: {},
       },
     },
-    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -144,6 +143,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: { pure: true },
+    },
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `${process.env.GTM_ACCOUNT_ID}`,
+        includeInDevelopment: false,
+        // Specify optional GTM environment details.
+        // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING',
+        // gtmPreview: 'YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME',
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
