@@ -174,7 +174,7 @@ class IgniteForm extends Component {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action="/ignite-thank-you.js"
+          action="/ignite-thank-you/"
           onSubmit={this.handleFormSubmit}
         >
           <FormFieldSet>
