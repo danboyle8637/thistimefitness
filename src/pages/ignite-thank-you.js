@@ -21,8 +21,8 @@ const IgniteThankYouPage = ({ data }) => {
   return (
     <Layout>
       <TextHeader
-        word={'14 for 14'}
-        tagLine={'Unlimited Class Trial'}
+        word={'Ignite'}
+        tagLine={'Ignite Beginner Program'}
         fontSize={'66px'}
         letterSpacing={'1.8px'}
       />

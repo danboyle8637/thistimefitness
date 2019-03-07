@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
 import TextInput from '../../Shared/Form/TextInput'
@@ -169,7 +168,7 @@ class IgniteForm extends Component {
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
         </HeadlineContainer>
         <div id="ignite-quiz" />
-        <FormWrapper
+        <form
           name={'ignite_lead_form'}
           method="post"
           data-netlify="true"
@@ -227,14 +226,10 @@ class IgniteForm extends Component {
               <FormButton type={'submit'}>I'm Interested</FormButton>
             </ButtonContainer>
           </FormFieldSet>
-        </FormWrapper>
+        </form>
       </SectionContainer>
     )
   }
 }
 
 export default IgniteForm
-
-const FormWrapper = styled.form`
-  width: 100%;
-`
