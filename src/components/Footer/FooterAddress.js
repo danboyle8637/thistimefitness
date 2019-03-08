@@ -70,6 +70,7 @@ const AddressText = styled.p`
   padding: 0;
   font-size: 15px;
   color: ${props => props.theme.footer.addressText};
+  text-decoration: none;
 `
 
 const SocialLink = styled.a`

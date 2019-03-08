@@ -131,15 +131,15 @@ module.exports = {
         background_color: `#2b2c3a`,
         theme_color: `#2b2c3a`,
         display: `standalone`,
-        icon: `src/images/ttf-icon.png`, // This path is relative to the root of the site.
+        icon: `${__dirname}src/images/ttf-icon.png`, // This path is relative to the root of the site.
         icons: [
           {
-            src: `src/images/favicons/ttf-manifext-logo-192x192.png`,
+            src: `${__dirname}src/images/favicons/ttf-manifext-logo-192x192.png`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `src/images/favicons/ttf-manifext-logo-512x512.png`,
+            src: `${__dirname}src/images/favicons/ttf-manifext-logo-512x512.png`,
             sizes: `512x512`,
             type: `image/png`,
           },
