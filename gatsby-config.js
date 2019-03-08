@@ -156,7 +156,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: `${process.env.GTM_ACCOUNT_ID}`,
+        id: `2282041936`,
         includeInDevelopment: false,
         // Specify optional GTM environment details.
         // gtmAuth: 'YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_AUTH_STRING',

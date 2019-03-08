@@ -27,7 +27,9 @@ const FooterNav = () => {
           <InternalLink to={'/privacy'}>Privacy</InternalLink>
           <InternalLink to={'/disclaimer'}>Disclaimer</InternalLink>
           <InternalLink to={'/contact'}>Contact</InternalLink>
-          <ExternalLink href={memberLoginLink}>Login</ExternalLink>
+          <ExternalLink href={memberLoginLink} target="_blank" rel={'noopener'}>
+            Login
+          </ExternalLink>
         </FooterSiteLinks>
         <FooterAddressWrapper>
           <FooterAddress />

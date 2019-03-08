@@ -18,7 +18,8 @@ const IgniteThankYouPage = ({ data }) => {
   const headline = data.file.childMarkdownRemark.frontmatter.headline
   const body = data.file.childMarkdownRemark.html
 
-  const purchaseIgnite = 'https://thistimefitness.sites.zenplanner.com/sign-up-now.cfm?display=MBRSHPS&categoryId=0E70FCAC-A8A6-45CB-A5B9-949B88196C5C&'
+  const purchaseIgnite =
+    'https://thistimefitness.sites.zenplanner.com/sign-up-now.cfm?display=MBRSHPS&categoryId=0E70FCAC-A8A6-45CB-A5B9-949B88196C5C&'
 
   return (
     <Layout>
@@ -53,7 +54,9 @@ const IgniteThankYouPage = ({ data }) => {
           tMarginTop={'40px'}
           dMarginTop={'40px'}
         >
-          <GhostButton href={purchaseIgnite} target="_blank">Register Now On ZenPlanner</GhostButton>
+          <GhostButton href={purchaseIgnite} target="_blank" rel={'noopener'}>
+            Register Now On ZenPlanner
+          </GhostButton>
         </ButtonContainer>
       </SectionContainer>
     </Layout>

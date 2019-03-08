@@ -39,7 +39,7 @@ const LocationContent = () => {
           (Ashley River Road)… in the Peripont Shopping Center.
         </BodyText>
         <GhostButtonWrapper>
-          <GhostButton href={mapLink} target="_blank">
+          <GhostButton href={mapLink} target="_blank" rel={'noopener'}>
             <SpacedMapIcon width={'14px'} fillColor={'#2AD2E2'} />
             Open in Google Maps
           </GhostButton>

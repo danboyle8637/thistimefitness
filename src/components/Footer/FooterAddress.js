@@ -21,10 +21,10 @@ class FooterAddress extends Component {
     return (
       <AddressContainer>
         <IconContainer>
-          <SocialLink href={facebookLink} target="_blank">
+          <SocialLink href={facebookLink} target="_blank" rel={'noopener'}>
             <AnimatedFacebook width={'30'} height={'30'} />
           </SocialLink>
-          <SocialLink href={instagramLink} target="_blank">
+          <SocialLink href={instagramLink} target="_blank" rel={'noopener'}>
             <AnimatedInstagram width={'30'} height={'30'} />
           </SocialLink>
           <SocialLink href={emailLink}>
@@ -35,7 +35,12 @@ class FooterAddress extends Component {
         <AddressText>Charleston, SC 29414</AddressText>
         <AddressText>843 - 437 - 6700</AddressText>
         <ButtonContainer tabletWidth={'100%'} desktopWidth={'100%'}>
-          <GhostButton margintop={'20px'} href={googleMapLink} target="_blank">
+          <GhostButton
+            margintop={'20px'}
+            href={googleMapLink}
+            target="_blank"
+            rel={'noopener'}
+          >
             <MapIcon width={'20'} height={'20'} fillColor={'#5afdf2'} />
             Open in Google Maps
           </GhostButton>

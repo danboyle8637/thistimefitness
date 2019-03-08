@@ -20,7 +20,7 @@ const BigPricingCard = ({ price, priceTitle, priceDescription, link }) => {
         tabletWidth={'100%'}
         desktopWidth={'100%'}
       >
-        <PurchaseButton href={link} target={'_blank'}>
+        <PurchaseButton href={link} target={'_blank'} rel={'noopener'}>
           Join The Family
         </PurchaseButton>
       </ButtonContainer>
