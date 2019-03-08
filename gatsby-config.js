@@ -111,6 +111,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ContactCopy`,
+        path: `${__dirname}/src/content/Contact`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `Manifest`,
+        path: `${__dirname}/src/images/favicons`,
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: `GCMS`,
@@ -133,7 +147,18 @@ module.exports = {
         display: `standalone`,
         crossOrigin: `use-credentials`,
         icon: `${__dirname}/src/images/ttf-icon.png`, // This path is relative to the root of the site.
-        include_favicon: true,
+        icons: [
+          {
+            src: `${__dirname}/src/images/favicons/ttf-manifext-logo-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `${__dirname}/src/images/favicons/ttf-manifext-logo-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     {
