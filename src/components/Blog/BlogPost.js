@@ -34,7 +34,11 @@ const BlogPost = ({ data }) => {
       />
       <BlogPageContainer>
         <BlogFeatureImageContainer>
-          <img src={blogFeatureImage} style={{ margin: 0, padding: 0 }} />
+          <img
+            src={blogFeatureImage}
+            style={{ margin: 0, padding: 0 }}
+            alt={blogTitle}
+          />
         </BlogFeatureImageContainer>
         <BlogContentWrapper>
           <BlogPostTitle>{blogTitle}</BlogPostTitle>

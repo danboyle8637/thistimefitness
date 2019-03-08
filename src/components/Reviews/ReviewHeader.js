@@ -7,7 +7,7 @@ import { above } from '../../styles/Theme'
 const ReviewHeader = ({ headline, url }) => {
   return (
     <ReviewHeaderContainer>
-      <ReviewAvatar src={url} alt={'Reviewer Avatar'} />
+      <ReviewAvatar src={url} alt={'Reviewer Picture'} />
       <ReviewHeaderWrapper>
         <ReviewHeadline>{headline}</ReviewHeadline>
         <ReviewStarsWrapper>

@@ -11,9 +11,10 @@ import { above } from '../../styles/Theme'
 const TransformationSection = ({ images }) => {
   const transformations = images.edges.map(image => {
     const id = image.node.id
+    const name = image.node.name
     const fluid = image.node.childImageSharp.fluid
 
-    return <TransformationCard key={id} image={fluid} />
+    return <TransformationCard key={id} name={name} image={fluid} />
   })
 
   return (

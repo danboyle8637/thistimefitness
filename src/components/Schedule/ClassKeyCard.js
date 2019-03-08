@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import ClassKeyDot from '../../svgs/ClassKeyDot'
-import { above } from '../../styles/Theme'
 
 class ClassKeyCard extends Component {
   setStartColor = () => {

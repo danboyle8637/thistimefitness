@@ -14,7 +14,11 @@ const TeamCard = ({ name, certs, body, pic }) => {
   return (
     <TeamCardContainer>
       <TeamCardWrapper>
-        <PictureWrapper fluid={pic} />
+        <PictureWrapper
+          fluid={pic}
+          title={`Picture of ${name}`}
+          alt={`Picture of ${name}`}
+        />
         <TeamContentWrapper>
           <HeadlineContainer
             left

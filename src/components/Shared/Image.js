@@ -14,7 +14,7 @@ class Image extends Component {
   static contextType = ScreenWidthContext
 
   render() {
-    const { image, top, bottom, marginTop } = this.props
+    const { image, top, bottom, marginTop, imageTitle, imageAlt } = this.props
     const { stopMidOpacity } = this.context
 
     const gradientArray = [
@@ -44,7 +44,7 @@ class Image extends Component {
 
     return (
       <ImageWrapper marginTop={marginTop}>
-        <GatsbyImageWrapper fluid={image} />
+        <GatsbyImageWrapper fluid={image} title={imageTitle} alt={imageAlt} />
         <TopGradientWrapper>{gradientTop.gradient}</TopGradientWrapper>
         <BottomGradientWrapper>{gradientBottom.gradient}</BottomGradientWrapper>
       </ImageWrapper>

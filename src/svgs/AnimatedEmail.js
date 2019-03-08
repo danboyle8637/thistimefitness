@@ -39,6 +39,17 @@ class AnimatedEmail extends Component {
     })
   }
 
+  handleMouseUp = () => {
+    TweenMax.to(this.emailIcon, 0.3, {
+      scale: '1',
+      rotation: '0',
+      ease: Power2.easeIn,
+    })
+    TweenMax.to(this.emailStroke, 0.3, {
+      stroke: '#5afdf2',
+    })
+  }
+
   render() {
     const { width, height, className } = this.props
 
@@ -53,6 +64,7 @@ class AnimatedEmail extends Component {
         viewBox="0 0 220.95 143.32"
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseLeave}
+        onMouseUp={this.handleMouseUp}
       >
         <title>Email Me Icon</title>
         <path

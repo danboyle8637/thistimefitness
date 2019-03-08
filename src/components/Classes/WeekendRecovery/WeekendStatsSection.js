@@ -27,6 +27,8 @@ const WeekendStatsSection = ({ images }) => {
           <BackgroundWrapper>
             <Image
               image={backgroundImage}
+              imageTitle={'Women having fun working out'}
+              imageAlt={'Women having fun working out'}
               top={'topBlue'}
               bottom={'bottomBlue'}
             />

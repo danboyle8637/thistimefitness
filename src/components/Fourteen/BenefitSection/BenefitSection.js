@@ -47,7 +47,9 @@ class BenefitSection extends Component {
     const benefits = copy.edges
       .filter(benefit => {
         const id = benefit.node.childMarkdownRemark.frontmatter.id
-        return id !== 'fourteen-quiz-call-to-action'
+        return (
+          id !== 'fourteen-quiz-call-to-action' && id !== 'fourteen-thank-you'
+        )
       })
       .map(benefit => {
         const headline = benefit.node.childMarkdownRemark.frontmatter.headline
@@ -64,12 +66,16 @@ class BenefitSection extends Component {
       <BenefitContainer>
         <Image
           image={this.state.jessFlex}
+          imageTitle={'Jessica flexing and having fun'}
+          imageAlt={'Jessica flexing and having fun'}
           top={'topBlue'}
           bottom={'bottomPurple'}
         />
         <BenefitsWrapper>{this.renderBenefits()}</BenefitsWrapper>
         <Image
           image={this.state.groupFlex}
+          imageTitle={'A group flexing and showing their results'}
+          imageAlt={'A group flexing and showing their results'}
           top={'topPurple'}
           bottom={'bottomBlue'}
         />

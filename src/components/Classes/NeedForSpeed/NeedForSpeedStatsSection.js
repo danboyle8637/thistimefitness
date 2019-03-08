@@ -27,6 +27,8 @@ const NeedForSpeedStatsSection = ({ images }) => {
           <BackgroundWrapper>
             <Image
               image={backgroundImage}
+              imageTitle={'Running through the park'}
+              imageAlt={'Running through the park'}
               top={'topBlue'}
               bottom={'bottomBlue'}
             />

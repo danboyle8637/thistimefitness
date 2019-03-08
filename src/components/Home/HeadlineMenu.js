@@ -18,6 +18,12 @@ class HeadlineMenu extends Component {
   }
 
   componentDidMount() {
+    this.menuItems.map(item => {
+      if (item.lastChild.textContent === 'First Time Specials') {
+        TweenMax.set(item.lastChild, { color: '#5AFDF2' })
+      }
+    })
+
     TweenMax.staggerFrom(
       this.menuItems,
       0.8,

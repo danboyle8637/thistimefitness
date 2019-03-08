@@ -16,7 +16,7 @@ class FooterAddress extends Component {
 
     const facebookLink = 'https://www.facebook.com/fatblastingbootcamp/'
     const instagramLink = 'https://www.instagram.com/thistimefitness/'
-    const emailLink = 'emailto:kindal@thistimefitness.com'
+    const emailLink = 'mailto:kindal@thistimefitness.com'
 
     return (
       <AddressContainer>
@@ -27,7 +27,7 @@ class FooterAddress extends Component {
           <SocialLink href={instagramLink} target="_blank">
             <AnimatedInstagram width={'30'} height={'30'} />
           </SocialLink>
-          <SocialLink href={emailLink} target="_blank">
+          <SocialLink href={emailLink}>
             <AnimatedEmail width={'30'} height={'30'} />
           </SocialLink>
         </IconContainer>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
 import TweenMax, { Power3 } from 'gsap/TweenMax'
 
 import FaqArrow from '../../svgs/FaqArrow'
@@ -22,7 +22,7 @@ class BlogPagination extends Component {
   }
 
   componentDidMount() {
-    const { hasNextPage, hasPrevPage, nextPageLink, pageNumber } = this.props
+    const { hasNextPage, hasPrevPage } = this.props
 
     if (hasNextPage) {
       TweenMax.to(this.nextArrow, 1, {

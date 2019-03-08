@@ -30,7 +30,11 @@ const HeadlineSection = ({ images, path }) => {
       {({ backgroundImage }) => (
         <HeadlineGrid>
           <BackgroundWrapper>
-            <Image fluid={backgroundImage} />
+            <Image
+              fluid={backgroundImage}
+              title={'Battle Rope Exercise'}
+              alt={'Battle Rope Exercise'}
+            />
           </BackgroundWrapper>
           <ContentWrapper>
             <DraggableWrapper>

@@ -25,7 +25,11 @@ const HeadlineSection = ({ images }) => {
       {({ backgroundImage }) => (
         <HeadlineGrid>
           <BackgroundWrapper>
-            <Image fluid={backgroundImage} />
+            <Image
+              fluid={backgroundImage}
+              title={'Running outside'}
+              alt={'Running outside'}
+            />
           </BackgroundWrapper>
           <ContentWrapper>
             <HeadlineContent />

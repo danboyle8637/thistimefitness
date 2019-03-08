@@ -27,6 +27,8 @@ const BodyBurnStatsSection = ({ images }) => {
           <BackgroundWrapper>
             <Image
               image={backgroundImage}
+              imageTitle={'Our studio floor and kettlebells'}
+              imageAlt={'Our studio floor and kettlebells'}
               top={'topBlue'}
               bottom={'bottomBlue'}
             />

@@ -40,7 +40,11 @@ class AboutKindal extends Component {
     const fluid = this.state.backgroundImage
     return (
       <SectionGrid>
-        <ImageWrapper fluid={fluid} />
+        <ImageWrapper
+          fluid={fluid}
+          title={'Hi I am Kindal'}
+          alt={'Hi I am Kindal'}
+        />
         <ContentWrapper>
           <AboutKindalContent copy={this.props.copy} />
         </ContentWrapper>

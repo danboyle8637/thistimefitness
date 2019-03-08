@@ -4,9 +4,9 @@ import Img from 'gatsby-image'
 
 import { above } from '../../styles/Theme'
 
-const TransformationCard = ({ image }) => (
+const TransformationCard = ({ image, name }) => (
   <ImageContainer>
-    <Img fluid={image} />
+    <Img fluid={image} title={name} alt={name} />
   </ImageContainer>
 )
 

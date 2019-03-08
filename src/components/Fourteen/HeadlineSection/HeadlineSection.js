@@ -26,7 +26,7 @@ class HeadlineSection extends Component {
         {({ backgroundImage }) => (
           <HeadlineGrid>
             <BackgroundWrapper>
-              <Image fluid={backgroundImage} />
+              <Image fluid={backgroundImage} title={'Beth pressing two kettlebells'} alt={'Beth pressing two kettlebells'} />
             </BackgroundWrapper>
             <ContentWrapper>
               <HeadlineContent />

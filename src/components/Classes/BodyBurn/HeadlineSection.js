@@ -25,7 +25,11 @@ const HeadlineSection = props => {
       {({ backgroundImage }) => (
         <HeadlineGrid>
           <BackgroundWrapper>
-            <Image fluid={backgroundImage} />
+            <Image
+              fluid={backgroundImage}
+              title={'Pushing a sled exercise'}
+              alt={'Pushing a sled exercise'}
+            />
           </BackgroundWrapper>
           <ContentWrapper>
             <HeadlineContent />

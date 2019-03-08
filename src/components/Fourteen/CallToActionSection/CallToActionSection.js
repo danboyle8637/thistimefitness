@@ -11,6 +11,7 @@ import { InnerBodyText } from '../../../styles/BodyText'
 import { BaseSubhead, SpecialSubhead } from '../../../styles/Headlines'
 
 const CallToActionSection = ({ copy }) => {
+  console.log(copy)
   const callToAction = copy.edges.find(edge => {
     const id = edge.node.childMarkdownRemark.frontmatter.id
     return id === 'fourteen-quiz-call-to-action'

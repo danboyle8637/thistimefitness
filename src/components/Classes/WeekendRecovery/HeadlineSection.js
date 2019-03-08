@@ -25,7 +25,7 @@ const HeadlineSection = ({ images }) => {
       {({ backgroundImage }) => (
         <HeadlineGrid>
           <BackgroundWrapper>
-            <Image fluid={backgroundImage} />
+            <Image fluid={backgroundImage} title={'Yoga downward dog pose'} alt={'Yoga downward dog pose'} />
           </BackgroundWrapper>
           <ContentWrapper>
             <HeadlineContent />

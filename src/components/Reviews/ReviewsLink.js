@@ -17,9 +17,3 @@ const ReviewsLink = () => {
 }
 
 export default ReviewsLink
-
-const ReviewsLinkContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`

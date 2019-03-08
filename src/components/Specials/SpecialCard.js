@@ -14,7 +14,7 @@ const SpecialCard = ({ images }) => {
     <SectionContainer desktopWidth={'100%'}>
       <SpecialsGrid>
         <SpecialCardContainer>
-          <FeatureImageWrapper fluid={fourteenDayImage} />
+          <FeatureImageWrapper fluid={fourteenDayImage} title={'The group doing wall sits'} alt={'The group doing wall sits'} />
           <SpecialContentWrapper>
             <SpecialTitle>14 Days for $14</SpecialTitle>
             <HorizontalLine />
@@ -37,7 +37,7 @@ const SpecialCard = ({ images }) => {
           </SpecialContentWrapper>
         </SpecialCardContainer>
         <SpecialCardContainer>
-          <FeatureImageWrapper fluid={IgniteImage} />
+          <FeatureImageWrapper fluid={IgniteImage} title={'Donna rocking out the battle ropes'} alt={'Donna rocking out the battle ropes'} />
           <SpecialContentWrapper>
             <SpecialTitle>Ignite</SpecialTitle>
             <HorizontalLine />

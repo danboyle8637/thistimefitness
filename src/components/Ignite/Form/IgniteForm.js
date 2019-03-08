@@ -166,7 +166,6 @@ class IgniteForm extends Component {
         </HeadlineContainer>
         <div id="ignite-quiz" />
         <form
-          style={{ width: '100%' }}
           name={'ignite_lead_form'}
           method="post"
           data-netlify="true"
