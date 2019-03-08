@@ -120,7 +120,7 @@ class LeadSection extends Component {
             >
               Come try unlimited
             </BaseSubhead>
-            <TTFLogoShort width={'270px'} />
+            <TTFLogoShort width={'270px'} gradientId={'ttf-short-fourteen'} />
             <BaseSubhead
               mobileLineHeight={'1.8'}
               tabletLineHeight={'1.8'}

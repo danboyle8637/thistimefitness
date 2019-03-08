@@ -10,7 +10,7 @@ const Header = () => {
     <HeaderContainer>
       <HeadlineWrapper>
         <Link to={'/'}>
-          <TTFLogoShort width={'50px'} />
+          <TTFLogoShort width={'50px'} gradientId={'ttf-short-header'} />
         </Link>
         <MenuSection />
       </HeadlineWrapper>

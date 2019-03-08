@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TTFLogoShort = ({ width, height, className }) => {
+const TTFLogoShort = ({ width, height, className, gradientId }) => {
   return (
     <svg
       id="ttf-logo-short"
@@ -10,6 +10,21 @@ const TTFLogoShort = ({ width, height, className }) => {
       height={height}
       viewBox="0 0 644.56 239.28"
     >
+      <defs>
+        <linearGradient
+          id={`${gradientId}`}
+          x1="234.97"
+          y1="-.31"
+          x2="682.46"
+          y2="225.13"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset=".26" stop-color="#2ad2e2" />
+          <stop offset=".5" stop-color="#5aa3ec" />
+          <stop offset=".84" stop-color="#9b65fa" />
+          <stop offset="1" stop-color="#b44cff" />
+        </linearGradient>
+      </defs>
       <g id="t">
         <path
           id="t-letter"
@@ -20,7 +35,7 @@ const TTFLogoShort = ({ width, height, className }) => {
       </g>
       <path
         id="ttf-gradient"
-        fill="#2ad2e2"
+        fill={`url(#${gradientId})`}
         d="M644.56 60.84V0H231.51v62.55h70.07v176.73h80.67V62.55h67.81v176.73h80.67v-76.57h99.81v-60.85h-99.81V60.84h113.83z"
       />
     </svg>

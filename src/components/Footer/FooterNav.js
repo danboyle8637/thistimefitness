@@ -13,7 +13,11 @@ const FooterNav = () => {
   return (
     <NavContainer>
       <FooterLogo>
-        <TTFLogoShort width={'60'} height={'30'} />
+        <TTFLogoShort
+          width={'60'}
+          height={'30'}
+          gradientId={'ttf-short-footer'}
+        />
       </FooterLogo>
       <FooterContentWrapper>
         <FooterSiteLinks>
