@@ -10,7 +10,7 @@ import { above } from '../../../styles/Theme'
 const HeadlineContent = () => {
   return (
     <ContentContainer>
-      <Logo />
+      <Logo gradientId={'need-for-speed-header'} />
       <HeadlineContainer
         mMarginTop={'6px'}
         tMarginTop={'12px'}

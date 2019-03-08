@@ -54,7 +54,7 @@ const LeadSection = ({ copy }) => {
         >
           We Call This Workout
         </BaseSubhead>
-        <Need4SpeedLogo width={'280px'} />
+        <Need4SpeedLogo width={'280px'} gradientId={'need-for-speed-lead'} />
       </HeadlineContainer>
     </SectionContainer>
   )
