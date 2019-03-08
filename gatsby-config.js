@@ -133,18 +133,7 @@ module.exports = {
         display: `standalone`,
         crossOrigin: `use-credentials`,
         icon: `${__dirname}/src/images/ttf-icon.png`, // This path is relative to the root of the site.
-        icons: [
-          {
-            src: `${__dirname}/src/images/favicons/ttf-manifext-logo-192x192.png`,
-            sizes: `192x192`,
-            type: `image/png`,
-          },
-          {
-            src: `${__dirname}/src/images/favicons/ttf-manifext-logo-512x512.png`,
-            sizes: `512x512`,
-            type: `image/png`,
-          },
-        ],
+        include_favicon: true,
       },
     },
     {
