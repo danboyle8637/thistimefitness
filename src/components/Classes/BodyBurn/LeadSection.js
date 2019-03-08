@@ -55,7 +55,7 @@ const LeadSection = ({ copy }) => {
         >
           We Call This Workout
         </BaseSubhead>
-        <BodyBurnLogoStyled />
+        <BodyBurnLogoStyled gradientId={'body-burn-lead'} />
       </HeadlineContainer>
     </SectionContainer>
   )

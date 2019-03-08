@@ -10,7 +10,7 @@ import { above } from '../../../styles/Theme'
 const HeadlineContent = () => {
   return (
     <ContentContainer>
-      <Logo />
+      <Logo gradientId={'body-burn-headline'} />
       <HeadlineContainer
         mMarginTop={'6px'}
         tMarginTop={'8px'}

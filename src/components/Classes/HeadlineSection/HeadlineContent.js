@@ -34,7 +34,7 @@ const HeadlineContent = () => {
 
   const classCard = classArray.map(card => {
     const iconObj = {
-      body_burn: <BodyBurnLogo />,
+      body_burn: <BodyBurnLogo gradientId={'classes-body-burn'} />,
       need_for_speed: <Need4SpeedLogo />,
       weekend_recovery: <WeekendRecoveryLogo />,
     }
