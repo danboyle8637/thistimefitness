@@ -1,5 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
-http://sleepy-cori-db5e31.netlify.com/* http://www.thistimefitness.com/:splat 301!
+http://sleepy-cori-db5e31.netlify.com/* http://thistimefitness.com/:splat 301!
 
 /body-burn-west-ashley /body-burn
 /14-days-for-14-dollars-kick-start /14-for-14-new-member-special
