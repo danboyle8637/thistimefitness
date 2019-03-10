@@ -19,7 +19,7 @@ const Ignite = ({ data }) => {
       <SEO
         title={siteConfig.igniteProgram.title}
         description={siteConfig.igniteProgram.description}
-        image={siteConfig.igniteProgram.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.igniteProgram.url}
         keywords={siteConfig.igniteProgram.keywords}
         lang={siteConfig.igniteProgram.lang}
@@ -129,6 +129,12 @@ export const query = graphql`
           }
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "ignite-share-image" }
+    ) {
+      publicURL
     }
   }
 `

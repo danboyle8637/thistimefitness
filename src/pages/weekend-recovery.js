@@ -16,7 +16,7 @@ const WeekendRecovery = ({ data }) => {
       <SEO
         title={siteConfig.weekendRecovery.title}
         description={siteConfig.weekendRecovery.description}
-        image={siteConfig.weekendRecovery.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.weekendRecovery.url}
         keywords={siteConfig.weekendRecovery.keywords}
         lang={siteConfig.weekendRecovery.lang}
@@ -140,6 +140,12 @@ export const query = graphql`
           }
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "weekend-recovery-share-image" }
+    ) {
+      publicURL
     }
   }
 `

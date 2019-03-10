@@ -113,6 +113,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `FacebookImages`,
+        path: `${__dirname}/src/images/Facebook`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `ContactCopy`,
         path: `${__dirname}/src/content/Contact`,
       },

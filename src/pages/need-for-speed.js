@@ -16,7 +16,7 @@ const NeedForSpeed = ({ data }) => {
       <SEO
         title={siteConfig.need4Speed.title}
         description={siteConfig.need4Speed.description}
-        image={siteConfig.need4Speed.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.need4Speed.url}
         keywords={siteConfig.need4Speed.keywords}
         lang={siteConfig.need4Speed.lang}
@@ -140,6 +140,12 @@ export const query = graphql`
           }
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "need-4-speed-share-image" }
+    ) {
+      publicURL
     }
   }
 `

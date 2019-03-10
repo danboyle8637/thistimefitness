@@ -18,7 +18,7 @@ const About = ({ data }) => {
       <SEO
         title={siteConfig.about.title}
         description={siteConfig.about.description}
-        image={siteConfig.about.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.about.url}
         keywords={siteConfig.about.keywords}
         lang={siteConfig.about.lang}
@@ -133,6 +133,12 @@ export const query = graphql`
           }
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "about-share-image" }
+    ) {
+      publicURL
     }
   }
 `

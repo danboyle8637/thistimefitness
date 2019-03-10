@@ -17,7 +17,7 @@ const FourteenFor14 = ({ data }) => {
       <SEO
         title={siteConfig.fourteen.title}
         description={siteConfig.fourteen.description}
-        image={siteConfig.fourteen.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.fourteen.url}
         keywords={siteConfig.fourteen.keywords}
         lang={siteConfig.fourteen.lang}
@@ -203,6 +203,12 @@ export const query = graphql`
           }
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "14-for-14-share-image" }
+    ) {
+      publicURL
     }
   }
 `

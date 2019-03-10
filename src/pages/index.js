@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
       <SEO
         title={siteConfig.home.title}
         description={siteConfig.home.description}
-        image={siteConfig.home.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.home.url}
         keywords={siteConfig.home.keywords}
         lang={siteConfig.home.lang}
@@ -61,6 +61,12 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "main-home-share-image" }
+    ) {
+      publicURL
     }
   }
 `

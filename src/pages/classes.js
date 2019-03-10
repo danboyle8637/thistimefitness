@@ -12,7 +12,7 @@ const Classes = ({ data }) => {
       <SEO
         title={siteConfig.classes.title}
         description={siteConfig.classes.description}
-        image={siteConfig.classes.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.classes.url}
         keywords={siteConfig.classes.keywords}
         lang={siteConfig.classes.lang}
@@ -88,6 +88,12 @@ export const query = graphql`
     }
     classesPath: sitePage(path: { eq: "/classes/" }) {
       path
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "classes-share-image" }
+    ) {
+      publicURL
     }
   }
 `

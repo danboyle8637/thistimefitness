@@ -12,7 +12,7 @@ const Specials = ({ data }) => (
     <SEO
       title={siteConfig.specials.title}
       description={siteConfig.specials.description}
-      image={siteConfig.specials.image}
+      image={data.facebookShare.publicURL}
       url={siteConfig.specials.url}
       keywords={siteConfig.specials.keywords}
       lang={siteConfig.specials.lang}
@@ -54,6 +54,12 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "specials-share-image" }
+    ) {
+      publicURL
     }
   }
 `

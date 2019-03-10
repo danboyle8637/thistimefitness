@@ -37,7 +37,7 @@ const BlogList = ({ data, pageContext }) => {
       <SEO
         title={siteConfig.blog.title}
         description={siteConfig.blog.description}
-        image={siteConfig.blog.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.blog.url}
         keywords={siteConfig.blog.keywords}
         lang={siteConfig.blog.lang}
@@ -90,6 +90,12 @@ export const query = graphql`
           url
         }
       }
+    }
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "blog-share-image" }
+    ) {
+      publicURL
     }
   }
 `

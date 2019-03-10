@@ -27,10 +27,10 @@ const Need4SpeedLogo = ({ width, height, className, gradientId }) => (
     </defs>
     <text
       transform="translate(0 128.14)"
-      font-size="102.39"
+      fontSize="102.39"
       fill="#f8f8f8"
-      font-family="Montserrat-Bold, Montserrat"
-      font-weight="700"
+      fontFamily="Montserrat-Bold, Montserrat"
+      fontWeight="700"
     >
       NEED
     </text>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
@@ -11,13 +12,13 @@ import { siteConfig } from '../helpers/siteConfig'
 import { above } from '../styles/Theme'
 import SEO from '../components/seo'
 
-const Pricing = () => {
+const Pricing = ({ data }) => {
   return (
     <Layout>
       <SEO
         title={siteConfig.pricing.title}
         description={siteConfig.pricing.description}
-        image={siteConfig.pricing.image}
+        image={data.facebookShare.publicURL}
         url={siteConfig.pricing.url}
         lang={siteConfig.pricing.lang}
       />
@@ -142,4 +143,15 @@ const PurchaseCardWrapper = styled.div`
     margin-top: 40px;
   }
   width: 100%;
+`
+
+export const query = graphql`
+  query {
+    facebookShare: file(
+      sourceInstanceName: { eq: "FacebookImages" }
+      name: { eq: "pricing-share-image" }
+    ) {
+      publicURL
+    }
+  }
 `
