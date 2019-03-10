@@ -18,7 +18,7 @@ const Pricing = ({ data }) => {
       <SEO
         title={siteConfig.pricing.title}
         description={siteConfig.pricing.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.pricing.url}
         lang={siteConfig.pricing.lang}
       />

@@ -16,7 +16,7 @@ const NeedForSpeed = ({ data }) => {
       <SEO
         title={siteConfig.need4Speed.title}
         description={siteConfig.need4Speed.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.need4Speed.url}
         keywords={siteConfig.need4Speed.keywords}
         lang={siteConfig.need4Speed.lang}

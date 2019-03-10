@@ -40,7 +40,7 @@ function SEO({ description, lang, meta, keywords, title, image, url }) {
               },
               {
                 name: `og:image`,
-                content: image,
+                content: `https://thistimefitness.com${image}`,
               },
               {
                 name: `fb:app_id`,

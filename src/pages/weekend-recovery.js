@@ -16,7 +16,7 @@ const WeekendRecovery = ({ data }) => {
       <SEO
         title={siteConfig.weekendRecovery.title}
         description={siteConfig.weekendRecovery.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.weekendRecovery.url}
         keywords={siteConfig.weekendRecovery.keywords}
         lang={siteConfig.weekendRecovery.lang}

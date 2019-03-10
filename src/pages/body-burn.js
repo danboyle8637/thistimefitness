@@ -16,7 +16,7 @@ const BodyBurn = ({ data }) => {
       <SEO
         title={siteConfig.bodyBurn.title}
         description={siteConfig.bodyBurn.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.bodyBurn.url}
         keywords={siteConfig.bodyBurn.keywords}
         lang={siteConfig.bodyBurn.lang}

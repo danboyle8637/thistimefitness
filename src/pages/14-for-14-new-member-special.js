@@ -17,7 +17,7 @@ const FourteenFor14 = ({ data }) => {
       <SEO
         title={siteConfig.fourteen.title}
         description={siteConfig.fourteen.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.fourteen.url}
         keywords={siteConfig.fourteen.keywords}
         lang={siteConfig.fourteen.lang}

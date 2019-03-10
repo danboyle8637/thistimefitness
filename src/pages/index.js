@@ -7,12 +7,13 @@ import SEO from '../components/seo'
 import { siteConfig } from '../helpers/siteConfig'
 
 const IndexPage = ({ data }) => {
+  console.log(data.facebookShare.publicURL)
   return (
     <Layout>
       <SEO
         title={siteConfig.home.title}
         description={siteConfig.home.description}
-        image={data.facebookShare.relativePath}
+        image={data.facebookShare.publicURL}
         url={siteConfig.home.url}
         keywords={siteConfig.home.keywords}
         lang={siteConfig.home.lang}
