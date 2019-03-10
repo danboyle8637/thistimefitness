@@ -19,7 +19,7 @@ const Ignite = ({ data }) => {
       <SEO
         title={siteConfig.igniteProgram.title}
         description={siteConfig.igniteProgram.description}
-        image={data.facebookShare.publicURL}
+        image={data.facebookShare.relativePath}
         url={siteConfig.igniteProgram.url}
         keywords={siteConfig.igniteProgram.keywords}
         lang={siteConfig.igniteProgram.lang}

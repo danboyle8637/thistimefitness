@@ -4,7 +4,6 @@ export const siteConfig = {
     title: 'This Time Fitness: West Ashley Fitness Studio for Women',
     description:
       'Welcome to This Time Fitness. We are a West Ashley fitness studio for women. We focus on strength training, cardio, mobility, and overall healthy living.',
-    image: '../images/Facebook/main-home-share-image.jpg',
     url: 'https://thistimefitness.com',
     keywords: [
       'this time fitness',
@@ -18,7 +17,6 @@ export const siteConfig = {
   about: {
     title: 'About This Time Fitness',
     description: `Learn more about This Time Fitness and why it's the best studio in Charleston for you to hit your goals and learn about your body.`,
-    image: '../images/Facebook/about-share-image.jpg',
     url: 'https://thistimefitness.com/about',
     keywords: [
       'this time fitness',
@@ -32,7 +30,6 @@ export const siteConfig = {
   classes: {
     title: 'The Boot Camp & Group Fitness Classes TTF Offers',
     description: `We offer high intensity strength training classes that mix in cardio too. But we also offer running classes and yoga for a well rounded experience.`,
-    image: '../images/Facebook/classes-share-image.jpg',
     url: 'https://thistimefitness.com/classes',
     keywords: [
       'boot camp fitness classes',
@@ -46,7 +43,6 @@ export const siteConfig = {
   igniteProgram: {
     title: 'Ignite - 6 Week Beginner Focused Fitness Program',
     description: `Ignite is a 6 week program for women just getting back into exercise. We'll work with you extra close so you know what to do. Plus you get a lot more!`,
-    image: '../images/Facebook/ignite-share-image.jpg',
     url: 'https://thistimefitness.com/ignite',
     keywords: [
       'beginner fitness',
@@ -60,7 +56,6 @@ export const siteConfig = {
   bodyBurn: {
     title: 'Body Burn High Intensity Strength Training',
     description: `Body Burn is our main class. It's a strength class with plenty of cardio. It's functional training designed to burn fat and get you strong. Learn more.`,
-    image: '../images/Facebook/body-burn-share-image.jpg',
     url: 'https://thistimefitness.com/body-burn',
     keywords: [
       'high intensity training',
@@ -73,7 +68,6 @@ export const siteConfig = {
   need4Speed: {
     title: 'Need 4 Speed Running Training',
     description: `Need 4 Speed is a running training class for all levels. You'll learn how to run with better form... with less injury... and faster. Learn more today.`,
-    image: '../images/Facebook/need-4-speed-share-image.jpg',
     url: 'https://thistimefitness.com/need-for-speed',
     keywords: [
       'learn to run',
@@ -86,7 +80,6 @@ export const siteConfig = {
   weekendRecovery: {
     title: 'Weekend Recovery is Body Burn and Yoga Together',
     description: `Weekend Recovery adds in an optional yoga class on Saturday and Sunday. It's the best way to recovery and work on your mobility. Learn more.`,
-    image: '../images/Facebook/weekend-recovery-share-image.jpg',
     url: 'https://thistimefitness.com/weekend-recovery',
     keywords: [
       'yoga',
@@ -99,7 +92,6 @@ export const siteConfig = {
   specials: {
     title: 'New Member Specials and Trials',
     description: `We offer a couple different ways for you to come try This Time Fitness. Learn about all of our options and start getting in the best shape you've ever been.`,
-    image: '../images/Facebook/specials-share-image.jpg',
     url: 'https://thistimefitness.com/specials',
     keywords: [
       'fitness specials',
@@ -112,7 +104,6 @@ export const siteConfig = {
   caseStudies: {
     title: 'Learn From Some Of Our Most Successful Members',
     description: `We have members who have worked really hard and completely changed their body and life. Here are their secrets, tips, and ideas so you can succeed too.`,
-    image: '../images/Facebook/',
     url: 'https://thistimefitness.com/case-studies',
     keywords: [
       'fitness success stories',
@@ -125,7 +116,6 @@ export const siteConfig = {
   fourteen: {
     title: 'Come Try 14 Days of Unlimited Classes for Only $14',
     description: `Come try our Body Burn class, Need 4 Speed, Yoga, and meet the trainers. You get unlimited classes for only $14. Come see what group fitness should be.`,
-    image: '../images/Facebook/14-for-14-share-image.jpg',
     url: 'https://thistimefitness.com/14-for-14-new-member-special',
     keywords: [
       '14 day trial',
@@ -150,7 +140,6 @@ export const siteConfig = {
   pricing: {
     title: 'Find The Membership Option That Works For Your Budget',
     description: `We offer many different membership options. You will find one that works for you budget. And we guarantee to deliver the best training in workouts in Charleston.`,
-    image: '../images/Facebook/pricing-share-image.jpg',
     url: 'https://thistimefitness.com/pricing',
     lang: 'en-us',
   },
@@ -163,7 +152,6 @@ export const siteConfig = {
   transformations: {
     title: 'See The Amazing Transformations From Our Amazing Members',
     description: `Here are some before and after pictures from real members of our studio. These women worked hard and got the results they wanted. You can too!`,
-    image: '../images/Facebook/14-for-14-share-image.jpg',
     url: 'https://thistimefitness.com/transformations',
     keywords: [
       'fitness success stories',

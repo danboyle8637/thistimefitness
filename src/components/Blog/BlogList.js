@@ -37,7 +37,7 @@ const BlogList = ({ data, pageContext }) => {
       <SEO
         title={siteConfig.blog.title}
         description={siteConfig.blog.description}
-        image={data.facebookShare.publicURL}
+        image={data.facebookShare.relativePath}
         url={siteConfig.blog.url}
         keywords={siteConfig.blog.keywords}
         lang={siteConfig.blog.lang}

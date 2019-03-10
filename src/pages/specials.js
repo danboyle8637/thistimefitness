@@ -12,7 +12,7 @@ const Specials = ({ data }) => (
     <SEO
       title={siteConfig.specials.title}
       description={siteConfig.specials.description}
-      image={data.facebookShare.publicURL}
+      image={data.facebookShare.relativePath}
       url={siteConfig.specials.url}
       keywords={siteConfig.specials.keywords}
       lang={siteConfig.specials.lang}

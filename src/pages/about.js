@@ -18,7 +18,7 @@ const About = ({ data }) => {
       <SEO
         title={siteConfig.about.title}
         description={siteConfig.about.description}
-        image={data.facebookShare.publicURL}
+        image={data.facebookShare.relativePath}
         url={siteConfig.about.url}
         keywords={siteConfig.about.keywords}
         lang={siteConfig.about.lang}

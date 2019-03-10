@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
       <SEO
         title={siteConfig.home.title}
         description={siteConfig.home.description}
-        image={data.facebookShare.publicURL}
+        image={data.facebookShare.relativePath}
         url={siteConfig.home.url}
         keywords={siteConfig.home.keywords}
         lang={siteConfig.home.lang}

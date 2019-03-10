@@ -12,7 +12,7 @@ const Classes = ({ data }) => {
       <SEO
         title={siteConfig.classes.title}
         description={siteConfig.classes.description}
-        image={data.facebookShare.publicURL}
+        image={data.facebookShare.relativePath}
         url={siteConfig.classes.url}
         keywords={siteConfig.classes.keywords}
         lang={siteConfig.classes.lang}
