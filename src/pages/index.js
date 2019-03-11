@@ -7,7 +7,6 @@ import SEO from '../components/seo'
 import { siteConfig } from '../helpers/siteConfig'
 
 const IndexPage = ({ data }) => {
-  console.log(data.facebookShare.publicURL)
   return (
     <Layout>
       <SEO
