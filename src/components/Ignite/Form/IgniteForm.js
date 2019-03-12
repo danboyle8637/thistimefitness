@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
 import TextInput from '../../Shared/Form/TextInput'
@@ -163,6 +164,7 @@ class IgniteForm extends Component {
       >
         <HeadlineContainer>
           <SpecialSubhead>Take The Quiz:</SpecialSubhead>
+          <FitChat>Setup a Fit Chat!</FitChat>
         </HeadlineContainer>
         <div id="ignite-quiz" />
         <form
@@ -230,3 +232,13 @@ class IgniteForm extends Component {
 }
 
 export default IgniteForm
+
+const FitChat = styled.div`
+  font-family: Montserrat;
+  color: ${props => props.theme.textColor};
+  font-size: 15px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 4.6px;
+  margin-top: 8px;
+`
