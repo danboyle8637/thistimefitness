@@ -21,30 +21,3 @@ exports.shouldUpdateScroll = ({
     setTimeout(() => currentPosition, transitionWait)
   }
 }
-
-const injectFacebookMessenger = () => {
-  function addDiv(divCode) {
-    document.getElementById('fb-root').appendChild(divCode)
-  }
-
-  const div = `
-    <div class="fb-customerchat"
-      attribution=setup_tool
-      page_id="143226049020904"
-      theme_color="#21dbec"
-      logged_in_greeting="Hi! If you have questions... I'm here"
-      logged_out_greeting="Hi! If you have questions... I'm here">
-    </div>
-  `
-
-  addDiv(div)
-}
-
-let injectedFBDiv = false
-
-exports.onRouteUpdate = () => {
-  if (document.getElementById('fb-root') !== null) {
-    injectFacebookMessenger()
-    injectedFBDiv = true
-  }
-}
