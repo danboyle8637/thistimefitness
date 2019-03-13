@@ -9,11 +9,9 @@
 import React from 'react'
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
-  setPostBodyComponents([<div key={'menu_portal'} id={'menu_portal'} />])
   setPostBodyComponents([
+    <div key={'menu_portal'} id={'menu_portal'} />,
     <div key={'schedule_portal'} id={'schedule_portal'} />,
-  ])
-  setPostBodyComponents([
     <div key={'blog_menu_portal'} id={'blog_menu_portal'} />,
   ])
 }

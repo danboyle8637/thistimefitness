@@ -1,7 +1,7 @@
 import Typography from 'typography'
 
 const fonts = new Typography({
-  headerFontFamily: ['Montserrat'],
+  headerFontFamily: ['Montserrat', 'Avenir Next', 'Helvetica Neue'],
   bodyFontFamily: ['Quickstand', 'Muli', 'sans-serif'],
   baseFontSize: '16px',
   baseLineHeight: 1.8,
