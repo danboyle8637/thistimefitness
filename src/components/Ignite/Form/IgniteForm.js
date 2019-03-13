@@ -25,11 +25,13 @@ class IgniteForm extends Component {
     super(props)
 
     this.state = {
+      formValid: false,
+      buttonText: 'Finish Quiz...',
       formControls: {
         obstacle: {
           initial: true,
           value: '',
-          valid: false,
+          valid: true,
           touched: false,
           checked: false,
           validationRules: {
@@ -116,6 +118,8 @@ class IgniteForm extends Component {
     copiedFormControls[name] = currentFormElement
 
     this.setState({ formControls: copiedFormControls })
+
+    this.isFormValid()
   }
 
   handleFormFocus = event => {
@@ -136,6 +140,24 @@ class IgniteForm extends Component {
     copiedFormControls[name] = currentFormElement
 
     this.setState({ formControls: copiedFormControls })
+  }
+
+  isFormValid = () => {
+    const { obstacle, firstName, email } = this.state.formControls
+
+    if (obstacle.valid && firstName.valid && email.valid) {
+      this.setState({
+        formValid: true,
+        buttonText: `I'm Interested!`,
+      })
+    }
+
+    if (!obstacle.valid || !firstName.valid || !email.valid) {
+      this.setState({
+        formValid: false,
+        buttonText: 'Finish Quiz...',
+      })
+    }
   }
 
   handleFormSubmit = event => {
@@ -179,6 +201,7 @@ class IgniteForm extends Component {
             <input type="hidden" name="bot-field" />
             <RadioInput
               name={'obstacle'}
+              question={'What is your biggest obstacle right now?'}
               value={this.state.formControls.obstacle.value}
               touched={this.state.formControls.obstacle.touched}
               valid={this.state.formControls.obstacle.valid}
@@ -222,7 +245,9 @@ class IgniteForm extends Component {
               tMarginTop={'40px'}
               dMarginTop={'40px'}
             >
-              <FormButton type={'submit'}>I'm Interested</FormButton>
+              <FormButton type={'submit'} valid={this.state.formValid}>
+                {this.state.buttonText}
+              </FormButton>
             </ButtonContainer>
           </FormFieldSet>
         </form>

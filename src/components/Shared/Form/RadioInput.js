@@ -9,7 +9,7 @@ import {
 import { BodyText } from '../../../styles/BodyText.js'
 
 const RadioInput = props => {
-  const { options, handleFormChange, name } = props
+  const { options, handleFormChange, name, question } = props
 
   const radios = options.map(option => {
     return (
@@ -28,7 +28,7 @@ const RadioInput = props => {
 
   return (
     <>
-      <BodyText>What is your #1 goals right now?</BodyText>
+      <BodyText>{question}</BodyText>
       <InputContainer marginTop={'10px'}>{radios}</InputContainer>
     </>
   )

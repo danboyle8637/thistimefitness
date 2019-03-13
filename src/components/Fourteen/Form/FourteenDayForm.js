@@ -25,10 +25,12 @@ class FourteenDayForm extends Component {
     super(props)
 
     this.state = {
+      formValid: false,
+      buttonText: 'Finish Quiz...',
       formControls: {
         goal: {
           value: '',
-          valid: false,
+          valid: true,
           touched: false,
           checked: false,
           validationRules: {
@@ -123,6 +125,8 @@ class FourteenDayForm extends Component {
     this.setState({
       formControls: updatedControls,
     })
+
+    this.isFormValid()
   }
 
   handleFormFocus = event => {
@@ -145,6 +149,24 @@ class FourteenDayForm extends Component {
     this.setState({
       formControls: updatedControls,
     })
+  }
+
+  isFormValid = () => {
+    const { goal, firstName, email } = this.state.formControls
+
+    if (goal.valid && firstName.valid && email.valid) {
+      this.setState({
+        formValid: true,
+        buttonText: `I'm Interested!`,
+      })
+    }
+
+    if (!goal.valid || !firstName.valid || !email.valid) {
+      this.setState({
+        formValid: false,
+        buttonText: 'Finish Quiz...',
+      })
+    }
   }
 
   handleFormSubmit = event => {
@@ -188,6 +210,7 @@ class FourteenDayForm extends Component {
             <input type="hidden" name="bot-field" />
             <RadioInput
               name={'goal'}
+              question={'What is your #1 goal right now?'}
               value={this.state.formControls.goal.value}
               touched={this.state.formControls.goal.touched}
               valid={this.state.formControls.goal.valid}
@@ -237,7 +260,9 @@ class FourteenDayForm extends Component {
               tMarginTop={'30px'}
               dMarginTop={'40px'}
             >
-              <FormButton type={'submit'}>I'm Interested</FormButton>
+              <FormButton type={'submit'} valid={this.state.formValid}>
+                {this.state.buttonText}
+              </FormButton>
             </ButtonContainer>
           </FormFieldSet>
         </form>

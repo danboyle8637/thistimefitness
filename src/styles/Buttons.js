@@ -111,7 +111,10 @@ const FormButton = styled.button`
   justify-content: center;
   align-items: center;
   padding: 10px 10px;
-  background: ${props => props.theme.primaryButtonColor};
+  background: ${props =>
+    !props.valid
+      ? props.theme.specialBackground
+      : props.theme.primaryButtonColor};
   border-radius: 4px;
   color: ${props => props.theme.fillerColor};
   text-decoration: none;
