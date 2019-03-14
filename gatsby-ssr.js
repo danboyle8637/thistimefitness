@@ -27,8 +27,8 @@ export const onRenderBody = ({ setPostBodyComponents, pathname }) => {
   ])
 
   if (
-    pathname !== '/' ||
-    pathname !== '/privacy' ||
+    pathname !== '/' &&
+    pathname !== '/privacy' &&
     pathname !== '/disclaimer'
   ) {
     setPostBodyComponents([
