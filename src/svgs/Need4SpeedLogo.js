@@ -19,10 +19,10 @@ const Need4SpeedLogo = ({ width, height, className, gradientId }) => (
         gradientTransform="translate(-1 -53)"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset=".32" stop-color="#2ad2e2" />
-        <stop offset=".54" stop-color="#5aa3ec" />
-        <stop offset=".85" stop-color="#9b65fa" />
-        <stop offset="1" stop-color="#b44cff" />
+        <stop offset=".32" stopColor="#2ad2e2" />
+        <stop offset=".54" stopColor="#5aa3ec" />
+        <stop offset=".85" stopColor="#9b65fa" />
+        <stop offset="1" stopColor="#b44cff" />
       </linearGradient>
     </defs>
     <text

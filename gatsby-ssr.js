@@ -18,14 +18,23 @@ logged_out_greeting="Hi! If you have questions... I'm here">
 </div>
 `
 
-export const onRenderBody = ({ setPostBodyComponents }) => {
+export const onRenderBody = ({ setPostBodyComponents, pathname }) => {
   setPostBodyComponents([
     <div key={'menu_portal'} id={'menu_portal'} />,
     <div key={'schedule_portal'} id={'schedule_portal'} />,
     <div key={'blog_menu_portal'} id={'blog_menu_portal'} />,
-    <div
-      key={'fb-messenger-div'}
-      dangerouslySetInnerHTML={{ __html: facebookMessenger }}
-    />,
   ])
+
+  if (
+    pathname !== '/' ||
+    pathname !== '/privacy' ||
+    pathname !== '/disclaimer'
+  ) {
+    setPostBodyComponents([
+      <div
+        key={'fb-messenger-div'}
+        dangerouslySetInnerHTML={{ __html: facebookMessenger }}
+      />,
+    ])
+  }
 }
