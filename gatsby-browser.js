@@ -6,6 +6,9 @@
 
 // You can delete this file if you're not using it
 
+require('typeface-montserrat')
+require('typeface-quicksand')
+
 const transitionWait = 250
 
 exports.shouldUpdateScroll = ({

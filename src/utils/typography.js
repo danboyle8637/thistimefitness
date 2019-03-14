@@ -2,27 +2,14 @@ import Typography from 'typography'
 
 const fonts = new Typography({
   headerFontFamily: ['Montserrat', 'Avenir Next', 'Helvetica Neue'],
-  bodyFontFamily: ['Quickstand', 'Muli', 'sans-serif'],
+  bodyFontFamily: ['Quicksand', 'sans-serif'],
   baseFontSize: '16px',
   baseLineHeight: 1.8,
   headerLineHeight: 1.2,
   scaleRatio: 2,
-  googleFonts: [
-    {
-      name: 'Montserrat',
-      styles: ['400', '500', '700'],
-    },
-    {
-      name: 'Quicksand',
-      styles: ['500'],
-    },
-    {
-      name: 'Muli',
-      styles: ['400'],
-    },
-  ],
   headerWeight: 700,
   bodyWeight: 500,
+  omitGoogleFont: true,
 })
 
 export default fonts
