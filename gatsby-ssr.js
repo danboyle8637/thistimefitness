@@ -19,6 +19,7 @@ logged_out_greeting="Hi! If you have questions... I'm here">
 `
 
 export const onRenderBody = ({ setPostBodyComponents, pathname }) => {
+  console.log(pathname)
   setPostBodyComponents([
     <div key={'menu_portal'} id={'menu_portal'} />,
     <div key={'schedule_portal'} id={'schedule_portal'} />,
