@@ -10,7 +10,6 @@ import BenefitSection from '../components/Ignite/BenefitSection/BenefitSection'
 import CTASection from '../components/Ignite/CTASection/CTASection'
 import IgniteForm from '../components/Ignite/Form/IgniteForm'
 import Faq from '../components/Shared/FAQ/FAQ'
-import FacebookMessenger from '../components/FacebookMessenger'
 import SEO from '../components/seo'
 import { siteConfig } from '../helpers/siteConfig'
 
@@ -35,7 +34,6 @@ const Ignite = ({ data }) => {
       <CTASection />
       <IgniteForm />
       <Faq questions={data.faqArray} />
-      <FacebookMessenger />
     </Layout>
   )
 }

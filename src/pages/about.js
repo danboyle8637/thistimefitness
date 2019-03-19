@@ -9,7 +9,6 @@ import AboutKindal from '../components/About/AboutKindal/AboutKindalGrid'
 import AboutKindalInvite from '../components/About/AboutKindal/AboutKindalInvite'
 import TheTeam from '../components/About/TheTeam/TheTeam'
 import WhyDifferent from '../components/About/WhyDifferent/WhyDifferent'
-import FacebookMessenger from '../components/FacebookMessenger'
 import { siteConfig } from '../helpers/siteConfig'
 import SEO from '../components/seo'
 
@@ -31,7 +30,6 @@ const About = ({ data }) => {
       <AboutKindalInvite copy={data.aboutCopy} />
       <TheTeam />
       <WhyDifferent />
-      <FacebookMessenger />
     </Layout>
   )
 }
