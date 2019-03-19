@@ -8,7 +8,7 @@
 
 import React from 'react'
 
-const facebookMessenger = (
+const facebookMessenger = `
   <div
     class="fb-customerchat"
     page_id="143226049020904"
@@ -18,13 +18,13 @@ const facebookMessenger = (
     greeting_dialog_display="fade"
     greeting_dialog_delay="3"
   />
-)
+`
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
     <div key={'menu_portal'} id={'menu_portal'} />,
     <div key={'schedule_portal'} id={'schedule_portal'} />,
     <div key={'blog_menu_portal'} id={'blog_menu_portal'} />,
-    facebookMessenger,
+    <div dangerouslySetInnerHTML={{ __html: facebookMessenger }} />,
   ])
 }
