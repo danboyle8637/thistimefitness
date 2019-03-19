@@ -19,7 +19,7 @@ function SEO({ description, lang, meta, keywords, title, image, url }) {
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
-                name: `description`,
+                property: `description`,
                 content: metaDescription,
               },
               {
@@ -35,15 +35,27 @@ function SEO({ description, lang, meta, keywords, title, image, url }) {
                 content: `website`,
               },
               {
-                name: `og:url`,
+                property: `og:url`,
                 content: url,
               },
               {
-                name: `og:image`,
+                property: `og:image`,
                 content: `https://thistimefitness.com${image}`,
               },
               {
-                name: `fb:app_id`,
+                property: `og:image:type`,
+                content: `image/jpeg`,
+              },
+              {
+                property: `og:image:width`,
+                content: 1080,
+              },
+              {
+                property: `og:image:height`,
+                content: 1080,
+              },
+              {
+                property: `fb:app_id`,
                 content: '734625066685760',
               },
             ]
