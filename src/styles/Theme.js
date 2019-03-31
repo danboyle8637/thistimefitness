@@ -56,6 +56,11 @@ const purpleTheme = {
   primaryColor: '#B44CFF',
   secondaryColor: '#2AD2E2',
   textColor: '#D7DAFF',
+  blogTextColor: '#5c5c5c',
+  pricingColor: '#1e1d2c',
+  fillerColor: '#f8f8f8',
+  accentColor: '#5afdf2',
+  errorColor: '#e23e44',
 }
 
 export { tealTheme, purpleTheme, above }
