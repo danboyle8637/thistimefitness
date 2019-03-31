@@ -5,4 +5,4 @@ pic: '../../images/About/about-team-jen.jpg'
 certs: NASM CPT, RKC, Yoga 200
 ---
 
-I have more certifications than any other train in Charleston.
+I have more certifications than any other trainer in Charleston.

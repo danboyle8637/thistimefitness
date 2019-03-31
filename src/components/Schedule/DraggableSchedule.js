@@ -24,8 +24,12 @@ class DraggableSchedule extends Component {
   componentDidMount() {
     const { bounds } = this.props
 
-    TweenMax.set(this.dragSchedule, { x: bounds * 3 })
-    this.context.handleChangeActiveSlide(3)
+    const today = new Date().getDay()
+    const daysOfWeek = [-3, 2, 0, -2, -4, -6, -8]
+    const activeDay = today + daysOfWeek[today]
+
+    TweenMax.set(this.dragSchedule, { x: bounds * activeDay })
+    this.context.handleChangeActiveSlide(activeDay)
 
     Draggable.create(this.dragSchedule, {
       type: 'x',

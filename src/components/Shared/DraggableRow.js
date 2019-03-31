@@ -31,14 +31,18 @@ class DraggableRow extends Component {
     const screenWidth = window.innerWidth
     this.setState({ screenWidth })
 
+    const today = new Date().getDay()
+    const daysOfWeek = [-3, 2, 0, -2, -4, -6, -8]
+    const activeDay = today + daysOfWeek[today]
+
     if (screenWidth < 1024 && page === 'classes') {
       TweenMax.set(this.card, { x: screenWidth })
       this.context.handleChangeActiveSlide(1)
     }
 
     if (page === 'schedule') {
-      TweenMax.set(this.card, { x: screenWidth * 3 })
-      this.context.handleChangeActiveSlide(3)
+      TweenMax.set(this.card, { x: screenWidth * activeDay })
+      this.context.handleChangeActiveSlide(activeDay)
     }
 
     if (screenWidth <= 1024) {

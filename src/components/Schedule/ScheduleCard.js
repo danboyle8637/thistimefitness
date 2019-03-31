@@ -42,7 +42,7 @@ const ScheduleDay = styled.h3`
   align-self: center;
   color: ${props => props.theme.textColor};
   font-size: 28px;
-  font-weight: 100;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.24em;
   ${above.tablet`
