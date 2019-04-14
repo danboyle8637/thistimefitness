@@ -95,14 +95,17 @@ class FourteenDayForm extends Component {
     const name = event.target.name
     const value = event.target.value
 
+    // Copy of state
     const updatedControls = {
       ...this.state.formControls,
     }
 
+    // Copy of the specific form element's state
     const updatedFormElement = {
       ...updatedControls[name],
     }
 
+    // Setting new data on the form element
     updatedFormElement.value = value
     updatedFormElement.touched = true
     updatedFormElement.valid = validate(
@@ -120,8 +123,10 @@ class FourteenDayForm extends Component {
       })
     }
 
+    // Update state copy with the new values from the element
     updatedControls[name] = updatedFormElement
 
+    // Update the state with the correct copy
     this.setState({
       formControls: updatedControls,
     })
