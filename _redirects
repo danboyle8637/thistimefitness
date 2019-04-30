@@ -1,5 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
-http://sleepy-cori-db5e31.netlify.com/* http://thistimefitness.com/:splat 301!
+http://sleepy-cori-db5e31.netlify.com/* http://thistimefitness.com/:splat
 
 /body-burn-west-ashley /body-burn
 /14-days-for-14-dollars-kick-start /14-for-14-new-member-special
@@ -20,3 +20,4 @@ http://sleepy-cori-db5e31.netlify.com/* http://thistimefitness.com/:splat 301!
 /5-healthy-tailgate-snacks-that-actually-taste-good /blog/5-healthy-appetizers-for-your-next-tailgate
 /perfect-pushup-mobility-form-strength-fat-burning /blog/how-to-perfect-your-pushups
 /youre-not-getting-results-want-youre-probably-not-enough /blog/how-to-get-better-results
+/real-life-jennifer-fahey-stopped-yo-yo-dieting-and-became-stronger-than-ever /blog/jennifer-transformation-story
