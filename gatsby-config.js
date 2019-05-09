@@ -125,6 +125,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `SummerSlimDownImages`,
+        path: `${__dirname}/src/images/SummerSlimDown`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `SummerSlimDownCopy`,
+        path: `${__dirname}/src/content/SummerSlimDown`,
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: `GCMS`,

@@ -6,7 +6,7 @@ import { InnerBodyText } from '../../styles/BodyText'
 import { BodyTextContainer } from '../../styles/Containers'
 import { above } from '../../styles/Theme'
 
-const ReviewCard = ({ reviewText, headline, stars, name, url }) => {
+const ReviewCard = ({ reviewText, headline, name, url }) => {
   return (
     <ReviewCardContainer>
       <ReviewHeader headline={headline} url={url} />

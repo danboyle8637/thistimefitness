@@ -136,6 +136,28 @@ const StatsHeadline = styled.h3`
   margin-top: ${props => props.marginTop || 0};
 `
 
+// *********** Summer Slim Down Headline *********** //
+
+const SummerHeadlineSmall = styled.h3`
+  ${mobileSetup}
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: ${props => (props.small ? '24px' : '26px')};
+  color: ${props => props.theme.textColor};
+  transform: ${props =>
+    moveHeadline(props.moveMobileX || '0', props.moveMobileY || '0')};
+  ${above.mobile`
+    transform: ${props =>
+      moveHeadline(props.moveTabletX || '0', props.moveTabletY || '0')};
+  `}
+  ${above.tablet`
+    transform: ${props =>
+      moveHeadline(props.moveDesktopX || '0', props.moveDesktopY || '0')};
+  `}
+`
+
 export {
   MagazineH1,
   MagazineH1Filler,
@@ -143,4 +165,5 @@ export {
   BaseSubhead,
   SpecialSubhead,
   StatsHeadline,
+  SummerHeadlineSmall,
 }
