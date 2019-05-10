@@ -10,6 +10,7 @@ import HowItWorksSection from '../components/SummerSlimDown/HowItWorksSection/Ho
 import LeadYouSection from '../components/SummerSlimDown/LeadYouSection/LeadYouSection'
 import CaseStudySection from '../components/SummerSlimDown/CaseStudySection/CaseStudySection'
 import ChoiceIsYoursSection from '../components/SummerSlimDown/ChoiceIsYoursSection/ChoiceIsYoursSection'
+import EarlyBirdCTASection from '../components/SummerSlimDown/EarlyBirdCTASection/EarlyBirdCTASection'
 
 const SummerSlimDownChallenge = () => {
   return (
@@ -23,6 +24,7 @@ const SummerSlimDownChallenge = () => {
       <LeadYouSection />
       <CaseStudySection />
       <ChoiceIsYoursSection />
+      <EarlyBirdCTASection />
     </Layout>
   )
 }

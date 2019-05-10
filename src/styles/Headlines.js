@@ -138,6 +138,15 @@ const StatsHeadline = styled.h3`
 
 // *********** Summer Slim Down Headline *********** //
 
+const SummerHeadlineLarge = styled.h1`
+  ${mobileSetup}
+  font-size: 60px;
+  ${above.mobile`
+    ${tabletSetup}
+    font-size: 90px;
+  `}
+`
+
 const SummerHeadlineSmall = styled.h3`
   ${mobileSetup}
   margin: 0;
@@ -156,6 +165,7 @@ const SummerHeadlineSmall = styled.h3`
   ${above.mobile`
     transform: ${props =>
       moveHeadline(props.moveTabletX || '0', props.moveTabletY || '0')};
+    font-size: 36px;
   `}
   ${above.tablet`
     transform: ${props =>
@@ -171,4 +181,5 @@ export {
   SpecialSubhead,
   StatsHeadline,
   SummerHeadlineSmall,
+  SummerHeadlineLarge,
 }

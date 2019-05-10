@@ -1,16 +1,27 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import { MagazineH1 } from '../../../../styles/Headlines'
+import { SummerHeadlineLarge } from '../../../../styles/Headlines'
 import { HeadlineContainer } from '../../../../styles/Containers'
+import { above } from '../../../../styles/Theme'
 
 const Headline2 = () => {
   return (
-    <HeadlineContainer left>
-      <MagazineH1 upper>Summer</MagazineH1>
-      <MagazineH1 upper>Slim</MagazineH1>
-      <MagazineH1 upper>Down</MagazineH1>
-    </HeadlineContainer>
+    <SummerHeadlineContainer left>
+      <SummerHeadlineLarge upper>Summer</SummerHeadlineLarge>
+      <SummerHeadlineLarge upper>Slim</SummerHeadlineLarge>
+      <SummerHeadlineLarge upper>Down</SummerHeadlineLarge>
+    </SummerHeadlineContainer>
   )
 }
 
 export default Headline2
+
+const SummerHeadlineContainer = styled(HeadlineContainer)`
+  ${above.mobile`
+    transform: translateX(80px);
+  `}
+  ${above.tablet`
+    align-self: flex-end;
+  `}
+`
