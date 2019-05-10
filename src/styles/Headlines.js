@@ -145,7 +145,12 @@ const SummerHeadlineSmall = styled.h3`
   font-family: Montserrat;
   font-weight: 600;
   font-size: ${props => (props.small ? '24px' : '26px')};
-  color: ${props => props.theme.textColor};
+  color: ${props =>
+    props.purple
+      ? props.theme.secondaryColor
+      : props.dark
+      ? props.theme.pricingColor
+      : props.theme.textColor};
   transform: ${props =>
     moveHeadline(props.moveMobileX || '0', props.moveMobileY || '0')};
   ${above.mobile`

@@ -7,6 +7,9 @@ import VideoSection from '../components/SummerSlimDown/VideoSection/VideoSection
 import BigDifferencesSection from '../components/SummerSlimDown/BigDifferencesSection/BigDifferencesSection'
 import TestimonialSection from '../components/SummerSlimDown/TestimonialSection/TestimonialSection'
 import HowItWorksSection from '../components/SummerSlimDown/HowItWorksSection/HowItWorksSection'
+import LeadYouSection from '../components/SummerSlimDown/LeadYouSection/LeadYouSection'
+import CaseStudySection from '../components/SummerSlimDown/CaseStudySection/CaseStudySection'
+import ChoiceIsYoursSection from '../components/SummerSlimDown/ChoiceIsYoursSection/ChoiceIsYoursSection'
 
 const SummerSlimDownChallenge = () => {
   return (
@@ -17,6 +20,9 @@ const SummerSlimDownChallenge = () => {
       <BigDifferencesSection />
       <TestimonialSection />
       <HowItWorksSection />
+      <LeadYouSection />
+      <CaseStudySection />
+      <ChoiceIsYoursSection />
     </Layout>
   )
 }

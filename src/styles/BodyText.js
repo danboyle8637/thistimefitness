@@ -26,6 +26,21 @@ const InnerBodyText = styled.div`
   }
   & ul {
     color: ${props => props.theme.textColor};
+    list-style: none;
+    & li {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: ${props => props.theme.secondaryColor};
+        transform: translate(-180%, 80%);
+      }
+    }
   }
   & a {
     color: ${props => props.theme.primaryColor};
