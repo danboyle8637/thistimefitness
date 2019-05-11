@@ -16,21 +16,22 @@ const emailValidationRules = {
 
 const formState = {
   goalValue: {
-    value: '',
+    value: 'weightLoss',
     valid: false,
-    options: [
-      {
-        value: 'weightLoss',
-        displayValue: 'Losing some real weight',
-        checked: false,
-      },
-      {
-        value: 'strength',
-        displayValue: 'I want to get strong',
-        checked: false,
-      },
-    ],
+    checked: true,
   },
+  goalOptions: [
+    {
+      value: 'weightLoss',
+      displayValue: 'Losing some significant weight',
+      checked: true,
+    },
+    {
+      value: 'strength',
+      displayValue: 'Getting seriously strong',
+      checked: false,
+    },
+  ],
   firstNameValue: {
     value: '',
     valid: false,
@@ -54,6 +55,31 @@ const formState = {
 const formReducer = (state, action) => {
   switch (action.type) {
     case 'goalValue': {
+      const isValid = validate(action.value, goalValidationRules)
+      return {
+        ...state,
+        goalValue: {
+          value: action.value,
+          valid: isValid,
+        },
+      }
+    }
+    case 'goalOptions': {
+      return {
+        ...state,
+        goalOptions: [
+          {
+            value: 'weightLoss',
+            displayValue: 'Losing some significant weight',
+            checked: action.value === 'weightLoss' ? true : false,
+          },
+          {
+            value: 'strength',
+            displayValue: 'Getting seriously strong',
+            checked: action.value === 'strength' ? true : false,
+          },
+        ],
+      }
     }
     case 'firstNameValue': {
       const isValid = validate(action.value, firstNameValidationRules)
@@ -100,3 +126,5 @@ const formReducer = (state, action) => {
     }
   }
 }
+
+export { formState, formReducer }

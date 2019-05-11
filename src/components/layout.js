@@ -11,21 +11,25 @@ import { ScreenWidthStore } from '../context/ScreenWidthContext'
 import { MenuOpenStore } from '../context/MenuOpenContext'
 import { ActiveSlideStore } from '../context/ActiveSlideContext'
 import { tealTheme } from '../styles/Theme'
+import { FormStore } from '../context/FormContext'
+import { formState, formReducer } from '../reducers/formReducer'
 
 const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={tealTheme}>
-        <ActiveSlideStore>
-          <MenuOpenStore>
-            <ScreenWidthStore>
-              <Header />
-              <TTFLayout>{children}</TTFLayout>
-              <Footer />
-              <Global />
-            </ScreenWidthStore>
-          </MenuOpenStore>
-        </ActiveSlideStore>
+        <FormStore initialState={formState} reducer={formReducer}>
+          <ActiveSlideStore>
+            <MenuOpenStore>
+              <ScreenWidthStore>
+                <Header />
+                <TTFLayout>{children}</TTFLayout>
+                <Footer />
+                <Global />
+              </ScreenWidthStore>
+            </MenuOpenStore>
+          </ActiveSlideStore>
+        </FormStore>
       </ThemeProvider>
     </>
   )
