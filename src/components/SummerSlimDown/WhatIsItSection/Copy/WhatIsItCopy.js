@@ -19,7 +19,11 @@ const WhatIsItCopy = () => {
   const body = copy.whatIsItCopy.childMarkdownRemark.html
 
   return (
-    <BodyTextContainer mMarginTop={'40px'}>
+    <BodyTextContainer
+      mMarginTop={'40px'}
+      tMarginTop={'60px'}
+      dMarginTop={'60px'}
+    >
       <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
     </BodyTextContainer>
   )

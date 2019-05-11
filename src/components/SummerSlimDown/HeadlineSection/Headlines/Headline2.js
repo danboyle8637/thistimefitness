@@ -23,5 +23,6 @@ const SummerHeadlineContainer = styled(HeadlineContainer)`
   `}
   ${above.tablet`
     align-self: flex-end;
+    padding-left: 220px;
   `}
 `

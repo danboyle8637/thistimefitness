@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { SectionContainer } from '../../../styles/Containers'
 import Headline1 from './Headlines/Headline1'
 import DifferenceCard from './DifferenceCard'
+import { above } from '../../../styles/Theme'
 
 const BigDifferencesSection = () => {
   const query = graphql`
@@ -47,7 +48,7 @@ const BigDifferencesSection = () => {
   })
 
   return (
-    <SectionContainer>
+    <SectionContainer desktopWidth={'94%'}>
       <Headline1 />
       <CardContainer>{cards}</CardContainer>
     </SectionContainer>
@@ -61,4 +62,10 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  ${above.mobile`
+    align-items: center;
+  `}
+  ${above.tablet`
+    flex-direction: row;
+  `}
 `

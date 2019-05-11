@@ -5,7 +5,7 @@ import { SummerHeadlineSmall } from '../../../../styles/Headlines'
 
 const Headline1 = () => {
   return (
-    <HeadlineContainer>
+    <HeadlineContainer tabletWidth={'100%'} desktopWidth={'100%'}>
       <SummerHeadlineSmall>Watch the Video!</SummerHeadlineSmall>
     </HeadlineContainer>
   )

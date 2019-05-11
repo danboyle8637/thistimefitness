@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { SummerHeadlineSmall } from '../../../styles/Headlines'
 import { InnerBodyText } from '../../../styles/BodyText'
+import { above } from '../../../styles/Theme'
 
 const DiffferenceCard = ({ number, headline, body }) => {
   return (
@@ -25,6 +26,12 @@ const CardContainer = styled.div`
   margin-top: 80px;
   position: relative;
   display: flex;
+  ${above.mobile`
+    width: 80%;
+  `}
+  ${above.tablet`
+    padding: 20px; 
+  `}
 `
 
 const BigNumber = styled.p`
@@ -39,9 +46,10 @@ const BigNumber = styled.p`
 `
 
 const ContentWrapper = styled.div`
+  margin-top: 4px;
   display: flex;
   flex-direction: column;
   justify-self: end;
-  width: 240px;
+  width: 100%;
   z-index: 1;
 `

@@ -8,6 +8,7 @@ import {
   BodyTextContainer,
 } from '../../../styles/Containers'
 import { InnerBodyText } from '../../../styles/BodyText'
+import { above } from '../../../styles/Theme'
 
 const LeadYouCopy = () => {
   const query = graphql`
@@ -45,4 +46,7 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
+  ${above.mobile`
+    width: 80%;
+  `}
 `

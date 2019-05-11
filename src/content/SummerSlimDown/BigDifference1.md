@@ -4,4 +4,4 @@ headline: Personal Training
 number: 1
 ---
 
-We train you individually for your goals. That means serious results!
+We train you individually during workouts. This means you learn, improve, and get serious results!

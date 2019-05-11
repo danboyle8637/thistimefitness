@@ -7,7 +7,11 @@ import WhatIsItCopy from './Copy/WhatIsItCopy'
 
 const WhatIsItSection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer
+      mobilePadding={'40px 20px 80px 20px'}
+      tabletPadding={'60px 20px 120px 20px'}
+      desktopPadding={'60px 20px 120px 20px'}
+    >
       <MainButton>I'm Interested!</MainButton>
       <Headline1 />
       <WhatIsItCopy />

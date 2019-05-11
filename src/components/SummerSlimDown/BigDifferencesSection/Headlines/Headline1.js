@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { SpecialSubhead } from '../../../../styles/Headlines'
+import { above } from '../../../../styles/Theme'
 
 const Headline1 = () => {
   return (
@@ -38,6 +39,9 @@ const BigNumber = styled.p`
   font-weight: 800;
   color: ${props => props.theme.pricingColor};
   font-size: 160px;
+  ${above.mobile`
+    font-size: 220px;
+  `}
 `
 
 const HeadlineWrapper = styled.div`
@@ -45,4 +49,7 @@ const HeadlineWrapper = styled.div`
   grid-row: 1 / -1;
   margin-left: 70px;
   z-index: 1;
+  ${above.mobile`
+    margin-left: 100px;
+  `}
 `

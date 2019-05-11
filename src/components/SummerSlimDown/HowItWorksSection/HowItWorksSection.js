@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { SectionContainer } from '../../../styles/Containers'
 import Headline1 from './Headlines/Headline1'
 import HowItWorksCard from './HowItWorksCard'
+import { above } from '../../../styles/Theme'
 
 const HowItWorksSection = () => {
   const query = graphql`
@@ -40,7 +41,11 @@ const HowItWorksSection = () => {
   })
 
   return (
-    <SectionContainer color={'#26243E'}>
+    <SectionContainer
+      color={'#26243E'}
+      tabletWidth={'100%'}
+      desktopWidth={'100%'}
+    >
       <Headline1 />
       <CardContainer>{cards}</CardContainer>
     </SectionContainer>
@@ -54,4 +59,9 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${above.tablet`
+    margin-top: 80px;
+    flex-direction: row;
+    align-items: flex-start;
+  `}
 `

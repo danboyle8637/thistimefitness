@@ -7,14 +7,21 @@ import {
 } from '../../../styles/Containers'
 import { SummerHeadlineSmall } from '../../../styles/Headlines'
 import { InnerBodyText } from '../../../styles/BodyText'
+import { above } from '../../../styles/Theme'
 
 const HowItWorksCard = ({ headline, body }) => {
   return (
     <CardContainer>
-      <HeadlineContainer left>
+      <HeadlineContainer left desktopWidth={'100%'}>
         <SummerHeadlineSmall purple>{headline}</SummerHeadlineSmall>
       </HeadlineContainer>
-      <BodyTextContainer mMarginTop={'20px'}>
+      <BodyTextContainer
+        mMarginTop={'20px'}
+        tMarginTop={'20px'}
+        dMarginTop={'30px'}
+        tabletWidth={'100%'}
+        desktopWidth={'100%'}
+      >
         <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
       </BodyTextContainer>
     </CardContainer>
@@ -37,4 +44,10 @@ const CardContainer = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
+  ${above.mobile`
+    width: 80%;
+  `}
+  ${above.tablet`
+    margin: 20px;
+  `}
 `
