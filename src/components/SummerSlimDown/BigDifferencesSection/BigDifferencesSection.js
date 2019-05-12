@@ -66,6 +66,7 @@ const CardContainer = styled.div`
     align-items: center;
   `}
   ${above.tablet`
+    margin-top: 80px;
     flex-direction: row;
   `}
 `

@@ -8,7 +8,12 @@ import {
 
 const Headline2 = () => {
   return (
-    <HeadlineContainer left mMarginTop={'40px'}>
+    <HeadlineContainer
+      left
+      mMarginTop={'40px'}
+      tMarginTop={'40px'}
+      dMarginTop={'40px'}
+    >
       <SummerHeadlineSmall mobileLineHeight={'1.6'}>
         Registration Opens
       </SummerHeadlineSmall>

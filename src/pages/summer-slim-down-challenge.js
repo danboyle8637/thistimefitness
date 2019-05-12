@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import HeadlineSection from '../components/SummerSlimDown/HeadlineSection/HeadlineSection'
@@ -12,8 +13,9 @@ import CaseStudySection from '../components/SummerSlimDown/CaseStudySection/Case
 import ChoiceIsYoursSection from '../components/SummerSlimDown/ChoiceIsYoursSection/ChoiceIsYoursSection'
 import EarlyBirdCTASection from '../components/SummerSlimDown/EarlyBirdCTASection/EarlyBirdCTASection'
 import SummerSlimDownForm from '../components/SummerSlimDown/Form/SummerSlimDownForm'
+import Faq from '../components/Shared/FAQ/FAQ'
 
-const SummerSlimDownChallenge = () => {
+const SummerSlimDownChallenge = ({ data }) => {
   return (
     <Layout>
       <HeadlineSection />
@@ -27,8 +29,28 @@ const SummerSlimDownChallenge = () => {
       <ChoiceIsYoursSection />
       <EarlyBirdCTASection />
       <SummerSlimDownForm />
+      <Faq questions={data.summerQuestions} />
     </Layout>
   )
 }
 
 export default SummerSlimDownChallenge
+
+export const query = graphql`
+  query {
+    summerQuestions: allFile(
+      filter: { sourceInstanceName: { eq: "FAQ" }, name: { regex: "/summer/" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            html
+            frontmatter {
+              question
+            }
+          }
+        }
+      }
+    }
+  }
+`

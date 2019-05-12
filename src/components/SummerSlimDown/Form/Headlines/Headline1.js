@@ -8,7 +8,7 @@ import {
 
 const Headline1 = () => {
   return (
-    <HeadlineContainer left>
+    <HeadlineContainer left tabletWidth={'90%'} desktopWidth={'80%'}>
       <SummerHeadlineSmall mobileLineHeight={'1.6'}>
         Get on the
       </SummerHeadlineSmall>

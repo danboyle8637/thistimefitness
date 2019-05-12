@@ -8,22 +8,36 @@ import EarlyBirdCopy1 from './Copy/EarlyBirdCopy1'
 import EarlyBirdCopy2 from './Copy/EarlyBirdCopy2'
 import SwitchCover from './SwtichCover'
 import KindalSig from '../../../svgs/KindalSig'
+import { above } from '../../../styles/Theme'
 
 const EarlyBirdCTASection = () => {
   return (
-    <SectionContainer>
+    <SectionContainer
+      mobilePadding={'40px 20px 80px 20px'}
+      tabletPadding={'40px 20px 120px 20px'}
+      desktopPadding={'40px 20px 120px 20px'}
+      desktopWidth={'100%'}
+    >
       <Headline1 />
       <Headline2 />
-      <BodyTextContainer mMarginTop={'60px'}>
+      <BodyTextContainer
+        mMarginTop={'60px'}
+        tMarginTop={'60px'}
+        dMarginTop={'60px'}
+      >
         <EarlyBirdCopy1 />
       </BodyTextContainer>
       <ImageWrapper>
         <SwitchCover />
       </ImageWrapper>
-      <BodyTextContainer mMarginTop={'40px'}>
+      <BodyTextContainer
+        mMarginTop={'40px'}
+        tMarginTop={'40px'}
+        dMarginTop={'40px'}
+      >
         <EarlyBirdCopy2 />
+        <Kindal fill={'#2AD2E2'} />
       </BodyTextContainer>
-      <Kindal fill={'#2AD2E2'} />
     </SectionContainer>
   )
 }
@@ -32,6 +46,12 @@ export default EarlyBirdCTASection
 
 const ImageWrapper = styled.div`
   width: 100%;
+  ${above.mobile`
+    width: 80%;
+  `}
+  ${above.tablet`
+    width: 30%;
+  `}
 `
 
 const Kindal = styled(KindalSig)`

@@ -1,20 +1,42 @@
-import React from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 
 import { BodyText } from '../../../styles/BodyText'
-import { BaseSubhead } from '../../../styles/Headlines'
+import { SummerCaseStudyCard } from '../../../styles/Headlines'
+import { above } from '../../../styles/Theme'
 
-const CaseStudyCard = ({ client, results, pic, slug }) => {
+const CaseStudyCard = ({
+  client,
+  results,
+  mobileThumbnail,
+  desktopThumbnail,
+  slug,
+}) => {
+  const [screenSize, setScreenSize] = useState(0)
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth
+    setScreenSize(screenWidth)
+  }, [])
+
+  let thumbnailImage
+
+  if (screenSize < 1024) {
+    thumbnailImage = <CaseStudyImage fluid={mobileThumbnail} />
+  }
+
+  if (screenSize >= 1024) {
+    thumbnailImage = <CaseStudyImage fluid={desktopThumbnail} />
+  }
+
   return (
     <CardContainer>
-      <ImageWrapper>
-        <CaseStudyImage fluid={pic} />
-      </ImageWrapper>
+      <ImageWrapper>{thumbnailImage}</ImageWrapper>
       <ContentWrapper>
         <BodyText>{client}</BodyText>
-        <BaseSubhead secondary>{results}</BaseSubhead>
+        <SummerCaseStudyCard>{results}</SummerCaseStudyCard>
         <Button to={slug}>Read More...</Button>
       </ContentWrapper>
     </CardContainer>
@@ -30,6 +52,10 @@ const CardContainer = styled.div`
   background: #393b4f;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  ${above.tablet`
+    flex-direction: column;
+    width: 380px;
+  `}
 `
 
 const ImageWrapper = styled.div`
@@ -38,6 +64,9 @@ const ImageWrapper = styled.div`
 
 const CaseStudyImage = styled(Image)`
   border-radius: 4px 0 0 4px;
+  ${above.tablet`
+    border-radius: 4px 4px 0 0;
+  `}
 `
 
 const ContentWrapper = styled.div`
@@ -63,4 +92,7 @@ const Button = styled(Link)`
   text-align: center;
   text-decoration: none;
   width: 100%;
+  ${above.mobile`
+    margin-top: 14px;
+  `}
 `

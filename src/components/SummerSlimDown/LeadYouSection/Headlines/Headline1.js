@@ -10,16 +10,38 @@ const Headline1 = () => {
   return (
     <HeadlineContainer left>
       <SummerHeadlineSmall mobileLineHeight={'1.6'}>We'll</SummerHeadlineSmall>
-      <SpecialSubhead big upper>
+      <SpecialSubhead
+        big
+        upper
+        tabletLineHeight={'1.0'}
+        desktopLineHeight={'1.0'}
+      >
         Lead
       </SpecialSubhead>
-      <SpecialSubhead big upper moveMobileX={'6px'}>
+      <SpecialSubhead
+        big
+        upper
+        moveMobileX={'6px'}
+        moveTabletX={'7px'}
+        moveDesktopX={'7px'}
+      >
         You
       </SpecialSubhead>
-      <SummerHeadlineSmall mobileLineHeight={'1.6'} moveMobileX={'18px'}>
+      <SummerHeadlineSmall
+        mobileLineHeight={'1.6'}
+        moveMobileX={'18px'}
+        moveTabletX={'20px'}
+        moveDesktopX={'20px'}
+      >
         the rest of
       </SummerHeadlineSmall>
-      <SummerHeadlineSmall moveMobileX={'18px'}>the way</SummerHeadlineSmall>
+      <SummerHeadlineSmall
+        moveMobileX={'18px'}
+        moveTabletX={'20px'}
+        moveDesktopX={'20px'}
+      >
+        the way
+      </SummerHeadlineSmall>
     </HeadlineContainer>
   )
 }

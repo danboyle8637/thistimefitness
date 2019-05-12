@@ -32,7 +32,11 @@ const LeadYouCopy = () => {
       <HeadlineContainer>
         <Headline1 />
       </HeadlineContainer>
-      <BodyTextContainer mMarginTop={'60px'}>
+      <BodyTextContainer
+        mMarginTop={'60px'}
+        tMarginTop={'60px'}
+        dMarginTop={'60px'}
+      >
         <InnerBodyText dangerouslySetInnerHTML={{ __html: body }} />
       </BodyTextContainer>
     </ContentContainer>

@@ -125,7 +125,7 @@ const FormButton = styled.button`
   letter-spacing: 4px;
   border: none;
   cursor: pointer;
-  width: 270px;
+  width: 100%;
   ${above.mobile`
     width: 380px;
   `}

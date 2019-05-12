@@ -1,21 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import styled from 'styled-components'
 
-import { SectionContainer } from '../../../styles/Containers'
+import { SectionContainer, ButtonContainer } from '../../../styles/Containers'
 import Headline1 from './Headlines/Headline1'
 import RadioInput from '../../Shared/Form/RadioInput'
 import TextInput from '../../Shared/Form/TextInput'
 import { FormFieldSet } from '../../../styles/Form'
 import { useFormStore } from '../../../context/FormContext'
 import useFormInput from '../../../customHooks/useFormInputs'
+import { FormButton } from '../../../styles/Buttons'
+import { above } from '../../../styles/Theme'
 
 const SummerSlimDownForm = () => {
   const [formState, dispatch] = useFormStore()
   const { handleFormChange, handleFormFocus } = useFormInput()
+  const [buttonText, setButtonText] = useState('Finish All Questions...')
+  const [formValid, setFormValid] = useState(false)
+
+  useEffect(() => {
+    if (
+      formState.goalValue.valid &&
+      formState.firstNameValue.valid &&
+      formState.emailValue.valid
+    ) {
+      setButtonText('Get On Early Bird List!')
+      setFormValid(true)
+    } else {
+      setButtonText('Check Your Answers...')
+      setFormValid(false)
+    }
+  })
 
   return (
-    <SectionContainer>
+    <SectionContainer
+      mobilePadding={'40px 20px 80px 20px'}
+      tabletPadding={'40px 20px 120px 20px'}
+      desktopPadding={'40px 20px 120px 20px'}
+    >
       <Headline1 />
-      <form>
+      <EarlyBirdForm>
         <FormFieldSet>
           <input type="hidden" name="bot-field" />
           <RadioInput
@@ -57,10 +80,29 @@ const SummerSlimDownForm = () => {
             onFocus={handleFormFocus}
             onBlur={handleFormFocus}
           />
+          <ButtonContainer
+            mMarginTop={'40px'}
+            tMarginTop={'60px'}
+            dMarginTop={'60px'}
+          >
+            <FormButton type={'submit'} valid={formValid}>
+              {buttonText}
+            </FormButton>
+          </ButtonContainer>
         </FormFieldSet>
-      </form>
+      </EarlyBirdForm>
     </SectionContainer>
   )
 }
 
 export default SummerSlimDownForm
+
+const EarlyBirdForm = styled.form`
+  width: 100%;
+  ${above.mobile`
+    width: 90%;
+  `}
+  ${above.tablet`
+    width: 80%;
+  `}
+`

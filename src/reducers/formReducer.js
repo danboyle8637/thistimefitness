@@ -17,7 +17,7 @@ const emailValidationRules = {
 const formState = {
   goalValue: {
     value: 'weightLoss',
-    valid: false,
+    valid: true,
     checked: true,
   },
   goalOptions: [

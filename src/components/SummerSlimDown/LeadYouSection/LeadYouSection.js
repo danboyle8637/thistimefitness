@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SectionContainer } from '../../../styles/Containers'
+import { SectionContainer, ButtonContainer } from '../../../styles/Containers'
 import LeadYouContent from './LeadYouContent'
 import { SiteButton } from '../../../styles/Buttons'
 
@@ -11,7 +11,13 @@ const LeadYouSection = () => {
       <ContentWrapper>
         <LeadYouContent />
       </ContentWrapper>
-      <SiteButton>I'm Interested!</SiteButton>
+      <ButtonContainer
+        mMarginTop={'40px'}
+        tMarginTop={'60px'}
+        dMarginTop={'60px'}
+      >
+        <SiteButton>I'm Interested!</SiteButton>
+      </ButtonContainer>
     </SectionContainer>
   )
 }

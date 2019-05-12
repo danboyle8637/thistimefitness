@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { SectionContainer } from '../../../styles/Containers'
 import Headline1 from './Headlines/Headline1'
 import CaseStudyCard from './CaseStudyCard'
+import { above } from '../../../styles/Theme'
 
 const CaseStudySection = () => {
   const query = graphql`
@@ -12,7 +13,7 @@ const CaseStudySection = () => {
       caseStudies: allFile(
         filter: {
           sourceInstanceName: { eq: "SummerSlimDownCopy" }
-          name: { regex: "/CaseStudy/" }
+          name: { regex: "/CaseStudyPreview/" }
         }
       ) {
         nodes {
@@ -20,12 +21,24 @@ const CaseStudySection = () => {
             frontmatter {
               id
               client
-              pic {
+              mobileThumbnail {
                 childImageSharp {
                   fluid(
                     jpegProgressive: true
                     maxWidth: 400
                     maxHeight: 400
+                    quality: 90
+                  ) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              desktopThumbnail {
+                childImageSharp {
+                  fluid(
+                    jpegProgressive: true
+                    maxWidth: 600
+                    maxHeight: 300
                     quality: 90
                   ) {
                     ...GatsbyImageSharpFluid
@@ -47,7 +60,11 @@ const CaseStudySection = () => {
     const id = card.childMarkdownRemark.frontmatter.id
     const client = card.childMarkdownRemark.frontmatter.client
     const results = card.childMarkdownRemark.frontmatter.results
-    const pic = card.childMarkdownRemark.frontmatter.pic.childImageSharp.fluid
+    const mobileThumbnail =
+      card.childMarkdownRemark.frontmatter.mobileThumbnail.childImageSharp.fluid
+    const desktopThumbnail =
+      card.childMarkdownRemark.frontmatter.desktopThumbnail.childImageSharp
+        .fluid
     const slug = card.childMarkdownRemark.frontmatter.slug
 
     return (
@@ -55,14 +72,15 @@ const CaseStudySection = () => {
         key={id}
         client={client}
         results={results}
-        pic={pic}
+        mobileThumbnail={mobileThumbnail}
+        desktopThumbnail={desktopThumbnail}
         slug={slug}
       />
     )
   })
 
   return (
-    <SectionContainer>
+    <SectionContainer desktopWidth={'100%'}>
       <Headline1 />
       <CardsContainer>{cards}</CardsContainer>
     </SectionContainer>
@@ -72,8 +90,16 @@ const CaseStudySection = () => {
 export default CaseStudySection
 
 const CardsContainer = styled.div`
-  margin-top: 40px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   width: 100%;
+  ${above.mobile`
+    margin-top: 60px;
+  `}
+  ${above.tablet`
+    margin-top: 100px;
+    flex-direction: row;
+    justify-content: space-around;
+  `}
 `

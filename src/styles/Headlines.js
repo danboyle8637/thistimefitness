@@ -173,6 +173,16 @@ const SummerHeadlineSmall = styled.h3`
   `}
 `
 
+const SummerCaseStudyCard = styled.h3`
+  ${mobileSetup}
+  font-size: 28px;
+  color: ${props => props.theme.pricingColor};
+  font-weight: 800;
+  ${above.mobile`
+    font-size: 46px;
+  `}
+`
+
 export {
   MagazineH1,
   MagazineH1Filler,
@@ -182,4 +192,5 @@ export {
   StatsHeadline,
   SummerHeadlineSmall,
   SummerHeadlineLarge,
+  SummerCaseStudyCard,
 }
