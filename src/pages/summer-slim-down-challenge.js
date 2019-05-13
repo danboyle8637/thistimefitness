@@ -14,10 +14,20 @@ import ChoiceIsYoursSection from '../components/SummerSlimDown/ChoiceIsYoursSect
 import EarlyBirdCTASection from '../components/SummerSlimDown/EarlyBirdCTASection/EarlyBirdCTASection'
 import SummerSlimDownForm from '../components/SummerSlimDown/Form/SummerSlimDownForm'
 import Faq from '../components/Shared/FAQ/FAQ'
+import { siteConfig } from '../helpers/siteConfig'
+import SEO from '../components/seo'
 
 const SummerSlimDownChallenge = ({ data }) => {
   return (
     <Layout>
+      <SEO
+        title={siteConfig.summerSlimDown.title}
+        description={siteConfig.summerSlimDown.description}
+        image={siteConfig.summerSlimDown.image}
+        url={siteConfig.summerSlimDown.url}
+        keywords={siteConfig.summerSlimDown.keywords}
+        lang={siteConfig.summerSlimDown.lang}
+      />
       <HeadlineSection />
       <WhatIsItSection />
       <VideoSection />

@@ -183,6 +183,21 @@ export const siteConfig = {
   ignite: {
     countdownDate: '05/13/2019 12:00 AM',
   },
+  summerSlimDown: {
+    countdownDate: '06/10/2019 12:00 AM',
+    title: 'This Time Fitness Summer Slim Down Challenge',
+    description: `The Summer Slim Down Challenge is an 8 week program to help you burn fat, get strong, and feel incredible over the summer. Are you ready for the best summer yet?`,
+    url: 'https://thistimefitness.com/summer-slim-down-challenge',
+    image: '../images/Facebook/summer-slim-down-share-image.jpg',
+    keywords: [
+      'this time fitness',
+      'charleston gym',
+      'charleston personal trainer',
+      'west ashley gym',
+      'personal trainer west ashley',
+    ],
+    lang: 'en-us',
+  },
   purchaseLinks: {
     eightPerMonth: `https://thistimefitness.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&MembershipTemplateId=F4D3E520-8DE8-4F31-A1E0-B4CFEFC2866D&personId=56B20BB1-7E56-4266-85AE-06304AD82AF1`,
     twelvePerMonth: `https://thistimefitness.sites.zenplanner.com/registration.cfm?payment=MEMBERSHIP&MembershipTemplateId=62022540-7CF8-4E99-B7E0-15C66510AB58&personId=B2D98D37-BD76-4F80-BF57-BEE23A2636FF`,

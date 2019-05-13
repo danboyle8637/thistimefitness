@@ -56,6 +56,6 @@ const ContentContainer = styled.div`
     padding: 60px 0 20px 24px;
   `}
   ${above.tablet`
-    padding: 80px 0 20px 160px;
+    padding: 60px 0 20px 160px;
   `}
 `

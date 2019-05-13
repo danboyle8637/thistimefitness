@@ -9,12 +9,44 @@ import { above } from '../../styles/Theme'
 const SpecialCard = ({ images }) => {
   const fourteenDayImage = images.fourteenSpecial.childImageSharp.fluid
   const IgniteImage = images.igniteSpecial.childImageSharp.fluid
+  const summerSlimDownImage = images.summerSlimDownSpecial.childImageSharp.fluid
 
   return (
     <SectionContainer desktopWidth={'100%'}>
       <SpecialsGrid>
         <SpecialCardContainer>
-          <FeatureImageWrapper fluid={fourteenDayImage} title={'The group doing wall sits'} alt={'The group doing wall sits'} />
+          <FeatureImageWrapper
+            fluid={summerSlimDownImage}
+            title={'Summer Slim Down group picture'}
+            alt={'Summer Slim Down group picture'}
+          />
+          <SpecialContentWrapper>
+            <SpecialTitle>Summer Slim Down</SpecialTitle>
+            <HorizontalLine />
+            <SpecialDescription>
+              This only happens once a year. Join the 8 week Summer Slim Down
+              Challenge. Get strong... get fit... lose weight... and make this
+              the best summer you've every had!
+            </SpecialDescription>
+            <ButtonContainer
+              mMarginTop={'20px'}
+              tMarginTop={'20px'}
+              dMarginTop={'28px'}
+              tabletWidth={'100%'}
+              desktopWidth={'100%'}
+            >
+              <MainButton to={'/summer-slim-down-challenge'}>
+                Learn More
+              </MainButton>
+            </ButtonContainer>
+          </SpecialContentWrapper>
+        </SpecialCardContainer>
+        <SpecialCardContainer>
+          <FeatureImageWrapper
+            fluid={fourteenDayImage}
+            title={'The group doing wall sits'}
+            alt={'The group doing wall sits'}
+          />
           <SpecialContentWrapper>
             <SpecialTitle>14 Days for $14</SpecialTitle>
             <HorizontalLine />
@@ -37,7 +69,11 @@ const SpecialCard = ({ images }) => {
           </SpecialContentWrapper>
         </SpecialCardContainer>
         <SpecialCardContainer>
-          <FeatureImageWrapper fluid={IgniteImage} title={'Donna rocking out the battle ropes'} alt={'Donna rocking out the battle ropes'} />
+          <FeatureImageWrapper
+            fluid={IgniteImage}
+            title={'Donna rocking out the battle ropes'}
+            alt={'Donna rocking out the battle ropes'}
+          />
           <SpecialContentWrapper>
             <SpecialTitle>Ignite</SpecialTitle>
             <HorizontalLine />
@@ -85,7 +121,7 @@ const SpecialCardContainer = styled.div`
   flex-direction: column;
   width: 100%;
   background: ${props => props.theme.fillerColor};
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   &:not(:first-child) {
     margin-top: 76px;
@@ -107,6 +143,7 @@ const SpecialContentWrapper = styled.div`
 const FeatureImageWrapper = styled(Image)`
   padding: 0;
   margin: 0;
+  border-radius: 4px 4px 0 0;
   width: 100%;
 `
 

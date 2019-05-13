@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
@@ -76,6 +76,9 @@ const ContentWrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
+  ${above.tablet`
+    padding: 20px;
+  `}
 `
 
 const Button = styled(Link)`

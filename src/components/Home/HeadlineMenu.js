@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import { TweenMax, Back } from 'gsap/TweenMax'
 
 import ListArrow from '../../svgs/ListArrow'
+import KettlebellIcon from '../../svgs/KettlebellIcon'
 import { above } from '../../styles/Theme'
 
 class HeadlineMenu extends Component {
@@ -20,7 +21,7 @@ class HeadlineMenu extends Component {
   componentDidMount() {
     this.menuItems.map(item => {
       if (item.lastChild.textContent === 'First Time Specials') {
-        TweenMax.set(item.lastChild, { color: '#5AFDF2' })
+        TweenMax.set(item.lastChild, { color: '#5afdf2' })
       }
     })
 
@@ -33,34 +34,36 @@ class HeadlineMenu extends Component {
   }
 
   render() {
+    const kettlebellColor = '#b3b6e1'
+
     return (
       <MenuContainer>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/specials">First Time Specials</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/about">About</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/classes">Our Classes</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/case-studies">Case Studies</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/schedule">Schedule</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/location">Location</MenuLink>
         </MenuText>
         <MenuText ref={this.setMenuItemRef}>
-          <MenuArrow />
+          <MenuKettlebell fill={kettlebellColor} stroke={kettlebellColor} />
           <MenuLink to="/blog">Blog</MenuLink>
         </MenuText>
       </MenuContainer>
@@ -121,6 +124,16 @@ const MenuLink = styled(Link)`
 
 const MenuArrow = styled(ListArrow)`
   width: 40px;
+  ${above.mobile`
+    width: 50px;
+  `}
+  ${above.tablet`
+    width: 60px;
+  `}
+`
+
+const MenuKettlebell = styled(KettlebellIcon)`
+  width: 12px;
   ${above.mobile`
     width: 50px;
   `}

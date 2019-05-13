@@ -56,6 +56,7 @@ export default HowItWorksSection
 
 const CardContainer = styled.div`
   margin-top: 60px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;

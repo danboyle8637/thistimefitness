@@ -7,7 +7,10 @@ import { InnerBodyText } from '../../../../styles/BodyText'
 const WhatIsItCopy = () => {
   const query = graphql`
     query {
-      whatIsItCopy: file(sourceInstanceName: { eq: "SummerSlimDownCopy" }) {
+      whatIsItCopy: file(
+        sourceInstanceName: { eq: "SummerSlimDownCopy" }
+        name: { eq: "WhatIsIt" }
+      ) {
         childMarkdownRemark {
           html
         }

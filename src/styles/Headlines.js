@@ -181,6 +181,9 @@ const SummerCaseStudyCard = styled.h3`
   ${above.mobile`
     font-size: 46px;
   `}
+  ${above.tablet`
+    font-size: 60px;
+  `}
 `
 
 export {

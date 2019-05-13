@@ -1,40 +1,29 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import Image from 'gatsby-image'
 import styled from 'styled-components'
+import VimeoPlayer from 'react-player/lib/players/Vimeo'
 
 import Headline1 from './Headlines/Headline1'
 import { above } from '../../../styles/Theme'
 
 const VideoSection = () => {
-  const query = graphql`
-    query {
-      video: file(
-        sourceInstanceName: { eq: "SummerSlimDownImages" }
-        name: { eq: "video-place-holder" }
-      ) {
-        childImageSharp {
-          fluid(
-            jpegProgressive: true
-            maxWidth: 600
-            maxHeight: 338
-            quality: 90
-          ) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `
-
-  const data = useStaticQuery(query)
-  const fluid = data.video.childImageSharp.fluid
-
   return (
     <VideoContainer>
       <Headline1 />
       <VideoWrapper>
-        <Image fluid={fluid} />
+        <VimeoPlayer
+          url={'https://vimeo.com/335634671'}
+          playsInline={true}
+          width={'100%'}
+          height={'100%'}
+          config={{
+            vimeo: {
+              preload: true,
+              playerOptions: {
+                responsive: true,
+              },
+            },
+          }}
+        />
       </VideoWrapper>
     </VideoContainer>
   )
@@ -54,7 +43,7 @@ const VideoContainer = styled.div`
 
 const VideoWrapper = styled.div`
   margin-top: 20px;
-  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   ${above.tablet`
     margin-top: 40px;
   `}

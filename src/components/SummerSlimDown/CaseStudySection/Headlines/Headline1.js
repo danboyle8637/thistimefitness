@@ -9,7 +9,7 @@ const Headline1 = () => {
       left
       mMarginTop={'80px'}
       tMarginTop={'80px'}
-      dMarginTop={'120px'}
+      dMarginTop={'200px'}
     >
       <SummerHeadlineSmall>See for yourself...</SummerHeadlineSmall>
     </HeadlineContainer>

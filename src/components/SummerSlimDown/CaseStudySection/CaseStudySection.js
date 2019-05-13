@@ -2,14 +2,11 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import {
-  SectionContainer,
-  ButtonContainer,
-  HeadlineContainer,
-} from '../../../styles/Containers'
+import { SectionContainer, ButtonContainer } from '../../../styles/Containers'
 import { MainButton } from '../../../styles/Buttons'
 import Headline1 from './Headlines/Headline1'
 import CaseStudyCard from './CaseStudyCard'
+import CountdownTimer from '../CountdownSection/CountdownTimer'
 import { above } from '../../../styles/Theme'
 
 const CaseStudySection = () => {
@@ -93,8 +90,9 @@ const CaseStudySection = () => {
     >
       <div id="summer_case_studies" />
       <ButtonContainer>
-        <MainButton to={'/'}>I'm Interested!</MainButton>
+        <MainButton to={'/summer-early-bird-form'}>I'm Interested!</MainButton>
       </ButtonContainer>
+      <CountdownTimer />
       <Headline1 />
       <CardsContainer>{cards}</CardsContainer>
     </SectionContainer>

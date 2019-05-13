@@ -21,7 +21,10 @@ class MenuList extends Component {
 
   componentDidMount() {
     this.menuItems.map(item => {
-      if (item.firstChild.textContent === 'Specials') {
+      if (
+        item.firstChild.textContent === 'Specials' ||
+        item.firstChild.textContent === 'Summer Slim Down'
+      ) {
         TweenMax.set(item.firstChild, { color: '#2AD2E2' })
       }
     })
@@ -43,39 +46,35 @@ class MenuList extends Component {
         <MenuListContainer>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/about">About</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/classes">Classes</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/schedule">Schedule</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/specials">Specials</MenuLink>
-            <MenuArrow />
+          </MenuText>
+          <MenuText ref={this.setMenuItemRef}>
+            <MenuLink to="/summer-slim-down-challenge">
+              Summer Slim Down
+            </MenuLink>
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/case-studies">Case Studies</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/transformations">Before/Afters</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/pricing">Pricing</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/blog">Blog</MenuLink>
-            <MenuArrow />
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/location">Location</MenuLink>
-            <MenuArrow />
           </MenuText>
         </MenuListContainer>
       </MenuContainer>
@@ -117,7 +116,7 @@ const MenuLink = styled(Link)`
   text-decoration: none;
   color: #b3b6e1;
   font-family: 'Montserrat';
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 2.2px;
   text-transform: uppercase;
@@ -128,15 +127,5 @@ const MenuLink = styled(Link)`
   }
   ${above.mobile`
     font-size: 20px;
-  `}
-`
-
-const MenuArrow = styled(ListArrow)`
-  width: 40px;
-  ${above.mobile`
-    width: 50px;
-  `}
-  ${above.tablet`
-    width: 60px;
   `}
 `

@@ -15,7 +15,12 @@ const Headline1 = () => {
       <SpecialSubhead big upper>
         Early
       </SpecialSubhead>
-      <SpecialSubhead big upper>
+      <SpecialSubhead
+        big
+        upper
+        tabletLineHeight={'1.0'}
+        desktopLineHeight={'1.0'}
+      >
         Bird List
       </SpecialSubhead>
     </HeadlineContainer>

@@ -13,7 +13,7 @@ import { above } from '../../../styles/Theme'
 
 const SummerSlimDownForm = () => {
   const [formState, dispatch] = useFormStore()
-  const { handleFormChange, handleFormFocus } = useFormInput()
+  const { handleFormChange, handleFormFocus, handleFormSubmit } = useFormInput()
   const [buttonText, setButtonText] = useState('Finish All Questions...')
   const [formValid, setFormValid] = useState(false)
 
@@ -38,7 +38,14 @@ const SummerSlimDownForm = () => {
       desktopPadding={'40px 20px 120px 20px'}
     >
       <Headline1 />
-      <EarlyBirdForm>
+      <EarlyBirdForm
+        name={'summer_slim_down_form'}
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/summer-slim-thank-you/"
+        onSubmit={handleFormSubmit}
+      >
         <FormFieldSet>
           <input type="hidden" name="bot-field" />
           <RadioInput

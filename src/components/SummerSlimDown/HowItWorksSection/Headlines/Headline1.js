@@ -15,7 +15,13 @@ const Headline1 = () => {
       <SpecialSubhead upper big secondary>
         Challenge
       </SpecialSubhead>
-      <SpecialSubhead upper big secondary>
+      <SpecialSubhead
+        upper
+        big
+        secondary
+        tabletLineHeight={'1.0'}
+        desktopLineHeight={'1.0'}
+      >
         Works:
       </SpecialSubhead>
     </HeadlineContainer>

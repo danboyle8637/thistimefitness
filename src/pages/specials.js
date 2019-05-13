@@ -55,6 +55,21 @@ export const query = graphql`
         }
       }
     }
+    summerSlimDownSpecial: file(
+      sourceInstanceName: { eq: "SpecialsImages" }
+      name: { eq: "summer-slim-down-special" }
+    ) {
+      childImageSharp {
+        fluid(
+          maxWidth: 600
+          maxHeight: 333
+          jpegProgressive: true
+          quality: 90
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     facebookShare: file(
       sourceInstanceName: { eq: "FacebookImages" }
       name: { eq: "specials-share-image" }

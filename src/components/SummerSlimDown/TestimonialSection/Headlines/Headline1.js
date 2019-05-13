@@ -16,7 +16,12 @@ const Headline1 = () => {
       <SpecialSubhead upper big>
         You can
       </SpecialSubhead>
-      <SpecialSubhead upper big>
+      <SpecialSubhead
+        upper
+        big
+        tabletLineHeight={'1.0'}
+        desktopLineHeight={'1.0'}
+      >
         Do this!
       </SpecialSubhead>
     </HeadlineContainer>

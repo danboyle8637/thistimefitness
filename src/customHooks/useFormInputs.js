@@ -1,4 +1,11 @@
 import { useFormStore } from '../context/FormContext'
+import { navigate } from 'gatsby'
+
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 const useFormInputs = () => {
   const [formState, dispatch] = useFormStore()
@@ -58,9 +65,31 @@ const useFormInputs = () => {
     }
   }
 
+  const handleFormSubmit = event => {
+    event.preventDefault()
+    const form = event.target
+    const name = event.target.name
+
+    if (name === 'summer_slim_down_form') {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name': form.getAttribute('name'),
+          goal: formState.goalValue.value,
+          firstName: formState.firstNameValue.value,
+          emailAddress: formState.emailValue.value,
+        }),
+      })
+        .then(() => navigate(form.getAttribute('action')))
+        .catch(error => alert(error))
+    }
+  }
+
   return {
     handleFormChange,
     handleFormFocus,
+    handleFormSubmit,
   }
 }
 

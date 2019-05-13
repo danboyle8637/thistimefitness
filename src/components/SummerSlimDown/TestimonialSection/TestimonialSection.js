@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Headline1 from './Headlines/Headline1'
-import { SiteButton } from '../../../styles/Buttons'
+import { MainButton } from '../../../styles/Buttons'
 import { SectionContainer, ButtonContainer } from '../../../styles/Containers'
 import ChallengeReviews from './ChallengeReviews'
 
@@ -18,7 +18,7 @@ const TestimonialSection = () => {
         tMarginTop={'60px'}
         dMarginTop={'60px'}
       >
-        <SiteButton>I'm Interested!</SiteButton>
+        <MainButton to={'/summer-early-bird-form'}>I'm Interested!</MainButton>
       </ButtonContainer>
       <ChallengeReviews />
     </SectionContainer>
