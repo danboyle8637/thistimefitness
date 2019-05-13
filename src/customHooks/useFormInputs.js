@@ -78,7 +78,7 @@ const useFormInputs = () => {
           'form-name': form.getAttribute('name'),
           goal: formState.goalValue.value,
           firstName: formState.firstNameValue.value,
-          emailAddress: formState.emailValue.value,
+          email: formState.emailValue.value,
         }),
       })
         .then(() => navigate(form.getAttribute('action')))

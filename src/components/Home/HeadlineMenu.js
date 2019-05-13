@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { TweenMax, Back } from 'gsap/TweenMax'
 
-import ListArrow from '../../svgs/ListArrow'
 import KettlebellIcon from '../../svgs/KettlebellIcon'
 import { above } from '../../styles/Theme'
 
@@ -122,22 +121,12 @@ const MenuLink = styled(Link)`
   `}
 `
 
-const MenuArrow = styled(ListArrow)`
-  width: 40px;
-  ${above.mobile`
-    width: 50px;
-  `}
-  ${above.tablet`
-    width: 60px;
-  `}
-`
-
 const MenuKettlebell = styled(KettlebellIcon)`
   width: 12px;
   ${above.mobile`
-    width: 50px;
+    width: 16px;
   `}
   ${above.tablet`
-    width: 60px;
+    width: 18px;
   `}
 `

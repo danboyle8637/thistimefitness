@@ -35,6 +35,7 @@ const ClassCard = ({ icon, title, body, path }) => {
           <ClassCardContainer>
             <ClassCardWrapper>
               <HeadlineContainer
+                left
                 mMarginTop={'20px'}
                 tMarginTop={'20px'}
                 tabletWidth={'100%'}
@@ -109,6 +110,7 @@ const DescriptionText = styled.p`
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 3.4px;
+  align-self: center;
   ${above.mobile`
     letter-spacing: 13px;
   `}
