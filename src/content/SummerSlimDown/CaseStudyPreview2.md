@@ -4,5 +4,5 @@ client: Plateau breaker...
 mobileThumbnail: '../../images/SummerSlimDown/case-study-lori-400x400.jpg'
 desktopThumbnail: '../../images/SummerSlimDown/case-study-lori-thumbnail-big.jpg'
 results: Lost 15lbs
-slug: /lori
+slug: /summer-case-study2
 ---

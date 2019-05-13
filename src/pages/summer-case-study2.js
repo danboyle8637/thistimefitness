@@ -6,15 +6,15 @@ import CaseStudyCopy from '../components/SummerSlimDown/CaseStudySection/CaseStu
 import SummerSlimDownForm from '../components/SummerSlimDown/Form/SummerSlimDownForm'
 import ResultsDisclaimer from '../components/Transformations/ResultsDisclaimer'
 
-const SummerCaseStudy1 = () => {
+const SummerCaseStudy2 = () => {
   return (
     <Layout>
-      <HeadlineSection name={'CaseStudy1'} />
-      <CaseStudyCopy name={'CaseStudy1'} />
+      <HeadlineSection name={'CaseStudy2'} />
+      <CaseStudyCopy name={'CaseStudy2'} />
       <SummerSlimDownForm />
       <ResultsDisclaimer />
     </Layout>
   )
 }
 
-export default SummerCaseStudy1
+export default SummerCaseStudy2

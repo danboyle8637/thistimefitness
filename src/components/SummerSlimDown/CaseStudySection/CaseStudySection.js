@@ -2,7 +2,12 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
-import { SectionContainer } from '../../../styles/Containers'
+import {
+  SectionContainer,
+  ButtonContainer,
+  HeadlineContainer,
+} from '../../../styles/Containers'
+import { MainButton } from '../../../styles/Buttons'
 import Headline1 from './Headlines/Headline1'
 import CaseStudyCard from './CaseStudyCard'
 import { above } from '../../../styles/Theme'
@@ -80,7 +85,16 @@ const CaseStudySection = () => {
   })
 
   return (
-    <SectionContainer desktopWidth={'100%'}>
+    <SectionContainer
+      mobilePadding={'20px 16px 80px 16px'}
+      tabletPadding={'20px 16px 120px 16px'}
+      desktopPadding={'20px 16px 120px 16px'}
+      desktopWidth={'100%'}
+    >
+      <div id="summer_case_studies" />
+      <ButtonContainer>
+        <MainButton to={'/'}>I'm Interested!</MainButton>
+      </ButtonContainer>
       <Headline1 />
       <CardsContainer>{cards}</CardsContainer>
     </SectionContainer>

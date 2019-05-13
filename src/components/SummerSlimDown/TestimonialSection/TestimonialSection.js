@@ -10,7 +10,7 @@ const TestimonialSection = () => {
     <SectionContainer
       mobilePadding={'20px 16px 80px 16px'}
       tabletPadding={'40px 16px 80px 16px'}
-      desktopPadding={'40px 16px 80px 16px'}
+      desktopPadding={'40px 16px 0px 16px'}
     >
       <Headline1 />
       <ButtonContainer

@@ -50,7 +50,12 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 60%;
+  padding: 50px 0 20px 16px;
   ${above.mobile`
-    width: 80%;
+    width: 70%;
+    padding: 60px 0 20px 24px;
+  `}
+  ${above.tablet`
+    padding: 80px 0 20px 160px;
   `}
 `

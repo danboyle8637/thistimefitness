@@ -25,7 +25,7 @@ export default ResultsDisclaimer
 
 const DisclaimerText = styled.p`
   margin: 0;
-  padding: 0;
+  padding: 12px;
   font-size: 14px;
   color: #4a4c6f;
 `

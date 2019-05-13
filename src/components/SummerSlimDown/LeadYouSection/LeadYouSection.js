@@ -1,29 +1,96 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Image from 'gatsby-image'
 
-import { SectionContainer, ButtonContainer } from '../../../styles/Containers'
+import {
+  HeadlineGrid,
+  BackgroundWrapper,
+  ContentWrapper,
+} from '../../../styles/CreateHeadlineSection'
+import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
 import LeadYouContent from './LeadYouContent'
-import { SiteButton } from '../../../styles/Buttons'
 
 const LeadYouSection = () => {
+  const query = graphql`
+    query {
+      mobileBackground: file(
+        sourceInstanceName: { eq: "SummerSlimDownImages" }
+        name: { eq: "kindal-lead-you-600x1375" }
+      ) {
+        childImageSharp {
+          fluid(
+            jpegProgressive: true
+            maxWidth: 600
+            maxHeight: 1375
+            quality: 90
+          ) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      tabletBackground: file(
+        sourceInstanceName: { eq: "SummerSlimDownImages" }
+        name: { eq: "kindal-lead-you-834x900" }
+      ) {
+        childImageSharp {
+          fluid(
+            jpegProgressive: true
+            maxWidth: 834
+            maxHeight: 900
+            quality: 90
+          ) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      desktopBackground: file(
+        sourceInstanceName: { eq: "SummerSlimDownImages" }
+        name: { eq: "kindal-lead-you-1440x800" }
+      ) {
+        childImageSharp {
+          fluid(
+            jpegProgressive: true
+            maxWidth: 1440
+            maxHeight: 800
+            quality: 90
+          ) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `
+
+  const kindal = useStaticQuery(query)
+  const mobileBackground = kindal.mobileBackground
+  const tabletBackground = kindal.tabletBackground
+  const desktopBackground = kindal.desktopBackground
+
   return (
-    <SectionContainer>
-      <ContentWrapper>
-        <LeadYouContent />
-      </ContentWrapper>
-      <ButtonContainer
-        mMarginTop={'40px'}
-        tMarginTop={'60px'}
-        dMarginTop={'60px'}
-      >
-        <SiteButton>I'm Interested!</SiteButton>
-      </ButtonContainer>
-    </SectionContainer>
+    <RenderBackgroundImage
+      mobileBackground={mobileBackground}
+      tabletBackground={tabletBackground}
+      desktopBackground={desktopBackground}
+    >
+      {({ backgroundImage }) => (
+        <HeadlineGrid>
+          <BackgroundWrapper>
+            <Image fluid={backgroundImage} />
+          </BackgroundWrapper>
+          <ContentWrapper>
+            <TextWrapper>
+              <LeadYouContent />
+            </TextWrapper>
+          </ContentWrapper>
+        </HeadlineGrid>
+      )}
+    </RenderBackgroundImage>
   )
 }
 
 export default LeadYouSection
 
-const ContentWrapper = styled.div`
+const TextWrapper = styled.div`
   width: 100%;
 `
