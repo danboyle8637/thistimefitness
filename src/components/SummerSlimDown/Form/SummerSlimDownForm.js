@@ -36,6 +36,8 @@ const SummerSlimDownForm = () => {
       mobilePadding={'40px 20px 80px 20px'}
       tabletPadding={'40px 20px 120px 20px'}
       desktopPadding={'40px 20px 120px 20px'}
+      tabletWidth={'100%'}
+      desktopWidth={'100%'}
     >
       <Headline1 />
       <EarlyBirdForm

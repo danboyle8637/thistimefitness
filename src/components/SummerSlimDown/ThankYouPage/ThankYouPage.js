@@ -43,6 +43,11 @@ const ThankYouPage = () => {
           }
         }
       }
+      gcms {
+        asset(where: { id: "cjvn2i1dxh3qw0946o96ttjw4" }) {
+          url
+        }
+      }
     }
   `
 
@@ -53,6 +58,7 @@ const ThankYouPage = () => {
     data.summerThankYou.childMarkdownRemark.frontmatter.book.childImageSharp
       .fluid
   const body = data.summerThankYou.childMarkdownRemark.html
+  const switchUrl = data.gcms.asset.url
 
   return (
     <>
@@ -91,7 +97,13 @@ const ThankYouPage = () => {
           tMarginTop={'40px'}
           dMarginTop={'40px'}
         >
-          <SiteButton>Download Switch!</SiteButton>
+          <SiteButton
+            href={switchUrl}
+            rel={'noopener noreferrer'}
+            target={'_blank'}
+          >
+            Download Switch!
+          </SiteButton>
         </ButtonContainer>
       </SectionContainer>
     </>

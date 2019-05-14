@@ -12,6 +12,8 @@ const WhatIsItSection = () => {
       mobilePadding={'40px 20px 80px 20px'}
       tabletPadding={'60px 20px 120px 20px'}
       desktopPadding={'60px 20px 120px 20px'}
+      tabletWidth={'100%'}
+      desktopWidth={'100%'}
     >
       <MainButton to={'/summer-early-bird-form'}>I'm Interested!</MainButton>
       <CountdownTimer />
