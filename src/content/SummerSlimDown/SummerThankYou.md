@@ -19,4 +19,4 @@ The download link for Switch is there too.
 
 Go through the substitutions. They're incredibly helpful.
 
-Thank you for getting on the early bird list. I'll talk with you soon!
+I hope you join and I can't wait to talk with you soon!
