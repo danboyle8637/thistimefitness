@@ -2,11 +2,13 @@
 id: summer_slim_down_early_bird1
 ---
 
-There are 30 spots open for this years challenge.
+There are only 18 spots left for this years challenge.
 
-I'll open registration on June 3rd at 7:00am.
+Registration is open now!
 
-But if you sign up on the Early Bird list today, I'll open registration for you a full 24 hours early.
+Fill out the form below. You can see pricing. It's the same as a normal membership with a small \$35 registration fee.
+
+You can join or we can talk first over email or phone.
 
 Plus I'll immediately send you my Switch Guide so you can start your transformation now.
 

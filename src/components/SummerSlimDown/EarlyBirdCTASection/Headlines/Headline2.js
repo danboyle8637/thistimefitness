@@ -15,9 +15,9 @@ const Headline2 = () => {
       dMarginTop={'40px'}
     >
       <SummerHeadlineSmall mobileLineHeight={'1.6'}>
-        Registration Opens
+        Registration Closes
       </SummerHeadlineSmall>
-      <SpecialSubhead secondary>June 3 - @7:00am</SpecialSubhead>
+      <SpecialSubhead secondary>June 10 @12am</SpecialSubhead>
     </HeadlineContainer>
   )
 }

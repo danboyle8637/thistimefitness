@@ -10,9 +10,9 @@ const Headline1 = () => {
   return (
     <HeadlineContainer left tabletWidth={'90%'} desktopWidth={'80%'}>
       <SummerHeadlineSmall mobileLineHeight={'1.6'}>
-        Get on the
+        Don't Wait
       </SummerHeadlineSmall>
-      <SpecialSubhead secondary>EARLY BIRD LIST</SpecialSubhead>
+      <SpecialSubhead secondary>Register Now!</SpecialSubhead>
     </HeadlineContainer>
   )
 }

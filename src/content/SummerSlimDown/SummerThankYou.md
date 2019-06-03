@@ -5,21 +5,17 @@ headline: I Will Email You Today
 book: '../../images/SummerSlimDown/switch-book-cover.png'
 ---
 
-It worked! You're on the early bird list.
+It worked! You can register and lock in your spot now.
 
-I am going to share with you some great information over the next few weeks.
+Or we can talk first over email or phone... or you can come to the studio.
 
-I have some blog posts... we'll do a LIVE fit chat as a group... plus me and you can even meet in person if you want.
+If you have any questions, ask me.
 
-Check your email because I just sent you a welcome message.
+Remember... registration is open now.
 
-If you have any questions, let me know.
+Below is you can sign up for the plan that fits your schedule.
 
-Remember... registration opens on June 2nd for you.
-
-If you want to come try a workout for free... email me and we will set that up.
-
-Below is the download link for Switch.
+The download link for Switch is there too.
 
 Go through the substitutions. They're incredibly helpful.
 
