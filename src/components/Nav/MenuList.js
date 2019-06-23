@@ -57,11 +57,6 @@ class MenuList extends Component {
             <MenuLink to="/specials">Specials</MenuLink>
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>
-            <MenuLink to="/summer-slim-down-challenge">
-              Summer Slim Down
-            </MenuLink>
-          </MenuText>
-          <MenuText ref={this.setMenuItemRef}>
             <MenuLink to="/case-studies">Case Studies</MenuLink>
           </MenuText>
           <MenuText ref={this.setMenuItemRef}>

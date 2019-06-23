@@ -16,33 +16,6 @@ const SpecialCard = ({ images }) => {
       <SpecialsGrid>
         <SpecialCardContainer>
           <FeatureImageWrapper
-            fluid={summerSlimDownImage}
-            title={'Summer Slim Down group picture'}
-            alt={'Summer Slim Down group picture'}
-          />
-          <SpecialContentWrapper>
-            <SpecialTitle>Summer Slim Down</SpecialTitle>
-            <HorizontalLine />
-            <SpecialDescription>
-              This only happens once a year. Join the 8 week Summer Slim Down
-              Challenge. Get strong... get fit... lose weight... and make this
-              the best summer you've every had!
-            </SpecialDescription>
-            <ButtonContainer
-              mMarginTop={'20px'}
-              tMarginTop={'20px'}
-              dMarginTop={'28px'}
-              tabletWidth={'100%'}
-              desktopWidth={'100%'}
-            >
-              <MainButton to={'/summer-slim-down-challenge'}>
-                Learn More
-              </MainButton>
-            </ButtonContainer>
-          </SpecialContentWrapper>
-        </SpecialCardContainer>
-        <SpecialCardContainer>
-          <FeatureImageWrapper
             fluid={fourteenDayImage}
             title={'The group doing wall sits'}
             alt={'The group doing wall sits'}
