@@ -18,7 +18,7 @@ class HeadlineMenu extends Component {
   }
 
   componentDidMount() {
-    this.menuItems.map(item => {
+    this.menuItems.forEach(item => {
       if (item.lastChild.textContent === 'First Time Specials') {
         TweenMax.set(item.lastChild, { color: '#5afdf2' })
       }
@@ -30,6 +30,10 @@ class HeadlineMenu extends Component {
       { ease: Back.easeOut.config(1.2), x: -600, opacity: 0 },
       0.2
     )
+  }
+
+  componentWillUnmount() {
+    TweenMax.killTweensOf(this.menuItems)
   }
 
   render() {

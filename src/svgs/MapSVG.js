@@ -44,6 +44,13 @@ class MapSVG extends Component {
     })
   }
 
+  componentWillUnmount() {
+    TweenMax.killTweensOf(this.circleK)
+    TweenMax.killTweensOf(this.matadors)
+    TweenMax.killTweensOf(this.easterbys)
+    TweenMax.killTweensOf(this.ttf)
+  }
+
   render() {
     const { width, height } = this.props
 

@@ -20,7 +20,8 @@ const validate = (value, rules) => {
         break
 
       default:
-        isValid = isValid
+        isValid = true
+        break
     }
   }
 
