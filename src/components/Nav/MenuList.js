@@ -6,7 +6,6 @@ import TweenMax, { Back } from 'gsap/TweenMax'
 import { HeadlineContainer } from '../../styles/Containers'
 import { SpecialSubhead } from '../../styles/Headlines'
 import { above } from '../../styles/Theme'
-import ListArrow from '../../svgs/ListArrow'
 
 class MenuList extends Component {
   constructor(props) {
@@ -21,9 +20,7 @@ class MenuList extends Component {
 
   componentDidMount() {
     this.menuItems.map(item => {
-      if (
-        item.firstChild.textContent === 'Specials'
-      ) {
+      if (item.firstChild.textContent === 'Specials') {
         TweenMax.set(item.firstChild, { color: '#2AD2E2' })
       }
     })
