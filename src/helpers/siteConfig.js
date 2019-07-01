@@ -181,7 +181,7 @@ export const siteConfig = {
     lang: 'en-us',
   },
   ignite: {
-    countdownDate: '05/13/2019 12:00 AM',
+    countdownDate: '07/14/2019 12:00 AM',
   },
   summerSlimDown: {
     countdownDate: '06/10/2019 12:00 AM',
