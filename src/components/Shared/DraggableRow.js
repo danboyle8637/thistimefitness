@@ -13,6 +13,7 @@ class DraggableRow extends Component {
   constructor(props) {
     super(props)
 
+    // eslint-disable-next-line
     const throwPropsPlugin = ThrowPropsPlugin
 
     this.state = {

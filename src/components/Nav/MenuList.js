@@ -19,7 +19,7 @@ class MenuList extends Component {
   }
 
   componentDidMount() {
-    this.menuItems.map(item => {
+    this.menuItems.forEach(item => {
       if (item.firstChild.textContent === 'Specials') {
         TweenMax.set(item.firstChild, { color: '#2AD2E2' })
       }

@@ -10,7 +10,6 @@
 // })
 
 const path = require(`path`)
-const childProcess = require('child_process')
 
 // This creates blog pages based on the number of total blog posts.
 // Currently I have 6 blog posts showing up per page.
@@ -93,10 +92,4 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
       },
     })
   }
-}
-
-exports.onPostBuild = () => {
-  childProcess.execSync(
-    "ps aux | grep jest | grep -v grep | awk '{print $2}' | xargs kill"
-  )
 }

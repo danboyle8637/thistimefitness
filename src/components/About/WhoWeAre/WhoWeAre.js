@@ -33,7 +33,7 @@ const WhoWeAre = ({ copy }) => {
   const whoWeAreCopy = copy.edges.find(copyChunk => {
     const id = copyChunk.node.childMarkdownRemark.frontmatter.id
     if (id !== 'who_we_are') {
-      return
+      return null
     }
     return copyChunk
   })
