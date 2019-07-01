@@ -77,19 +77,6 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-
-//   if (node.internal.type === 'GCMS') {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }
-
 // For the moment, tells Webpack to ignore the ThrowPropsPlugin file.
 // Will take this out and retst building becuase I updated GSAP
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {

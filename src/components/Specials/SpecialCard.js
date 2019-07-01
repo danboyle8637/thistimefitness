@@ -9,7 +9,6 @@ import { above } from '../../styles/Theme'
 const SpecialCard = ({ images }) => {
   const fourteenDayImage = images.fourteenSpecial.childImageSharp.fluid
   const IgniteImage = images.igniteSpecial.childImageSharp.fluid
-  const summerSlimDownImage = images.summerSlimDownSpecial.childImageSharp.fluid
 
   return (
     <SectionContainer desktopWidth={'100%'}>

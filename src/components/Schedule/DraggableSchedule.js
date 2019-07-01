@@ -12,6 +12,7 @@ class DraggableSchedule extends Component {
   constructor(props) {
     super(props)
 
+    // eslint-disable-next-line
     const throwPropsPlugin = ThrowPropsPlugin
 
     this.dragSchedule = null
