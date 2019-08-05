@@ -7,6 +7,7 @@ import LeadSection from '../components/FallIntoFitness/LeadSection/LeadSection'
 import LetterSection from '../components/FallIntoFitness/LetterSection/LetterSection'
 import CountdownSection from '../components/FallIntoFitness/CountdownTimer/CountdownSection'
 import BenefitSection from '../components/FallIntoFitness/BenefitSection/BenefitSection'
+import BonusSection from '../components/FallIntoFitness/BonusSection/BonusSection'
 import CTASection from '../components/FallIntoFitness/CTASection/CTASection'
 import FallIntoFitnessForm from '../components/FallIntoFitness/Form/FallIntoFitnessForm'
 import Faq from '../components/Shared/FAQ/FAQ'
@@ -30,6 +31,7 @@ const Ignite = ({ data }) => {
       <LetterSection copy={data.fallIntoFitnessCopy} images={data} />
       <CountdownSection />
       <BenefitSection copy={data.fallIntoFitnessCopy} />
+      <BonusSection images={data} />
       <CountdownSection />
       <CTASection />
       <FallIntoFitnessForm />
@@ -95,6 +97,51 @@ export const query = graphql`
         ) {
           ...GatsbyImageSharpFluid
           aspectRatio
+        }
+      }
+    }
+    welcomePackMobile: file(
+      sourceInstanceName: { eq: "FallIntoFitnessImages" }
+      name: { eq: "fall-fitness-bonus-welcome-pack-600x1300" }
+    ) {
+      childImageSharp {
+        fluid(
+          maxWidth: 600
+          maxHeight: 1300
+          jpegProgressive: true
+          quality: 90
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    welcomePackTablet: file(
+      sourceInstanceName: { eq: "FallIntoFitnessImages" }
+      name: { eq: "fall-fitness-bonus-welcome-pack-834x1112" }
+    ) {
+      childImageSharp {
+        fluid(
+          maxWidth: 834
+          maxHeight: 1112
+          jpegProgressive: true
+          quality: 90
+        ) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    welcomePackLaptop: file(
+      sourceInstanceName: { eq: "FallIntoFitnessImages" }
+      name: { eq: "fall-fitness-bonus-welcome-pack-1440x900" }
+    ) {
+      childImageSharp {
+        fluid(
+          maxWidth: 1440
+          maxHeight: 900
+          jpegProgressive: true
+          quality: 90
+        ) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

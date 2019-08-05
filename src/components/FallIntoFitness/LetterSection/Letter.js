@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import Image from 'gatsby-image'
 
 import { InnerBodyText } from '../../../styles/BodyText'
+import FallLeaf1 from '../../../svgs/FallLeaf1'
+import FallLeaf2 from '../../../svgs/FallLeaf2'
+import FallLeaf3 from '../../../svgs/FallLeaf3'
 import { above } from '../../../styles/Theme'
 import KindalSig from '../../../svgs/KindalSig'
 
@@ -21,6 +24,9 @@ const Letter = ({ part1, part2, kindal }) => {
         </ImageWrapper>
         <InnerBodyText note dangerouslySetInnerHTML={{ __html: body2 }} />
         <Signature fill={'#2b2c3a'} />
+        <Leaf1 />
+        <Leaf2 />
+        <Leaf3 />
       </Part2Wrapper>
     </>
   )
@@ -87,5 +93,35 @@ const Signature = styled(KindalSig)`
   ${above.mobile`
     margin: 20px 30px;
     width: 140px;
+  `}
+`
+
+const Leaf1 = styled(FallLeaf1)`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  transform: translate(26px, -80px);
+  z-index: 2;
+`
+
+const Leaf2 = styled(FallLeaf2)`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  transform: translate(12px, 20px) rotate(24deg);
+  z-index: 2;
+`
+
+const Leaf3 = styled(FallLeaf3)`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  transform: translate(-70px, -10px) rotate(-24deg);
+  z-index: 2;
+  ${above.tablet`
+    transform: translate(20px, -10px) rotate(-24deg);
   `}
 `

@@ -23,7 +23,7 @@ const InnerBodyText = styled.div`
   }
   & strong {
     font-weight: 600;
-    color: #a1fff9;
+    color: ${props => (props.purple ? '#2B2C3A' : '#a1fff9')};
   }
   & ol {
     color: ${props => props.theme.secondaryColor};
