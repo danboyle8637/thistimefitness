@@ -1,28 +1,28 @@
 import React from 'react'
 import Image from 'gatsby-image'
 
+import HeadlineContent from './HeadlineContent'
 import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
 import {
   HeadlineGrid,
   BackgroundWrapper,
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
-import HeadlineContent from './HeadlineContent'
 import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
 import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 
 const HeadlineSection = ({ images }) => {
   const {
-    runningMobileBackground,
-    runningTabletBackground,
-    runningDesktopBackground,
+    fallIntoFitnessMobileBackground,
+    fallIntoFitnessTabletBackground,
+    fallIntoFitnessDesktopBackground,
   } = images
 
   return (
     <RenderBackgroundImage
-      mobileBackground={runningMobileBackground}
-      tabletBackground={runningTabletBackground}
-      desktopBackground={runningDesktopBackground}
+      mobileBackground={fallIntoFitnessMobileBackground}
+      tabletBackground={fallIntoFitnessTabletBackground}
+      desktopBackground={fallIntoFitnessDesktopBackground}
     >
       {({ backgroundImage }) => {
         const backgroundReady = useIsBackgroundReady(backgroundImage)
@@ -33,8 +33,12 @@ const HeadlineSection = ({ images }) => {
               {backgroundReady ? (
                 <Image
                   fluid={backgroundImage}
-                  title={'Running outside'}
-                  alt={'Running outside'}
+                  title={
+                    'An amazing group of women celebrating after a great workout'
+                  }
+                  alt={
+                    'An amazing group of women celebrating after a great workout'
+                  }
                 />
               ) : (
                 <BackgroundImageLoader />

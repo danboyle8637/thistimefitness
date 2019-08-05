@@ -43,7 +43,9 @@ export const query = graphql`
         }
       }
     }
-    igniteSpecial: file(relativePath: { eq: "ignite-special.jpg" }) {
+    fallIntoFitnessSpecial: file(
+      relativePath: { eq: "fall-into-fitness-special.jpg" }
+    ) {
       childImageSharp {
         fluid(
           maxWidth: 600
@@ -63,3 +65,16 @@ export const query = graphql`
     }
   }
 `
+
+// igniteSpecial: file(relativePath: { eq: "ignite-special.jpg" }) {
+//   childImageSharp {
+//     fluid(
+//       maxWidth: 600
+//       maxHeight: 333
+//       jpegProgressive: true
+//       quality: 90
+//     ) {
+//       ...GatsbyImageSharpFluid
+//     }
+//   }
+// }

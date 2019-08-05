@@ -8,6 +8,8 @@ import {
 } from '../../../styles/CreateHeadlineSection'
 import HeadlineContent from './HeadlineContent'
 import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
+import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 
 const HeadlineSection = props => {
   const {
@@ -22,20 +24,28 @@ const HeadlineSection = props => {
       tabletBackground={bodyBurnTabletBackground}
       desktopBackground={bodyBurnDesktopBackground}
     >
-      {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image
-              fluid={backgroundImage}
-              title={'Pushing a sled exercise'}
-              alt={'Pushing a sled exercise'}
-            />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <HeadlineContent />
-          </ContentWrapper>
-        </HeadlineGrid>
-      )}
+      {({ backgroundImage }) => {
+        const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+        return (
+          <HeadlineGrid>
+            <BackgroundWrapper>
+              {backgroundReady ? (
+                <Image
+                  fluid={backgroundImage}
+                  title={'Pushing a sled exercise'}
+                  alt={'Pushing a sled exercise'}
+                />
+              ) : (
+                <BackgroundImageLoader />
+              )}
+            </BackgroundWrapper>
+            <ContentWrapper>
+              <HeadlineContent />
+            </ContentWrapper>
+          </HeadlineGrid>
+        )
+      }}
     </RenderBackgroundImage>
   )
 }

@@ -8,6 +8,8 @@ import {
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
 import HeadlineContent from './HeadlineContent'
+import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 
 const HeadlineSection = ({ images }) => {
   const {
@@ -22,16 +24,28 @@ const HeadlineSection = ({ images }) => {
       tabletBackground={weekendTabletBackground}
       desktopBackground={weekendDesktopBackground}
     >
-      {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image fluid={backgroundImage} title={'Yoga downward dog pose'} alt={'Yoga downward dog pose'} />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <HeadlineContent />
-          </ContentWrapper>
-        </HeadlineGrid>
-      )}
+      {({ backgroundImage }) => {
+        const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+        return (
+          <HeadlineGrid>
+            <BackgroundWrapper>
+              {backgroundReady ? (
+                <Image
+                  fluid={backgroundImage}
+                  title={'Yoga downward dog pose'}
+                  alt={'Yoga downward dog pose'}
+                />
+              ) : (
+                <BackgroundImageLoader />
+              )}
+            </BackgroundWrapper>
+            <ContentWrapper>
+              <HeadlineContent />
+            </ContentWrapper>
+          </HeadlineGrid>
+        )
+      }}
     </RenderBackgroundImage>
   )
 }

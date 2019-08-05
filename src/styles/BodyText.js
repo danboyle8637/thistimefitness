@@ -21,6 +21,10 @@ const InnerBodyText = styled.div`
     color: ${props =>
       props.note ? props.theme.blogTextColor : props.theme.textColor};
   }
+  & strong {
+    font-weight: 600;
+    color: #a1fff9;
+  }
   & ol {
     color: ${props => props.theme.secondaryColor};
   }

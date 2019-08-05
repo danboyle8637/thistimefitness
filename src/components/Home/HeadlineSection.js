@@ -7,6 +7,8 @@ import {
   ContentWrapper,
 } from '../../styles/CreateHeadlineSection'
 import RenderBackgroundImage from '../Shared/RenderBackgroundImage'
+import useIsBackgroundReady from '../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../Shared/BackgroundImageLoader'
 import HeadlineContent from './HeadlineContent'
 
 const HeadlineSection = ({ images }) => {
@@ -18,16 +20,28 @@ const HeadlineSection = ({ images }) => {
       tabletBackground={tabletBackground}
       desktopBackground={desktopBackground}
     >
-      {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image fluid={backgroundImage} title={'This Time Fitness Studio'} alt={'This Time Fitness Studio'} />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <HeadlineContent />
-          </ContentWrapper>
-        </HeadlineGrid>
-      )}
+      {({ backgroundImage }) => {
+        const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+        return (
+          <HeadlineGrid>
+            <BackgroundWrapper>
+              {backgroundReady ? (
+                <Image
+                  fluid={backgroundImage}
+                  title={'This Time Fitness Studio'}
+                  alt={'This Time Fitness Studio'}
+                />
+              ) : (
+                <BackgroundImageLoader />
+              )}
+            </BackgroundWrapper>
+            <ContentWrapper>
+              <HeadlineContent />
+            </ContentWrapper>
+          </HeadlineGrid>
+        )
+      }}
     </RenderBackgroundImage>
   )
 }

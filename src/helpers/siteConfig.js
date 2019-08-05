@@ -183,11 +183,11 @@ export const siteConfig = {
   ignite: {
     countdownDate: '07/15/2019 12:00 AM',
   },
-  summerSlimDown: {
-    countdownDate: '06/10/2019 12:00 AM',
-    title: 'This Time Fitness Summer Slim Down Challenge',
-    description: `The Summer Slim Down Challenge is an 8 week program to help you burn fat, get strong, and feel incredible over the summer. Are you ready for the best summer yet?`,
-    url: 'https://thistimefitness.com/summer-slim-down-challenge',
+  fallIntoFitness: {
+    countdownDate: '09/02/2019 12:00 AM',
+    title: 'This Time Fitness Fall Into Fitness Challenge',
+    description: `Fall Into Fitness is a 6 week challenge to help you get back into fitness the right way. Better form, learn exercises, burn fat, and get insanely fit. Are you ready?`,
+    url: 'https://thistimefitness.com/fall-into-fitness',
     image: '../images/Facebook/summer-slim-down-share-image.jpg',
     keywords: [
       'this time fitness',

@@ -125,6 +125,20 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `FallIntoFitnessImages`,
+        path: `${__dirname}/src/images/FallIntoFitness`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `FallIntoFitnessCopy`,
+        path: `${__dirname}/src/content/FallIntoFitness`,
+      },
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         typeName: `GCMS`,

@@ -8,6 +8,8 @@ import {
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
 import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
+import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 
 class HeadlineSection extends Component {
   render() {
@@ -23,16 +25,28 @@ class HeadlineSection extends Component {
         tabletBackground={tabletBackground}
         desktopBackground={desktopBackground}
       >
-        {({ backgroundImage }) => (
-          <HeadlineGrid>
-            <BackgroundWrapper>
-              <Image fluid={backgroundImage} title={'Beth pressing two kettlebells'} alt={'Beth pressing two kettlebells'} />
-            </BackgroundWrapper>
-            <ContentWrapper>
-              <HeadlineContent />
-            </ContentWrapper>
-          </HeadlineGrid>
-        )}
+        {({ backgroundImage }) => {
+          const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+          return (
+            <HeadlineGrid>
+              <BackgroundWrapper>
+                {backgroundReady ? (
+                  <Image
+                    fluid={backgroundImage}
+                    title={'Beth pressing two kettlebells'}
+                    alt={'Beth pressing two kettlebells'}
+                  />
+                ) : (
+                  <BackgroundImageLoader />
+                )}
+              </BackgroundWrapper>
+              <ContentWrapper>
+                <HeadlineContent />
+              </ContentWrapper>
+            </HeadlineGrid>
+          )
+        }}
       </RenderBackgroundImage>
     )
   }

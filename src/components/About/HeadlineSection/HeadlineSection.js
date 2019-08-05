@@ -8,6 +8,8 @@ import {
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
 import RenderBackgroundImage from '../../Shared/RenderBackgroundImage'
+import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 
 const HeadlineSection = ({ images }) => {
   const {
@@ -22,16 +24,28 @@ const HeadlineSection = ({ images }) => {
       tabletBackground={aboutTabletBackground}
       desktopBackground={aboutDesktopBackground}
     >
-      {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image fluid={backgroundImage} title={'Group of Members Flexing'} alt={'Group of Members Flexing'} />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <HeadlineContent />
-          </ContentWrapper>
-        </HeadlineGrid>
-      )}
+      {({ backgroundImage }) => {
+        const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+        return (
+          <HeadlineGrid>
+            <BackgroundWrapper>
+              {backgroundReady ? (
+                <Image
+                  fluid={backgroundImage}
+                  title={'Group of Members Flexing'}
+                  alt={'Group of Members Flexing'}
+                />
+              ) : (
+                <BackgroundImageLoader />
+              )}
+            </BackgroundWrapper>
+            <ContentWrapper>
+              <HeadlineContent />
+            </ContentWrapper>
+          </HeadlineGrid>
+        )
+      }}
     </RenderBackgroundImage>
   )
 }

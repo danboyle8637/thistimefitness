@@ -8,7 +8,7 @@ import { above } from '../../styles/Theme'
 
 const SpecialCard = ({ images }) => {
   const fourteenDayImage = images.fourteenSpecial.childImageSharp.fluid
-  const IgniteImage = images.igniteSpecial.childImageSharp.fluid
+  const IgniteImage = images.fallIntoFitnessSpecial.childImageSharp.fluid
 
   return (
     <SectionContainer desktopWidth={'100%'}>
@@ -43,6 +43,31 @@ const SpecialCard = ({ images }) => {
         <SpecialCardContainer>
           <FeatureImageWrapper
             fluid={IgniteImage}
+            title={'A group picture of amazing strong women after a workout'}
+            alt={'A group picture of amazing strong women after a workout'}
+          />
+          <SpecialContentWrapper>
+            <SpecialTitle>Fall Into Fitness</SpecialTitle>
+            <HorizontalLine />
+            <SpecialDescription>
+              Fall Into Fitness is built for women who are beginners. If you are
+              just getting back into exercise, this is a 6 week program you
+              don't want to miss.
+            </SpecialDescription>
+            <ButtonContainer
+              mMarginTop={'20px'}
+              tMarginTop={'20px'}
+              dMarginTop={'28px'}
+              tabletWidth={'100%'}
+              desktopWidth={'100%'}
+            >
+              <MainButton to={'/fall-into-fitness'}>Learn More</MainButton>
+            </ButtonContainer>
+          </SpecialContentWrapper>
+        </SpecialCardContainer>
+        {/* <SpecialCardContainer>
+          <FeatureImageWrapper
+            fluid={IgniteImage}
             title={'Donna rocking out the battle ropes'}
             alt={'Donna rocking out the battle ropes'}
           />
@@ -64,7 +89,7 @@ const SpecialCard = ({ images }) => {
               <MainButton to={'/ignite'}>Learn More</MainButton>
             </ButtonContainer>
           </SpecialContentWrapper>
-        </SpecialCardContainer>
+        </SpecialCardContainer> */}
       </SpecialsGrid>
     </SectionContainer>
   )

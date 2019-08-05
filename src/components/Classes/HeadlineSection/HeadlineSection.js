@@ -9,6 +9,8 @@ import {
   BackgroundWrapper,
   ContentWrapper,
 } from '../../../styles/CreateHeadlineSection'
+import useIsBackgroundReady from '../../../hooks/useIsBackgroundReady'
+import BackgroundImageLoader from '../../Shared/BackgroundImageLoader'
 import { above } from '../../../styles/Theme'
 
 const HeadlineSection = ({ images, path }) => {
@@ -27,22 +29,30 @@ const HeadlineSection = ({ images, path }) => {
       desktopBackground={classesDesktopBackground}
       path={path}
     >
-      {({ backgroundImage }) => (
-        <HeadlineGrid>
-          <BackgroundWrapper>
-            <Image
-              fluid={backgroundImage}
-              title={'Battle Rope Exercise'}
-              alt={'Battle Rope Exercise'}
-            />
-          </BackgroundWrapper>
-          <ContentWrapper>
-            <DraggableWrapper>
-              <HeadlineContent />
-            </DraggableWrapper>
-          </ContentWrapper>
-        </HeadlineGrid>
-      )}
+      {({ backgroundImage }) => {
+        const backgroundReady = useIsBackgroundReady(backgroundImage)
+
+        return (
+          <HeadlineGrid>
+            <BackgroundWrapper>
+              {backgroundReady ? (
+                <Image
+                  fluid={backgroundImage}
+                  title={'Battle Rope Exercise'}
+                  alt={'Battle Rope Exercise'}
+                />
+              ) : (
+                <BackgroundImageLoader />
+              )}
+            </BackgroundWrapper>
+            <ContentWrapper>
+              <DraggableWrapper>
+                <HeadlineContent />
+              </DraggableWrapper>
+            </ContentWrapper>
+          </HeadlineGrid>
+        )
+      }}
     </RenderBackgroundImage>
   )
 }
