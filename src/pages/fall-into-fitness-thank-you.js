@@ -21,7 +21,7 @@ const FallIntoFitnessThankYouPage = ({ data }) => {
   const body = data.file.childMarkdownRemark.html
 
   const purchaseIgnite =
-    'https://thistimefitness.sites.zenplanner.com/sign-up-now.cfm?display=MBRSHPS&categoryId=0E70FCAC-A8A6-45CB-A5B9-949B88196C5C&'
+    'https://thistimefitness.sites.zenplanner.com/sign-up-now.cfm?display=MBRSHPS&categoryId=3ABBC76B-E575-4C08-B448-28BA747EB04B&'
 
   return (
     <Layout>
