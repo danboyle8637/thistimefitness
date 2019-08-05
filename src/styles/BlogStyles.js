@@ -184,6 +184,8 @@ const BlogHTMLWrapper = styled.div`
     margin: 0;
     margin-bottom: 16px;
     padding: 0;
+    width: 100%;
+    height: auto;
   }
   & blockquote {
     position: relative;
